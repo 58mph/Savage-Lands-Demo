@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savage Arena - Tactical Auto-Battler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --blood: #8B0000; --crimson: #DC143C; --gold: #FFD700; --dark-gold: #B8860B;
+            --bone: #E8DCC4; --black: #0a0a0a; --dark: #121218; --panel: #1a1a24;
+            --frost: #00BFFF; --fire: #FF4500; --poison: #32CD32; --shadow: #9370DB; --arcane: #FF00FF;
+            --team-red: #DC143C; --team-blue: #4169E1; --team-green: #228B22; --team-purple: #8B008B; --team-orange: #FF8C00;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; image-rendering: pixelated; }
+        body { font-family: 'Crimson Text', Georgia, serif; background: var(--black); color: var(--bone); min-height: 100vh; overflow: hidden; }
+        
+        /* CRT Effect */
+        body::before { content: ""; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px); pointer-events: none; z-index: 9999; opacity: 0.4; }
+        body::after { content: ""; position: fixed; top: 0; left: 0; right: 0; height: 4px; background: rgba(255,215,0,0.08); animation: scanline 10s linear infinite; pointer-events: none; z-index: 9999; }
+        @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+        
+        .bg-layer { position: fixed; inset: 0; background: radial-gradient(ellipse at 50% 30%, #1a1510 0%, #0a0a0a 70%), linear-gradient(180deg, #0a0a0a 0%, #12101a 50%, #0a0a0a 100%); z-index: -1; }
+        
+        /* Screen Management */
+        .screen { display: none; width: 100vw; height: 100vh; }
+        .screen.active { display: flex; }
+        
+        /* Title Screen */
+        #title-screen { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .logo { font-family: 'Press Start 2P', monospace; font-size: 42px; font-weight: 900; color: var(--gold); text-shadow: 4px 4px 0 var(--blood), 0 0 30px rgba(255,215,0,0.6); margin-bottom: 15px; letter-spacing: 2px; line-height: 1.3; animation: logoGlow 3s ease-in-out infinite; }
+        @keyframes logoGlow { 0%, 100% { text-shadow: 4px 4px 0 var(--blood), 0 0 30px rgba(255,215,0,0.6); } 50% { text-shadow: 4px 4px 0 var(--blood), 0 0 50px rgba(255,215,0,0.9), 0 0 80px rgba(255,215,0,0.4); } }
+        .tagline { font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--crimson); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
+        .subtitle { font-family: 'Press Start 2P', monospace; font-size: 8px; color: #666; letter-spacing: 2px; margin-bottom: 40px; }
+        .team-preview { display: flex; gap: 15px; margin-bottom: 40px; }
+        .team-badge { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: white; border: 3px solid rgba(255,255,255,0.3); box-shadow: 0 0 10px currentColor; }
+        
+        /* Buttons */
+        .btn { font-family: 'Press Start 2P', monospace; padding: 18px 40px; margin: 8px; background: linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%); border: 4px solid var(--dark-gold); color: var(--bone); font-size: 10px; line-height: 1.5; cursor: pointer; transition: all 0.1s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 0 #000, 0 6px 0 var(--dark-gold); }
+        .btn:hover { background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%); border-color: var(--gold); color: var(--gold); transform: translateY(-2px); box-shadow: 0 6px 0 #000, 0 8px 0 var(--gold), 0 12px 20px rgba(255,215,0,0.2); }
+        .btn:active { transform: translateY(4px); box-shadow: 0 0 0 #000, 0 2px 0 var(--dark-gold); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; filter: grayscale(0.5); box-shadow: none; }
+        .btn.small { padding: 10px 20px; font-size: 8px; }
+        .btn.secondary { background: linear-gradient(180deg, #2a2a35 0%, #15151f 100%); border-color: #555; color: #888; box-shadow: 0 4px 0 #000, 0 6px 0 #444; }
+        .btn.secondary:hover { background: linear-gradient(180deg, #3a3a45 0%, #25252f 100%); border-color: #888; color: #ccc; box-shadow: 0 6px 0 #000, 0 8px 0 #666; }
+        
+        /* Selection Screen */
+        #select-screen { flex-direction: column; }
+        .select-header { padding: 15px 30px; background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%); border-bottom: 4px solid var(--dark-gold); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .select-header h1 { font-family: 'Press Start 2P', monospace; color: var(--gold); font-size: 12px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        .header-controls { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .search-box { display: flex; gap: 10px; align-items: center; }
+        .search-box input { padding: 10px 14px; background: #0a0a0f; border: 3px solid #333; color: var(--bone); font-family: 'Press Start 2P', monospace; font-size: 8px; width: 180px; }
+        .search-box input:focus { outline: none; border-color: var(--gold); }
+        .search-box input::placeholder { color: #444; }
+        .role-filters { display: flex; gap: 4px; flex-wrap: wrap; }
+        .role-filter { padding: 8px 14px; background: rgba(0,0,0,0.6); border: 2px solid #444; color: #888; font-size: 8px; font-family: 'Press Start 2P', monospace; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+        .role-filter:hover { border-color: var(--dark-gold); color: var(--bone); background: rgba(255,215,0,0.05); }
+        .role-filter.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.15); box-shadow: 0 0 10px rgba(255,215,0,0.2); }
+        .select-body { flex: 1; display: flex; overflow: hidden; position: relative; }
+        
+        /* Fighter Grid */
+        .fighter-grid-container { flex: 1; overflow-y: auto; padding: 20px; background: linear-gradient(180deg, #0f0f14 0%, #0a0a0a 100%); }
+        .fighter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+        .fighter-card { background: linear-gradient(145deg, #1e1e2a 0%, #15151f 100%); border: 3px solid #333; padding: 12px; cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden; box-shadow: 4px 4px 0 rgba(0,0,0,0.5); }
+        .fighter-card:hover { transform: translate(-2px, -2px); border-color: var(--dark-gold); box-shadow: 6px 6px 0 rgba(0,0,0,0.5), 0 0 15px rgba(255,215,0,0.1); }
+        .fighter-card.selected { border-color: var(--gold); background: linear-gradient(145deg, #2a2520 0%, #1a1510 100%); box-shadow: 6px 6px 0 rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.2); }
+        .fighter-card.selected::after { content: '✓'; position: absolute; top: -2px; right: -2px; width: 24px; height: 24px; background: var(--gold); border: 2px solid #000; color: var(--black); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; font-family: monospace; }
+        .fighter-portrait { width: 70px; height: 70px; margin: 0 auto 10px; border: 3px solid #444; background: #0a0a0f; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+        .fighter-portrait img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) contrast(1.1) brightness(0.9); image-rendering: pixelated; }
+        .fighter-name { font-family: 'Cinzel', serif; font-size: 10px; color: var(--bone); text-align: center; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .fighter-role { font-family: 'Press Start 2P', monospace; font-size: 7px; text-align: center; padding: 4px 8px; background: rgba(0,0,0,0.5); border: 1px solid #333; display: inline-block; width: 100%; text-transform: uppercase; }
+        .fighter-stats-preview { display: flex; justify-content: center; gap: 10px; margin-top: 8px; font-size: 8px; color: #666; font-family: monospace; }
+        
+        /* Team Panel */
+        .team-panel { width: 280px; background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%); border-left: 4px solid var(--dark-gold); display: flex; flex-direction: column; padding: 15px; }
+        .team-panel h2 { font-family: 'Press Start 2P', monospace; color: var(--gold); font-size: 10px; margin-bottom: 15px; text-align: center; padding-bottom: 15px; border-bottom: 2px solid #333; line-height: 1.6; }
+        .team-slots { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+        .team-slot { display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(0,0,0,0.3); border: 2px dashed #333; min-height: 60px; transition: all 0.2s; cursor: pointer; }
+        .team-slot:hover { border-color: var(--gold); background: rgba(255,215,0,0.05); }
+        .team-slot.filled { border-style: solid; border-color: var(--gold); background: rgba(255,215,0,0.05); }
+        .team-slot-number { width: 24px; height: 24px; background: var(--blood); color: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Press Start 2P', monospace; font-size: 8px; font-weight: bold; border: 2px solid #000; }
+        .team-slot-content { flex: 1; }
+        .team-slot-empty { color: #444; font-size: 8px; font-family: 'Press Start 2P', monospace; }
+        .team-slot-filled { display: flex; align-items: center; gap: 8px; }
+        .team-slot-portrait { width: 36px; height: 36px; background: #15151f; border: 2px solid #333; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .team-slot-portrait img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+        .team-slot-info { flex: 1; min-width: 0; }
+        .team-slot-name { font-size: 10px; color: var(--bone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .team-slot-role { font-size: 8px; font-family: 'Press Start 2P', monospace; }
+        .team-slot-remove { width: 22px; height: 22px; background: rgba(220,20,60,0.3); border: 2px solid var(--crimson); color: var(--crimson); cursor: pointer; font-size: 14px; font-family: monospace; display: flex; align-items: center; justify-content: center; transition: all 0.1s; }
+        .team-slot-remove:hover { background: var(--crimson); color: white; }
+        .team-actions { margin-top: 15px; display: flex; flex-direction: column; gap: 8px; }
+        .team-actions .btn { width: 100%; margin: 0; padding: 12px; }
+        
+        /* ==================== PERSONAL ARMORY OVERLAY ==================== */
+        .armory-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.92); display: none; justify-content: center; align-items: center; z-index: 1500; backdrop-filter: blur(4px); }
+        .armory-overlay.active { display: flex; }
+        .armory-container { background: linear-gradient(145deg, #1a1a24 0%, #0f0f14 100%); border: 4px solid var(--gold); max-width: 900px; width: 95%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 0 60px rgba(255,215,0,0.3), 0 20px 40px rgba(0,0,0,0.8); animation: armorySlideIn 0.3s ease-out; }
+        @keyframes armorySlideIn { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+        .armory-close { position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; background: rgba(139,0,0,0.5); border: 3px solid var(--crimson); color: var(--crimson); cursor: pointer; font-size: 24px; font-family: monospace; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 10; }
+        .armory-close:hover { background: var(--crimson); color: white; transform: scale(1.1); }
+        .armory-header { padding: 20px 30px; background: linear-gradient(180deg, rgba(139,0,0,0.3) 0%, transparent 100%); border-bottom: 2px solid var(--dark-gold); display: flex; align-items: center; gap: 20px; }
+        .armory-title { font-family: 'Press Start 2P', monospace; font-size: 14px; color: var(--gold); text-shadow: 2px 2px 0 var(--blood); }
+        .armory-subtitle { font-family: 'Cinzel', serif; font-size: 12px; color: #888; margin-top: 5px; }
+        
+        .armory-body { display: grid; grid-template-columns: 280px 1fr; gap: 0; min-height: 400px; }
+        
+        /* Character Display */
+        .armory-character { background: linear-gradient(135deg, #12121a 0%, #0a0a0f 100%); padding: 25px; display: flex; flex-direction: column; align-items: center; border-right: 2px solid #333; }
+        .armory-portrait { width: 180px; height: 180px; border: 4px solid var(--gold); background: #0a0a0f; margin-bottom: 15px; position: relative; overflow: hidden; box-shadow: 0 0 30px rgba(255,215,0,0.2), inset 0 0 40px rgba(0,0,0,0.8); }
+        .armory-portrait img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; filter: contrast(1.1) brightness(0.95); }
+        .armory-portrait .emoji-fallback { font-size: 100px; }
+        .armory-char-name { font-family: 'Cinzel', serif; font-size: 16px; color: var(--gold); text-align: center; margin-bottom: 5px; }
+        .armory-char-role { font-family: 'Press Start 2P', monospace; font-size: 9px; padding: 6px 15px; margin-bottom: 15px; }
+        
+        /* Build Rating */
+        .build-rating { width: 100%; background: rgba(0,0,0,0.5); border: 2px solid #333; padding: 12px; margin-bottom: 15px; }
+        .build-rating-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .build-rating-title { font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--frost); text-transform: uppercase; }
+        .build-rating-score { font-family: 'Press Start 2P', monospace; font-size: 14px; color: var(--gold); }
+        .build-rating-bar { height: 8px; background: #1a1a1a; border: 1px solid #444; overflow: hidden; }
+        .build-rating-fill { height: 100%; background: linear-gradient(90deg, var(--crimson) 0%, var(--gold) 50%, var(--poison) 100%); transition: width 0.5s ease-out; }
+        .build-rating-label { font-size: 8px; color: #666; text-align: center; margin-top: 5px; font-family: monospace; }
+        
+        /* Core Stats */
+        .armory-stats { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .armory-stat { background: rgba(0,0,0,0.4); padding: 8px; border-left: 3px solid var(--dark-gold); }
+        .armory-stat-label { font-size: 8px; color: #666; text-transform: uppercase; font-family: monospace; }
+        .armory-stat-value { font-size: 14px; color: var(--bone); font-weight: bold; font-family: 'Cinzel', serif; }
+        .armory-stat.hp .armory-stat-value { color: var(--poison); }
+        .armory-stat.atk .armory-stat-value { color: var(--crimson); }
+        .armory-stat.def .armory-stat-value { color: var(--frost); }
+        .armory-stat.spd .armory-stat-value { color: var(--gold); }
+        
+        /* Equipment Panel */
+        .armory-equipment { padding: 25px; }
+        .armory-section-title { font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid rgba(255,215,0,0.2); display: flex; align-items: center; gap: 10px; }
+        .armory-section-title::before { content: ''; width: 8px; height: 8px; background: var(--gold); }
+        
+        .equipment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 25px; }
+        .equipment-slot { background: linear-gradient(145deg, #1e1e2a 0%, #15151f 100%); border: 2px solid #444; padding: 12px; position: relative; transition: all 0.2s; }
+        .equipment-slot:hover { border-color: var(--dark-gold); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+        .equipment-slot.weapon { border-left: 4px solid var(--crimson); }
+        .equipment-slot.armor { border-left: 4px solid var(--frost); }
+        .equipment-slot.magic { border-left: 4px solid var(--arcane); }
+        .equipment-slot.accessory { border-left: 4px solid var(--gold); }
+        .equipment-slot-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .equipment-slot-type { font-size: 7px; color: #666; text-transform: uppercase; font-family: 'Press Start 2P', monospace; }
+        .equipment-slot-icon { font-size: 16px; }
+        .equipment-slot-name { font-family: 'Cinzel', serif; font-size: 11px; color: var(--bone); }
+        .equipment-slot-empty { color: #444; font-style: italic; font-size: 10px; }
+        .equipment-slot-stats { font-size: 9px; color: var(--poison); margin-top: 4px; font-family: monospace; }
+        
+        /* Abilities Section */
+        .abilities-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+        .ability-tag { background: linear-gradient(145deg, rgba(147,112,219,0.2) 0%, rgba(147,112,219,0.05) 100%); border: 2px solid var(--shadow); padding: 8px 14px; font-size: 10px; color: var(--arcane); font-family: monospace; display: flex; align-items: center; gap: 8px; transition: all 0.2s; }
+        .ability-tag:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(147,112,219,0.3); }
+        .ability-tag.elemental-fire { border-color: var(--fire); color: var(--fire); background: linear-gradient(145deg, rgba(255,69,0,0.2) 0%, rgba(255,69,0,0.05) 100%); }
+        .ability-tag.elemental-frost { border-color: var(--frost); color: var(--frost); background: linear-gradient(145deg, rgba(0,191,255,0.2) 0%, rgba(0,191,255,0.05) 100%); }
+        .ability-tag.elemental-poison { border-color: var(--poison); color: var(--poison); background: linear-gradient(145deg, rgba(50,205,50,0.2) 0%, rgba(50,205,50,0.05) 100%); }
+        .ability-tag.elemental-shadow { border-color: var(--shadow); color: var(--shadow); }
+        .ability-tag.elemental-holy { border-color: var(--gold); color: var(--gold); background: linear-gradient(145deg, rgba(255,215,0,0.2) 0%, rgba(255,215,0,0.05) 100%); }
+        .ability-tag.passive { border-color: #666; color: #aaa; background: rgba(100,100,100,0.1); }
+        .ability-icon { font-size: 14px; }
+        
+        /* Synergy Section */
+        .synergy-section { background: rgba(0,191,255,0.05); border: 2px solid rgba(0,191,255,0.3); padding: 15px; margin-bottom: 20px; }
+        .synergy-title { font-family: 'Press Start 2P', monospace; font-size: 9px; color: var(--frost); margin-bottom: 10px; }
+        .synergy-list { display: flex; flex-wrap: wrap; gap: 8px; }
+        .synergy-item { font-size: 9px; padding: 5px 10px; background: rgba(0,0,0,0.4); border: 1px solid #444; color: var(--bone); font-family: monospace; }
+        .synergy-item.positive { border-color: var(--poison); color: var(--poison); }
+        .synergy-item.warning { border-color: var(--gold); color: var(--gold); }
+        
+        /* Armory Actions */
+        .armory-actions { display: flex; gap: 12px; padding: 20px 25px; border-top: 2px solid #333; background: rgba(0,0,0,0.3); }
+        .armory-actions .btn { flex: 1; }
+        .btn.test-battle { background: linear-gradient(180deg, #2a4a2a 0%, #153015 100%); border-color: var(--poison); color: var(--poison); }
+        .btn.test-battle:hover { background: linear-gradient(180deg, #3a5a3a 0%, #254025 100%); border-color: #5f5; color: #5f5; }
+        
+        /* Modal */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: var(--panel); border: 2px solid var(--blood); border-radius: 12px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; transform: scale(0.9); opacity: 0; transition: all 0.3s; padding: 20px; }
+        .modal-overlay.active .modal { transform: scale(1); opacity: 1; }
+        .modal-close { position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; border-radius: 50%; background: rgba(0,0,0,0.5); border: 1px solid #333; color: #888; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+        .modal-close:hover { background: var(--crimson); color: white; }
+        .detail-header { display: flex; gap: 15px; margin-bottom: 15px; }
+        .detail-portrait { width: 90px; height: 90px; border-radius: 50%; background: #0a0a0f; border: 3px solid #444; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 50px; }
+        .detail-portrait img { width: 100%; height: 100%; object-fit: cover; }
+        .detail-info { flex: 1; }
+        .detail-name { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); }
+        .detail-id { font-size: 12px; color: #555; margin-bottom: 5px; }
+        .detail-role { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: bold; background: rgba(0,0,0,0.3); margin-bottom: 8px; }
+        .detail-actions { margin-top: 8px; }
+        .detail-section { margin-top: 15px; }
+        .detail-section-title { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+        .detail-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .stat-box { background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px; text-align: center; }
+        .stat-label { font-size: 9px; color: #666; text-transform: uppercase; }
+        .stat-value { font-size: 16px; color: var(--bone); font-weight: bold; }
+        .equipment-list { display: flex; flex-direction: column; gap: 5px; }
+        .equipment-item { display: flex; justify-content: space-between; padding: 5px 8px; background: rgba(0,0,0,0.2); border-radius: 4px; font-size: 11px; border-left: 3px solid #444; }
+        .equipment-item.weapon { border-left-color: var(--crimson); }
+        .equipment-item.armor { border-left-color: var(--frost); }
+        .equipment-item.magic { border-left-color: var(--arcane); }
+        .equipment-item.accessory { border-left-color: var(--gold); }
+        .equipment-slot { color: #666; }
+        .equipment-name { color: var(--bone); }
+        .spell-list { display: flex; flex-wrap: wrap; gap: 5px; }
+        .spell-tag { padding: 4px 10px; background: rgba(128,0,128,0.2); border: 1px solid var(--arcane); border-radius: 12px; font-size: 10px; color: var(--arcane); }
+        
+        /* Arena Screen - Compressed */
+        #arena-screen { flex-direction: column; }
+        .arena-header { padding: 10px 20px; background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%); border-bottom: 4px solid var(--dark-gold); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+        .arena-controls { display: flex; align-items: center; gap: 10px; }
+        .control-btn { padding: 8px 16px; background: #1a1a1a; border: 2px solid #444; color: var(--bone); font-family: 'Press Start 2P', monospace; font-size: 8px; cursor: pointer; transition: all 0.1s; box-shadow: 0 2px 0 #000; }
+        .control-btn:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); box-shadow: 0 3px 0 #000; }
+        .control-btn:active { transform: translateY(2px); box-shadow: none; }
+        .control-btn.active { background: var(--blood); border-color: var(--gold); }
+        .speed-controls { display: flex; gap: 4px; }
+        .speed-btn { padding: 6px 10px; background: #1a1a1a; border: 2px solid #333; color: #666; font-family: 'Press Start 2P', monospace; font-size: 7px; cursor: pointer; transition: all 0.1s; }
+        .speed-btn:hover { border-color: var(--gold); color: var(--bone); }
+        .speed-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.1); }
+        .arena-stats { display: flex; gap: 20px; }
+        .arena-stat { display: flex; align-items: center; gap: 8px; }
+        .arena-stat-label { font-size: 8px; color: #666; font-family: 'Press Start 2P', monospace; }
+        .arena-stat-value { font-size: 12px; color: var(--gold); font-family: 'Press Start 2P', monospace; }
+        .team-scores { display: flex; gap: 10px; }
+        .team-score { padding: 5px 12px; border: 2px solid; font-family: 'Press Start 2P', monospace; font-size: 8px; }
+        
+        .arena-body { flex: 1; display: flex; overflow: hidden; min-height: 0; }
+        .teams-panel { width: 200px; background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%); border-right: 2px solid #333; overflow-y: auto; padding: 10px; flex-shrink: 0; }
+        .team-section { margin-bottom: 15px; }
+        .team-section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .team-section-icon { font-size: 14px; }
+        .team-section-name { font-family: 'Press Start 2P', monospace; font-size: 8px; }
+        .team-section-count { font-size: 9px; color: #666; margin-left: auto; font-family: monospace; }
+        .team-member { display: flex; align-items: center; gap: 8px; padding: 6px; margin-bottom: 4px; background: rgba(0,0,0,0.3); border-left: 2px solid; cursor: pointer; transition: all 0.2s; font-size: 9px; }
+        .team-member:hover { background: rgba(255,255,255,0.05); }
+        .team-member.dead { opacity: 0.4; }
+        .team-member.inspected { background: rgba(255,215,0,0.1); border-color: var(--gold) !important; }
+        .team-member-portrait { width: 28px; height: 28px; border: 2px solid; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 14px; background: #15151f; }
+        .team-member-portrait img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+        .team-member-info { flex: 1; min-width: 0; }
+        .team-member-name { font-size: 9px; color: var(--bone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .team-member-hp { font-size: 8px; font-family: monospace; }
+        
+        /* Arena View */
+        .arena-view { flex: 1; position: relative; background: linear-gradient(180deg, #12101a 0%, #0a0808 50%, #12101a 100%); overflow: hidden; contain: strict; }
+        .arena-floor { position: absolute; inset: 5%; background: linear-gradient(135deg, #1a1510 0%, #0f0d0a 25%, #1a1510 50%, #0f0d0a 75%, #1a1510 100%); border: 4px solid #2a2520; box-shadow: inset 0 0 100px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.9); }
+        .arena-floor::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none' stroke='%23ffffff08' stroke-width='1'/%3E%3C/svg%3E"); opacity: 0.3; }
+        .arena-camera-layer { width: 100%; height: 100%; position: absolute; inset: 0; transform-origin: center center; transition: transform 0.15s ease-out; will-change: transform; }
+        
+        /* Pillars, Terrain, Tokens - Compressed */
+        .arena-pillar { position: absolute; width: 7%; aspect-ratio: 1; transform: translate(-50%, -50%); background: linear-gradient(135deg, #3a3530 0%, #1a1510 50%, #2a2520 100%); border: 3px solid #4a4540; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.7), inset 0 -5px 15px rgba(0,0,0,0.5), inset 0 5px 10px rgba(255,255,255,0.05); z-index: 10; }
+        .arena-pillar::before { content: ''; position: absolute; top: 10%; left: 10%; right: 10%; bottom: 40%; background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 60%); border-radius: 50%; }
+        .terrain-zone { position: absolute; transform: translate(-50%, -50%); border-radius: 50%; opacity: 0.6; z-index: 2; pointer-events: none; }
+        .terrain-zone.mud { background: radial-gradient(circle, #4a3c31 0%, #3a2c21 70%, transparent 100%); }
+        .terrain-zone.water { background: radial-gradient(circle, #2244aa88 0%, #113377 70%, transparent 100%); }
+        .terrain-zone.fire { background: radial-gradient(circle, #ff440088 0%, #cc220066 70%, transparent 100%); animation: firePulse 1s ease-in-out infinite; }
+        .terrain-zone.rune { background: radial-gradient(circle, #00ffff44 0%, #0088aa33 70%, transparent 100%); box-shadow: 0 0 20px #00ffff44; }
+        .terrain-zone.ice { background: radial-gradient(circle, #aaeeff66 0%, #6699cc44 70%, transparent 100%); }
+        @keyframes firePulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.8; } }
+        
+        .fighter-token { position: absolute; width: 7%; aspect-ratio: 1; transform: translate(-50%, -50%); z-index: 20; cursor: pointer; will-change: transform, left, top; contain: layout style paint; }
+        .fighter-token-inner { width: 100%; height: 100%; border-radius: 50%; border: 3px solid; display: flex; align-items: center; justify-content: center; font-size: 20px; background: #1a1a2a; overflow: hidden; transition: transform 0.1s, box-shadow 0.2s; }
+        .fighter-token-inner:hover { transform: scale(1.15); }
+        .fighter-token-inner img { width: 90%; height: 90%; object-fit: cover; border-radius: 50%; image-rendering: pixelated; }
+        .fighter-token.dead { opacity: 0.3; pointer-events: none; }
+        .fighter-token.dead .fighter-token-inner { filter: grayscale(1); border-color: #333 !important; }
+        .fighter-token.inspected .fighter-token-inner { box-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold) !important; border-color: var(--gold) !important; animation: inspectedPulse 1s ease-in-out infinite; }
+        @keyframes inspectedPulse { 0%, 100% { box-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold); } 50% { box-shadow: 0 0 30px var(--gold), 0 0 60px var(--gold); } }
+        .fighter-token.cloaked { opacity: 0.3; }
+        .fighter-token.berserk .fighter-token-inner { box-shadow: 0 0 15px var(--crimson), 0 0 25px var(--crimson), inset 0 0 10px rgba(255,50,50,0.3); animation: berserkPulse 0.4s ease-in-out infinite; }
+        @keyframes berserkPulse { 0%, 100% { box-shadow: 0 0 15px var(--crimson), 0 0 25px var(--crimson); } 50% { box-shadow: 0 0 25px var(--crimson), 0 0 40px var(--crimson), 0 0 60px rgba(255,50,50,0.5); } }
+        .fighter-hp-arc { position: absolute; inset: -4px; border-radius: 50%; border: 3px solid transparent; border-top-color: var(--poison); transform: rotate(-90deg); opacity: 0.8; }
+        .fighter-label { position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); font-size: 7px; color: rgba(255,255,255,0.5); background: rgba(0,0,0,0.7); padding: 1px 4px; border-radius: 3px; white-space: nowrap; }
+        .fighter-state-indicator { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); font-size: 10px; }
+        .ai-debug-overlay { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 6px; background: rgba(0,0,0,0.75); padding: 1px 4px; border-radius: 3px; color: var(--frost); pointer-events: none; white-space: nowrap; font-family: monospace; border: 1px solid rgba(0,191,255,0.3); }
+        .ai-debug-overlay.berserk { color: var(--crimson); border-color: var(--crimson); }
+        
+        /* Team Auras */
+        .fighter-token.team-0 .fighter-token-inner { box-shadow: 0 0 12px var(--team-red), inset 0 0 8px rgba(220,20,60,0.3); }
+        .fighter-token.team-1 .fighter-token-inner { box-shadow: 0 0 12px var(--team-blue), inset 0 0 8px rgba(65,105,225,0.3); }
+        .fighter-token.team-2 .fighter-token-inner { box-shadow: 0 0 12px var(--team-green), inset 0 0 8px rgba(34,139,34,0.3); }
+        .fighter-token.team-3 .fighter-token-inner { box-shadow: 0 0 12px var(--team-purple), inset 0 0 8px rgba(139,0,139,0.3); }
+        .fighter-token.team-4 .fighter-token-inner { box-shadow: 0 0 12px var(--team-orange), inset 0 0 8px rgba(255,140,0,0.3); }
+        
+        /* Last Stand */
+        @keyframes lastStandPulse { 0%, 100% { box-shadow: 0 0 15px var(--gold), 0 0 30px var(--gold), inset 0 0 10px rgba(255,215,0,0.5); transform: translate(-50%, -50%) scale(1); } 50% { box-shadow: 0 0 25px var(--gold), 0 0 50px var(--gold), inset 0 0 15px rgba(255,215,0,0.8); transform: translate(-50%, -50%) scale(1.1); } }
+        .fighter-token.last-stand .fighter-token-inner { animation: lastStandPulse 0.6s ease-in-out infinite !important; border-color: var(--gold) !important; border-width: 3px !important; }
+        .fighter-token.last-stand .fighter-label { color: var(--gold) !important; text-shadow: 0 0 8px var(--gold); }
+        
+        /* Damage Popups */
+        .damage-popup { position: absolute; pointer-events: none; z-index: 100; font-family: 'Cinzel', serif; font-weight: bold; text-shadow: 2px 2px 2px rgba(0,0,0,0.8); animation: damageFloat 1s ease-out forwards; }
+        .damage-popup.damage { color: #ff4444; font-size: 14px; }
+        .damage-popup.crit { color: var(--gold); font-size: 18px; }
+        .damage-popup.heal { color: var(--poison); font-size: 14px; }
+        .damage-popup.dodge { color: var(--frost); font-size: 12px; }
+        @keyframes damageFloat { 0% { opacity: 1; transform: translateY(0) scale(1); } 50% { opacity: 1; transform: translateY(-20px) scale(1.1); } 100% { opacity: 0; transform: translateY(-40px) scale(0.8); } }
+        
+        /* Projectiles */
+        .projectile { position: absolute; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); z-index: 15; pointer-events: none; }
+        .projectile.fire { background: radial-gradient(circle, #ff8800 0%, #ff4400 50%, #cc2200 100%); box-shadow: 0 0 10px #ff4400; }
+        .projectile.frost { background: radial-gradient(circle, #88ddff 0%, #00aaff 50%, #0066cc 100%); box-shadow: 0 0 10px #00aaff; }
+        .projectile.poison { background: radial-gradient(circle, #88ff88 0%, #00cc00 50%, #006600 100%); box-shadow: 0 0 10px #00cc00; }
+        .projectile.shadow { background: radial-gradient(circle, #bb88ff 0%, #8844cc 50%, #442266 100%); box-shadow: 0 0 10px #8844cc; }
+        .projectile.holy { background: radial-gradient(circle, #ffffcc 0%, #ffdd00 50%, #cc9900 100%); box-shadow: 0 0 10px #ffdd00; }
+        .projectile.melee { background: radial-gradient(circle, #ffffff 0%, #cccccc 50%, #888888 100%); box-shadow: 0 0 8px #ffffff; width: 6px; height: 6px; }
+        
+        /* Particles */
+        .particle { position: absolute; border-radius: 50%; pointer-events: none; animation: particleFade 0.6s ease-out forwards; z-index: 50; }
+        @keyframes particleFade { 0% { opacity: 1; transform: translate(0, 0) scale(1); } 100% { opacity: 0; transform: translate(var(--mx, 20px), var(--my, -20px)) scale(0.3); } }
+        
+        /* Inspector Panel */
+        .inspector-panel { background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%); border-left: 2px solid #333; display: flex; flex-direction: column; min-height: 0; width: 280px; }
+        .inspector-header { padding: 10px; border-bottom: 2px solid #333; font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); flex-shrink: 0; }
+        .inspector-content { flex: 1; overflow-y: auto; padding: 8px; font-size: 10px; min-height: 0; border-bottom: 2px solid #333; }
+        .empty-state { text-align: center; padding: 20px; color: #444; font-family: 'Press Start 2P', monospace; font-size: 8px; }
+        .empty-state-icon { font-size: 30px; margin-bottom: 8px; }
+        .inspector-portrait { width: 70px; height: 70px; margin: 0 auto 8px; border: 3px solid; background: #15151f; display: flex; align-items: center; justify-content: center; font-size: 40px; overflow: hidden; }
+        .inspector-portrait img { box-shadow: inset 0 0 20px rgba(0,0,0,0.7); image-rendering: pixelated; }
+        .inspector-name { font-family: 'Cinzel', serif; color: var(--gold); font-size: 11px; text-align: center; }
+        .inspector-base { color: #555; font-size: 8px; text-align: center; margin-bottom: 4px; font-family: monospace; }
+        .inspector-role { font-family: 'Press Start 2P', monospace; font-size: 8px; text-align: center; font-weight: bold; margin-bottom: 4px; }
+        .inspector-team { display: inline-block; padding: 3px 8px; font-size: 8px; color: white; font-family: 'Press Start 2P', monospace; }
+        .inspector-stats { margin: 8px 0; }
+        .inspector-stat-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-family: monospace; }
+        .inspector-stat-label { color: #555; }
+        .inspector-stat-value { color: var(--bone); font-weight: bold; }
+        .inspector-section-title { font-family: 'Press Start 2P', monospace; color: var(--gold); font-size: 7px; text-transform: uppercase; letter-spacing: 1px; margin: 8px 0 4px; padding-bottom: 2px; border-bottom: 1px solid rgba(255,215,0,0.15); }
+        .ai-state-display { background: rgba(0,191,255,0.08); border: 2px solid rgba(0,191,255,0.3); padding: 5px; margin-bottom: 6px; }
+        .ai-state-title { color: var(--frost); font-size: 7px; text-transform: uppercase; margin-bottom: 2px; font-family: 'Press Start 2P', monospace; }
+        .ai-state-value { color: var(--bone); font-size: 9px; font-weight: bold; font-family: monospace; }
+        .ai-state-reason { color: #555; font-size: 7px; margin-top: 2px; font-style: italic; }
+        .ai-debug-row { display: flex; justify-content: space-between; margin-top: 3px; font-size: 8px; }
+        .ai-debug-label { color: #666; }
+        .ai-debug-value { color: var(--bone); font-family: monospace; }
+        .buff-list { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 6px; }
+        .buff-tag { font-size: 7px; padding: 2px 5px; background: rgba(0,0,0,0.4); border: 1px solid #333; font-family: monospace; }
+        .buff-tag.positive { border-color: var(--poison); color: var(--poison); }
+        .buff-tag.negative { border-color: var(--crimson); color: var(--crimson); }
+        .buff-tag.elemental { border-color: var(--frost); color: var(--frost); }
+        .buff-tag.spell { border-color: var(--arcane); color: var(--arcane); }
+        .buff-tag.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.1); }
+        .inspector-equipment { margin: 6px 0; }
+        .inspector-equip-item { display: flex; justify-content: space-between; align-items: center; padding: 3px 6px; margin-bottom: 2px; background: rgba(0,0,0,0.3); font-size: 8px; border-left: 2px solid #444; font-family: monospace; }
+        .inspector-equip-item.weapon { border-left-color: var(--crimson); }
+        .inspector-equip-item.armor { border-left-color: var(--frost); }
+        .inspector-equip-item.magic { border-left-color: var(--arcane); }
+        .inspector-equip-item.accessory { border-left-color: var(--gold); }
+        .inspector-equip-slot { color: #555; font-size: 8px; }
+        .inspector-equip-name { color: var(--bone); text-align: right; flex: 1; margin-left: 5px; }
+        
+        /* Battle Log */
+        .battle-log { flex: 1; min-height: 0; background: rgba(0,0,0,0.85); padding: 8px; overflow-y: auto; font-family: 'Courier New', 'Consolas', monospace; font-size: 11px; line-height: 1.5; }
+        .battle-log-header { padding: 6px 8px; background: rgba(0,0,0,0.5); font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold); flex-shrink: 0; border-top: 1px solid #333; }
+        .log-entry { margin-bottom: 4px; padding-bottom: 3px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .log-entry .timestamp { color: #444; font-size: 9px; }
+        .log-entry .attacker { color: var(--gold); font-weight: bold; }
+        .log-entry .target { color: var(--bone); text-decoration: underline; }
+        .log-entry .weapon { color: var(--crimson); font-style: italic; }
+        .log-entry .damage { color: #ff6666; font-weight: bold; }
+        .log-entry .crit { color: var(--gold); font-size: 1.1em; text-transform: uppercase; }
+        .log-entry .heal { color: var(--poison); }
+        .log-entry .spell { color: var(--arcane); }
+        .log-kill { color: var(--gold); background: rgba(139,0,0,0.2); padding: 2px 4px; }
+        .log-system { color: #555; font-style: italic; }
+        .log-nemesis { color: #ff00ff; background: rgba(255,0,255,0.1); padding: 2px 4px; font-weight: bold; }
+        .log-laststand { color: var(--gold); background: rgba(255,215,0,0.2); padding: 2px 4px; font-weight: bold; text-transform: uppercase; }
+        .log-dodge, .log-status { color: var(--frost); }
+        .log-stealth { color: var(--shadow); }
+        .log-ability { color: var(--frost); font-weight: bold; }
+        
+        /* Kill Feed */
+        .kill-feed { position: absolute; top: 10px; right: 10px; width: 250px; pointer-events: none; z-index: 100; }
+        .kill-feed-entry { background: rgba(0,0,0,0.85); border: 1px solid #333; padding: 6px 10px; margin-bottom: 4px; font-size: 9px; font-family: 'Press Start 2P', monospace; display: flex; align-items: center; gap: 6px; animation: killFeedSlide 0.3s ease-out; }
+        @keyframes killFeedSlide { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .kill-feed-killer { color: var(--gold); }
+        .kill-feed-skull { color: var(--crimson); }
+        .kill-feed-victim { color: #888; }
+        
+        /* Replay Controls */
+        .replay-controls { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.9); border: 2px solid var(--dark-gold); padding: 8px 15px; display: none; align-items: center; gap: 10px; z-index: 100; }
+        .replay-controls.active { display: flex; }
+        .replay-label { font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--crimson); }
+        .replay-scrubber { width: 200px; height: 8px; background: #1a1a1a; border: 1px solid #444; cursor: pointer; position: relative; }
+        .replay-progress { height: 100%; background: var(--gold); width: 0%; transition: width 0.1s; }
+        
+        /* Victory Overlay */
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.97); display: none; justify-content: center; align-items: center; flex-direction: column; z-index: 2000; padding: 40px; overflow-y: auto; }
+        .overlay.active { display: flex; }
+        .victory-title { font-family: 'Press Start 2P', monospace; font-size: 42px; font-weight: 900; color: var(--gold); text-shadow: 4px 4px 0 var(--blood), 0 0 30px rgba(255,215,0,0.8); margin-bottom: 15px; animation: victoryPulse 2s ease-in-out infinite; line-height: 1.3; text-align: center; }
+        @keyframes victoryPulse { 0%, 100% { transform: scale(1); text-shadow: 4px 4px 0 var(--blood), 0 0 30px rgba(255,215,0,0.8); } 50% { transform: scale(1.02); text-shadow: 4px 4px 0 var(--blood), 0 0 50px rgba(255,215,0,1), 0 0 80px rgba(255,215,0,0.5); } }
+        .overlay-subtitle { font-family: 'Press Start 2P', monospace; font-size: 14px; margin-bottom: 30px; line-height: 1.5; }
+        .winning-team-display { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; justify-content: center; }
+        .winning-member { text-align: center; }
+        .winning-member-icon { width: 60px; height: 60px; border: 3px solid; margin-bottom: 5px; display: flex; align-items: center; justify-content: center; font-size: 30px; overflow: hidden; background: #15151f; }
+        .winning-member-icon.dead { opacity: 0.4; filter: grayscale(1); }
+        .winning-member-icon img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+        .winning-member-name { font-size: 10px; color: var(--bone); font-family: 'Cinzel', serif; }
+        .winning-member-role { font-size: 8px; color: #666; font-family: 'Press Start 2P', monospace; }
+        .winning-member-status { font-size: 8px; margin-top: 3px; font-family: 'Press Start 2P', monospace; }
+        .winning-member-status.alive { color: var(--poison); }
+        .winning-member-status.dead { color: var(--crimson); }
+        .overlay-stats { font-size: 10px; color: var(--bone); margin-bottom: 20px; text-align: center; font-family: 'Press Start 2P', monospace; line-height: 1.8; }
+        .battle-awards { display: flex; gap: 20px; justify-content: center; margin-bottom: 25px; flex-wrap: wrap; }
+        .award-card { background: linear-gradient(145deg, #1e1e2a 0%, #15151f 100%); border: 3px solid var(--dark-gold); padding: 15px 20px; text-align: center; min-width: 180px; box-shadow: 4px 4px 0 rgba(0,0,0,0.5); }
+        .award-title { font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .award-icon { font-size: 36px; margin-bottom: 8px; width: 50px; height: 50px; margin: 0 auto 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #15151f; border: 2px solid var(--gold); }
+        .award-icon img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+        .award-fighter-name { font-family: 'Cinzel', serif; font-size: 12px; color: var(--bone); margin-bottom: 4px; }
+        .award-fighter-team { font-size: 8px; padding: 3px 8px; display: inline-block; margin-bottom: 6px; font-family: 'Press Start 2P', monospace; }
+        .award-value { font-size: 14px; font-weight: bold; color: var(--crimson); font-family: 'Press Start 2P', monospace; }
+        .award-value.mvp { color: var(--gold); }
+        .award-detail { font-size: 8px; color: #666; margin-top: 4px; font-family: monospace; }
+        .battle-log-container { width: 100%; max-width: 600px; max-height: 200px; background: rgba(0,0,0,0.5); border: 1px solid #333; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+        .battle-log-title { padding: 8px 12px; background: rgba(0,0,0,0.3); font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); border-bottom: 1px solid #333; }
+        .battle-log-content { max-height: 150px; overflow-y: auto; padding: 8px; font-family: 'Courier New', monospace; font-size: 9px; }
+        .overlay-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 12px; background: #0a0a0a; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; border: 1px solid #222; }
+        ::-webkit-scrollbar-thumb { background: var(--dark-gold); border: 2px solid #0a0a0a; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+        * { scrollbar-width: thin; scrollbar-color: var(--dark-gold) #0a0a0a; }
+        
+        /* Speech Bubble */
+        .speech-bubble { position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.9); border: 2px solid var(--gold); padding: 4px 8px; font-size: 8px; color: var(--bone); font-family: 'Press Start 2P', monospace; white-space: nowrap; z-index: 100; animation: bubblePop 0.3s ease-out; }
+        .speech-bubble::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--gold); }
+        @keyframes bubblePop { from { transform: translateX(-50%) scale(0); opacity: 0; } to { transform: translateX(-50%) scale(1); opacity: 1; } }
+        
+        /* Big Moment Text */
+        .big-moment-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Press Start 2P', monospace; font-size: 24px; color: var(--gold); text-shadow: 4px 4px 0 var(--blood), 0 0 30px var(--gold); animation: bigMoment 1.5s ease-out forwards; z-index: 200; pointer-events: none; text-align: center; }
+        @keyframes bigMoment { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; } 20% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; } 80% { transform: translate(-50%, -50%) scale(1); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1); opacity: 0; } }
+        .screen-shake { animation: shake 0.5s ease-in-out; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } 20%, 40%, 60%, 80% { transform: translateX(5px); } }
+        
+        /* Status Effects */
+        .fighter-token.status-fear .fighter-token-inner { animation: fearShake 0.1s infinite !important; border-color: #ff00ff !important; }
+        @keyframes fearShake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+        .fighter-token.status-root .fighter-token-inner { border-color: #228B22 !important; box-shadow: 0 0 15px #228B22, 0 0 25px rgba(34,139,34,0.5) !important; }
+        .fighter-token.status-root::after { content: '🌿'; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); font-size: 12px; z-index: 30; }
+        .fighter-token.status-slow .fighter-token-inner { filter: brightness(0.6) saturate(0.5); }
+        .fighter-token.status-silence .fighter-token-inner { border-color: #666 !important; filter: grayscale(0.5); }
+        .fighter-token.hunting-nemesis::before { content: '💢'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 12px; z-index: 30; animation: nemesisPulse 0.5s ease-in-out infinite; }
+        @keyframes nemesisPulse { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.3); } }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .armory-body { grid-template-columns: 1fr; }
+            .armory-character { border-right: none; border-bottom: 2px solid #333; }
+        }
+        @media (max-width: 768px) {
+            .logo { font-size: 24px; }
+            .team-panel { width: 220px; }
+            .teams-panel { width: 150px; }
+            .inspector-panel { width: 220px; }
+            .equipment-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-layer"></div>
+    
+    <!-- Title Screen -->
+    <div class="screen active" id="title-screen">
+        <div class="logo">SAVAGE<br>ARENA</div>
+        <div class="tagline">⚔️ Tactical Auto-Battler ⚔️</div>
+        <div class="subtitle">5v5v5v5v5 Battle Royale</div>
+        <div class="team-preview">
+            <div class="team-badge" style="background: var(--team-red);">🔴</div>
+            <div class="team-badge" style="background: var(--team-blue);">🔵</div>
+            <div class="team-badge" style="background: var(--team-green);">🟢</div>
+            <div class="team-badge" style="background: var(--team-purple);">🟣</div>
+            <div class="team-badge" style="background: var(--team-orange);">🟠</div>
+        </div>
+        <button class="btn" onclick="showScreen('select-screen')">Build Your Team</button>
+        <button class="btn secondary" onclick="randomTeamAndStart()">Quick Battle</button>
+    </div>
+    
+    <!-- Selection Screen -->
+    <div class="screen" id="select-screen">
+        <div class="select-header">
+            <h1>⚔️ Build Your Team</h1>
+            <div class="header-controls">
+                <div class="role-filters">
+                    <button class="role-filter active" data-role="all" onclick="filterByRole('all')">All</button>
+                    <button class="role-filter" data-role="Tank" onclick="filterByRole('Tank')">Tank</button>
+                    <button class="role-filter" data-role="Berserker" onclick="filterByRole('Berserker')">Berserk</button>
+                    <button class="role-filter" data-role="Battle Mage" onclick="filterByRole('Battle Mage')">Mage</button>
+                    <button class="role-filter" data-role="Rogue" onclick="filterByRole('Rogue')">Rogue</button>
+                    <button class="role-filter" data-role="Paladin" onclick="filterByRole('Paladin')">Paladin</button>
+                    <button class="role-filter" data-role="Cleric" onclick="filterByRole('Cleric')">Cleric</button>
+                    <button class="role-filter" data-role="Ranger" onclick="filterByRole('Ranger')">Ranger</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search..." oninput="filterFighters()">
+                </div>
+            </div>
+            <div style="font-family: 'Press Start 2P', monospace; font-size: 8px; color: #666;"><span id="fighter-count">0</span> Fighters</div>
+        </div>
+        <div class="select-body">
+            <div class="fighter-grid-container">
+                <div class="fighter-grid" id="fighter-grid"></div>
+            </div>
+            <div class="team-panel">
+                <h2>🔴 Your Team</h2>
+                <div class="team-slots" id="team-slots"></div>
+                <div class="team-actions">
+                    <button class="btn" id="start-btn" onclick="startBattle()" disabled>Start Battle</button>
+                    <button class="btn secondary small" onclick="clearTeam()">Clear Team</button>
+                    <button class="btn secondary small" onclick="randomTeam()">Random Team</button>
+                    <button class="btn secondary small" onclick="showScreen('title-screen')">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Personal Armory Overlay -->
+    <div class="armory-overlay" id="armory-overlay" onclick="closeArmoryOnBackdrop(event)">
+        <div class="armory-container" id="armory-container">
+            <button class="armory-close" onclick="closeArmory()">×</button>
+            <div class="armory-header">
+                <div>
+                    <div class="armory-title">⚔️ PERSONAL ARMORY</div>
+                    <div class="armory-subtitle" id="armory-char-subtitle">Customize your champion</div>
+                </div>
+            </div>
+            <div class="armory-body">
+                <div class="armory-character">
+                    <div class="armory-portrait" id="armory-portrait"></div>
+                    <div class="armory-char-name" id="armory-char-name">Fighter Name</div>
+                    <div class="armory-char-role" id="armory-char-role" style="background: var(--frost);">Role</div>
+                    
+                    <div class="build-rating">
+                        <div class="build-rating-header">
+                            <span class="build-rating-title">🎯 Build Rating</span>
+                            <span class="build-rating-score" id="build-score">85</span>
+                        </div>
+                        <div class="build-rating-bar">
+                            <div class="build-rating-fill" id="build-fill" style="width: 85%;"></div>
+                        </div>
+                        <div class="build-rating-label" id="build-label">Strong Synergy</div>
+                    </div>
+                    
+                    <div class="armory-stats" id="armory-stats"></div>
+                </div>
+                
+                <div class="armory-equipment">
+                    <div class="armory-section-title">Equipment Loadout</div>
+                    <div class="equipment-grid" id="armory-equipment-grid"></div>
+                    
+                    <div class="armory-section-title">Abilities & Spells</div>
+                    <div class="abilities-grid" id="armory-abilities"></div>
+                    
+                    <div class="synergy-section" id="synergy-section">
+                        <div class="synergy-title">🔗 Team Synergies</div>
+                        <div class="synergy-list" id="synergy-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="armory-actions">
+                <button class="btn test-battle" onclick="quickTestBattle()">⚔️ Quick Test Battle</button>
+                <button class="btn secondary" onclick="closeArmory()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fighter Detail Modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" id="fighter-detail-modal">
+            <button class="modal-close" onclick="closeFighterModal()">×</button>
+            <div id="detail-content"></div>
+        </div>
+    </div>
+    
+    <!-- Arena Screen -->
+    <div class="screen" id="arena-screen">
+        <div class="arena-header">
+            <div class="arena-controls">
+                <button class="control-btn" id="pause-btn" onclick="togglePause()">⏸️ Pause</button>
+                <div class="speed-controls">
+                    <button class="speed-btn active" onclick="setSpeed(1)">1x</button>
+                    <button class="speed-btn" onclick="setSpeed(2)">2x</button>
+                    <button class="speed-btn" onclick="setSpeed(3)">3x</button>
+                </div>
+                <button class="control-btn" onclick="exitArena()">🚪 Exit</button>
+            </div>
+            <div class="arena-stats">
+                <div class="arena-stat">
+                    <span class="arena-stat-label">Time:</span>
+                    <span class="arena-stat-value" id="battle-time">0:00</span>
+                </div>
+            </div>
+            <div class="team-scores" id="team-scores"></div>
+        </div>
+        <div class="arena-body">
+            <div class="teams-panel" id="teams-panel"></div>
+            <div class="arena-view" id="arena-view">
+                <div class="arena-camera-layer" id="camera-layer">
+                    <div class="arena-floor"></div>
+                </div>
+                <div class="kill-feed" id="kill-feed"></div>
+                <div class="replay-controls" id="replay-ui">
+                    <span class="replay-label">REPLAY</span>
+                    <button class="control-btn" onclick="toggleReplayMode()" id="replay-toggle-btn">⏸️</button>
+                    <div class="replay-scrubber" onclick="seekReplay(event)">
+                        <div class="replay-progress" id="replay-progress"></div>
+                    </div>
+                    <button class="control-btn" onclick="setReplaySpeed(0.5)">0.5x</button>
+                    <button class="control-btn" onclick="setReplaySpeed(1)">1x</button>
+                    <button class="control-btn" onclick="setReplaySpeed(2)">2x</button>
+                </div>
+            </div>
+            <div class="inspector-panel">
+                <div class="inspector-header"><h3>🔍 Fighter Inspector</h3></div>
+                <div class="inspector-content" id="inspector-content">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">👆</div>
+                        <div>Click a fighter</div>
+                    </div>
+                </div>
+                <div class="battle-log-header">📜 Battle Log</div>
+                <div class="battle-log" id="battle-log"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Victory Overlay -->
+    <div class="overlay" id="victory-overlay">
+        <div class="victory-title" id="victory-title">VICTORY!</div>
+        <div class="overlay-subtitle" id="victory-subtitle">Team Red Wins!</div>
+        <div class="winning-team-display" id="winning-team-display"></div>
+        <div class="battle-awards" id="battle-awards"></div>
+        <div class="overlay-stats" id="victory-stats"></div>
+        <div class="battle-log-container">
+            <div class="battle-log-title">📜 Battle Chronicle</div>
+            <div class="battle-log-content" id="final-battle-log"></div>
+        </div>
+        <div class="overlay-buttons">
+            <button class="btn" onclick="returnToSelect()">Build New Team</button>
+            <button class="btn" onclick="playAgain()">Play Again</button>
+        </div>
+    </div>
+
+    <script>
+        // ==================== CONFIGURATION ====================
+        const IPFS_CONFIG = {
+            gateway: 'https://gateway.pinata.cloud/ipfs/',
+            fallbackGateway: 'https://cloudflare-ipfs.com/ipfs/',
+            cid: 'bafybeigidp6pel576xbmcdns5epgq5ivhkmss7vijfqvjztz2j7s5shdoa',
+            getUrl: (tokenId) => `${IPFS_CONFIG.gateway}${IPFS_CONFIG.cid}/${tokenId}.png`,
+            getFallbackUrl: (tokenId) => `${IPFS_CONFIG.fallbackGateway}${IPFS_CONFIG.cid}/${tokenId}.png`
+        };
+
+        const imageCache = new Map();
+        let currentlyViewingFighter = null;
+        let currentRoleFilter = 'all';
+        let armoryFighter = null;
+
+        // ==================== TEAMS & ROLES ====================
+        const TEAMS = [
+            { id: 0, name: 'Red Team', color: '#DC143C', emoji: '🔴', letter: 'R' },
+            { id: 1, name: 'Blue Team', color: '#4169E1', emoji: '🔵', letter: 'B' },
+            { id: 2, name: 'Green Team', color: '#228B22', emoji: '🟢', letter: 'G' },
+            { id: 3, name: 'Purple Team', color: '#8B008B', emoji: '🟣', letter: 'P' },
+            { id: 4, name: 'Orange Team', color: '#FF8C00', emoji: '🟠', letter: 'O' }
+        ];
+
+        const AI_STATES = {
+            AGGRESSIVE: 'aggressive', DEFENSIVE: 'defensive', RETREATING: 'retreating',
+            HEALING_SELF: 'healing_self', HEALING_ALLY: 'healing_ally', KITING: 'kiting',
+            PURSUING: 'pursuing', FLANKING: 'flanking', PROTECTING: 'protecting',
+            FOCUS_FIRE: 'focus_fire', BACKSTAB: 'backstab', SHIELD_RUSH: 'shield_rush',
+            CASTING: 'casting', CLOAKED: 'cloaked', BARRICADE: 'barricade'
+        };
+
+        const ROLES = {
+            TANK: { name: 'Tank', color: '#4a90d9', hpMod: 1.35, atkMod: 0.8, defMod: 1.5, healThreshold: 0.35, canHealOthers: false, baseAgility: 0.2, speedMod: 0.9 },
+            BERSERKER: { name: 'Berserker', color: '#d94a4a', hpMod: 1.0, atkMod: 1.5, defMod: 0.65, healThreshold: 0.2, canHealOthers: false, baseAgility: 0.5, speedMod: 1.1 },
+            MAGE: { name: 'Battle Mage', color: '#9b59b6', hpMod: 0.75, atkMod: 1.3, defMod: 0.75, healThreshold: 0.45, canHealOthers: false, baseAgility: 0.6, speedMod: 0.95 },
+            CLERIC: { name: 'Cleric', color: '#f39c12', hpMod: 0.9, atkMod: 0.9, defMod: 1.0, healThreshold: 0.5, canHealOthers: true, baseAgility: 0.4, speedMod: 0.95 },
+            ROGUE: { name: 'Rogue', color: '#2ecc71', hpMod: 0.8, atkMod: 1.35, defMod: 0.7, healThreshold: 0.3, canHealOthers: false, baseAgility: 0.9, speedMod: 1.4 },
+            PALADIN: { name: 'Paladin', color: '#f1c40f', hpMod: 1.2, atkMod: 1.0, defMod: 1.2, healThreshold: 0.45, canHealOthers: true, baseAgility: 0.3, speedMod: 0.95 },
+            RANGER: { name: 'Ranger', color: '#1abc9c', hpMod: 0.85, atkMod: 1.2, defMod: 0.85, healThreshold: 0.35, canHealOthers: false, baseAgility: 0.7, speedMod: 1.1 }
+        };
+
+        // ==================== GAME STATE ====================
+        let state = {
+            allFighters: [], selectedTeam: [], fighters: [], teams: [], pillars: [], projectiles: [],
+            isPaused: false, isRunning: false, battleStartTime: 0, inspectedFighter: null,
+            gameSpeed: 1, lastFrameTime: 0, animationId: null, battleLogHistory: [], lastAIUpdate: 0,
+            highestHit: { damage: 0, attacker: null, target: null, type: '' },
+            terrain: [], breakableCover: [], camera: { x: 0.5, y: 0.5, scale: 1 },
+            replayMode: false, battleOver: false, lastTerrainTick: 0
+        };
+
+        // ==================== GAME CONSTANTS ====================
+        const TEAM_SIZE = 5;
+        const MOVEMENT_SPEED = 0.03;
+        const ATTACK_COOLDOWN = 1800;
+        const SPELL_COOLDOWN = 4000;
+        const HEAL_COOLDOWN = 7000;
+        const HEAL_ALLY_COOLDOWN = 5000;
+        const DODGE_COOLDOWN = 4000;
+        const CLOAK_COOLDOWN = 12000;
+        const CLOAK_DURATION = 5000;
+        const STUN_DURATION = 1500;
+        const PILLAR_RADIUS = 0.035;
+        const FIGHTER_RADIUS = 0.035;
+        const MELEE_RANGE = 0.08;
+        const RANGED_RANGE = 0.22;
+        const BACKSTAB_MULTIPLIER = 2.2;
+        const BARRICADE_BLOCK_BONUS = 0.4;
+        const AI_UPDATE_INTERVAL = 400;
+
+        // ==================== AI CONFIGURATION ====================
+        const AI = {
+            TOP_N_ACTIONS: 4, REPEAT_PENALTY: 0.5, BERSERK_THRESHOLD: 2.5, BERSERK_DURATION: 8000,
+            BERSERK_AGGRESSION_MULT: 2.0, BERSERK_PRESERVATION_MULT: 0.3, FRUSTRATION_DECAY: 0.05,
+            INTENT_DURATION: 4000, HIGH_PRIORITY: 100, MEDIUM_PRIORITY: 50, LOW_PRIORITY: 20,
+            ENEMY_DISTANCE_WEIGHT: 15, ALLY_DISTANCE_WEIGHT: 8, COVER_BONUS: 30, ESCAPE_ROUTE_BONUS: 20,
+            ALLY_SUPPORT_RANGE: 0.2, ENEMY_CLUSTER_RANGE: 0.15, KITE_TRIGGER_RANGE: 0.12,
+            LOW_HEAL_THRESHOLD: 0.5, FOCUS_FIRE_BONUS: 40, COOLDOWN_PRESSURE_FACTOR: 2
+        };
+
+        const AI_INTENTS = { ENGAGE: 'engage', RETREAT: 'retreat', KITE: 'kite', SUPPORT: 'support', HOLD: 'hold' };
+
+        // ==================== BASE STATS ====================
+        const BASE_STATS = {
+            'Crocodillian': { hp: 125, atk: 14, def: 9, speed: 0.85, icon: '🐊', canHeal: true, healPower: 16, agility: 0.25 },
+            'Albino Crocodillian': { hp: 130, atk: 13, def: 10, speed: 0.8, icon: '🐊', canHeal: true, healPower: 18, agility: 0.2 },
+            'Golden Crocodillian': { hp: 135, atk: 15, def: 11, speed: 0.85, icon: '🐊', canHeal: true, healPower: 20, agility: 0.25 },
+            'Salamander': { hp: 95, atk: 18, def: 5, speed: 1.1, icon: '🦎', canHeal: true, healPower: 14, agility: 0.6 },
+            'Lizardman': { hp: 110, atk: 15, def: 7, speed: 1.0, icon: '🦎', canHeal: true, healPower: 15, agility: 0.45 },
+            'Golden Lizard': { hp: 120, atk: 16, def: 8, speed: 1.0, icon: '🦎', canHeal: true, healPower: 17, agility: 0.45 },
+            'Radioactive Lizard': { hp: 100, atk: 20, def: 5, speed: 1.15, icon: '☢️', canHeal: false, healPower: 0, agility: 0.55 },
+            'Gila Monster': { hp: 105, atk: 17, def: 6, speed: 1.05, icon: '🦎', canHeal: true, healPower: 12, agility: 0.5 },
+            'Poisonous Frog': { hp: 85, atk: 16, def: 4, speed: 1.25, icon: '🐸', canHeal: true, healPower: 20, agility: 0.8 },
+            'Frog': { hp: 90, atk: 14, def: 5, speed: 1.2, icon: '🐸', canHeal: true, healPower: 18, agility: 0.75 },
+            'Tree Frog': { hp: 80, atk: 15, def: 4, speed: 1.3, icon: '🐸', canHeal: true, healPower: 16, agility: 0.85 },
+            'Golden Froglord': { hp: 100, atk: 18, def: 6, speed: 1.15, icon: '🐸', canHeal: true, healPower: 22, agility: 0.7 },
+            'White Ratman': { hp: 80, atk: 20, def: 3, speed: 1.2, icon: '🐀', canHeal: false, healPower: 0, agility: 0.75 },
+            'Brown Ratman': { hp: 85, atk: 18, def: 4, speed: 1.15, icon: '🐀', canHeal: false, healPower: 0, agility: 0.7 },
+            'Black Ratman': { hp: 75, atk: 22, def: 2, speed: 1.25, icon: '🐀', canHeal: false, healPower: 0, agility: 0.85 },
+            'Golden Ratlord': { hp: 95, atk: 19, def: 5, speed: 1.2, icon: '🐀', canHeal: true, healPower: 14, agility: 0.75 },
+            'Zombie Rat': { hp: 70, atk: 24, def: 1, speed: 1.1, icon: '🧟', canHeal: false, healPower: 0, agility: 0.6 },
+            'Raccoon': { hp: 95, atk: 14, def: 6, speed: 1.1, icon: '🦝', canHeal: true, healPower: 16, agility: 0.55 },
+            'Golden Raccoon': { hp: 105, atk: 15, def: 7, speed: 1.1, icon: '🦝', canHeal: true, healPower: 18, agility: 0.55 },
+            'Possum': { hp: 90, atk: 13, def: 5, speed: 1.05, icon: '🐭', canHeal: true, healPower: 14, agility: 0.6 },
+            'Cosmic Possum': { hp: 100, atk: 16, def: 7, speed: 1.1, icon: '✨', canHeal: true, healPower: 20, agility: 0.65 },
+            'Golden Possum': { hp: 100, atk: 15, def: 6, speed: 1.1, icon: '🐭', canHeal: true, healPower: 18, agility: 0.6 },
+            'Brown Bear': { hp: 140, atk: 16, def: 8, speed: 0.8, icon: '🐻', canHeal: true, healPower: 12, agility: 0.2 },
+            'Black Bear': { hp: 135, atk: 18, def: 7, speed: 0.85, icon: '🐻', canHeal: true, healPower: 10, agility: 0.25 },
+            'Winter Bear': { hp: 150, atk: 14, def: 10, speed: 0.75, icon: '🐻‍❄️', canHeal: true, healPower: 14, agility: 0.15 },
+            'Golden Bear': { hp: 145, atk: 17, def: 9, speed: 0.8, icon: '🐻', canHeal: true, healPower: 16, agility: 0.2 },
+            'Minotaur': { hp: 160, atk: 19, def: 6, speed: 0.9, icon: '🐂', canHeal: false, healPower: 0, agility: 0.3 },
+            'Golden Bull': { hp: 170, atk: 20, def: 7, speed: 0.85, icon: '🐂', canHeal: false, healPower: 0, agility: 0.25 },
+            'Nightstalker': { hp: 70, atk: 24, def: 2, speed: 1.35, icon: '🌑', canHeal: false, healPower: 0, agility: 0.95 },
+            'default': { hp: 100, atk: 15, def: 5, speed: 1.0, icon: '⚔️', canHeal: true, healPower: 14, agility: 0.5 }
+        };
+
+        const PILLAR_POSITIONS = [
+            { x: 0.2, y: 0.25 }, { x: 0.8, y: 0.25 }, { x: 0.35, y: 0.5 }, { x: 0.65, y: 0.5 },
+            { x: 0.2, y: 0.75 }, { x: 0.8, y: 0.75 }, { x: 0.5, y: 0.35 }, { x: 0.5, y: 0.65 }
+        ];
+
+        const TEAM_SPAWNS = [
+            { cx: 0.15, cy: 0.5 }, { cx: 0.85, cy: 0.5 }, { cx: 0.5, cy: 0.15 },
+            { cx: 0.5, cy: 0.85 }, { cx: 0.5, cy: 0.5 }
+        ];
+
+        const TERRAIN_TYPES = {
+            mud: { speedMult: 0.5, color: '#4a3c31', aiAvoid: 0.3, name: 'Mud' },
+            water: { speedMult: 0.6, color: '#2244aa', aiAvoid: 0.2, name: 'Water' },
+            fire: { speedMult: 1.0, color: '#ff4400', damage: 5, aiAvoid: 0.8, name: 'Fire' },
+            rune: { speedMult: 1.5, color: '#00ffff', aiPrefer: 0.3, name: 'Haste Rune' },
+            ice: { speedMult: 1.2, color: '#aaeeff', slippery: true, aiAvoid: 0.1, name: 'Ice' }
+        };
+
+        // ==================== SAMPLE METADATA (Minimal for Demo) ====================
+        const METADATA = { data: [] };
+        
+        // Generate sample fighters
+        const bases = Object.keys(BASE_STATS).filter(k => k !== 'default');
+        const weapons = ['Iron Sword', 'Steel Axe', 'Shadow Dagger', 'Holy Blade', 'Frost Sword', 'Fire Axe', 'Venom Dagger'];
+        const offhands = ['Tower Shield', 'Arcane Staff', 'Buckler', 'Frost Scepter', 'None'];
+        const armors = ['Plate Armor', 'Leather Vest', 'Mage Robes', 'Paladin Plate', 'Shadow Cloak'];
+        const enhancements = ['Blessed', 'Berserker', 'Hunter', 'Frost-touched', 'Shadow-infused', 'None'];
+
+        for (let i = 1; i <= 50; i++) {
+            const base = bases[i % bases.length];
+            const weapon = weapons[i % weapons.length];
+            const offhand = offhands[i % offhands.length];
+            const armor = armors[i % armors.length];
+            const enhancement = enhancements[i % enhancements.length];
+            
+            METADATA.data.push({
+                name: `Chimera #${i}`,
+                attributes: [
+                    { trait_type: 'Base', value: base },
+                    { trait_type: 'Sword', value: weapon },
+                    { trait_type: 'Off Hand', value: offhand },
+                    { trait_type: 'Chest', value: armor },
+                    { trait_type: 'Condition:Enhancement', value: enhancement }
+                ]
+            });
+        }
+
+        // ==================== PARTICLE SYSTEM ====================
+        const ParticleSystem = {
+            container: null,
+            spawn(x, y, color, count = 5, size = 4) {
+                if (!this.container) return;
+                for (let i = 0; i < count; i++) {
+                    const el = document.createElement('div');
+                    el.className = 'particle';
+                    el.style.cssText = `background-color:${color};width:${size}px;height:${size}px;left:${x*100}%;top:${y*100}%`;
+                    const angle = Math.random() * Math.PI * 2;
+                    const dist = 20 + Math.random() * 40;
+                    el.style.setProperty('--mx', `${Math.cos(angle)*dist}px`);
+                    el.style.setProperty('--my', `${Math.sin(angle)*dist}px`);
+                    this.container.appendChild(el);
+                    setTimeout(() => el.remove(), 600);
+                }
+            },
+            blood(x, y, isCrit) { this.spawn(x, y, '#8B0000', isCrit ? 12 : 4, isCrit ? 5 : 3); if (isCrit) this.spawn(x, y, '#FFD700', 3, 6); },
+            heal(x, y) { this.spawn(x, y, '#32CD32', 6, 4); },
+            spell(x, y, element) {
+                const colors = { fire: '#FF4500', frost: '#00BFFF', poison: '#32CD32', shadow: '#9370DB', holy: '#FFD700' };
+                this.spawn(x, y, colors[element] || '#FF00FF', 8, 5);
+            }
+        };
+
+        // ==================== KILL FEED ====================
+        const KillFeed = {
+            entries: [],
+            add(killer, victim) {
+                const feed = document.getElementById('kill-feed');
+                if (!feed) return;
+                const entry = document.createElement('div');
+                entry.className = 'kill-feed-entry';
+                entry.innerHTML = `<span class="kill-feed-killer" style="color:${killer.team.color}">${killer.name.split('#')[0]}</span>
+                    <span class="kill-feed-skull">💀</span>
+                    <span class="kill-feed-victim" style="color:${victim.team.color}">${victim.name.split('#')[0]}</span>`;
+                feed.insertBefore(entry, feed.firstChild);
+                this.entries.push(entry);
+                if (this.entries.length > 5) { this.entries.shift()?.remove(); }
+                setTimeout(() => entry.remove(), 5000);
+            },
+            clear() { this.entries.forEach(e => e.remove()); this.entries = []; }
+        };
+
+        // ==================== PERSONAL ARMORY SYSTEM ====================
+        function openArmory(slotIndex) {
+            const fighter = state.selectedTeam[slotIndex];
+            if (!fighter) return;
+            
+            armoryFighter = { ...fighter, slotIndex };
+            
+            // Update portrait
+            document.getElementById('armory-portrait').innerHTML = renderFighterImage(fighter, 'large');
+            document.getElementById('armory-char-name').textContent = fighter.name;
+            document.getElementById('armory-char-role').textContent = fighter.role.name;
+            document.getElementById('armory-char-role').style.background = fighter.role.color;
+            document.getElementById('armory-char-subtitle').textContent = `${fighter.base} • Slot ${slotIndex + 1}`;
+            
+            // Stats
+            document.getElementById('armory-stats').innerHTML = `
+                <div class="armory-stat hp"><div class="armory-stat-label">HP</div><div class="armory-stat-value">${fighter.stats.hp}</div></div>
+                <div class="armory-stat atk"><div class="armory-stat-label">ATK</div><div class="armory-stat-value">${fighter.stats.atk}</div></div>
+                <div class="armory-stat def"><div class="armory-stat-label">DEF</div><div class="armory-stat-value">${fighter.stats.def}</div></div>
+                <div class="armory-stat spd"><div class="armory-stat-label">SPD</div><div class="armory-stat-value">${(fighter.stats.speed * 100).toFixed(0)}%</div></div>
+            `;
+            
+            // Equipment
+            const eq = fighter.equipment;
+            document.getElementById('armory-equipment-grid').innerHTML = `
+                <div class="equipment-slot weapon">
+                    <div class="equipment-slot-header">
+                        <span class="equipment-slot-type">Weapon</span>
+                        <span class="equipment-slot-icon">⚔️</span>
+                    </div>
+                    <div class="equipment-slot-name">${eq.weapon || '<span class="equipment-slot-empty">Empty</span>'}</div>
+                    ${eq.canCleave ? '<div class="equipment-slot-stats">+Cleave</div>' : ''}
+                </div>
+                <div class="equipment-slot armor">
+                    <div class="equipment-slot-header">
+                        <span class="equipment-slot-type">Off-Hand</span>
+                        <span class="equipment-slot-icon">🛡️</span>
+                    </div>
+                    <div class="equipment-slot-name">${eq.offHand || '<span class="equipment-slot-empty">Empty</span>'}</div>
+                    ${eq.hasShield ? '<div class="equipment-slot-stats">+Block</div>' : ''}
+                </div>
+                <div class="equipment-slot armor">
+                    <div class="equipment-slot-header">
+                        <span class="equipment-slot-type">Armor</span>
+                        <span class="equipment-slot-icon">🎽</span>
+                    </div>
+                    <div class="equipment-slot-name">${eq.armor[0] || '<span class="equipment-slot-empty">Empty</span>'}</div>
+                </div>
+                <div class="equipment-slot accessory">
+                    <div class="equipment-slot-header">
+                        <span class="equipment-slot-type">Accessory</span>
+                        <span class="equipment-slot-icon">💍</span>
+                    </div>
+                    <div class="equipment-slot-name">${eq.accessories[0] || '<span class="equipment-slot-empty">Empty</span>'}</div>
+                </div>
+            `;
+            
+            // Abilities
+            const abilities = [];
+            eq.spells.forEach(s => {
+                abilities.push({ name: s.name, icon: getSpellIcon(s.element), type: `elemental-${s.element}` });
+            });
+            if (fighter.stats.canCleave) abilities.push({ name: 'Cleave', icon: '🪓', type: 'passive' });
+            if (fighter.stats.hasShield) abilities.push({ name: 'Block', icon: '🛡️', type: 'passive' });
+            if (fighter.stats.canBarricade) abilities.push({ name: 'Barricade', icon: '🏰', type: 'passive' });
+            if (fighter.stats.canCloak) abilities.push({ name: 'Cloak', icon: '👻', type: 'passive' });
+            if (fighter.stats.sneakAttack) abilities.push({ name: 'Sneak Attack', icon: '🗡️', type: 'passive' });
+            
+            document.getElementById('armory-abilities').innerHTML = abilities.length > 0 
+                ? abilities.map(a => `<div class="ability-tag ${a.type}"><span class="ability-icon">${a.icon}</span>${a.name}</div>`).join('')
+                : '<span style="color:#666;font-size:10px;">No special abilities</span>';
+            
+            // Calculate Build Rating
+            const buildRating = calculateBuildRating(fighter);
+            document.getElementById('build-score').textContent = buildRating.score;
+            document.getElementById('build-fill').style.width = `${buildRating.score}%`;
+            document.getElementById('build-label').textContent = buildRating.label;
+            
+            // Team Synergies
+            const synergies = calculateTeamSynergies(fighter, slotIndex);
+            document.getElementById('synergy-list').innerHTML = synergies.length > 0
+                ? synergies.map(s => `<div class="synergy-item ${s.type}">${s.text}</div>`).join('')
+                : '<div class="synergy-item">No team synergies detected</div>';
+            
+            document.getElementById('armory-overlay').classList.add('active');
+        }
+
+        function closeArmory() {
+            document.getElementById('armory-overlay').classList.remove('active');
+            armoryFighter = null;
+        }
+
+        function closeArmoryOnBackdrop(e) {
+            if (e.target.id === 'armory-overlay') closeArmory();
+        }
+
+        function getSpellIcon(element) {
+            return { fire: '🔥', frost: '❄️', poison: '☠️', shadow: '🌑', holy: '✨' }[element] || '✨';
+        }
+
+        function calculateBuildRating(fighter) {
+            let score = 50; // Base score
+            const eq = fighter.equipment;
+            const role = fighter.role.name;
+            
+            // Role-equipment synergy
+            if (role === 'Tank' && eq.hasShield) score += 15;
+            if (role === 'Berserker' && eq.canCleave) score += 15;
+            if (role === 'Battle Mage' && eq.isCaster) score += 15;
+            if (role === 'Rogue' && fighter.stats.canCloak) score += 15;
+            if ((role === 'Paladin' || role === 'Cleric') && eq.spells.some(s => s.element === 'holy')) score += 15;
+            
+            // Spell synergy
+            if (eq.spells.length > 0) score += eq.spells.length * 8;
+            
+            // Stats balance
+            const statTotal = fighter.stats.hp + fighter.stats.atk * 3 + fighter.stats.def * 2;
+            score += Math.min(20, statTotal / 10);
+            
+            score = Math.min(100, Math.max(0, Math.round(score)));
+            
+            let label = 'Weak Build';
+            if (score >= 90) label = 'Legendary Build';
+            else if (score >= 75) label = 'Strong Synergy';
+            else if (score >= 60) label = 'Good Balance';
+            else if (score >= 40) label = 'Average Build';
+            
+            return { score, label };
+        }
+
+        function calculateTeamSynergies(fighter, slotIndex) {
+            const synergies = [];
+            const team = state.selectedTeam.filter((f, i) => f && i !== slotIndex);
+            
+            // Check for role synergies
+            const roles = team.map(f => f.role.name);
+            
+            if (fighter.role.canHealOthers && team.length > 0) {
+                synergies.push({ text: `Can heal ${team.length} teammates`, type: 'positive' });
+            }
+            
+            if (fighter.role.name === 'Tank' && roles.some(r => r === 'Battle Mage' || r === 'Cleric')) {
+                synergies.push({ text: 'Protects backline casters', type: 'positive' });
+            }
+            
+            if (fighter.role.name === 'Rogue' && roles.includes('Tank')) {
+                synergies.push({ text: 'Tank draws aggro for flanks', type: 'positive' });
+            }
+            
+            // Element synergies
+            const teamSpells = team.flatMap(f => f.equipment.spells.map(s => s.element));
+            const fighterElements = fighter.equipment.spells.map(s => s.element);
+            
+            if (fighterElements.includes('frost') && teamSpells.includes('fire')) {
+                synergies.push({ text: 'Fire + Frost combo!', type: 'positive' });
+            }
+            
+            // Warnings
+            if (fighter.role.name === 'Cleric' && roles.filter(r => r === 'Cleric').length > 0) {
+                synergies.push({ text: 'Multiple healers may be redundant', type: 'warning' });
+            }
+            
+            if (!roles.includes('Tank') && fighter.role.name !== 'Tank' && team.length >= 3) {
+                synergies.push({ text: 'Team lacks a Tank!', type: 'warning' });
+            }
+            
+            return synergies;
+        }
+
+        function quickTestBattle() {
+            if (!armoryFighter) return;
+            closeArmory();
+            
+            // Ensure we have a full team
+            while (state.selectedTeam.filter(t => t).length < TEAM_SIZE) {
+                const available = state.allFighters.filter(f => !state.selectedTeam.includes(f));
+                if (available.length === 0) break;
+                const random = available[Math.floor(Math.random() * available.length)];
+                const emptySlot = state.selectedTeam.findIndex(t => !t);
+                if (emptySlot !== -1) state.selectedTeam[emptySlot] = random;
+            }
+            
+            renderTeamSlots();
+            setTimeout(() => startBattle(), 100);
+        }
+
+        // ==================== IMAGE HANDLING ====================
+        function getTokenId(fighterName) {
+            const match = fighterName.match(/#(\d+)/);
+            return match ? match[1] : null;
+        }
+
+        function renderFighterImage(fighter, sizeClass = '') {
+            const cached = imageCache.get(fighter.id);
+            if (cached) return `<img src="${cached}" alt="${fighter.name}" class="${sizeClass}" loading="lazy">`;
+            if (cached === null) return `<span class="emoji-fallback">${fighter.icon}</span>`;
+            const tokenId = getTokenId(fighter.name);
+            if (tokenId) {
+                const img = new Image();
+                const url = IPFS_CONFIG.getUrl(tokenId);
+                img.onload = () => { imageCache.set(fighter.id, url); refreshFighterImage(fighter.id); };
+                img.onerror = () => {
+                    const fallbackImg = new Image();
+                    const fallbackUrl = IPFS_CONFIG.getFallbackUrl(tokenId);
+                    fallbackImg.onload = () => { imageCache.set(fighter.id, fallbackUrl); refreshFighterImage(fighter.id); };
+                    fallbackImg.onerror = () => { imageCache.set(fighter.id, null); };
+                    fallbackImg.src = fallbackUrl;
+                };
+                img.src = url;
+            }
+            return `<span class="emoji-fallback">${fighter.icon}</span>`;
+        }
+
+        function refreshFighterImage(id) {
+            const gridCard = document.querySelector(`.fighter-card[data-id="${id}"] .fighter-portrait`);
+            if (gridCard) {
+                const fighter = state.allFighters.find(f => f.id === id);
+                if (fighter) gridCard.innerHTML = renderFighterImage(fighter);
+            }
+            if (currentlyViewingFighter?.id === id) renderFighterDetail(currentlyViewingFighter);
+        }
+
+        // ==================== NAME GENERATOR ====================
+        const FIRST_NAMES = {
+            sword: ['Aldric', 'Brom', 'Cael', 'Dorn', 'Erik', 'Finn', 'Gareth', 'Holt', 'Ivan', 'Jax', 'Kael', 'Lorn', 'Magnus'],
+            axe: ['Grimjaw', 'Ironhide', 'Bonecrusher', 'Ragnar', 'Bjorn', 'Thorin', 'Ulf', 'Grok', 'Brak'],
+            dagger: ['Shadow', 'Whisper', 'Shade', 'Viper', 'Silk', 'Ghost', 'Phantom', 'Wraith'],
+            staff: ['Arcanus', 'Mystral', 'Zephyr', 'Sage', 'Merlin', 'Theron', 'Azrael'],
+            spear: ['Leonidas', 'Achilles', 'Hector', 'Ajax', 'Perseus', 'Ares'],
+            mace: ['Godfrey', 'Bartholomew', 'Constantine', 'Dominic', 'Edmund']
+        };
+
+        const LAST_NAMES = {
+            'Crocodillian': ['Scalebane', 'Swampfang', 'Marshclaw', 'Bogmaw'],
+            'Salamander': ['Embertail', 'Flamescale', 'Cinderfoot', 'Ashborn'],
+            'Lizardman': ['Coldblood', 'Slitherfang', 'Scaleheart', 'Reptis'],
+            'Frog': ['Boghopper', 'Lilypad', 'Pondskip', 'Marshcroak'],
+            'Ratman': ['Whiskersnow', 'Dustgnaw', 'Shadowgnaw', 'Nighttail'],
+            'Bear': ['Ironpaw', 'Thunderclaw', 'Oakmane', 'Stonefur'],
+            'Minotaur': ['Hornbreaker', 'Bullrush', 'Labyrinthson', 'Ironhorn'],
+            'default': ['Steelborn', 'Ironwill', 'Stoneheart', 'Battleborn']
+        };
+
+        function generateFighterName(attrs, originalName) {
+            if (originalName && !originalName.startsWith('Chimera #')) return originalName;
+            
+            const base = attrs.Base || 'default';
+            const weapon = (attrs.Sword || '').toLowerCase();
+            const num = parseInt(originalName?.match(/\d+/)?.[0] || '0');
+            
+            let weaponType = 'sword';
+            if (weapon.includes('axe')) weaponType = 'axe';
+            else if (weapon.includes('dagger')) weaponType = 'dagger';
+            else if (weapon.includes('staff')) weaponType = 'staff';
+            
+            const firstNames = FIRST_NAMES[weaponType];
+            const baseKey = Object.keys(LAST_NAMES).find(k => base.includes(k)) || 'default';
+            const lastNames = LAST_NAMES[baseKey];
+            
+            const firstName = firstNames[num % firstNames.length];
+            const lastName = lastNames[(num * 7) % lastNames.length];
+            
+            return `${firstName} ${lastName}`;
+        }
+
+        // ==================== EQUIPMENT & ROLE PARSING ====================
+        function parseEquipment(attributes) {
+            const eq = { weapon: null, weaponType: 'melee', offHand: null, armor: [], accessories: [], enhancements: [], hasShield: false, hasRanged: false, hasTrident: false, spells: [], buffs: [], canCleave: false, isRogue: false, isCaster: false };
+            const addedSpells = new Set();
+            
+            attributes.forEach(attr => {
+                const val = attr.value.toLowerCase();
+                const type = attr.trait_type;
+                
+                if (type === 'Sword' || val.includes('sword') || val.includes('blade') || val.includes('axe') || val.includes('dagger')) {
+                    eq.weapon = attr.value;
+                    if (val.includes('axe') || val.includes('cleaver')) eq.canCleave = true;
+                    if (val.includes('dagger')) eq.isRogue = true;
+                }
+                if (type === 'Off Hand') {
+                    eq.offHand = attr.value;
+                    if (val.includes('staff') || val.includes('scepter')) { eq.hasRanged = true; eq.isCaster = true; }
+                    if (val.includes('trident')) { eq.hasTrident = true; eq.hasRanged = true; }
+                }
+                if (type === 'Shield' || val.includes('shield')) { eq.hasShield = true; eq.armor.push(attr.value); }
+                if (['Belt', 'Boots', 'Chest', 'Robes'].includes(type)) eq.armor.push(attr.value);
+                if (['Capes', 'Gloves', 'Shoulder'].includes(type)) eq.accessories.push(attr.value);
+                if (type === 'Condition:Enhancement') { eq.enhancements.push(attr.value); eq.buffs.push({ name: attr.value, type: 'positive' }); }
+                
+                // Spell detection
+                if ((val.includes('frost') || val.includes('ice')) && !addedSpells.has('frost')) { addedSpells.add('frost'); eq.spells.push({ name: 'Frost Bolt', element: 'frost', damage: 15, castTime: 800 }); eq.buffs.push({ name: 'Frost', type: 'elemental' }); }
+                if ((val.includes('flame') || val.includes('fire') || val.includes('inferno')) && !addedSpells.has('fire')) { addedSpells.add('fire'); eq.spells.push({ name: 'Fireball', element: 'fire', damage: 20, castTime: 1200 }); eq.buffs.push({ name: 'Fire', type: 'elemental' }); }
+                if ((val.includes('poison') || val.includes('venom') || val.includes('toxic')) && !addedSpells.has('poison')) { addedSpells.add('poison'); eq.spells.push({ name: 'Poison', element: 'poison', damage: 12, castTime: 400 }); eq.buffs.push({ name: 'Toxic', type: 'elemental' }); }
+                if ((val.includes('shadow') || val.includes('night')) && !addedSpells.has('shadow')) { addedSpells.add('shadow'); eq.spells.push({ name: 'Shadow Strike', element: 'shadow', damage: 18, castTime: 300 }); eq.buffs.push({ name: 'Shadow', type: 'spell' }); eq.isRogue = true; }
+                if ((val.includes('holy') || val.includes('blessed') || val.includes('avenger')) && !addedSpells.has('holy')) { addedSpells.add('holy'); eq.spells.push({ name: 'Holy Smite', element: 'holy', damage: 16, castTime: 1000 }); eq.buffs.push({ name: 'Blessed', type: 'positive' }); }
+            });
+            return eq;
+        }
+
+        function determineRole(attributes) {
+            let hasShield = false, hasRobes = false, hasStaff = false, hasShadow = false, hasHoly = false, hasDestroyer = false;
+            attributes.forEach(attr => {
+                const val = attr.value.toLowerCase();
+                if (val.includes('shield') || val.includes('plate') || val.includes('tanking')) hasShield = true;
+                if (val.includes('robes') || val.includes('vestment')) hasRobes = true;
+                if (val.includes('staff') || val.includes('scepter')) hasStaff = true;
+                if (val.includes('shadow') || val.includes('night') || val.includes('stalker')) hasShadow = true;
+                if (val.includes('holy') || val.includes('blessed') || val.includes('paladin') || val.includes('avenger')) hasHoly = true;
+                if (val.includes('destroyer') || val.includes('berserker') || val.includes('blood')) hasDestroyer = true;
+            });
+            if (hasHoly && hasShield) return ROLES.PALADIN;
+            if (hasHoly && (hasRobes || hasStaff)) return ROLES.CLERIC;
+            if (hasDestroyer) return ROLES.BERSERKER;
+            if (hasShield && !hasRobes) return ROLES.TANK;
+            if (hasShadow) return ROLES.ROGUE;
+            if (hasRobes || hasStaff) return ROLES.MAGE;
+            return ROLES.RANGER;
+        }
+
+        function calculateStats(attributes, baseStats, role, equipment) {
+            let stats = {
+                hp: Math.floor(baseStats.hp * role.hpMod), atk: Math.floor(baseStats.atk * role.atkMod),
+                def: Math.floor(baseStats.def * role.defMod), speed: baseStats.speed * role.speedMod,
+                crit: 10, agility: baseStats.agility * (1 + role.baseAgility) / 2,
+                hasShield: equipment.hasShield, canCleave: equipment.canCleave, isRogue: equipment.isRogue,
+                canBarricade: false, canCloak: false, sneakAttack: false, protection: false
+            };
+            attributes.forEach(attr => {
+                const val = attr.value.toLowerCase();
+                if (val.includes('champion') || val.includes('hero')) { stats.atk += 3; stats.crit += 5; }
+                if (val.includes('golden')) { stats.def += 2; stats.hp += 10; }
+                if (val.includes('blood') || val.includes('berserker')) { stats.atk += 4; stats.def -= 1; }
+                if (val.includes('archmage') || val.includes('wizard')) { stats.atk += 2; }
+                if (val.includes('dragon')) { stats.hp += 15; stats.def += 2; }
+                if (val.includes('stalker') || val.includes('shadow') || val.includes('night')) { stats.agility += 0.15; stats.sneakAttack = true; stats.canCloak = true; }
+                if (val.includes('spiked') || val.includes('tower')) { stats.def += 3; stats.canBarricade = true; }
+                if (val.includes('paladin') || val.includes('blessed')) { stats.protection = true; }
+            });
+            stats.agility = Math.min(0.95, stats.agility);
+            return stats;
+        }
+
+        // ==================== UI RENDERING ====================
+        function renderFighterGrid() {
+            const grid = document.getElementById('fighter-grid');
+            grid.innerHTML = state.allFighters.map(f => `
+                <div class="fighter-card ${state.selectedTeam.some(t => t && t.id === f.id) ? 'selected' : ''}"
+                     data-id="${f.id}" data-role="${f.role.name}"
+                     onclick="toggleFighterSelection(${f.id})"
+                     ondblclick="showFighterDetail(${f.id})">
+                    <div class="fighter-portrait">${renderFighterImage(f)}</div>
+                    <div class="fighter-name">${f.name}</div>
+                    <div class="fighter-role" style="color: ${f.role.color};">${f.role.name}</div>
+                    <div class="fighter-stats-preview">
+                        <span>❤️${f.stats.hp}</span>
+                        <span>⚔️${f.stats.atk}</span>
+                        <span>🛡️${f.stats.def}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTeamSlots() {
+            const slots = document.getElementById('team-slots');
+            slots.innerHTML = Array(TEAM_SIZE).fill(null).map((_, i) => {
+                const fighter = state.selectedTeam[i];
+                return `
+                    <div class="team-slot ${fighter ? 'filled' : ''}" onclick="${fighter ? `openArmory(${i})` : ''}">
+                        <div class="team-slot-number">${i + 1}</div>
+                        <div class="team-slot-content">
+                            ${fighter ? `
+                                <div class="team-slot-filled">
+                                    <div class="team-slot-portrait">${renderFighterImage(fighter)}</div>
+                                    <div class="team-slot-info">
+                                        <div class="team-slot-name">${fighter.name}</div>
+                                        <div class="team-slot-role" style="color: ${fighter.role.color};">${fighter.role.name}</div>
+                                    </div>
+                                    <button class="team-slot-remove" onclick="removeFromTeam(${i}); event.stopPropagation();">×</button>
+                                </div>
+                            ` : `<div class="team-slot-empty">Click to add • Empty Slot</div>`}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            const count = state.selectedTeam.filter(t => t !== null).length;
+            document.getElementById('start-btn').disabled = count < TEAM_SIZE;
+        }
+
+        function filterFighters() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            document.querySelectorAll('.fighter-card').forEach(card => {
+                const fighter = state.allFighters.find(f => f.id === parseInt(card.dataset.id));
+                if (!fighter) return;
+                const matchesSearch = fighter.name.toLowerCase().includes(search) || fighter.base.toLowerCase().includes(search);
+                const matchesRole = currentRoleFilter === 'all' || fighter.role.name === currentRoleFilter;
+                card.style.display = (matchesSearch && matchesRole) ? 'block' : 'none';
+            });
+        }
+
+        function filterByRole(role) {
+            currentRoleFilter = role;
+            document.querySelectorAll('.role-filter').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.role === role);
+            });
+            filterFighters();
+        }
+
+        // ==================== TEAM MANAGEMENT ====================
+        function toggleFighterSelection(id) {
+            const fighter = state.allFighters.find(f => f.id === id);
+            if (!fighter) return;
+            const idx = state.selectedTeam.findIndex(t => t && t.id === id);
+            if (idx >= 0) {
+                state.selectedTeam[idx] = null;
+            } else {
+                const emptyIdx = state.selectedTeam.findIndex(t => t === null);
+                if (emptyIdx >= 0 && emptyIdx < TEAM_SIZE) {
+                    state.selectedTeam[emptyIdx] = fighter;
+                } else if (state.selectedTeam.length < TEAM_SIZE) {
+                    state.selectedTeam.push(fighter);
+                }
+            }
+            renderFighterGrid();
+            renderTeamSlots();
+        }
+
+        function removeFromTeam(idx) {
+            state.selectedTeam[idx] = null;
+            renderFighterGrid();
+            renderTeamSlots();
+        }
+
+        function clearTeam() {
+            state.selectedTeam = Array(TEAM_SIZE).fill(null);
+            renderFighterGrid();
+            renderTeamSlots();
+        }
+
+        function randomTeam() {
+            state.selectedTeam = [];
+            const shuffled = [...state.allFighters].sort(() => Math.random() - 0.5);
+            for (let i = 0; i < TEAM_SIZE && i < shuffled.length; i++) {
+                state.selectedTeam.push(shuffled[i]);
+            }
+            while (state.selectedTeam.length < TEAM_SIZE) state.selectedTeam.push(null);
+            renderFighterGrid();
+            renderTeamSlots();
+        }
+
+        function randomTeamAndStart() {
+            randomTeam();
+            setTimeout(() => startBattle(), 100);
+        }
+
+        // ==================== FIGHTER DETAIL MODAL ====================
+        function showFighterDetail(id) {
+            const fighter = state.allFighters.find(f => f.id === id);
+            if (!fighter) return;
+            currentlyViewingFighter = fighter;
+            renderFighterDetail(fighter);
+            document.getElementById('modal-overlay').classList.add('active');
+        }
+
+        function renderFighterDetail(f) {
+            const eq = f.equipment;
+            document.getElementById('detail-content').innerHTML = `
+                <div class="detail-header">
+                    <div class="detail-portrait">${renderFighterImage(f)}</div>
+                    <div class="detail-info">
+                        <div class="detail-name">${f.name}</div>
+                        <div class="detail-id">${f.originalName || f.name} • ${f.base}</div>
+                        <div class="detail-role" style="color: ${f.role.color};">${f.role.name}</div>
+                        <div class="detail-actions">
+                            <button class="btn small ${state.selectedTeam.some(t => t && t.id === f.id) ? 'secondary' : ''}" 
+                                    onclick="toggleFighterSelection(${f.id}); renderFighterDetail(state.allFighters.find(f => f.id === ${f.id}));">
+                                ${state.selectedTeam.some(t => t && t.id === f.id) ? 'Remove' : 'Add to Team'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">Combat Stats</div>
+                    <div class="detail-stats">
+                        <div class="stat-box"><div class="stat-label">HP</div><div class="stat-value">${f.stats.hp}</div></div>
+                        <div class="stat-box"><div class="stat-label">ATK</div><div class="stat-value">${f.stats.atk}</div></div>
+                        <div class="stat-box"><div class="stat-label">DEF</div><div class="stat-value">${f.stats.def}</div></div>
+                        <div class="stat-box"><div class="stat-label">Speed</div><div class="stat-value">${(f.stats.speed * 100).toFixed(0)}%</div></div>
+                        <div class="stat-box"><div class="stat-label">Crit</div><div class="stat-value">${f.stats.crit}%</div></div>
+                        <div class="stat-box"><div class="stat-label">Agility</div><div class="stat-value">${(f.stats.agility * 100).toFixed(0)}%</div></div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">Equipment</div>
+                    <div class="equipment-list">
+                        ${eq.weapon ? `<div class="equipment-item weapon"><span class="equipment-slot">Weapon</span><span class="equipment-name">${eq.weapon}</span></div>` : ''}
+                        ${eq.offHand ? `<div class="equipment-item armor"><span class="equipment-slot">Off-Hand</span><span class="equipment-name">${eq.offHand}</span></div>` : ''}
+                        ${eq.armor.map(a => `<div class="equipment-item armor"><span class="equipment-slot">Armor</span><span class="equipment-name">${a}</span></div>`).join('')}
+                        ${eq.accessories.map(a => `<div class="equipment-item accessory"><span class="equipment-slot">Accessory</span><span class="equipment-name">${a}</span></div>`).join('')}
+                    </div>
+                </div>
+                ${eq.spells.length > 0 ? `
+                <div class="detail-section">
+                    <div class="detail-section-title">Spells</div>
+                    <div class="spell-list">${eq.spells.map(s => `<span class="spell-tag">${getSpellIcon(s.element)} ${s.name}</span>`).join('')}</div>
+                </div>` : ''}
+            `;
+        }
+
+        function closeFighterModal() {
+            document.getElementById('modal-overlay').classList.remove('active');
+            currentlyViewingFighter = null;
+        }
+
+        function closeModal(e) {
+            if (e.target.id === 'modal-overlay') closeFighterModal();
+        }
+
+        // ==================== SCREEN NAVIGATION ====================
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id)?.classList.add('active');
+        }
+
+        // ==================== BATTLE INITIALIZATION ====================
+        function startBattle() {
+            const playerTeam = state.selectedTeam.filter(t => t !== null);
+            if (playerTeam.length < TEAM_SIZE) {
+                alert('Select ' + TEAM_SIZE + ' fighters!');
+                return;
+            }
+
+            state.fighters = [];
+            state.teams = [];
+            state.projectiles = [];
+            state.battleLogHistory = [];
+            state.highestHit = { damage: 0, attacker: null, target: null, type: '' };
+            state.isPaused = false;
+            state.isRunning = true;
+            state.inspectedFighter = null;
+
+            const usedIds = new Set(playerTeam.map(f => f.id));
+            const availableFighters = state.allFighters.filter(f => !usedIds.has(f.id));
+
+            TEAMS.forEach((team, teamIdx) => {
+                const teamData = { ...team, members: [], alive: TEAM_SIZE };
+                const spawn = TEAM_SPAWNS[teamIdx];
+                const fighters = teamIdx === 0 ? playerTeam : [];
+
+                if (teamIdx !== 0) {
+                    while (fighters.length < TEAM_SIZE && availableFighters.length > 0) {
+                        const idx = Math.floor(Math.random() * availableFighters.length);
+                        fighters.push(availableFighters.splice(idx, 1)[0]);
+                    }
+                }
+
+                fighters.forEach((f, i) => {
+                    const angle = (i / TEAM_SIZE) * Math.PI * 2;
+                    const radius = 0.06;
+                    const fighterInstance = {
+                        ...f,
+                        fighterId: state.fighters.length,
+                        teamId: teamIdx,
+                        team: teamData,
+                        isPlayer: teamIdx === 0,
+                        x: spawn.cx + Math.cos(angle) * radius,
+                        y: spawn.cy + Math.sin(angle) * radius,
+                        vx: 0, vy: 0,
+                        hp: f.stats.hp,
+                        maxHp: f.stats.hp,
+                        alive: true,
+                        targetId: null,
+                        protectTarget: null,
+                        lastAttack: 0,
+                        lastSpell: 0,
+                        lastHeal: 0,
+                        lastHealAlly: 0,
+                        lastDodge: 0,
+                        lastCloak: 0,
+                        cloakUntil: 0,
+                        stunnedUntil: 0,
+                        castingUntil: 0,
+                        currentCastSpell: null,
+                        isBarricading: false,
+                        aiState: AI_STATES.AGGRESSIVE,
+                        aiStateReason: 'Entering battle',
+                        aiIntent: AI_INTENTS.ENGAGE,
+                        aiIntentExpires: 0,
+                        aiMemory: {
+                            lastAction: null, lastTarget: null, lastSuccess: true,
+                            frustration: 0, consecutiveFailures: 0, lastHp: f.stats.hp,
+                            berserkUntil: 0, decisionLog: []
+                        },
+                        nemesis: { id: null, name: null, damageReceived: 0 },
+                        damageReceivedFrom: {},
+                        isLastStand: false,
+                        aiDebug: { action: 'idle', berserk: false },
+                        kills: 0,
+                        damageDealt: 0,
+                        healingDone: 0,
+                        el: null
+                    };
+                    state.fighters.push(fighterInstance);
+                    teamData.members.push(fighterInstance);
+                });
+
+                state.teams.push(teamData);
+            });
+
+            state.pillars = PILLAR_POSITIONS.map((p, i) => ({ id: i, x: p.x, y: p.y }));
+
+            // Initialize terrain
+            state.terrain = [];
+            const terrainTypes = ['mud', 'mud', 'rune', 'fire', 'ice', 'water'];
+            for (let i = 0; i < 7; i++) {
+                const type = terrainTypes[Math.floor(Math.random() * terrainTypes.length)];
+                const terrainDef = TERRAIN_TYPES[type] || TERRAIN_TYPES.mud;
+                state.terrain.push({
+                    type, x: 0.12 + Math.random() * 0.76, y: 0.12 + Math.random() * 0.76,
+                    radius: 0.05 + Math.random() * 0.04, ...terrainDef
+                });
+            }
+
+            state.battleOver = false;
+            state.replayMode = false;
+            state.camera = { x: 0.5, y: 0.5, scale: 1 };
+            KillFeed.clear();
+
+            showScreen('arena-screen');
+            renderArena();
+            clearLog();
+            addLog('⚔️ The battle begins!', 'system');
+
+            state.battleStartTime = performance.now();
+            state.lastFrameTime = state.battleStartTime;
+            requestAnimationFrame(gameLoop);
+        }
+
+        // ==================== ARENA RENDERING ====================
+        function renderArena() {
+            const cam = document.getElementById('camera-layer');
+            ParticleSystem.container = cam;
+            
+            // Clear existing elements except floor
+            cam.querySelectorAll('.terrain-zone, .arena-pillar, .fighter-token').forEach(el => el.remove());
+
+            // Render terrain
+            state.terrain.forEach(t => {
+                const el = document.createElement('div');
+                el.className = `terrain-zone ${t.type}`;
+                el.style.cssText = `left:${t.x*100}%;top:${t.y*100}%;width:${t.radius*200}%;height:${t.radius*200}%`;
+                cam.appendChild(el);
+            });
+
+            // Render pillars
+            state.pillars.forEach(p => {
+                const el = document.createElement('div');
+                el.className = 'arena-pillar';
+                el.style.cssText = `left:${p.x*100}%;top:${p.y*100}%`;
+                cam.appendChild(el);
+            });
+
+            // Render fighters
+            state.fighters.forEach(f => {
+                const el = document.createElement('div');
+                el.className = `fighter-token team-${f.teamId}`;
+                el.style.cssText = `left:${f.x*100}%;top:${f.y*100}%`;
+                el.innerHTML = `
+                    <div class="fighter-token-inner" style="border-color:${f.team.color}">${renderFighterImage(f)}</div>
+                    <div class="fighter-hp-arc"></div>
+                    <div class="fighter-label">${f.name.split('#')[0].split(' ')[0]}</div>
+                    <div class="fighter-state-indicator"></div>
+                    <div class="ai-debug-overlay"></div>
+                `;
+                el.onclick = () => inspectFighter(f.fighterId);
+                f.el = el;
+                cam.appendChild(el);
+            });
+
+            renderTeamsPanel();
+            updateTeamScores();
+        }
+
+        function renderTeamsPanel() {
+            const panel = document.getElementById('teams-panel');
+            panel.innerHTML = state.teams.map(team => `
+                <div class="team-section">
+                    <div class="team-section-header" style="border-bottom-color: ${team.color};">
+                        <span class="team-section-icon">${team.emoji}</span>
+                        <span class="team-section-name" style="color: ${team.color};">${team.name}</span>
+                        <span class="team-section-count">${team.alive}/${TEAM_SIZE}</span>
+                    </div>
+                    ${team.members.map(m => `
+                        <div class="team-member ${!m.alive ? 'dead' : ''} ${state.inspectedFighter?.fighterId === m.fighterId ? 'inspected' : ''}"
+                             style="border-left-color: ${team.color};"
+                             onclick="inspectFighter(${m.fighterId})">
+                            <div class="team-member-portrait" style="border-color: ${team.color};">${renderFighterImage(m)}</div>
+                            <div class="team-member-info">
+                                <div class="team-member-name">${m.name.split('#')[0].split(' ')[0]}</div>
+                                <div class="team-member-hp" style="color: ${m.alive ? (m.hp/m.maxHp > 0.5 ? 'var(--poison)' : (m.hp/m.maxHp > 0.25 ? 'var(--gold)' : 'var(--crimson)')) : '#444'};">
+                                    ${m.alive ? `${Math.floor(m.hp)}/${m.maxHp}` : 'DEAD'}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+
+        function updateTeamScores() {
+            const scores = document.getElementById('team-scores');
+            scores.innerHTML = state.teams.map(t => `
+                <div class="team-score" style="border-color: ${t.color}; color: ${t.color}; opacity: ${t.alive > 0 ? 1 : 0.3};">
+                    ${t.emoji} ${t.alive}
+                </div>
+            `).join('');
+        }
+
+        // ==================== INSPECTOR ====================
+        function inspectFighter(fighterId) {
+            const f = state.fighters.find(fighter => fighter.fighterId === fighterId);
+            if (!f) return;
+            
+            state.inspectedFighter = f;
+            
+            document.querySelectorAll('.fighter-token').forEach(el => el.classList.remove('inspected'));
+            f.el?.classList.add('inspected');
+            
+            document.querySelectorAll('.team-member').forEach(el => el.classList.remove('inspected'));
+            
+            renderInspector(f);
+            renderTeamsPanel();
+        }
+
+        function renderInspector(f) {
+            const content = document.getElementById('inspector-content');
+            if (!f) {
+                content.innerHTML = '<div class="empty-state"><div class="empty-state-icon">👆</div><div>Click a fighter</div></div>';
+                return;
+            }
+
+            const eq = f.equipment;
+            const now = performance.now();
+            
+            let equipHtml = '';
+            if (eq.weapon) equipHtml += `<div class="inspector-equip-item weapon"><span class="inspector-equip-slot">⚔️</span><span class="inspector-equip-name">${eq.weapon}</span></div>`;
+            if (eq.offHand) equipHtml += `<div class="inspector-equip-item armor"><span class="inspector-equip-slot">🛡️</span><span class="inspector-equip-name">${eq.offHand}</span></div>`;
+
+            content.innerHTML = `
+                <div class="inspector-portrait" style="border-color: ${f.team.color};">${renderFighterImage(f)}</div>
+                <div class="inspector-name">${f.name}</div>
+                <div class="inspector-base">${f.base}</div>
+                <div class="inspector-role" style="color: ${f.role.color};">${f.role.name}</div>
+                <div class="inspector-team" style="background: ${f.team.color};">${f.team.emoji} ${f.team.name}</div>
+                <div class="ai-state-display">
+                    <div class="ai-state-title">AI State</div>
+                    <div class="ai-state-value">${f.aiState.toUpperCase()}</div>
+                    <div class="ai-state-reason">${f.aiStateReason}</div>
+                    <div class="ai-debug-row"><span class="ai-debug-label">Intent:</span><span class="ai-debug-value">${f.aiIntent}</span></div>
+                    <div class="ai-debug-row"><span class="ai-debug-label">Last Action:</span><span class="ai-debug-value">${f.aiDebug?.action || 'none'}</span></div>
+                </div>
+                ${f.nemesis?.id !== null ? `
+                <div class="inspector-section-title" style="color: #ff00ff;">⚡ Nemesis</div>
+                <div style="color: #ff00ff; font-size: 9px; padding: 4px; background: rgba(255,0,255,0.1); margin-bottom: 8px;">
+                    ${state.fighters.find(n => n.fighterId === f.nemesis.id)?.name.split('#')[0] || 'Unknown'} (${f.nemesis.damageReceived} dmg received)
+                </div>` : ''}
+                <div class="inspector-stats">
+                    <div class="inspector-stat-row"><span class="inspector-stat-label">HP</span><span class="inspector-stat-value">${Math.floor(f.hp)}/${f.maxHp}</span></div>
+                    <div class="inspector-stat-row"><span class="inspector-stat-label">ATK</span><span class="inspector-stat-value">${f.stats.atk}</span></div>
+                    <div class="inspector-stat-row"><span class="inspector-stat-label">DEF</span><span class="inspector-stat-value">${f.stats.def}</span></div>
+                    <div class="inspector-stat-row"><span class="inspector-stat-label">Kills</span><span class="inspector-stat-value">${f.kills}</span></div>
+                    <div class="inspector-stat-row"><span class="inspector-stat-label">Damage</span><span class="inspector-stat-value">${f.damageDealt}</span></div>
+                </div>
+                <div class="inspector-section-title">Equipment</div>
+                <div class="inspector-equipment">${equipHtml || '<div style="color:#555;font-size:9px;">No equipment</div>'}</div>
+                <div class="inspector-section-title">Abilities</div>
+                <div class="buff-list">
+                    ${eq.buffs.map(b => `<span class="buff-tag ${b.type}">${b.name}</span>`).join('')}
+                    ${f.stats.canCleave ? '<span class="buff-tag positive">Cleave</span>' : ''}
+                    ${f.stats.hasShield ? '<span class="buff-tag positive">Shield</span>' : ''}
+                    ${f.stats.canBarricade ? `<span class="buff-tag ${f.isBarricading ? 'active' : 'positive'}">Barricade</span>` : ''}
+                    ${f.stats.canCloak ? `<span class="buff-tag ${f.cloakUntil > now ? 'active' : 'spell'}">Cloak</span>` : ''}
+                </div>
+            `;
+        }
+
+        // ==================== BATTLE LOG ====================
+        function addLog(msg, type = '') {
+            const log = document.getElementById('battle-log');
+            if (!log) return;
+            const time = formatTime(performance.now() - state.battleStartTime);
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${type}`;
+            entry.innerHTML = `<span class="timestamp">[${time}]</span> ${msg}`;
+            log.appendChild(entry);
+            while (log.children.length > 150) log.removeChild(log.firstChild);
+            log.scrollTop = log.scrollHeight;
+            state.battleLogHistory.push({ time, msg, type });
+            if (state.battleLogHistory.length > 200) state.battleLogHistory.shift();
+        }
+
+        function clearLog() {
+            const log = document.getElementById('battle-log');
+            if (log) log.innerHTML = '';
+            state.battleLogHistory = [];
+        }
+
+        function formatTime(ms) {
+            const s = Math.floor(ms / 1000);
+            return `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')}`;
+        }
+
+        // ==================== GAME CONTROLS ====================
+        function togglePause() {
+            state.isPaused = !state.isPaused;
+            document.getElementById('pause-btn').textContent = state.isPaused ? '▶️ Resume' : '⏸️ Pause';
+            document.getElementById('pause-btn').classList.toggle('active', state.isPaused);
+            if (!state.isPaused) state.lastFrameTime = performance.now();
+        }
+
+        function setSpeed(speed) {
+            state.gameSpeed = speed;
+            document.querySelectorAll('.speed-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === `${speed}x`);
+            });
+        }
+
+        function exitArena() {
+            state.isRunning = false;
+            if (state.animationId) cancelAnimationFrame(state.animationId);
+            document.getElementById('victory-overlay').classList.remove('active');
+            showScreen('select-screen');
+        }
+
+        // ==================== GAME LOOP ====================
+        function gameLoop(timestamp) {
+            if (!state.isRunning) return;
+            
+            state.animationId = requestAnimationFrame(gameLoop);
+            
+            if (state.isPaused) return;
+
+            const delta = Math.min((timestamp - state.lastFrameTime) * state.gameSpeed, 100);
+            state.lastFrameTime = timestamp;
+
+            // Update battle time
+            document.getElementById('battle-time').textContent = formatTime(timestamp - state.battleStartTime);
+
+            // Update AI
+            if (timestamp - state.lastAIUpdate > AI_UPDATE_INTERVAL / state.gameSpeed) {
+                updateAI(timestamp);
+                state.lastAIUpdate = timestamp;
+            }
+
+            // Update movement and combat
+            updateFighters(delta, timestamp);
+            updateProjectiles(delta);
+
+            // Update visuals
+            state.fighters.forEach(f => {
+                if (!f.el) return;
+                f.el.style.left = `${f.x * 100}%`;
+                f.el.style.top = `${f.y * 100}%`;
+                
+                // HP arc
+                const hpPercent = f.hp / f.maxHp;
+                const arc = f.el.querySelector('.fighter-hp-arc');
+                if (arc) {
+                    arc.style.borderTopColor = hpPercent > 0.5 ? 'var(--poison)' : (hpPercent > 0.25 ? 'var(--gold)' : 'var(--crimson)');
+                    arc.style.transform = `rotate(${-90 + (1 - hpPercent) * 360}deg)`;
+                }
+
+                // State indicator
+                const indicator = f.el.querySelector('.fighter-state-indicator');
+                if (indicator) {
+                    if (f.cloakUntil > timestamp) indicator.textContent = '👻';
+                    else if (f.isBarricading) indicator.textContent = '🏰';
+                    else if (f.castingUntil > timestamp) indicator.textContent = '✨';
+                    else indicator.textContent = '';
+                }
+
+                // AI debug
+                const debug = f.el.querySelector('.ai-debug-overlay');
+                if (debug) {
+                    debug.textContent = f.aiDebug?.action || '';
+                    debug.classList.toggle('berserk', f.aiMemory?.berserkUntil > timestamp);
+                }
+
+                // Classes
+                f.el.classList.toggle('dead', !f.alive);
+                f.el.classList.toggle('cloaked', f.cloakUntil > timestamp);
+                f.el.classList.toggle('berserk', f.aiMemory?.berserkUntil > timestamp);
+                f.el.classList.toggle('last-stand', f.isLastStand);
+            });
+
+            // Update inspector if viewing someone
+            if (state.inspectedFighter) {
+                renderInspector(state.inspectedFighter);
+            }
+
+            // Update teams panel periodically
+            if (Math.random() < 0.1) renderTeamsPanel();
+
+            // Check battle end
+            checkBattleEnd();
+        }
+
+        // ==================== AI UPDATE ====================
+        function updateAI(now) {
+            state.fighters.filter(f => f.alive && f.stunnedUntil < now).forEach(f => {
+                const allies = state.fighters.filter(a => a.teamId === f.teamId && a.alive && a.fighterId !== f.fighterId);
+                const enemies = state.fighters.filter(e => e.teamId !== f.teamId && e.alive);
+                if (enemies.length === 0) return;
+
+                const mem = f.aiMemory;
+
+                // Frustration tracking
+                if (f.hp < mem.lastHp) mem.frustration += 0.2;
+                mem.lastHp = f.hp;
+                mem.frustration = Math.max(0, Math.min(5, mem.frustration - AI.FRUSTRATION_DECAY));
+
+                // Berserk mode
+                if (mem.frustration > AI.BERSERK_THRESHOLD && now > mem.berserkUntil) {
+                    mem.berserkUntil = now + AI.BERSERK_DURATION;
+                    mem.frustration = 0;
+                    addLog(`🔥 <span class="attacker">${f.name.split('#')[0]}</span> goes BERSERK!`, 'system');
+                }
+
+                // Check last stand
+                if (allies.length === 0 && !f.isLastStand) {
+                    f.isLastStand = true;
+                    addLog(`⚔️ <span class="attacker">${f.name.split('#')[0]}</span> is the LAST STAND for ${f.team.name}!`, 'laststand');
+                }
+
+                // Simple AI: target nearest enemy
+                const nearest = enemies.sort((a, b) => 
+                    Math.hypot(a.x - f.x, a.y - f.y) - Math.hypot(b.x - f.x, b.y - f.y)
+                )[0];
+
+                f.targetId = nearest.fighterId;
+                f.aiState = AI_STATES.AGGRESSIVE;
+                f.aiStateReason = `Targeting ${nearest.name.split('#')[0]}`;
+                f.aiDebug.action = 'attack';
+            });
+        }
+
+        // ==================== FIGHTER UPDATE ====================
+        function updateFighters(delta, now) {
+            state.fighters.filter(f => f.alive).forEach(f => {
+                if (f.stunnedUntil > now) return;
+
+                const target = state.fighters.find(t => t.fighterId === f.targetId && t.alive);
+                if (!target) return;
+
+                const dx = target.x - f.x;
+                const dy = target.y - f.y;
+                const dist = Math.hypot(dx, dy);
+
+                // Movement
+                const inRange = dist < MELEE_RANGE;
+                if (!inRange && !f.isBarricading) {
+                    const speedFactor = (delta / 1000) * MOVEMENT_SPEED;
+                    const speed = f.stats.speed * speedFactor;
+                    const angle = Math.atan2(dy, dx);
+                    let newX = f.x + Math.cos(angle) * speed;
+                    let newY = f.y + Math.sin(angle) * speed;
+
+                    // Pillar collision
+                    state.pillars.forEach(p => {
+                        const pDist = Math.hypot(newX - p.x, newY - p.y);
+                        if (pDist < PILLAR_RADIUS + FIGHTER_RADIUS) {
+                            const pushAngle = Math.atan2(newY - p.y, newX - p.x);
+                            newX = p.x + Math.cos(pushAngle) * (PILLAR_RADIUS + FIGHTER_RADIUS);
+                            newY = p.y + Math.sin(pushAngle) * (PILLAR_RADIUS + FIGHTER_RADIUS);
+                        }
+                    });
+
+                    // Bounds
+                    f.x = Math.max(0.05, Math.min(0.95, newX));
+                    f.y = Math.max(0.05, Math.min(0.95, newY));
+                }
+
+                // Combat - scale cooldowns by game speed
+                if (inRange && now - f.lastAttack > ATTACK_COOLDOWN / state.gameSpeed) {
+                    performAttack(f, target, now);
+                }
+
+                // Spell casting
+                if (f.equipment.spells.length > 0 && now - f.lastSpell > SPELL_COOLDOWN / state.gameSpeed && dist < RANGED_RANGE) {
+                    const spell = f.equipment.spells[0];
+                    castSpell(f, target, spell, now);
+                }
+
+                // Self healing
+                if (f.hp / f.maxHp < f.role.healThreshold && now - f.lastHeal > HEAL_COOLDOWN / state.gameSpeed) {
+                    const baseStats = BASE_STATS[f.base] || BASE_STATS.default;
+                    if (baseStats.canHeal) {
+                        const heal = Math.floor(baseStats.healPower * (0.8 + Math.random() * 0.4));
+                        f.hp = Math.min(f.maxHp, f.hp + heal);
+                        f.healingDone += heal;
+                        f.lastHeal = now;
+                        showDamagePopup(f, heal, 'heal');
+                        ParticleSystem.heal(f.x, f.y);
+                        addLog(`💚 <span class="attacker">${f.name.split('#')[0]}</span> heals for <span class="heal">${heal}</span>`, 'heal');
+                    }
+                }
+            });
+        }
+
+        function performAttack(attacker, target, now) {
+            attacker.lastAttack = now;
+
+            // Dodge check
+            if (Math.random() < target.stats.agility * 0.5) {
+                showDamagePopup(target, 'DODGE', 'dodge');
+                addLog(`🌀 <span class="target">${target.name.split('#')[0]}</span> dodges!`, 'dodge');
+                return;
+            }
+
+            // Damage calculation
+            let damage = Math.max(1, attacker.stats.atk - Math.floor(target.stats.def * 0.5));
+            let isCrit = Math.random() * 100 < attacker.stats.crit;
+            let hitType = 'normal';
+
+            // Backstab
+            if (attacker.stats.sneakAttack && attacker.cloakUntil > now) {
+                damage = Math.floor(damage * BACKSTAB_MULTIPLIER);
+                hitType = 'backstab';
+                attacker.cloakUntil = 0;
+                addLog(`🗡️ <span class="attacker">${attacker.name.split('#')[0]}</span> BACKSTABS <span class="target">${target.name.split('#')[0]}</span>!`, 'damage');
+            }
+
+            if (isCrit) {
+                damage = Math.floor(damage * 1.5);
+                hitType = 'crit';
+            }
+
+            // Barricade block
+            if (target.isBarricading && Math.random() < BARRICADE_BLOCK_BONUS) {
+                damage = Math.floor(damage * 0.3);
+                addLog(`🛡️ <span class="target">${target.name.split('#')[0]}</span> BLOCKS with barricade!`, 'ability');
+            }
+
+            // Apply damage
+            target.hp -= damage;
+            attacker.damageDealt += damage;
+
+            // Track nemesis
+            target.damageReceivedFrom[attacker.fighterId] = (target.damageReceivedFrom[attacker.fighterId] || 0) + damage;
+            if (target.damageReceivedFrom[attacker.fighterId] > (target.nemesis?.damageReceived || 0)) {
+                target.nemesis = { id: attacker.fighterId, name: attacker.name, damageReceived: target.damageReceivedFrom[attacker.fighterId] };
+            }
+
+            // Track highest hit
+            if (damage > state.highestHit.damage) {
+                state.highestHit = { damage, attacker, target, type: hitType };
+            }
+
+            // Effects
+            showDamagePopup(target, damage, isCrit ? 'crit' : 'damage');
+            ParticleSystem.blood(target.x, target.y, isCrit);
+
+            addLog(`⚔️ <span class="attacker">${attacker.name.split('#')[0]}</span> hits <span class="target">${target.name.split('#')[0]}</span> for <span class="damage">${damage}</span>${isCrit ? ' <span class="crit">CRITICAL!</span>' : ''}`, 'damage');
+
+            // Death check
+            if (target.hp <= 0) {
+                handleDeath(target, attacker, now);
+            }
+        }
+
+        function castSpell(caster, target, spell, now) {
+            caster.lastSpell = now;
+            
+            // Create projectile
+            state.projectiles.push({
+                x: caster.x, y: caster.y,
+                targetX: target.x, targetY: target.y,
+                targetId: target.fighterId,
+                casterId: caster.fighterId,
+                spell: spell,
+                speed: 0.15
+            });
+
+            addLog(`✨ <span class="attacker">${caster.name.split('#')[0]}</span> casts <span class="spell">${spell.name}</span> at <span class="target">${target.name.split('#')[0]}</span>!`, 'spell');
+        }
+
+        function updateProjectiles(delta) {
+            state.projectiles = state.projectiles.filter(p => {
+                const target = state.fighters.find(f => f.fighterId === p.targetId);
+                if (!target || !target.alive) return false;
+
+                const dx = target.x - p.x;
+                const dy = target.y - p.y;
+                const dist = Math.hypot(dx, dy);
+
+                if (dist < 0.03) {
+                    // Hit!
+                    const caster = state.fighters.find(f => f.fighterId === p.casterId);
+                    let damage = p.spell.damage + (caster?.stats.atk || 0) * 0.3;
+                    
+                    target.hp -= damage;
+                    if (caster) caster.damageDealt += damage;
+
+                    showDamagePopup(target, Math.floor(damage), 'damage');
+                    ParticleSystem.spell(target.x, target.y, p.spell.element);
+
+                    if (target.hp <= 0) {
+                        handleDeath(target, caster, performance.now());
+                    }
+
+                    return false;
+                }
+
+                // Move projectile
+                const speed = p.speed * delta / 1000;
+                p.x += (dx / dist) * speed;
+                p.y += (dy / dist) * speed;
+
+                return true;
+            });
+
+            // Render projectiles
+            const cam = document.getElementById('camera-layer');
+            cam.querySelectorAll('.projectile').forEach(el => el.remove());
+            state.projectiles.forEach(p => {
+                const el = document.createElement('div');
+                el.className = `projectile ${p.spell.element}`;
+                el.style.cssText = `left:${p.x*100}%;top:${p.y*100}%`;
+                cam.appendChild(el);
+            });
+        }
+
+        function handleDeath(victim, killer, now) {
+            victim.alive = false;
+            victim.hp = 0;
+            victim.team.alive--;
+
+            if (killer) {
+                killer.kills++;
+                KillFeed.add(killer, victim);
+            }
+
+            addLog(`☠️ <span class="attacker">${killer?.name.split('#')[0] || 'Unknown'}</span> KILLS <span class="target">${victim.name.split('#')[0]}</span>!`, 'kill');
+
+            updateTeamScores();
+        }
+
+        function showDamagePopup(fighter, value, type) {
+            if (!fighter.el) return;
+            const popup = document.createElement('div');
+            popup.className = `damage-popup ${type}`;
+            popup.textContent = typeof value === 'number' ? (type === 'heal' ? `+${value}` : `-${value}`) : value;
+            popup.style.cssText = `left:${fighter.x*100}%;top:${fighter.y*100}%`;
+            document.getElementById('camera-layer').appendChild(popup);
+            setTimeout(() => popup.remove(), 1000);
+        }
+
+        // ==================== BATTLE END ====================
+        function checkBattleEnd() {
+            const aliveTeams = state.teams.filter(t => t.alive > 0);
+            if (aliveTeams.length > 1) return;
+
+            state.isRunning = false;
+            const winningTeam = aliveTeams[0];
+            const playerWon = winningTeam && winningTeam.id === 0;
+
+            const mvp = state.fighters.reduce((best, f) => {
+                const score = (f.kills * 100) + (f.damageDealt * 1) + (f.healingDone * 2) + (f.alive ? 50 : 0);
+                f.mvpScore = score;
+                return score > (best?.mvpScore || 0) ? f : best;
+            }, null);
+
+            setTimeout(() => {
+                document.getElementById('victory-title').textContent = playerWon ? 'VICTORY!' : 'DEFEAT';
+                document.getElementById('victory-title').style.color = winningTeam ? winningTeam.color : '#888';
+                document.getElementById('victory-subtitle').textContent = winningTeam ? `${winningTeam.emoji} ${winningTeam.name} Wins!` : 'Draw!';
+                document.getElementById('victory-subtitle').style.color = winningTeam ? winningTeam.color : '#888';
+
+                const teamMembers = winningTeam ? state.fighters.filter(f => f.teamId === winningTeam.id) : [];
+                document.getElementById('winning-team-display').innerHTML = teamMembers.map(m => `
+                    <div class="winning-member">
+                        <div class="winning-member-icon ${m.alive ? '' : 'dead'}" style="border-color: ${winningTeam.color};">
+                            ${m.alive ? renderFighterImage(m) : '🪦'}
+                        </div>
+                        <div class="winning-member-name">${m.name.split('#')[0]}</div>
+                        <div class="winning-member-role">${m.role.name}</div>
+                        <div class="winning-member-status ${m.alive ? 'alive' : 'dead'}">${m.alive ? '✓ Alive' : 'Fallen'}</div>
+                    </div>
+                `).join('');
+
+                const highHit = state.highestHit;
+                const hitTypeLabel = highHit.type === 'backstab' ? '🗡️ BACKSTAB' : (highHit.type === 'crit' ? '💥 CRITICAL' : '⚔️ STRIKE');
+                
+                document.getElementById('battle-awards').innerHTML = `
+                    <div class="award-card">
+                        <div class="award-title">🏆 MVP</div>
+                        <div class="award-icon">${mvp ? renderFighterImage(mvp) : '❓'}</div>
+                        <div class="award-fighter-name">${mvp ? mvp.name.split('#')[0] : 'None'}</div>
+                        ${mvp ? `<div class="award-fighter-team" style="background: ${mvp.team.color}; color: white;">${mvp.team.emoji} ${mvp.team.name}</div>` : ''}
+                        <div class="award-value mvp">${mvp ? Math.floor(mvp.mvpScore) : 0} pts</div>
+                        <div class="award-detail">${mvp ? `${mvp.kills} kills • ${mvp.damageDealt} dmg • ${mvp.healingDone} healed` : ''}</div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-title">💀 Highest Hit</div>
+                        <div class="award-icon">${highHit.attacker ? renderFighterImage(highHit.attacker) : '❓'}</div>
+                        <div class="award-fighter-name">${highHit.attacker ? highHit.attacker.name.split('#')[0] : 'None'}</div>
+                        ${highHit.attacker ? `<div class="award-fighter-team" style="background: ${highHit.attacker.team.color}; color: white;">${highHit.attacker.team.emoji} ${highHit.attacker.team.name}</div>` : ''}
+                        <div class="award-value">${highHit.damage} damage</div>
+                        <div class="award-detail">${highHit.target ? `${hitTypeLabel} on ${highHit.target.name.split('#')[0]}` : ''}</div>
+                    </div>
+                `;
+
+                const teamStats = winningTeam ? state.fighters.filter(f => f.teamId === winningTeam.id) : [];
+                const survivors = teamStats.filter(f => f.alive).length;
+                document.getElementById('victory-stats').innerHTML = winningTeam ?
+                    `Kills: ${teamStats.reduce((s, f) => s + f.kills, 0)} | Damage: ${teamStats.reduce((s, f) => s + f.damageDealt, 0)} | Survivors: ${survivors}/${TEAM_SIZE}` : '';
+
+                document.getElementById('final-battle-log').innerHTML = state.battleLogHistory.slice(-60).map(e =>
+                    `<div class="log-entry log-${e.type}"><span class="timestamp">[${e.time}]</span> ${e.msg}</div>`
+                ).join('');
+
+                document.getElementById('victory-overlay').classList.add('active');
+            }, 800);
+
+            state.battleOver = true;
+        }
+
+        function returnToSelect() {
+            document.getElementById('victory-overlay').classList.remove('active');
+            document.getElementById('replay-ui').classList.remove('active');
+            state.replayMode = false;
+            showScreen('select-screen');
+        }
+
+        function playAgain() {
+            document.getElementById('victory-overlay').classList.remove('active');
+            document.getElementById('replay-ui').classList.remove('active');
+            state.replayMode = false;
+            startBattle();
+        }
+
+        // ==================== INITIALIZATION ====================
+        function init() {
+            state.allFighters = METADATA.data.map((data, idx) => {
+                const base = data.attributes.find(a => a.trait_type === 'Base')?.value || 'Unknown';
+                const baseStats = BASE_STATS[base] || BASE_STATS.default;
+                const role = determineRole(data.attributes);
+                const equipment = parseEquipment(data.attributes);
+                const stats = calculateStats(data.attributes, baseStats, role, equipment);
+                const attrsObj = {};
+                data.attributes.forEach(a => attrsObj[a.trait_type] = a.value);
+                const generatedName = generateFighterName(attrsObj, data.name);
+                return { id: idx, name: generatedName, originalName: data.name, base, attributes: data.attributes, stats, role, icon: baseStats.icon, equipment };
+            });
+            
+            state.selectedTeam = Array(TEAM_SIZE).fill(null);
+            
+            document.getElementById('fighter-count').textContent = `${state.allFighters.length}`;
+            renderFighterGrid();
+            renderTeamSlots();
+            state.allFighters.forEach(f => renderFighterImage(f));
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (!state.isRunning) return;
+                switch(e.key) {
+                    case ' ': e.preventDefault(); togglePause(); break;
+                    case '1': setSpeed(1); break;
+                    case '2': setSpeed(2); break;
+                    case '3': setSpeed(3); break;
+                    case 'Escape':
+                        if (state.inspectedFighter) {
+                            state.inspectedFighter = null;
+                            renderInspector(null);
+                            document.querySelectorAll('.fighter-token').forEach(el => el.classList.remove('inspected'));
+                        }
+                        break;
+                }
+            });
+        }
+
+        // ==================== START ====================
+        init();
+    </script>
+</body>
+</html>

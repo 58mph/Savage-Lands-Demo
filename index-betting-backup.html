@@ -1,0 +1,3260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savage Arena - AI Betting Pit</title>
+    <meta name="description" content="24/7 AI agent battles. Bet on outcomes. Verifiably fair.">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <style>
+        :root {
+            --black: #0a0a0a; --dark: #111111; --panel: #1a1a1a;
+            --red: #DC143C; --blood: #8B0000; --crimson: #CC0000;
+            --white: #ffffff; --gray: #888888; --dark-gray: #444444;
+            --gold: #FFD700; --green: #32CD32; --blue: #4169E1;
+            --purple: #8B008B; --orange: #FF8C00; --cyan: #00CED1;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cinzel', serif; background: var(--black); color: var(--white); min-height: 100vh; }
+        
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); border-bottom: 3px solid var(--blood); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 56px; }
+        .nav-brand { font-family: 'Press Start 2P', monospace; font-size: 11px; color: var(--red); letter-spacing: 2px; }
+        .nav-stats { display: flex; gap: 15px; }
+        .nav-stat { font-family: 'Press Start 2P', monospace; font-size: 9px; padding: 8px 12px; background: rgba(0,0,0,0.5); border: 2px solid var(--dark-gray); }
+        .nav-stat.gold { border-color: var(--gold); color: var(--gold); }
+        .nav-stat.green { border-color: var(--green); color: var(--green); }
+        .nav-stat.red { border-color: var(--red); color: var(--red); }
+        
+        body { padding-top: 88px; } /* 32px demo banner + 56px nav */
+        
+        /* BIG POPUP TEXT */
+        .big-popup {
+            position: absolute;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 20px;
+            color: var(--gold);
+            text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+            z-index: 200;
+            pointer-events: none;
+            animation: bigPopFloat 1s forwards;
+        }
+        .big-popup.crit { color: #FFD700; font-size: 24px; }
+        .big-popup.kill { color: #FF0000; font-size: 22px; }
+        .big-popup.ability { color: #00FFFF; font-size: 18px; }
+        .big-popup.heal { color: #44FF44; font-size: 18px; }
+        
+        @keyframes bigPopFloat {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            20% { transform: translate(-50%, -70%) scale(1.3); opacity: 1; }
+            100% { transform: translate(-50%, -120%) scale(1); opacity: 0; }
+        }
+        
+        /* PARTICLE EFFECTS */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 60;
+        }
+        .fire-particle {
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #FF6600 0%, #FF0000 50%, transparent 100%);
+            border-radius: 50%;
+            animation: fireFloat 0.8s forwards;
+        }
+        .poison-particle {
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #44FF88 0%, #008800 50%, transparent 100%);
+            border-radius: 50%;
+            animation: poisonFloat 1s forwards;
+        }
+        .heal-particle {
+            font-size: 12px;
+            animation: healFloat 0.8s forwards;
+        }
+        
+        @keyframes fireFloat {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-30px) scale(0.3); opacity: 0; }
+        }
+        @keyframes poisonFloat {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+            100% { transform: translate(var(--dx), var(--dy)) scale(0.5); opacity: 0; }
+        }
+        @keyframes healFloat {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-20px); opacity: 0; }
+        }
+        
+        /* SCREEN SHAKE */
+        .arena-view.shake {
+            animation: screenShake 0.3s;
+        }
+        @keyframes screenShake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-5px); }
+            40% { transform: translateX(5px); }
+            60% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
+        }
+        
+        /* PHASE ANNOUNCEMENTS */
+        .phase-announcement {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Press Start 2P', monospace;
+            font-size: 28px;
+            color: var(--gold);
+            text-shadow: 4px 4px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+            z-index: 500;
+            pointer-events: none;
+            text-align: center;
+            animation: phaseAnnounce 2s forwards;
+        }
+        .phase-announcement.betting { color: var(--gold); }
+        .phase-announcement.battle { color: var(--red); font-size: 32px; }
+        .phase-announcement.victory { color: var(--green); font-size: 36px; }
+        
+        @keyframes phaseAnnounce {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            15% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+            85% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+        }
+        
+        /* GRAVESTONES */
+        .gravestone {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            z-index: 4;
+            opacity: 0.7;
+            filter: drop-shadow(2px 2px 2px black);
+            animation: graveAppear 0.5s forwards;
+        }
+        @keyframes graveAppear {
+            0% { transform: translate(-50%, -50%) scale(0) rotate(-20deg); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.2) rotate(10deg); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 0.7; }
+        }
+        
+        /* MAIN LAYOUT */
+        .arena-layout { display: flex; min-height: calc(100vh - 56px); }
+        
+        /* LEFT SIDEBAR - Teams & Betting */
+        .sidebar { width: 340px; background: var(--panel); border-right: 2px solid var(--blood); display: flex; flex-direction: column; overflow-y: auto; }
+        .sidebar-header { padding: 18px; border-bottom: 2px solid var(--dark-gray); text-align: center; }
+        .sidebar-header h2 { font-family: 'Press Start 2P', monospace; font-size: 11px; margin-bottom: 6px; }
+        .sidebar-header .timer { font-family: 'Press Start 2P', monospace; font-size: 18px; color: var(--gold); }
+        .sidebar-header .status { font-family: 'Press Start 2P', monospace; font-size: 10px; padding: 5px 10px; margin-top: 10px; display: inline-block; }
+        .sidebar-header .status.betting { background: var(--gold); color: var(--black); }
+        .sidebar-header .status.live { background: var(--green); color: var(--black); animation: pulse 1s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+        
+        .teams-list { flex: 1; padding: 10px; }
+        
+        /* TEAM CARDS */
+        .team-card { background: var(--dark); border: 3px solid var(--dark-gray); margin-bottom: 12px; cursor: pointer; transition: all 0.2s; }
+        .team-card:hover { border-color: var(--gray); }
+        .team-card.selected { border-color: var(--gold); box-shadow: 0 0 15px rgba(255,215,0,0.3); }
+        .team-card.winner { border-color: var(--green); background: rgba(50,205,50,0.1); }
+        .team-card.eliminated { opacity: 0.4; }
+        .team-card-header { padding: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--dark-gray); }
+        .team-card-name { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .team-card-color { width: 14px; height: 14px; border-radius: 50%; }
+        .team-card-odds { font-family: 'Press Start 2P', monospace; font-size: 13px; color: var(--gold); }
+        .team-card-fighters { padding: 10px 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+        .team-fighter { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--dark-gray); overflow: hidden; cursor: pointer; transition: all 0.2s; position: relative; }
+        .team-fighter:hover { border-color: var(--gold); transform: scale(1.1); z-index: 10; }
+        .team-fighter img { width: 100%; height: 100%; object-fit: cover; }
+        .team-fighter.dead { opacity: 0.3; filter: grayscale(1); }
+        .team-fighter.inspected { border-color: var(--gold); box-shadow: 0 0 10px var(--gold); }
+        .team-card-stats { padding: 8px 12px; font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--gray); display: flex; justify-content: space-between; }
+        
+        /* WAGER SECTION */
+        .wager-section { padding: 10px; border-top: 2px solid var(--blood); background: rgba(0,0,0,0.3); }
+        .wager-section h3 { font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--gray); margin-bottom: 10px; }
+        .wager-presets { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
+        .wager-preset { padding: 6px 10px; background: var(--dark); border: 2px solid var(--dark-gray); color: var(--white); font-family: 'Press Start 2P', monospace; font-size: 7px; cursor: pointer; }
+        .wager-preset:hover { border-color: var(--gold); }
+        .wager-input { width: 100%; padding: 10px; background: var(--dark); border: 2px solid var(--dark-gray); color: var(--gold); font-family: 'Press Start 2P', monospace; font-size: 10px; text-align: right; margin-bottom: 8px; }
+        .wager-input:focus { border-color: var(--gold); outline: none; }
+        .potential-payout { font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--green); text-align: center; margin-bottom: 10px; min-height: 20px; }
+        .place-bet-btn { width: 100%; padding: 12px; font-family: 'Press Start 2P', monospace; font-size: 9px; background: linear-gradient(180deg, #2a2510 0%, #1a1508 100%); border: 3px solid var(--gold); color: var(--gold); cursor: pointer; }
+        .place-bet-btn:hover:not(:disabled) { background: linear-gradient(180deg, #3a3520 0%, #2a2510 100%); }
+        .place-bet-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        /* BET TYPE TABS */
+        .bet-tabs { display: flex; gap: 2px; margin-bottom: 8px; flex-wrap: wrap; }
+        .bet-tab { flex: 1; min-width: 60px; padding: 6px 4px; background: var(--dark); border: 2px solid var(--dark-gray); color: var(--gray); font-family: 'Press Start 2P', monospace; font-size: 6px; cursor: pointer; text-align: center; }
+        .bet-tab:hover { border-color: var(--gray); color: var(--white); }
+        .bet-tab.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.1); }
+        
+        /* BET SLIP */
+        .bet-slip { background: var(--dark); border: 2px solid var(--dark-gray); margin-bottom: 8px; max-height: 120px; overflow-y: auto; }
+        .bet-slip-header { padding: 6px 8px; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--dark-gray); font-family: 'Press Start 2P', monospace; font-size: 7px; color: var(--gold); display: flex; justify-content: space-between; }
+        .bet-slip-item { padding: 6px 8px; border-bottom: 1px solid #222; font-family: 'Press Start 2P', monospace; font-size: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .bet-slip-item:last-child { border-bottom: none; }
+        .bet-slip-remove { color: var(--red); cursor: pointer; padding: 2px 6px; }
+        .bet-slip-remove:hover { background: rgba(220,20,60,0.2); }
+        .bet-slip-empty { padding: 15px; text-align: center; color: var(--dark-gray); font-family: 'Press Start 2P', monospace; font-size: 6px; }
+        
+        /* PROP BETS */
+        .prop-bet { display: flex; gap: 5px; margin-bottom: 5px; }
+        .prop-btn { flex: 1; padding: 8px 4px; background: var(--dark); border: 2px solid var(--dark-gray); color: var(--gray); font-family: 'Press Start 2P', monospace; font-size: 6px; cursor: pointer; text-align: center; }
+        .prop-btn:hover { border-color: var(--gray); }
+        .prop-btn.selected { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.1); }
+        .prop-line { text-align: center; font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--white); padding: 5px; }
+        
+        /* CENTER - ARENA */
+        .arena-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .arena-header { padding: 10px 20px; background: var(--panel); border-bottom: 2px solid var(--blood); display: flex; justify-content: space-between; align-items: center; }
+        .arena-title { font-family: 'Press Start 2P', monospace; font-size: 13px; }
+        .arena-controls { display: flex; gap: 5px; }
+        .speed-btn { padding: 6px 10px; background: var(--dark); border: 2px solid var(--dark-gray); color: var(--gray); font-family: 'Press Start 2P', monospace; font-size: 7px; cursor: pointer; }
+        .speed-btn:hover, .speed-btn.active { border-color: var(--gold); color: var(--white); }
+        
+        .arena-view { flex: 1; position: relative; background: radial-gradient(ellipse at 50% 50%, #1a0a0a 0%, #050505 100%); min-height: 400px; overflow: hidden; }
+        .arena-floor { position: absolute; inset: 3%; background: linear-gradient(145deg, #1a1010 0%, #0a0505 100%); border: 3px solid var(--blood); box-shadow: inset 0 0 100px rgba(0,0,0,0.9), 0 0 50px rgba(139,0,0,0.3); }
+        
+        /* FIGHTERS IN ARENA - SCALED UP */
+        .fighter-token { position: absolute; width: 75px; height: 75px; transform: translate(-50%, -50%); z-index: 10; transition: left 0.5s ease-out, top 0.5s ease-out; cursor: pointer; }
+        .fighter-inner { width: 100%; height: 100%; border-radius: 50%; border: 3px solid; overflow: hidden; background: var(--dark); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .fighter-gear { position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); display: flex; gap: 3px; font-size: 12px; white-space: nowrap; }
+        .fighter-gear span { filter: drop-shadow(1px 1px 1px black); }
+        .fighter-role-icon { position: absolute; top: -10px; right: -10px; font-size: 16px; filter: drop-shadow(1px 1px 2px black); }
+        .fighter-inner img { width: 100%; height: 100%; object-fit: cover; }
+        .fighter-token.dead { opacity: 0.2; pointer-events: none; }
+        .fighter-token.dead .fighter-inner { filter: grayscale(1); }
+        .fighter-token:hover .fighter-inner { box-shadow: 0 0 15px var(--gold); }
+        .fighter-hp { position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 55px; height: 5px; background: #222; border: 1px solid #000; }
+        .fighter-hp-fill { height: 100%; transition: width 0.2s; }
+        .fighter-label { position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); font-family: 'Press Start 2P', monospace; font-size: 6px; color: white; text-shadow: 1px 1px 2px black; white-space: nowrap; }
+        
+        .damage-popup { position: absolute; font-family: 'Press Start 2P', monospace; font-size: 13px; pointer-events: none; animation: dmgFloat 0.7s forwards; z-index: 100; text-shadow: 2px 2px 0 black; }
+        .damage-popup.damage { color: var(--crimson); }
+        .damage-popup.crit { color: var(--gold); font-size: 17px; }
+        @keyframes dmgFloat { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-25px); } }
+        
+        @keyframes attackFade { 0% { opacity: 0.9; } 100% { opacity: 0; } }
+        .attack-line { box-shadow: 0 0 5px currentColor; }
+        
+        /* Magic projectile animation */
+        @keyframes projectileFly {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0.5); opacity: 0.3; }
+        }
+        
+        /* Impact pulse */
+        @keyframes impactPulse {
+            0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+        
+        /* Holy beam fade */
+        @keyframes beamFade {
+            0% { opacity: 1; filter: brightness(1.5); }
+            100% { opacity: 0; filter: brightness(0.5); }
+        }
+        
+        /* Melee slash pop */
+        @keyframes slashPop {
+            0% { transform: translate(-50%, -50%) scale(0.5) rotate(-15deg); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.2) rotate(15deg); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(0.8) rotate(0deg); opacity: 0; }
+        }
+        
+        /* Death effect */
+        @keyframes deathPop {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            30% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+            100% { transform: translate(-50%, -80%) scale(0.8); opacity: 0; }
+        }
+        
+        /* Battle Log Panel - SCALED UP */
+        .battle-log-panel {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 380px;
+            max-height: 260px;
+            background: rgba(0,0,0,0.92);
+            border: 2px solid var(--blood);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(139,0,0,0.4);
+        }
+        .battle-log-header {
+            padding: 10px 14px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 11px;
+            color: var(--red);
+            background: rgba(139,0,0,0.4);
+            border-bottom: 2px solid var(--blood);
+        }
+        .battle-log {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .battle-log-entry {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            padding: 8px 10px;
+            margin-bottom: 5px;
+            border-left: 4px solid #888;
+            background: rgba(0,0,0,0.6);
+            animation: logSlide 0.2s;
+            line-height: 1.5;
+        }
+        .battle-log-entry.crit {
+            color: var(--gold);
+            background: rgba(255,215,0,0.15);
+            font-size: 11px;
+        }
+        .battle-log-entry.eliminate {
+            color: var(--red);
+            background: rgba(220,20,60,0.25);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .battle-log-entry.retreat {
+            color: #aaa;
+            font-style: italic;
+        }
+        .battle-log-entry.gear {
+            color: var(--cyan);
+            background: rgba(0,206,209,0.1);
+        }
+        @keyframes logSlide {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Fighter wounded glow */
+        .fighter-token.wounded .fighter-inner {
+            animation: woundPulse 1s infinite;
+        }
+        @keyframes woundPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(255,0,0,0.3); }
+            50% { box-shadow: 0 0 15px rgba(255,0,0,0.6); }
+        }
+        
+        /* Fighter critical glow */
+        .fighter-token.critical .fighter-inner {
+            animation: criticalPulse 0.5s infinite;
+        }
+        @keyframes criticalPulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(255,0,0,0.5); filter: brightness(1); }
+            50% { box-shadow: 0 0 20px rgba(255,0,0,0.8); filter: brightness(0.7); }
+        }
+        
+        @keyframes trapPop {
+            0% { transform: translate(-50%,-50%) scale(0.5); opacity: 1; }
+            50% { transform: translate(-50%,-50%) scale(1.5); opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(1); opacity: 0; }
+        }
+        
+        @keyframes rollSpin {
+            0% { transform: translate(-50%,-50%) scale(1) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(1.5) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes aoeExpand {
+            0% { transform: translate(-50%,-50%) scale(0.3); opacity: 1; }
+            50% { transform: translate(-50%,-50%) scale(1.2); opacity: 0.8; }
+            100% { transform: translate(-50%,-50%) scale(1); opacity: 0; }
+        }
+        
+        /* DoT/HoT status indicators */
+        .fighter-token.burning::before {
+            content: '🔥';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            animation: burnFlicker 0.3s infinite;
+        }
+        .fighter-token.poisoned::before {
+            content: '☠️';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+        }
+        .fighter-token.blessed::after {
+            content: '✨';
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            font-size: 10px;
+            animation: blessGlow 0.5s infinite;
+        }
+        @keyframes burnFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes blessGlow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .fighter-token.slowed .fighter-inner {
+            filter: hue-rotate(270deg) saturate(0.5);
+        }
+        .fighter-token.slowed::before {
+            content: '🐌';
+            position: absolute;
+            top: -8px;
+            left: 30%;
+            font-size: 10px;
+        }
+        
+        /* Stealth effect */
+        .fighter-token.stealthed .fighter-inner {
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .fighter-token.stealthed::after {
+            content: '👁️‍🗨️';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 12px;
+        }
+        
+        /* Charging effect */
+        .fighter-token.charging .fighter-inner {
+            animation: chargePulse 0.2s infinite;
+        }
+        @keyframes chargePulse {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.5); }
+        }
+        
+        /* Casting effect */
+        .fighter-token.casting .fighter-inner {
+            animation: castGlow 0.4s infinite;
+            box-shadow: 0 0 15px #8844FF;
+        }
+        .fighter-token.casting::after {
+            content: '✨';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            animation: castSpin 0.5s linear infinite;
+        }
+        @keyframes castGlow {
+            0%, 100% { filter: brightness(1) hue-rotate(0deg); }
+            50% { filter: brightness(1.3) hue-rotate(20deg); }
+        }
+        @keyframes castSpin {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+        
+        /* MVP Bar */
+        .mvp-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(20,20,30,0.95) 100%);
+            border-top: 2px solid var(--gold);
+        }
+        .mvp-box {
+            background: rgba(0,0,0,0.6);
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 12px 20px;
+            text-align: center;
+            min-width: 150px;
+            transition: all 0.3s;
+        }
+        .mvp-box:hover {
+            transform: scale(1.05);
+            border-color: var(--gold);
+        }
+        .mvp-damage { border-color: #FF4444; }
+        .mvp-healing { border-color: #44FF44; }
+        .mvp-overall { border-color: var(--gold); background: rgba(255,215,0,0.1); }
+        .mvp-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .mvp-portrait {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            overflow: hidden;
+            border: 2px solid #666;
+        }
+        .mvp-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .mvp-name {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .mvp-value {
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .mvp-damage .mvp-value { color: #FF4444; }
+        .mvp-healing .mvp-value { color: #44FF44; }
+        .mvp-overall .mvp-value { color: var(--gold); }
+        
+        /* Lightning Effect */
+        .lightning-bolt {
+            position: absolute;
+            pointer-events: none;
+            z-index: 50;
+        }
+        .lightning-bolt svg {
+            filter: drop-shadow(0 0 10px #4488FF);
+        }
+        
+        /* Poison Cloud Effect */
+        .poison-cloud-particle {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(68,255,136,0.6) 0%, transparent 70%);
+            animation: poisonFloat 1.5s ease-out forwards;
+        }
+        @keyframes poisonFloat {
+            0% { transform: translate(-50%,-50%) scale(0.5); opacity: 0.8; }
+            100% { transform: translate(-50%,-50%) scale(2) translateY(-30px); opacity: 0; }
+        }
+        
+        @keyframes fireExplode {
+            0% { transform: translate(-50%,-50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.2); opacity: 0; }
+        }
+        
+        @keyframes flashPop {
+            0% { transform: translate(-50%,-50%) scale(0.3); opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; }
+        }
+        
+        @keyframes skullPop {
+            0% { transform: translate(-50%,-50%) scale(0.5); opacity: 1; }
+            50% { transform: translate(-50%,-50%) scale(1.3); opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(0.8) translateY(-20px); opacity: 0; }
+        }
+        
+        @keyframes lightningFlash {
+            0% { opacity: 1; filter: brightness(2); }
+            50% { opacity: 1; filter: brightness(1); }
+            100% { opacity: 0; }
+        }
+        
+        /* Lightning gear aura */
+        .fighter-token.has-lightning .fighter-inner {
+            box-shadow: 0 0 8px #88DDFF, 0 0 16px rgba(136,221,255,0.5);
+        }
+        .fighter-token.has-lightning::before {
+            content: '⚡';
+            position: absolute;
+            top: -8px;
+            right: -5px;
+            font-size: 10px;
+            animation: lightningCrackle 0.3s infinite;
+            z-index: 10;
+        }
+        @keyframes lightningCrackle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+        }
+        
+        /* Spell Projectiles */
+        @keyframes projectilePulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.3); }
+        }
+        .spell-projectile {
+            transition: left 0.1s linear, top 0.1s linear;
+        }
+        
+        /* Inspector Abilities */
+        .inspector-ability {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 8px;
+            margin-bottom: 6px;
+            transition: all 0.2s;
+        }
+        .inspector-ability.ready { border-color: var(--green); }
+        .inspector-ability.on-cooldown { opacity: 0.6; border-color: #666; }
+        .inspector-ability.active {
+            border-color: var(--gold);
+            background: rgba(255,215,0,0.2);
+            animation: abilityFlash 0.3s ease-in-out;
+        }
+        @keyframes abilityFlash {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px var(--gold); }
+        }
+        .inspector-ability-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .inspector-ability-name {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 9px;
+            color: var(--gold);
+        }
+        .inspector-ability-cd {
+            font-size: 10px;
+            color: #888;
+        }
+        .inspector-ability-cd.ready { color: var(--green); }
+        .inspector-ability-desc {
+            font-size: 10px;
+            color: #aaa;
+        }
+        
+        /* Status Effects */
+        .inspector-status-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .inspector-status {
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-family: 'Press Start 2P', monospace;
+        }
+        .inspector-status.buff { background: rgba(50,205,50,0.3); border: 1px solid var(--green); color: var(--green); }
+        .inspector-status.debuff { background: rgba(220,20,60,0.3); border: 1px solid var(--red); color: var(--red); }
+        .inspector-status.neutral { background: rgba(100,100,100,0.3); border: 1px solid #888; color: #aaa; }
+        
+        /* AI State */
+        .inspector-ai-state {
+            background: rgba(0,0,0,0.5);
+            border: 2px solid;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .inspector-ai-state.engaging { border-color: #FF4444; background: rgba(255,68,68,0.15); }
+        .inspector-ai-state.casting { border-color: #8844FF; background: rgba(136,68,255,0.15); }
+        .inspector-ai-state.healing { border-color: #44FF44; background: rgba(68,255,68,0.15); }
+        .inspector-ai-state.retreating { border-color: #FFAA00; background: rgba(255,170,0,0.15); }
+        .inspector-ai-state.stealthed { border-color: #AA44AA; background: rgba(170,68,170,0.15); }
+        .inspector-ai-state.blocking { border-color: #4488FF; background: rgba(68,136,255,0.15); }
+        .inspector-ai-state.dead { border-color: #666; background: rgba(100,100,100,0.15); }
+        .inspector-ai-label {
+            font-size: 8px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .inspector-ai-value {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 11px;
+        }
+        
+        /* Arena pillars */
+        .arena-pillar {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #444 0%, #222 70%, #111 100%);
+            border: 2px solid #555;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 -5px 10px rgba(0,0,0,0.5);
+            z-index: 5;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Arena traps */
+        .arena-trap {
+            position: absolute;
+            border-radius: 8px;
+            background: repeating-linear-gradient(45deg, #331111, #331111 5px, #220808 5px, #220808 10px);
+            border: 2px solid #551111;
+            z-index: 3;
+            transform: translate(-50%, -50%);
+        }
+        .arena-trap.active {
+            background: repeating-linear-gradient(45deg, #661111, #661111 5px, #440808 5px, #440808 10px);
+            border-color: #FF4400;
+            box-shadow: 0 0 15px rgba(255,68,0,0.5);
+        }
+        
+        /* Shield indicator */
+        .fighter-shield {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            border: 3px solid #4488FF;
+            border-radius: 0 0 50% 50%;
+            background: rgba(68,136,255,0.2);
+            transform-origin: center bottom;
+            z-index: 8;
+            pointer-events: none;
+        }
+        
+        .battle-log-entry.trap {
+            color: #FF6600;
+            background: rgba(255,102,0,0.15);
+        }
+        .battle-log-entry.block {
+            color: #4488FF;
+            background: rgba(68,136,255,0.15);
+        }
+        .battle-log-entry.friendly {
+            color: #FF8800;
+            background: rgba(255,136,0,0.15);
+        }
+        .battle-log-entry.ability {
+            color: #AA44FF;
+            background: rgba(170,68,255,0.15);
+        }
+        .battle-log-entry.heal {
+            color: #44FF44;
+            background: rgba(68,255,68,0.15);
+        }
+        
+        .kill-feed { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; z-index: 50; max-width: 220px; }
+        .kill-entry { background: rgba(0,0,0,0.85); padding: 6px 10px; font-family: 'Press Start 2P', monospace; font-size: 8px; border-left: 4px solid var(--crimson); animation: killSlide 0.3s; }
+        @keyframes killSlide { from { transform: translateX(100%); opacity: 0; } }
+        
+        /* RIGHT SIDEBAR - Fighter Inspector */
+        .inspector { width: 280px; background: var(--panel); border-left: 2px solid var(--blood); display: flex; flex-direction: column; }
+        .inspector-header { padding: 15px; border-bottom: 2px solid var(--dark-gray); }
+        .inspector-header h2 { font-family: 'Press Start 2P', monospace; font-size: 9px; }
+        .inspector-content { flex: 1; padding: 15px; overflow-y: auto; }
+        .inspector-empty { text-align: center; padding: 40px 20px; color: var(--dark-gray); }
+        .inspector-empty-icon { font-size: 48px; margin-bottom: 15px; }
+        .inspector-portrait { width: 80px; height: 80px; margin: 0 auto 15px; border-radius: 50%; border: 3px solid var(--gold); overflow: hidden; }
+        .inspector-portrait img { width: 100%; height: 100%; object-fit: cover; }
+        .inspector-name { font-family: 'Cinzel', serif; font-size: 14px; text-align: center; margin-bottom: 5px; }
+        .inspector-role { font-family: 'Press Start 2P', monospace; font-size: 8px; text-align: center; color: var(--gray); margin-bottom: 15px; }
+        .inspector-team { font-family: 'Press Start 2P', monospace; font-size: 7px; text-align: center; padding: 4px 10px; margin-bottom: 15px; display: inline-block; width: 100%; }
+        .inspector-section { margin-bottom: 15px; }
+        .inspector-section-title { font-family: 'Press Start 2P', monospace; font-size: 7px; color: var(--red); margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid var(--dark-gray); }
+        .inspector-stat { display: flex; justify-content: space-between; padding: 4px 0; font-size: 10px; border-bottom: 1px solid #1a1a1a; }
+        .inspector-stat-label { color: var(--gray); }
+        .inspector-stat-value { font-family: monospace; }
+        .inspector-stat-bar { height: 6px; background: var(--dark-gray); margin-top: 2px; }
+        .inspector-stat-fill { height: 100%; }
+        .inspector-gear { font-size: 9px; color: var(--gray); padding: 3px 0; }
+        .inspector-gear-slot { color: var(--dark-gray); min-width: 60px; display: inline-block; }
+        .inspector-gear-item { color: var(--white); }
+        .inspector-abilities { display: flex; flex-wrap: wrap; gap: 4px; }
+        .inspector-ability { font-family: 'Press Start 2P', monospace; font-size: 6px; padding: 4px 6px; background: rgba(0,0,0,0.3); border: 1px solid var(--dark-gray); }
+        
+        /* FAIRNESS */
+        .fairness-box { padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--dark-gray); margin-top: 15px; }
+        .fairness-box h4 { font-family: 'Press Start 2P', monospace; font-size: 6px; color: var(--green); margin-bottom: 5px; }
+        .fairness-box code { font-size: 7px; color: var(--gray); word-break: break-all; display: block; }
+        
+        /* HOUSE EDGE INFO */
+        .house-info { position: fixed; bottom: 10px; left: 10px; background: rgba(0,0,0,0.8); border: 1px solid var(--dark-gray); padding: 8px 12px; font-family: 'Press Start 2P', monospace; font-size: 7px; z-index: 100; }
+        .house-info span { color: var(--gold); }
+        
+        /* RESULT OVERLAY */
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; flex-direction: column; z-index: 2000; }
+        .overlay.active { display: flex; }
+        .result-title { font-family: 'Press Start 2P', monospace; font-size: 36px; margin-bottom: 15px; animation: resultPulse 1.5s infinite; }
+        @keyframes resultPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .result-title.win { color: var(--gold); text-shadow: 0 0 40px rgba(255,215,0,0.6); }
+        .result-title.lose { color: var(--red); text-shadow: 0 0 40px rgba(220,20,60,0.6); }
+        .result-title.nobet { color: var(--gray); }
+        .result-winner { font-family: 'Press Start 2P', monospace; font-size: 14px; margin-bottom: 10px; }
+        .result-payout { font-family: 'Press Start 2P', monospace; font-size: 20px; margin-bottom: 25px; }
+        .result-payout.win { color: var(--green); }
+        .result-payout.lose { color: var(--red); }
+        .result-next { font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gray); margin-bottom: 20px; }
+        .btn { font-family: 'Press Start 2P', monospace; padding: 15px 30px; background: linear-gradient(180deg, var(--red) 0%, var(--blood) 100%); border: 3px solid var(--red); color: var(--white); font-size: 10px; cursor: pointer; }
+        .btn:hover { transform: translateY(-2px); }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .inspector { display: none; }
+        }
+        @media (max-width: 900px) {
+            .arena-layout { flex-direction: column; }
+            .sidebar { width: 100%; max-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- DEMO MODE BANNER -->
+    <div style="background: linear-gradient(90deg, #FF8C00, #FFD700); color: black; text-align: center; padding: 8px; font-family: 'Press Start 2P', monospace; font-size: 10px; position: fixed; top: 0; left: 0; right: 0; z-index: 10000;">
+        🎮 DEMO MODE - Test with free tokens! Real betting coming soon. 
+        <a href="/api" style="color: #8B0000; margin-left: 10px;">API Docs →</a>
+    </div>
+    
+    <nav class="nav" style="top: 32px;">
+        <div class="nav-brand">⚔️ SAVAGE ARENA</div>
+        <div class="nav-stats">
+            <div class="nav-stat gold">💰 <span id="nav-balance">1000.00</span></div>
+            <div class="nav-stat green">W: <span id="nav-wins">0</span></div>
+            <div class="nav-stat red">L: <span id="nav-losses">0</span></div>
+        </div>
+    </nav>
+
+    <div class="arena-layout">
+        <!-- LEFT: Teams & Betting -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🎰 MATCH #<span id="match-num">001</span></h2>
+                <div class="timer" id="main-timer">1:00</div>
+                <div class="status betting" id="match-status">BETTING OPEN</div>
+            </div>
+            <div class="teams-list" id="teams-list"></div>
+            <div class="wager-section">
+                <h3>🎰 BET SLIP</h3>
+                
+                <!-- Bet Type Tabs -->
+                <div class="bet-tabs">
+                    <button class="bet-tab active" onclick="setBetType('winner')" id="tab-winner">🏆 WIN</button>
+                    <button class="bet-tab" onclick="setBetType('top2')" id="tab-top2">🥈 TOP 2</button>
+                    <button class="bet-tab" onclick="setBetType('top3')" id="tab-top3">🥉 TOP 3</button>
+                    <button class="bet-tab" onclick="setBetType('firstBlood')" id="tab-firstBlood">🩸 1ST BLOOD</button>
+                    <button class="bet-tab" onclick="setBetType('props')" id="tab-props">📊 PROPS</button>
+                </div>
+                
+                <!-- Props Panel (hidden by default) -->
+                <div id="props-panel" style="display: none; margin-bottom: 8px;">
+                    <div class="prop-line">TOTAL KILLS: <span id="kills-line">12</span></div>
+                    <div class="prop-bet">
+                        <button class="prop-btn" onclick="addPropBet('killsOver')" id="btn-killsOver">OVER <span id="kills-over-odds">1.90</span>x</button>
+                        <button class="prop-btn" onclick="addPropBet('killsUnder')" id="btn-killsUnder">UNDER <span id="kills-under-odds">1.90</span>x</button>
+                    </div>
+                    <div class="prop-line">MATCH TIME: <span id="duration-line">2:00</span></div>
+                    <div class="prop-bet">
+                        <button class="prop-btn" onclick="addPropBet('durationOver')" id="btn-durationOver">OVER <span id="dur-over-odds">1.85</span>x</button>
+                        <button class="prop-btn" onclick="addPropBet('durationUnder')" id="btn-durationUnder">UNDER <span id="dur-under-odds">1.95</span>x</button>
+                    </div>
+                </div>
+                
+                <!-- Bet Slip -->
+                <div class="bet-slip" id="bet-slip">
+                    <div class="bet-slip-header">
+                        <span>YOUR BETS</span>
+                        <span id="slip-count">0</span>
+                    </div>
+                    <div id="bet-slip-items">
+                        <div class="bet-slip-empty">Click a team to add bets</div>
+                    </div>
+                </div>
+                
+                <!-- Wager Input -->
+                <div class="wager-presets">
+                    <button class="wager-preset" onclick="setWager(10)">10</button>
+                    <button class="wager-preset" onclick="setWager(25)">25</button>
+                    <button class="wager-preset" onclick="setWager(50)">50</button>
+                    <button class="wager-preset" onclick="setWager(100)">100</button>
+                    <button class="wager-preset" onclick="setWager('max')">MAX</button>
+                </div>
+                <input type="number" class="wager-input" id="wager-input" value="10" oninput="updatePotential()">
+                <div class="potential-payout" id="potential-payout">Total potential: --</div>
+                <button class="place-bet-btn" id="bet-btn" onclick="placeAllBets()" disabled>ADD A BET FIRST</button>
+            </div>
+        </div>
+
+        <!-- CENTER: Arena -->
+        <div class="arena-main">
+            <div class="arena-header">
+                <div class="arena-title">🏟️ BATTLE ROYALE - <span id="teams-remaining">4</span> TEAMS</div>
+                <div class="arena-controls">
+                    <span style="font-family: 'Press Start 2P', monospace; font-size: 8px; color: var(--gray);">🌍 LIVE</span>
+                </div>
+            </div>
+            <div class="arena-view" id="arena-view">
+                <div class="arena-floor"></div>
+                <!-- Pillars -->
+                <div class="arena-pillar" style="left:25%;top:30%;width:40px;height:40px;"></div>
+                <div class="arena-pillar" style="left:75%;top:30%;width:40px;height:40px;"></div>
+                <div class="arena-pillar" style="left:25%;top:70%;width:40px;height:40px;"></div>
+                <div class="arena-pillar" style="left:75%;top:70%;width:40px;height:40px;"></div>
+                <div class="arena-pillar" style="left:50%;top:50%;width:50px;height:50px;"></div>
+                <!-- Traps -->
+                <div class="arena-trap" id="trap-0" style="left:35%;top:20%;width:50px;height:50px;"></div>
+                <div class="arena-trap" id="trap-1" style="left:65%;top:20%;width:50px;height:50px;"></div>
+                <div class="arena-trap" id="trap-2" style="left:35%;top:80%;width:50px;height:50px;"></div>
+                <div class="arena-trap" id="trap-3" style="left:65%;top:80%;width:50px;height:50px;"></div>
+                <div id="fighters-container"></div>
+                <div class="kill-feed" id="kill-feed"></div>
+                <div class="battle-log-panel">
+                    <div class="battle-log-header">⚔️ BATTLE LOG</div>
+                    <div class="battle-log" id="battle-log"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Fighter Inspector -->
+        <div class="inspector">
+            <div class="inspector-header">
+                <h2>🔍 FIGHTER INFO</h2>
+            </div>
+            <div class="inspector-content" id="inspector-content">
+                <div class="inspector-empty">
+                    <div class="inspector-empty-icon">👆</div>
+                    <div>Click a fighter to inspect</div>
+                </div>
+            </div>
+            <div class="fairness-box">
+                <h4>🔒 VERIFIABLE SEED</h4>
+                <code id="match-seed">Loading...</code>
+            </div>
+        </div>
+    </div>
+
+    <div class="house-info">
+        <span>KING'S TAX: <span>8%</span> built into odds</span>
+        <button id="music-btn" onclick="toggleMusic()" style="margin-left:20px;padding:5px 15px;background:#222;border:1px solid var(--gold);color:var(--gold);cursor:pointer;font-family:'Press Start 2P',monospace;font-size:8px;">🔇 MUSIC OFF</button>
+    </div>
+    
+    <!-- MVP Boxes -->
+    <div class="mvp-bar" id="mvp-bar" style="display: none;">
+        <div class="mvp-box mvp-damage">
+            <div class="mvp-title">⚔️ DAMAGE MVP</div>
+            <div class="mvp-portrait" id="mvp-damage-portrait"></div>
+            <div class="mvp-name" id="mvp-damage-name">-</div>
+            <div class="mvp-value" id="mvp-damage-value">0 DMG</div>
+        </div>
+        <div class="mvp-box mvp-healing">
+            <div class="mvp-title">💚 HEALING MVP</div>
+            <div class="mvp-portrait" id="mvp-healing-portrait"></div>
+            <div class="mvp-name" id="mvp-healing-name">-</div>
+            <div class="mvp-value" id="mvp-healing-value">0 HEAL</div>
+        </div>
+        <div class="mvp-box mvp-overall">
+            <div class="mvp-title">👑 MATCH MVP</div>
+            <div class="mvp-portrait" id="mvp-overall-portrait"></div>
+            <div class="mvp-name" id="mvp-overall-name">-</div>
+            <div class="mvp-value" id="mvp-overall-value">-</div>
+        </div>
+    </div>
+
+    <!-- Result Overlay -->
+    <div class="overlay" id="result-overlay">
+        <div class="result-title" id="result-title">VICTORY!</div>
+        <div class="result-winner" id="result-winner">Crimson Horde Wins!</div>
+        <div class="result-payout" id="result-payout">+185.00</div>
+        <div class="result-next" id="result-next">Next match in 5s...</div>
+        <button class="btn" onclick="skipToNext()">SKIP →</button>
+    </div>
+
+    <script>
+        // ============ CONFIG ============
+        const IPFS = 'https://gateway.pinata.cloud/ipfs/bafybeigidp6pel576xbmcdns5epgq5ivhkmss7vijfqvjztz2j7s5shdoa';
+        const TEAM_SIZE = 5; // 5 fighters per team (more tactical depth)
+        const NUM_TEAMS = 4; // 4 teams battle royale (corners)
+        const MATCH_TIME = 180000; // 3 minutes max
+        const BET_WINDOW = 15000; // 15 seconds for testing (increase for production)
+        const RESULT_DELAY = 5000; // 5 seconds between matches
+        const HOUSE_EDGE = 0.08; // 8% house edge built into odds
+        
+        // ============ SEEDED RNG ============
+        class RNG {
+            constructor(s) { this.s = this.hash(String(s)); }
+            hash(str) { let h = 0; for (let i = 0; i < str.length; i++) h = ((h << 5) - h) + str.charCodeAt(i) & 0x7fffffff; return h || 1; }
+            next() { this.s = (this.s * 1103515245 + 12345) & 0x7fffffff; return this.s / 0x7fffffff; }
+            int(a, b) { return Math.floor(this.next() * (b - a + 1)) + a; }
+            shuffle(arr) { const r = [...arr]; for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(this.next() * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; } return r; }
+        }
+        
+        // ============ FIGHTERS DATABASE ============
+        const FIGHTERS = [
+            { id: 1, name: "Crocus III", hp: 380, atk: 22, def: 14, spd: 0.9, role: "Tank", gear: { weapon: "Steel Longsword", armor: "Plate Mail", shield: "Tower Shield" } },
+            { id: 2, name: "Frostfang", hp: 290, atk: 28, def: 8, spd: 1.1, role: "Berserker", gear: { weapon: "Frost Axe", armor: "Fur Cloak" } },
+            { id: 3, name: "Flamekeeper", hp: 250, atk: 24, def: 10, spd: 0.85, role: "Mage", gear: { weapon: "Fire Staff", armor: "Wizard Robes", offhand: "Tome of Fire" } },
+            { id: 4, name: "Destroyer", hp: 340, atk: 25, def: 12, spd: 1.0, role: "Berserker", gear: { weapon: "War Hammer", armor: "Spiked Plate" } },
+            { id: 5, name: "Venomous", hp: 320, atk: 26, def: 11, spd: 1.25, role: "Rogue", gear: { weapon: "Poison Dagger", armor: "Shadow Cloak" } },
+            { id: 6, name: "Torch", hp: 260, atk: 30, def: 6, spd: 1.2, role: "Mage", gear: { weapon: "Flame Staff", armor: "Fire Robes" } },
+            { id: 7, name: "Duelist", hp: 350, atk: 23, def: 13, spd: 0.9, role: "Tank", gear: { weapon: "Crackling Rapier", armor: "Chain Mail", shield: "Buckler" } },
+            { id: 8, name: "Grimclaw", hp: 420, atk: 24, def: 14, spd: 0.8, role: "Tank", gear: { weapon: "Battle Axe", armor: "Bear Hide", shield: "Wooden Shield" } },
+            { id: 9, name: "Ashwalker", hp: 280, atk: 26, def: 9, spd: 1.2, role: "Berserker", gear: { weapon: "Volcanic Sword", armor: "Charred Plate" } },
+            { id: 10, name: "Dreadfroth", hp: 240, atk: 32, def: 5, spd: 1.25, role: "Rogue", gear: { weapon: "Assassin Blade", armor: "Shadow Leather" } },
+            { id: 11, name: "Shadowmere", hp: 260, atk: 28, def: 7, spd: 1.15, role: "Rogue", gear: { weapon: "Shadow Dagger", armor: "Night Cloak" } },
+            { id: 12, name: "Ironscale", hp: 300, atk: 27, def: 10, spd: 1.1, role: "Berserker", gear: { weapon: "Serrated Blade", armor: "Scale Mail" } },
+            { id: 13, name: "Frostmage", hp: 280, atk: 22, def: 12, spd: 0.75, role: "Mage", gear: { weapon: "Ice Staff", armor: "Frost Robes", offhand: "Crystal Orb" } },
+            { id: 14, name: "Minotaur", hp: 480, atk: 28, def: 10, spd: 0.9, role: "Tank", gear: { weapon: "Great Axe", armor: "Bronze Plate" } },
+            { id: 15, name: "Assassin", hp: 240, atk: 30, def: 6, spd: 1.3, role: "Rogue", gear: { weapon: "Twin Daggers", armor: "Assassin Garb" } },
+            { id: 16, name: "Ursa", hp: 450, atk: 22, def: 16, spd: 0.75, role: "Tank", gear: { weapon: "Maul", armor: "Plate Armor", shield: "Great Shield" } },
+            { id: 17, name: "Flamebear", hp: 400, atk: 26, def: 12, spd: 0.8, role: "Berserker", gear: { weapon: "Flaming Claws", armor: "Molten Hide" } },
+            { id: 18, name: "Champion", hp: 360, atk: 24, def: 13, spd: 0.85, role: "Tank", gear: { weapon: "Champion Sword", armor: "Royal Plate", shield: "Kite Shield" } },
+            { id: 19, name: "Shadowrat", hp: 220, atk: 34, def: 4, spd: 1.3, role: "Rogue", gear: { weapon: "Venom Blade", armor: "Rat Leather" } },
+            { id: 20, name: "Rotscale", hp: 300, atk: 27, def: 9, spd: 1.1, role: "Berserker", gear: { weapon: "Rot Axe", armor: "Decayed Plate" } },
+            { id: 21, name: "Voidcoon", hp: 280, atk: 24, def: 10, spd: 1.1, role: "Mage", gear: { weapon: "Void Staff", armor: "Shadow Robes" } },
+            { id: 22, name: "Paladin", hp: 380, atk: 24, def: 14, spd: 1.0, role: "Paladin", gear: { weapon: "Holy Sword", armor: "Blessed Plate", shield: "Holy Shield" } },
+            { id: 23, name: "Necro", hp: 250, atk: 26, def: 8, spd: 1.05, role: "Necromancer", gear: { weapon: "Bone Staff", armor: "Death Robes" } },
+            { id: 24, name: "Mindcroc", hp: 300, atk: 22, def: 12, spd: 0.8, role: "Controller", gear: { weapon: "Mind Staff", armor: "Psionic Robes" } },
+            { id: 25, name: "Priest", hp: 290, atk: 20, def: 10, spd: 1.1, role: "Cleric", gear: { weapon: "Holy Mace", armor: "Priest Robes" } },
+            { id: 26, name: "Cosmic", hp: 320, atk: 26, def: 12, spd: 1.1, role: "Mage", gear: { weapon: "Lightning Staff", armor: "Stormweave Robes" } },
+            { id: 27, name: "Raging Bull", hp: 500, atk: 30, def: 10, spd: 0.85, role: "Berserker", gear: { weapon: "Giant Axe", armor: "Bull Hide" } },
+            { id: 28, name: "Nightblade", hp: 200, atk: 38, def: 3, spd: 1.4, role: "Rogue", gear: { weapon: "Night Edge", armor: "Void Cloak" } },
+            { id: 29, name: "Serpent", hp: 310, atk: 26, def: 10, spd: 1.05, role: "Berserker", gear: { weapon: "Serpent Fang", armor: "Scale Armor" } },
+            { id: 30, name: "Bonelord", hp: 270, atk: 24, def: 9, spd: 1.0, role: "Necromancer", gear: { weapon: "Skull Staff", armor: "Bone Plate" } }
+        ];
+        
+        const TEAM_TEMPLATES = [
+            { name: "Crimson Horde", color: "#DC143C" },
+            { name: "Azure Arcanum", color: "#4169E1" },
+            { name: "Emerald Rangers", color: "#228B22" },
+            { name: "Shadow Guild", color: "#8B008B" }
+        ];
+        
+        // ============ STATE ============
+        let state = {
+            balance: 1000,
+            wins: 0,
+            losses: 0,
+            match: null,
+            selectedTeam: null,
+            wager: 10,
+            betPlaced: false,
+            speed: 1,
+            inspectedFighter: null,
+            matchNum: 1,
+            autoNextTimer: null,
+            // Multi-bet system
+            betType: 'winner',
+            betSlip: [],  // Array of {type, team, odds, amount}
+        };
+        
+        // ============ BET TYPE FUNCTIONS ============
+        function setBetType(type) {
+            state.betType = type;
+            document.querySelectorAll('.bet-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(`tab-${type}`).classList.add('active');
+            
+            // Show/hide props panel
+            document.getElementById('props-panel').style.display = type === 'props' ? 'block' : 'none';
+            
+            // Update team cards to show relevant odds
+            renderTeams();
+        }
+        
+        function getOddsForType(team, type) {
+            const m = state.match;
+            if (!m) return 1.0;
+            
+            const t = m.teams[team];
+            const baseOdds = t.odds;
+            
+            switch(type) {
+                case 'winner': return baseOdds;
+                case 'top2': return Math.max(1.1, baseOdds * 0.5);  // ~half odds for top 2
+                case 'top3': return Math.max(1.05, baseOdds * 0.35); // lower odds for top 3
+                case 'firstBlood': return Math.max(1.5, (6 - baseOdds) * 1.2); // inverse odds
+                default: return baseOdds;
+            }
+        }
+        
+        function addToBetSlip(teamIdx) {
+            if (state.betPlaced || state.match?.status !== 'betting') return;
+            if (state.betType === 'props') return; // Props handled separately
+            
+            const m = state.match;
+            const team = m.teams[teamIdx];
+            const odds = getOddsForType(teamIdx, state.betType);
+            
+            // Check if already in slip
+            const existingIdx = state.betSlip.findIndex(b => b.team === teamIdx && b.type === state.betType);
+            if (existingIdx >= 0) {
+                // Remove if already exists
+                state.betSlip.splice(existingIdx, 1);
+            } else {
+                // Add to slip
+                state.betSlip.push({
+                    type: state.betType,
+                    team: teamIdx,
+                    teamName: team.name,
+                    odds: odds,
+                    color: team.color
+                });
+            }
+            
+            renderBetSlip();
+            updatePotential();
+        }
+        
+        function addPropBet(propType) {
+            if (state.betPlaced || state.match?.status !== 'betting') return;
+            
+            const odds = propType.includes('Over') ? 1.90 : 1.90;
+            
+            // Toggle
+            const existingIdx = state.betSlip.findIndex(b => b.type === propType);
+            if (existingIdx >= 0) {
+                state.betSlip.splice(existingIdx, 1);
+                document.getElementById(`btn-${propType}`)?.classList.remove('selected');
+            } else {
+                state.betSlip.push({
+                    type: propType,
+                    team: null,
+                    teamName: propType.replace(/([A-Z])/g, ' $1').trim(),
+                    odds: odds,
+                    color: '#888'
+                });
+                document.getElementById(`btn-${propType}`)?.classList.add('selected');
+            }
+            
+            renderBetSlip();
+            updatePotential();
+        }
+        
+        function removeFromSlip(idx) {
+            const bet = state.betSlip[idx];
+            if (bet.type.startsWith('kills') || bet.type.startsWith('duration')) {
+                document.getElementById(`btn-${bet.type}`)?.classList.remove('selected');
+            }
+            state.betSlip.splice(idx, 1);
+            renderBetSlip();
+            updatePotential();
+        }
+        
+        function renderBetSlip() {
+            const container = document.getElementById('bet-slip-items');
+            const count = state.betSlip.length;
+            document.getElementById('slip-count').textContent = count;
+            
+            if (count === 0) {
+                container.innerHTML = '<div class="bet-slip-empty">Click a team to add bets</div>';
+                document.getElementById('bet-btn').disabled = true;
+                document.getElementById('bet-btn').textContent = 'ADD A BET FIRST';
+                return;
+            }
+            
+            container.innerHTML = state.betSlip.map((bet, i) => `
+                <div class="bet-slip-item">
+                    <span style="color: ${bet.color}">
+                        ${bet.type.toUpperCase()}: ${bet.teamName}
+                    </span>
+                    <span>
+                        <span style="color: var(--gold)">${bet.odds.toFixed(2)}x</span>
+                        <span class="bet-slip-remove" onclick="removeFromSlip(${i})">✕</span>
+                    </span>
+                </div>
+            `).join('');
+            
+            document.getElementById('bet-btn').disabled = false;
+            document.getElementById('bet-btn').textContent = `PLACE ${count} BET${count > 1 ? 'S' : ''}`;
+        }
+        
+        function placeAllBets() {
+            if (state.betSlip.length === 0 || state.betPlaced || state.match?.status !== 'betting') return;
+            if (state.wager <= 0 || state.wager > state.balance) return;
+            
+            // Calculate total wager (split evenly or per bet)
+            const perBet = state.wager / state.betSlip.length;
+            
+            // Deduct total wager
+            state.balance -= state.wager;
+            state.betPlaced = true;
+            
+            // Store amounts on each bet
+            state.betSlip.forEach(bet => {
+                bet.amount = perBet;
+            });
+            
+            updateBalance();
+            document.getElementById('bet-btn').disabled = true;
+            document.getElementById('bet-btn').textContent = `✓ ${state.betSlip.length} BET${state.betSlip.length > 1 ? 'S' : ''} PLACED`;
+            document.querySelectorAll('.team-card').forEach(c => c.style.pointerEvents = 'none');
+        }
+        
+        // ============ ODDS CALCULATION (with house edge) ============
+        function calcTeamPower(fighters) {
+            return fighters.reduce((s, f) => {
+                // Role multipliers
+                const roleMod = { Tank: 1.0, Berserker: 1.1, Mage: 0.95, Rogue: 1.15, Paladin: 1.05, Necromancer: 0.9, Controller: 0.85, Cleric: 0.8 };
+                const mod = roleMod[f.role] || 1.0;
+                return s + (f.hp * 0.4 + f.atk * 2.5 + f.def * 1.5 + f.spd * 15) * mod;
+            }, 0);
+        }
+        
+        function calcOdds(teams) {
+            const powers = teams.map(t => calcTeamPower(t.fighters));
+            const totalPower = powers.reduce((a, b) => a + b, 0);
+            
+            // Calculate true probabilities
+            const probs = powers.map(p => p / totalPower);
+            
+            // Convert to odds with house edge
+            // For multi-way betting, we apply overround (sum of implied probs > 100%)
+            const overround = 1 + HOUSE_EDGE; // e.g., 1.08 means 108% total implied probability
+            
+            return probs.map(prob => {
+                // Fair odds = 1/prob
+                // With house edge, we reduce the payout
+                const fairOdds = 1 / prob;
+                const housedOdds = fairOdds / overround;
+                // Minimum odds of 1.05 (5% profit minimum)
+                return Math.max(1.05, Math.round(housedOdds * 100) / 100);
+            });
+        }
+        
+        // ============ PROVABLY FAIR SEED GENERATION ============
+        // Server secret - in production this would be committed on-chain before match
+        const SERVER_SECRET = 'SAVAGE_ARENA_V1_2026';
+        
+        // Simple hash function for seed generation
+        function hashSeed(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return Math.abs(hash).toString(16).padStart(8, '0');
+        }
+        
+        // Generate verifiable seed: SAVAGE-{matchId}-{hash}
+        // Anyone can verify by hashing SERVER_SECRET + matchId
+        function generateSeed(matchId) {
+            const combined = `${SERVER_SECRET}:${matchId}`;
+            const hash = hashSeed(combined);
+            return `SAVAGE-${matchId}-${hash}`;
+        }
+        
+        // ============ MATCH GENERATION ============
+        function createMatch(id) {
+            // Provably fair seed - deterministic based on match ID
+            const seed = generateSeed(id);
+            const rng = new RNG(seed);
+            
+            // Shuffle fighters and assign to teams
+            const shuffled = rng.shuffle([...FIGHTERS]);
+            const teams = [];
+            
+            for (let i = 0; i < NUM_TEAMS; i++) {
+                const template = TEAM_TEMPLATES[i];
+                // Spawn in corners: 0=top-left, 1=top-right, 2=bottom-left, 3=bottom-right
+                const cornerX = [0.15, 0.80, 0.15, 0.80];
+                const cornerY = [0.15, 0.15, 0.80, 0.80];
+                const teamFighters = shuffled.slice(i * TEAM_SIZE, (i + 1) * TEAM_SIZE).map(f => ({
+                    ...f,
+                    currentHp: f.hp,
+                    alive: true,
+                    teamIdx: i,
+                    x: cornerX[i] + (rng.next() - 0.5) * 0.15,
+                    y: cornerY[i] + (rng.next() - 0.5) * 0.15,
+                    // Stat tracking for MVP
+                    damageDealt: 0,
+                    healingDone: 0,
+                    kills: 0
+                }));
+                
+                // Generate dynamic team name based on composition
+                const teamName = generateTeamName(teamFighters, rng);
+                
+                teams.push({
+                    name: teamName,
+                    color: template.color,
+                    idx: i,
+                    fighters: teamFighters,
+                    alive: TEAM_SIZE,
+                    eliminated: false
+                });
+            }
+            
+            const odds = calcOdds(teams);
+            teams.forEach((t, i) => t.odds = odds[i]);
+            
+            return {
+                id,
+                seed,
+                rng,
+                teams,
+                status: 'betting',
+                winner: null,
+                time: 0,
+                totalKills: 0, // Track for props
+                startTime: Date.now() + BET_WINDOW
+            };
+        }
+        
+        // ============ ARENA FEATURES ============
+        const ARENA_PILLARS = [
+            { x: 0.25, y: 0.30, radius: 0.04 },
+            { x: 0.75, y: 0.30, radius: 0.04 },
+            { x: 0.25, y: 0.70, radius: 0.04 },
+            { x: 0.75, y: 0.70, radius: 0.04 },
+            { x: 0.50, y: 0.50, radius: 0.05 },
+        ];
+        
+        const ARENA_TRAPS = [
+            { x: 0.35, y: 0.20, radius: 0.05, damage: 15, cooldown: 0 },
+            { x: 0.65, y: 0.20, radius: 0.05, damage: 15, cooldown: 0 },
+            { x: 0.35, y: 0.80, radius: 0.05, damage: 15, cooldown: 0 },
+            { x: 0.65, y: 0.80, radius: 0.05, damage: 15, cooldown: 0 },
+        ];
+        
+        function collidesWithPillar(x, y, r = 0.03) {
+            for (const p of ARENA_PILLARS) {
+                if (Math.hypot(x - p.x, y - p.y) < p.radius + r) return p;
+            }
+            return null;
+        }
+        
+        function getSeparationForce(f, all) {
+            let fx = 0, fy = 0;
+            for (const o of all) {
+                if (o.id === f.id || !o.alive) continue;
+                const dx = f.x - o.x, dy = f.y - o.y;
+                const dist = Math.hypot(dx, dy);
+                if (dist < 0.07 && dist > 0.001) {
+                    const force = (0.07 - dist) / 0.07;
+                    fx += (dx / dist) * force * 0.015;
+                    fy += (dy / dist) * force * 0.015;
+                }
+            }
+            return { x: fx, y: fy };
+        }
+        
+        function showTrapEffect(trap) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${trap.x*100}%;top:${trap.y*100}%;transform:translate(-50%,-50%);font-size:28px;z-index:100;pointer-events:none;animation:trapPop 0.4s forwards;`;
+            el.textContent = '🔺';
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 400);
+        }
+        
+        function showBlockEffect(target) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${target.x*100}%;top:${(target.y-0.05)*100}%;transform:translateX(-50%);font-family:'Press Start 2P',monospace;font-size:9px;color:#4488FF;z-index:100;pointer-events:none;animation:dmgFloat 0.5s forwards;text-shadow:1px 1px 2px black;`;
+            el.textContent = 'BLOCK!';
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 500);
+        }
+        
+        // ============ SIMULATION ============
+        const ATTACK_TYPES = {
+            'Tank': { type: 'melee', range: 0.08, emoji: '🗡️', color: '#888888' },
+            'Berserker': { type: 'melee', range: 0.10, emoji: '⚔️', color: '#FF4444' },
+            'Mage': { type: 'ranged', range: 0.35, emoji: '✨', color: '#8844FF' },
+            'Rogue': { type: 'melee', range: 0.08, emoji: '🗡️', color: '#44FF44' },
+            'Paladin': { type: 'melee', range: 0.09, emoji: '✝️', color: '#FFD700' },
+            'Necromancer': { type: 'ranged', range: 0.32, emoji: '💀', color: '#44FF88' },
+            'Controller': { type: 'ranged', range: 0.30, emoji: '🔮', color: '#FF44FF' },
+            'Cleric': { type: 'ranged', range: 0.25, emoji: '💫', color: '#FFFFFF' },
+        };
+        
+        const ROLE_PRIORITY = { 'Tank': 0, 'Paladin': 1, 'Berserker': 2, 'Rogue': 3, 'Controller': 4, 'Cleric': 5, 'Mage': 6, 'Necromancer': 7 };
+        
+        // WoW-style abilities with cast times and projectile speeds
+        // projectileSpeed: distance per tick (0.05 = slow, 0.15 = fast). No speed = instant hit
+        const CLASS_ABILITIES = {
+            'Rogue': { name: 'Vanish', cooldown: 15, duration: 3, castTime: 0 },  // Instant stealth
+            'Berserker': { name: 'Charge', cooldown: 12, range: 0.25, castTime: 0 }, // Instant gap closer
+            'Tank': { name: 'Shield Slam', cooldown: 14, range: 0.20, castTime: 0 }, // Instant
+            'Paladin': { name: 'Divine Storm', cooldown: 14, range: 0.18, castTime: 0 },
+            'Cleric': { name: 'Flash Heal', cooldown: 10, amount: 18, hotDuration: 3, hotAmount: 4, castTime: 2, projectileSpeed: 0.12, projectileEmoji: '✨' }, // Travels to target
+            'Mage': { name: 'Pyroblast', cooldown: 18, aoeRadius: 0.10, damage: 15, castTime: 3, projectileSpeed: 0.10, projectileEmoji: '🔥' },  // Fast fireball
+            'Necromancer': { name: 'Death and Decay', cooldown: 20, aoeRadius: 0.12, dotDamage: 6, dotDuration: 3, castTime: 2, projectileSpeed: 0.06, projectileEmoji: '💀' }, // Slow creeping death
+            'Controller': { name: 'Psychic Scream', cooldown: 16, aoeRadius: 0.08, slow: 0.4, duration: 2, castTime: 1, projectileSpeed: 0.15, projectileEmoji: '🔮' }, // Fast psychic wave
+        };
+        
+        // Active projectiles in flight
+        let activeProjectiles = [];
+        
+        // Dynamic team name generation based on composition
+        function generateTeamName(fighters, rng) {
+            const roles = fighters.map(f => f.role);
+            const tankCount = roles.filter(r => ['Tank', 'Paladin'].includes(r)).length;
+            const healerCount = roles.filter(r => r === 'Cleric').length;
+            const casterCount = roles.filter(r => ['Mage', 'Necromancer', 'Controller'].includes(r)).length;
+            const meleeCount = roles.filter(r => ['Berserker', 'Rogue'].includes(r)).length;
+            
+            // Prefixes based on dominant type
+            const prefixes = {
+                tank: ['Iron', 'Steel', 'Bulwark', 'Fortress', 'Vanguard'],
+                healer: ['Divine', 'Holy', 'Sacred', 'Blessed', 'Light'],
+                caster: ['Arcane', 'Mystic', 'Shadow', 'Void', 'Eldritch'],
+                melee: ['Blood', 'Savage', 'Feral', 'Crimson', 'Brutal'],
+                balanced: ['Storm', 'War', 'Battle', 'Chaos', 'Doom']
+            };
+            
+            const suffixes = {
+                tank: ['Guard', 'Wall', 'Shield', 'Bastion', 'Legion'],
+                healer: ['Covenant', 'Order', 'Chorus', 'Circle', 'Sanctum'],
+                caster: ['Conclave', 'Cabal', 'Coven', 'Circle', 'Assembly'],
+                melee: ['Horde', 'Pack', 'Clan', 'Warband', 'Raiders'],
+                balanced: ['Company', 'Brigade', 'Alliance', 'Pact', 'Guild']
+            };
+            
+            let type = 'balanced';
+            if (tankCount >= 2) type = 'tank';
+            else if (healerCount >= 2) type = 'healer';
+            else if (casterCount >= 3) type = 'caster';
+            else if (meleeCount >= 3) type = 'melee';
+            
+            const prefix = prefixes[type][rng.int(0, prefixes[type].length - 1)];
+            const suffix = suffixes[type][rng.int(0, suffixes[type].length - 1)];
+            return `${prefix} ${suffix}`;
+        }
+        
+        function showAbilityEffect(f, abilityName, color) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${f.x*100}%;top:${(f.y-0.06)*100}%;transform:translateX(-50%);font-family:'Press Start 2P',monospace;font-size:8px;color:${color};z-index:100;pointer-events:none;animation:dmgFloat 0.8s forwards;text-shadow:1px 1px 2px black;`;
+            el.textContent = abilityName;
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 800);
+        }
+        
+        function showDodgeRoll(f) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${f.x*100}%;top:${f.y*100}%;transform:translate(-50%,-50%);font-size:20px;z-index:100;pointer-events:none;animation:rollSpin 0.4s forwards;`;
+            el.textContent = '💨';
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 400);
+        }
+        
+        function showHealEffect(target) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${target.x*100}%;top:${(target.y-0.04)*100}%;transform:translateX(-50%);font-family:'Press Start 2P',monospace;font-size:10px;color:#44FF44;z-index:100;pointer-events:none;animation:dmgFloat 0.6s forwards;text-shadow:0 0 5px #44FF44;`;
+            el.textContent = '+HEAL';
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 600);
+            playSound('heal');
+            spawnHealParticles(target.x, target.y);
+        }
+        
+        // ============ SOUND SYSTEM ============
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let soundEnabled = true;
+        
+        function playSound(type) {
+            if (!soundEnabled) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                switch(type) {
+                    case 'hit':
+                        osc.frequency.value = 150;
+                        osc.type = 'square';
+                        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                        gain.gain.exponentialDecayTo(0.01, audioCtx.currentTime + 0.1);
+                        osc.start(); osc.stop(audioCtx.currentTime + 0.1);
+                        break;
+                    case 'crit':
+                        osc.frequency.value = 400;
+                        osc.type = 'sawtooth';
+                        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                        gain.gain.exponentialDecayTo(0.01, audioCtx.currentTime + 0.2);
+                        osc.start(); osc.stop(audioCtx.currentTime + 0.2);
+                        break;
+                    case 'kill':
+                        osc.frequency.value = 80;
+                        osc.type = 'square';
+                        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                        gain.gain.exponentialDecayTo(0.01, audioCtx.currentTime + 0.4);
+                        osc.start(); osc.stop(audioCtx.currentTime + 0.4);
+                        break;
+                    case 'spell':
+                        osc.frequency.value = 600;
+                        osc.type = 'sine';
+                        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                        osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.3);
+                        gain.gain.exponentialDecayTo(0.01, audioCtx.currentTime + 0.3);
+                        osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+                        break;
+                    case 'heal':
+                        osc.frequency.value = 300;
+                        osc.type = 'sine';
+                        osc.frequency.exponentialRampToValueAtTime(500, audioCtx.currentTime + 0.2);
+                        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                        gain.gain.exponentialDecayTo(0.01, audioCtx.currentTime + 0.2);
+                        osc.start(); osc.stop(audioCtx.currentTime + 0.2);
+                        break;
+                    case 'charge':
+                        osc.frequency.value = 100;
+                        osc.type = 'sawtooth';
+                        osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.15);
+                        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                        gain.gain.exponentialDecayTo(0.01, audioCtx.currentTime + 0.15);
+                        osc.start(); osc.stop(audioCtx.currentTime + 0.15);
+                        break;
+                }
+            } catch(e) {}
+        }
+        
+        // ============ BATTLE MUSIC (Tone.js Heavy Metal Synth) ============
+        let musicStarted = false;
+        let musicPlaying = false;
+        let synths = {};
+        
+        async function initBattleMusic() {
+            if (musicStarted) return;
+            musicStarted = true;
+            
+            await Tone.start();
+            
+            // Distorted rhythm guitar
+            synths.guitar = new Tone.Synth({
+                oscillator: { type: 'sawtooth' },
+                envelope: { attack: 0.01, decay: 0.1, sustain: 0.3, release: 0.1 }
+            }).toDestination();
+            synths.guitar.volume.value = -12;
+            
+            // Heavy bass
+            synths.bass = new Tone.Synth({
+                oscillator: { type: 'square' },
+                envelope: { attack: 0.01, decay: 0.2, sustain: 0.5, release: 0.2 }
+            }).toDestination();
+            synths.bass.volume.value = -8;
+            
+            // Kick drum
+            synths.kick = new Tone.MembraneSynth({
+                pitchDecay: 0.05,
+                octaves: 6,
+                envelope: { attack: 0.001, decay: 0.3, sustain: 0, release: 0.1 }
+            }).toDestination();
+            synths.kick.volume.value = -6;
+            
+            // Snare
+            synths.snare = new Tone.NoiseSynth({
+                noise: { type: 'white' },
+                envelope: { attack: 0.001, decay: 0.15, sustain: 0, release: 0.05 }
+            }).toDestination();
+            synths.snare.volume.value = -10;
+            
+            // Hi-hat
+            synths.hihat = new Tone.MetalSynth({
+                frequency: 400,
+                envelope: { attack: 0.001, decay: 0.05, release: 0.01 },
+                harmonicity: 5.1,
+                modulationIndex: 32,
+                resonance: 4000,
+                octaves: 1.5
+            }).toDestination();
+            synths.hihat.volume.value = -18;
+            
+            // Heavy metal riff in E minor (170 BPM)
+            Tone.Transport.bpm.value = 170;
+            
+            // Guitar riff pattern (E minor power chord madness)
+            const guitarRiff = ['E2', 'E2', 'G2', 'E2', 'A2', 'G2', 'E2', 'D2'];
+            let guitarIdx = 0;
+            synths.guitarLoop = new Tone.Loop(time => {
+                synths.guitar.triggerAttackRelease(guitarRiff[guitarIdx % guitarRiff.length], '16n', time);
+                guitarIdx++;
+            }, '16n');
+            
+            // Bass following root notes
+            const bassNotes = ['E1', 'E1', 'G1', 'E1', 'E1', 'G1', 'E1', 'D1'];
+            let bassIdx = 0;
+            synths.bassLoop = new Tone.Loop(time => {
+                synths.bass.triggerAttackRelease(bassNotes[bassIdx % bassNotes.length], '8n', time);
+                bassIdx++;
+            }, '8n');
+            
+            // Double kick drums
+            synths.kickLoop = new Tone.Loop(time => {
+                synths.kick.triggerAttackRelease('C1', '16n', time);
+            }, '16n');
+            
+            // Snare on 2 and 4
+            synths.snareLoop = new Tone.Loop(time => {
+                synths.snare.triggerAttackRelease('16n', time);
+            }, '2n');
+            synths.snareLoop.playbackRate = 0.5;
+            
+            // Hi-hat 8th notes
+            synths.hihatLoop = new Tone.Loop(time => {
+                synths.hihat.triggerAttackRelease('32n', time);
+            }, '8n');
+        }
+        
+        function startBattleMusic() {
+            if (!musicStarted || musicPlaying) return;
+            musicPlaying = true;
+            synths.guitarLoop?.start(0);
+            synths.bassLoop?.start(0);
+            synths.kickLoop?.start(0);
+            synths.snareLoop?.start('4n');
+            synths.hihatLoop?.start(0);
+            Tone.Transport.start();
+        }
+        
+        function stopBattleMusic() {
+            if (!musicPlaying) return;
+            musicPlaying = false;
+            Tone.Transport.stop();
+            synths.guitarLoop?.stop();
+            synths.bassLoop?.stop();
+            synths.kickLoop?.stop();
+            synths.snareLoop?.stop();
+            synths.hihatLoop?.stop();
+        }
+        
+        // Music toggle button (added to UI)
+        function toggleMusic() {
+            if (!musicStarted) {
+                initBattleMusic().then(() => startBattleMusic());
+                document.getElementById('music-btn').textContent = '🔊 MUSIC ON';
+            } else if (musicPlaying) {
+                stopBattleMusic();
+                document.getElementById('music-btn').textContent = '🔇 MUSIC OFF';
+            } else {
+                startBattleMusic();
+                document.getElementById('music-btn').textContent = '🔊 MUSIC ON';
+            }
+        }
+        
+        // ============ PARTICLE EFFECTS ============
+        function spawnFireParticles(x, y, count = 15) {
+            const c = document.getElementById('fighters-container');
+            // Explosion ring
+            for (let i = 0; i < count; i++) {
+                const angle = (i / count) * Math.PI * 2;
+                const dist = 30 + Math.random() * 20;
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.textContent = ['🔥', '💥', '✨'][Math.floor(Math.random() * 3)];
+                p.style.cssText = `position:absolute;left:${x*100}%;top:${y*100}%;font-size:${14 + Math.random()*10}px;pointer-events:none;z-index:100;`;
+                p.style.animation = `fireExplode 0.6s ease-out forwards`;
+                p.style.setProperty('--tx', `${Math.cos(angle) * dist}px`);
+                p.style.setProperty('--ty', `${Math.sin(angle) * dist}px`);
+                c.appendChild(p);
+                setTimeout(() => p.remove(), 700);
+            }
+            // Center flash
+            const flash = document.createElement('div');
+            flash.style.cssText = `position:absolute;left:${x*100}%;top:${y*100}%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(255,100,0,0.8) 0%,rgba(255,200,0,0.4) 40%,transparent 70%);pointer-events:none;z-index:99;animation:flashPop 0.4s ease-out forwards;`;
+            c.appendChild(flash);
+            setTimeout(() => flash.remove(), 400);
+        }
+        
+        function spawnPoisonCloud(x, y) {
+            const c = document.getElementById('fighters-container');
+            // Billowing poison puffs
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const p = document.createElement('div');
+                    p.className = 'poison-cloud-particle';
+                    const offsetX = (Math.random() - 0.5) * 40;
+                    const offsetY = (Math.random() - 0.5) * 40;
+                    const size = 30 + Math.random() * 30;
+                    p.style.cssText = `left:calc(${x*100}% + ${offsetX}px);top:calc(${y*100}% + ${offsetY}px);width:${size}px;height:${size}px;`;
+                    c.appendChild(p);
+                    setTimeout(() => p.remove(), 1500);
+                }, i * 100);
+            }
+            // Skull emoji in center
+            const skull = document.createElement('div');
+            skull.textContent = '☠️';
+            skull.style.cssText = `position:absolute;left:${x*100}%;top:${y*100}%;transform:translate(-50%,-50%);font-size:32px;pointer-events:none;z-index:100;animation:skullPop 1s ease-out forwards;`;
+            c.appendChild(skull);
+            setTimeout(() => skull.remove(), 1000);
+        }
+        
+        function spawnLightning(fromX, fromY, toX, toY) {
+            const c = document.getElementById('fighters-container');
+            const bolt = document.createElement('div');
+            bolt.className = 'lightning-bolt';
+            // Create SVG lightning
+            const dx = (toX - fromX) * 100;
+            const dy = (toY - fromY) * 100;
+            const len = Math.hypot(dx, dy);
+            const segs = 5;
+            let path = `M 0 0`;
+            for (let i = 1; i <= segs; i++) {
+                const t = i / segs;
+                const jx = (Math.random() - 0.5) * 15;
+                const jy = (Math.random() - 0.5) * 15;
+                path += ` L ${dx * t + jx} ${dy * t + jy}`;
+            }
+            bolt.innerHTML = `<svg width="${Math.abs(dx)+30}" height="${Math.abs(dy)+30}" style="overflow:visible;"><path d="${path}" stroke="#88DDFF" stroke-width="3" fill="none"/><path d="${path}" stroke="#FFFFFF" stroke-width="1" fill="none"/></svg>`;
+            bolt.style.cssText = `left:${fromX*100}%;top:${fromY*100}%;animation:lightningFlash 0.3s ease-out forwards;`;
+            c.appendChild(bolt);
+            setTimeout(() => bolt.remove(), 300);
+        }
+        
+        function spawnHealParticles(x, y) {
+            const c = document.getElementById('fighters-container');
+            for (let i = 0; i < 5; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle heal-particle';
+                p.textContent = '✨';
+                const offsetX = (Math.random() - 0.5) * 30;
+                p.style.left = `calc(${x*100}% + ${offsetX}px)`;
+                p.style.top = `${y*100}%`;
+                p.style.animationDelay = `${i * 0.1}s`;
+                c.appendChild(p);
+                setTimeout(() => p.remove(), 800);
+            }
+        }
+        
+        function showBigPopup(x, y, text, type) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.className = `big-popup ${type}`;
+            el.style.left = `${x*100}%`;
+            el.style.top = `${y*100}%`;
+            el.textContent = text;
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 1000);
+        }
+        
+        function screenShake() {
+            const arena = document.getElementById('arena-view');
+            arena.classList.add('shake');
+            setTimeout(() => arena.classList.remove('shake'), 300);
+        }
+        
+        // Launch a projectile when cast completes (travels to target)
+        function executeCast(f, spellType, target, m, allFighters) {
+            const ability = CLASS_ABILITIES[f.role];
+            
+            // If ability has projectile speed, launch projectile instead of instant effect
+            if (ability.projectileSpeed && target) {
+                const projectile = {
+                    id: Date.now() + Math.random(),
+                    casterId: f.id,
+                    casterTeamIdx: f.teamIdx,
+                    spellType,
+                    x: f.x,
+                    y: f.y,
+                    targetX: target.x,
+                    targetY: target.y,
+                    targetId: target.id,
+                    speed: ability.projectileSpeed,
+                    emoji: ability.projectileEmoji || '✨',
+                    ability: ability,
+                    casterName: f.name
+                };
+                activeProjectiles.push(projectile);
+                addBattleLog(`✨ ${f.name} launches ${ability.name}!`, 'ability', m.teams[f.teamIdx].color);
+                return; // Don't apply effect yet - wait for projectile to land
+            }
+            
+            // Fallback for spells without projectiles (shouldn't happen but just in case)
+            applySpellEffect(f, spellType, target, m, allFighters);
+        }
+        
+        // Apply spell effect when projectile lands (or instant cast)
+        function applySpellEffect(f, spellType, target, m, allFighters) {
+            const ability = CLASS_ABILITIES[f.role];
+            const enemies = allFighters.filter(e => e.alive && e.teamIdx !== f.teamIdx);
+            const allies = allFighters.filter(a => a.alive && a.teamIdx === f.teamIdx && a.id !== f.id);
+            
+            if (spellType === 'heal' && target && target.alive) {
+                const healAmt = ability.amount + m.rng.int(-5, 5);
+                const actualHeal = Math.min(healAmt, target.hp - target.currentHp);
+                target.currentHp = Math.min(target.hp, target.currentHp + healAmt);
+                target.hotTimer = ability.hotDuration;
+                target.hotAmount = ability.hotAmount;
+                f.healingDone = (f.healingDone || 0) + actualHeal;
+                showHealEffect(target);
+                showBigPopup(target.x, target.y, '+HEAL', 'heal');
+                spawnHealParticles(target.x, target.y);
+                addBattleLog(`💚 ${f.name} heals ${target.name} for ${actualHeal}!`, 'heal', '#44FF44');
+            } else if (spellType === 'fireball') {
+                // Use current target position (may have moved)
+                const tx = target?.x ?? 0.5;
+                const ty = target?.y ?? 0.5;
+                showAoEEffect(tx, ty, ability.aoeRadius, '#FF4400', '🔥');
+                playSound('spell');
+                spawnFireParticles(tx, ty, 15);
+                screenShake();
+                const enemiesInAoE = enemies.filter(e => Math.hypot(e.x - tx, e.y - ty) < ability.aoeRadius);
+                let hitCount = 0;
+                enemiesInAoE.forEach(e => {
+                    const dmg = ability.damage + m.rng.int(-4, 4);
+                    e.currentHp -= dmg;
+                    f.damageDealt = (f.damageDealt || 0) + dmg;
+                    e.dotTimer = 3;
+                    e.dotDamage = 6;
+                    showDamage(e, dmg, false);
+                    hitCount++;
+                    if (e.currentHp <= 0) {
+                        e.currentHp = 0; e.alive = false;
+                        f.kills = (f.kills || 0) + 1;
+                        m.teams[e.teamIdx].alive--;
+                        if (m.teams[e.teamIdx].alive === 0) m.teams[e.teamIdx].eliminated = true;
+                        addKill(f.name, e.name, m.teams[f.teamIdx].color);
+                        showDeathEffect(e);
+                        showBigPopup(e.x, e.y, 'KILLED!', 'kill');
+                        playSound('kill');
+                    }
+                });
+                addBattleLog(`🔥 PYROBLAST IMPACT! (${hitCount} hit)`, 'ability', '#FF4400');
+            } else if (spellType === 'deathcloud') {
+                const tx = target?.x ?? 0.5;
+                const ty = target?.y ?? 0.5;
+                showAoEEffect(tx, ty, ability.aoeRadius, '#44FF88', '💀');
+                playSound('spell');
+                spawnPoisonCloud(tx, ty);
+                const enemiesInAoE = enemies.filter(e => Math.hypot(e.x - tx, e.y - ty) < ability.aoeRadius);
+                enemiesInAoE.forEach(e => {
+                    e.dotTimer = ability.dotDuration;
+                    e.dotDamage = ability.dotDamage;
+                });
+                addBattleLog(`☠️ DEATH AND DECAY lands! (${enemiesInAoE.length} poisoned)`, 'ability', '#44FF88');
+            } else if (spellType === 'mindblast') {
+                const tx = target?.x ?? 0.5;
+                const ty = target?.y ?? 0.5;
+                showAoEEffect(tx, ty, ability.aoeRadius, '#FF44FF', '🔮');
+                playSound('spell');
+                spawnLightning(f.x, f.y, tx, ty);
+                const enemiesInAoE = enemies.filter(e => Math.hypot(e.x - tx, e.y - ty) < ability.aoeRadius);
+                enemiesInAoE.forEach(e => {
+                    e.slowTimer = ability.duration;
+                    e.slowAmount = ability.slow;
+                    const dmg = 10 + m.rng.int(-3, 3);
+                    e.currentHp -= dmg;
+                    f.damageDealt = (f.damageDealt || 0) + dmg;
+                    showDamage(e, dmg, false);
+                });
+                addBattleLog(`🔮 ${f.name} casts PSYCHIC SCREAM! (${enemiesInAoE.length} feared)`, 'ability', '#FF44FF');
+            }
+        }
+        
+        function spawnGravestone(x, y, teamColor) {
+            const c = document.getElementById('fighters-container');
+            const graves = ['🪦', '💀', '⚰️', '🦴'];
+            const el = document.createElement('div');
+            el.className = 'gravestone';
+            el.style.left = `${x * 100}%`;
+            el.style.top = `${y * 100}%`;
+            el.style.color = teamColor || '#888';
+            el.textContent = graves[Math.floor(Math.random() * graves.length)];
+            c.appendChild(el);
+        }
+        
+        function showPhaseAnnouncement(text, type, duration = 2000) {
+            const arena = document.getElementById('arena-view');
+            // Remove any existing announcement
+            const existing = arena.querySelector('.phase-announcement');
+            if (existing) existing.remove();
+            
+            const el = document.createElement('div');
+            el.className = `phase-announcement ${type}`;
+            el.textContent = text;
+            arena.appendChild(el);
+            setTimeout(() => el.remove(), duration);
+        }
+        
+        function showAoEEffect(x, y, radius, color, emoji) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            const size = radius * 200;
+            el.style.cssText = `position:absolute;left:${x*100}%;top:${y*100}%;width:${size}px;height:${size}px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,${color}88 0%,${color}44 50%,transparent 70%);border:2px solid ${color};z-index:50;pointer-events:none;animation:aoeExpand 0.6s forwards;`;
+            c.appendChild(el);
+            // Center emoji
+            const em = document.createElement('div');
+            em.style.cssText = `position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:24px;`;
+            em.textContent = emoji;
+            el.appendChild(em);
+            setTimeout(() => el.remove(), 600);
+        }
+        
+        function showDoTTick(target, dmg) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${(target.x+0.02)*100}%;top:${(target.y-0.03)*100}%;font-family:'Press Start 2P',monospace;font-size:8px;color:#FF4488;z-index:100;pointer-events:none;animation:dmgFloat 0.4s forwards;`;
+            el.textContent = `-${dmg}🔥`;
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 400);
+        }
+        
+        function showHoTTick(target, heal) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.style.cssText = `position:absolute;left:${(target.x-0.02)*100}%;top:${(target.y-0.03)*100}%;font-family:'Press Start 2P',monospace;font-size:8px;color:#44FF88;z-index:100;pointer-events:none;animation:dmgFloat 0.4s forwards;`;
+            el.textContent = `+${heal}💚`;
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 400);
+        }
+        
+        // Update projectiles - move toward target, check for impact
+        function updateProjectiles(m) {
+            const allFighters = m.teams.flatMap(t => t.fighters);
+            const toRemove = [];
+            
+            activeProjectiles.forEach((proj, idx) => {
+                // Find current target position (target may have moved)
+                const target = allFighters.find(f => f.id === proj.targetId);
+                if (target && target.alive) {
+                    proj.targetX = target.x;
+                    proj.targetY = target.y;
+                }
+                
+                // Move projectile toward target
+                const dx = proj.targetX - proj.x;
+                const dy = proj.targetY - proj.y;
+                const dist = Math.hypot(dx, dy);
+                
+                if (dist <= proj.speed) {
+                    // Projectile reached target - apply effect!
+                    const caster = allFighters.find(f => f.id === proj.casterId);
+                    if (caster) {
+                        applySpellEffect(caster, proj.spellType, target || { x: proj.targetX, y: proj.targetY }, m, allFighters);
+                    }
+                    toRemove.push(idx);
+                } else {
+                    // Move toward target
+                    proj.x += (dx / dist) * proj.speed;
+                    proj.y += (dy / dist) * proj.speed;
+                }
+            });
+            
+            // Remove impacted projectiles (reverse order to preserve indices)
+            toRemove.reverse().forEach(idx => activeProjectiles.splice(idx, 1));
+        }
+        
+        function tick(m) {
+            if (m.status !== 'live') return;
+            
+            const aliveTeams = m.teams.filter(t => !t.eliminated);
+            if (aliveTeams.length <= 1) {
+                m.winner = aliveTeams[0]?.idx ?? null;
+                m.status = 'ended';
+                return;
+            }
+            
+            const allFighters = m.teams.flatMap(t => t.fighters).filter(f => f.alive);
+            
+            // ===== UPDATE PROJECTILES =====
+            updateProjectiles(m);
+            
+            // ===== TRAP TRIGGERS =====
+            for (let i = 0; i < ARENA_TRAPS.length; i++) {
+                const trap = ARENA_TRAPS[i];
+                const trapEl = document.getElementById(`trap-${i}`);
+                
+                if (trap.cooldown > 0) {
+                    trap.cooldown--;
+                    if (trapEl) trapEl.classList.remove('active');
+                    continue;
+                }
+                
+                for (const f of allFighters) {
+                    if (Math.hypot(f.x - trap.x, f.y - trap.y) < trap.radius) {
+                        const dmg = trap.damage + m.rng.int(-5, 5);
+                        f.currentHp -= dmg;
+                        trap.cooldown = 8;
+                        if (trapEl) trapEl.classList.add('active');
+                        
+                        showTrapEffect(trap);
+                        showDamage(f, dmg, false);
+                        addBattleLog(`🔺 ${f.name} triggers SPIKE TRAP! -${dmg}`, 'trap', '#FF6600');
+                        
+                        if (f.currentHp <= 0) {
+                            f.currentHp = 0;
+                            f.alive = false;
+                            const team = m.teams[f.teamIdx];
+                            team.alive--;
+                            if (team.alive === 0) {
+                                team.eliminated = true;
+                                addBattleLog(`${team.name} ELIMINATED!`, 'eliminate', team.color);
+                            }
+                            addKill('Spike Trap', f.name, '#FF6600');
+                            showDeathEffect(f);
+                        }
+                        break;
+                    }
+                }
+            }
+            
+            // ===== DoT/HoT TICK PROCESSING =====
+            for (const f of allFighters) {
+                // DoT damage (burning/poison)
+                if (f.dotTimer > 0) {
+                    f.dotTimer--;
+                    const dmg = f.dotDamage || 5;
+                    f.currentHp -= dmg;
+                    showDoTTick(f, dmg);
+                    if (f.currentHp <= 0) {
+                        f.currentHp = 0; f.alive = false;
+                        m.teams[f.teamIdx].alive--;
+                        if (m.teams[f.teamIdx].alive === 0) m.teams[f.teamIdx].eliminated = true;
+                        addKill('DoT', f.name, '#FF4488');
+                        showDeathEffect(f);
+                    }
+                }
+                
+                // HoT healing
+                if (f.hotTimer > 0 && f.alive) {
+                    f.hotTimer--;
+                    const heal = f.hotAmount || 5;
+                    f.currentHp = Math.min(f.hp, f.currentHp + heal);
+                    showHoTTick(f, heal);
+                }
+                
+                // Slow decay
+                if (f.slowTimer > 0) f.slowTimer--;
+            }
+            
+            // Sort by role priority - tanks move/act first
+            const attackOrder = [...allFighters].sort((a, b) => 
+                (ROLE_PRIORITY[a.role] || 5) - (ROLE_PRIORITY[b.role] || 5)
+            );
+            
+            attackOrder.forEach(f => {
+                if (!f.alive) return;
+                
+                const enemies = allFighters.filter(e => e.alive && e.teamIdx !== f.teamIdx);
+                const allies = allFighters.filter(a => a.alive && a.teamIdx === f.teamIdx && a.id !== f.id);
+                if (enemies.length === 0) return;
+                
+                const atkType = ATTACK_TYPES[f.role] || ATTACK_TYPES['Berserker'];
+                const isRanged = atkType.type === 'ranged';
+                const isTank = ['Tank', 'Paladin'].includes(f.role);
+                const hpPercent = f.currentHp / f.hp;
+                const isHurt = hpPercent < 0.4;
+                
+                // Find best target
+                let target;
+                if (f.role === 'Rogue') {
+                    const wounded = enemies.filter(e => e.currentHp / e.hp < 0.5);
+                    const pool = wounded.length > 0 ? wounded : enemies;
+                    target = pool.reduce((min, e) => e.currentHp < min.currentHp ? e : min, pool[0]);
+                } else if (isTank) {
+                    target = enemies.reduce((c, e) => Math.hypot(e.x-f.x,e.y-f.y) < Math.hypot(c.x-f.x,c.y-f.y) ? e : c, enemies[0]);
+                } else {
+                    target = enemies[m.rng.int(0, enemies.length - 1)];
+                }
+                
+                f.targetId = target.id;
+                f.shieldDir = null;
+                
+                // Initialize ability state
+                if (f.abilityCooldown === undefined) f.abilityCooldown = 0;
+                if (f.stealthTimer === undefined) f.stealthTimer = 0;
+                if (f.castingTimer === undefined) f.castingTimer = 0;
+                if (f.castingSpell === undefined) f.castingSpell = null;
+                if (f.abilityCooldown > 0) f.abilityCooldown--;
+                if (f.stealthTimer > 0) f.stealthTimer--;
+                
+                // If casting, can't move - count down and fire when ready
+                if (f.castingTimer > 0) {
+                    f.castingTimer--;
+                    if (f.castingTimer === 0 && f.castingSpell) {
+                        // Cast complete! Fire the spell
+                        executeCast(f, f.castingSpell, f.castingTarget, m, allFighters);
+                        f.castingSpell = null;
+                        f.castingTarget = null;
+                    }
+                    return; // Skip everything else while casting
+                }
+                
+                const dx = target.x - f.x;
+                const dy = target.y - f.y;
+                const dist = Math.hypot(dx, dy);
+                
+                // Count nearby enemies for "surrounded" check
+                const nearbyEnemies = enemies.filter(e => Math.hypot(e.x - f.x, e.y - f.y) < 0.15).length;
+                const isSurrounded = nearbyEnemies >= 2;
+                
+                // ===== CLASS ABILITIES =====
+                const ability = CLASS_ABILITIES[f.role];
+                
+                // ROGUE: Vanish when hurt or surrounded
+                if (f.role === 'Rogue' && f.abilityCooldown === 0 && (isHurt || isSurrounded) && f.stealthTimer === 0) {
+                    f.stealthTimer = ability.duration;
+                    f.abilityCooldown = ability.cooldown;
+                    showAbilityEffect(f, 'VANISH!', '#AA44AA');
+                    playSound('spell');
+                    addBattleLog(`🫥 ${f.name} vanishes into shadow!`, 'ability', '#AA44AA');
+                }
+                
+                // BERSERKER: Rage Rush to close gap
+                if (f.role === 'Berserker' && f.abilityCooldown === 0 && dist > 0.15 && dist < ability.range) {
+                    // Charge toward target!
+                    f.x += (dx / dist) * 0.12;
+                    f.y += (dy / dist) * 0.12;
+                    f.abilityCooldown = ability.cooldown;
+                    showAbilityEffect(f, 'RAGE RUSH!', '#FF4444');
+                    playSound('charge');
+                    addBattleLog(`🔥 ${f.name} RAGE RUSHES!`, 'ability', '#FF4444');
+                }
+                
+                // TANK: Shield Charge
+                if (f.role === 'Tank' && f.abilityCooldown === 0 && dist > 0.12 && dist < ability.range) {
+                    f.x += (dx / dist) * 0.10;
+                    f.y += (dy / dist) * 0.10;
+                    f.abilityCooldown = ability.cooldown;
+                    showAbilityEffect(f, 'CHARGE!', '#4488FF');
+                    playSound('charge');
+                    addBattleLog(`🛡️ ${f.name} SHIELD CHARGES!`, 'ability', '#4488FF');
+                }
+                
+                // PALADIN: Holy Charge
+                if (f.role === 'Paladin' && f.abilityCooldown === 0 && dist > 0.10 && dist < (ability?.range || 0.18)) {
+                    f.x += (dx / dist) * 0.08;
+                    f.y += (dy / dist) * 0.08;
+                    f.abilityCooldown = 10;
+                    showAbilityEffect(f, 'HOLY CHARGE!', '#FFD700');
+                    playSound('charge');
+                    addBattleLog(`✝️ ${f.name} HOLY CHARGES!`, 'ability', '#FFD700');
+                }
+                
+                // CLERIC: Flash Heal (with cast time)
+                if (f.role === 'Cleric' && f.abilityCooldown === 0 && ability) {
+                    const woundedAllies = allies.filter(a => a.currentHp / a.hp < 0.6);
+                    if (woundedAllies.length > 0) {
+                        woundedAllies.sort((a, b) => {
+                            const aTank = ['Tank', 'Paladin'].includes(a.role) ? 1 : 0;
+                            const bTank = ['Tank', 'Paladin'].includes(b.role) ? 1 : 0;
+                            if (bTank !== aTank) return bTank - aTank;
+                            return (a.currentHp / a.hp) - (b.currentHp / b.hp);
+                        });
+                        const healTarget = woundedAllies[0];
+                        // Start casting
+                        f.castingTimer = ability.castTime || 1;
+                        f.castingSpell = 'heal';
+                        f.castingTarget = healTarget;
+                        f.abilityCooldown = ability.cooldown;
+                        showAbilityEffect(f, 'CASTING...', '#44FF44');
+                        addBattleLog(`✨ ${f.name} begins casting Flash Heal...`, 'ability', '#44FF44');
+                    }
+                }
+                
+                // MAGE: Pyroblast (with cast time)
+                if (f.role === 'Mage' && f.abilityCooldown === 0 && ability && dist < 0.35) {
+                    f.castingTimer = ability.castTime || 1;
+                    f.castingSpell = 'fireball';
+                    f.castingTarget = target;
+                    f.abilityCooldown = ability.cooldown;
+                    showAbilityEffect(f, 'CASTING...', '#FF4400');
+                    addBattleLog(`✨ ${f.name} begins casting Pyroblast...`, 'ability', '#FF4400');
+                }
+                
+                // NECROMANCER: Death and Decay (with cast time)
+                if (f.role === 'Necromancer' && f.abilityCooldown === 0 && ability && dist < 0.32) {
+                    f.castingTimer = ability.castTime || 1;
+                    f.castingSpell = 'deathcloud';
+                    f.castingTarget = target;
+                    f.abilityCooldown = ability.cooldown;
+                    showAbilityEffect(f, 'CASTING...', '#44FF88');
+                    addBattleLog(`✨ ${f.name} begins casting Death and Decay...`, 'ability', '#44FF88');
+                }
+                
+                // CONTROLLER: Psychic Scream (with cast time)
+                if (f.role === 'Controller' && f.abilityCooldown === 0 && ability && dist < 0.30) {
+                    f.castingTimer = ability.castTime || 1;
+                    f.castingSpell = 'mindblast';
+                    f.castingTarget = target;
+                    f.abilityCooldown = ability.cooldown;
+                    showAbilityEffect(f, 'CASTING...', '#FF44FF');
+                    addBattleLog(`✨ ${f.name} begins casting Psychic Scream...`, 'ability', '#FF44FF');
+                }
+                
+                // DODGE ROLL: Surrounded fighters try to escape
+                if (isSurrounded && !isTank && f.stealthTimer === 0 && m.rng.next() < 0.25) {
+                    // Roll away from center of enemies
+                    let avgX = 0, avgY = 0;
+                    const nearby = enemies.filter(e => Math.hypot(e.x - f.x, e.y - f.y) < 0.15);
+                    nearby.forEach(e => { avgX += e.x; avgY += e.y; });
+                    avgX /= nearby.length; avgY /= nearby.length;
+                    
+                    const escapeX = f.x - avgX;
+                    const escapeY = f.y - avgY;
+                    const escapeDist = Math.hypot(escapeX, escapeY);
+                    if (escapeDist > 0.01) {
+                        f.x += (escapeX / escapeDist) * 0.08;
+                        f.y += (escapeY / escapeDist) * 0.08;
+                        showDodgeRoll(f);
+                    }
+                }
+                
+                // ===== MOVEMENT =====
+                const sep = getSeparationForce(f, allFighters);
+                let moveX = 0, moveY = 0;
+                const speedMult = f.slowTimer > 0 ? (1 - (f.slowAmount || 0.5)) : 1; // Slow reduces movement
+                
+                // Stealthed rogues reposition for backstab
+                if (f.stealthTimer > 0) {
+                    // Move behind target
+                    const behindX = target.x - (dx / dist) * 0.06;
+                    const behindY = target.y - (dy / dist) * 0.06;
+                    moveX = (behindX - f.x) * 0.03;
+                    moveY = (behindY - f.y) * 0.03;
+                } else if (isTank) {
+                    // Tanks advance toward enemies
+                    if (dist > atkType.range * 0.9) {
+                        moveX = (dx / dist) * 0.012 * f.spd;
+                        moveY = (dy / dist) * 0.012 * f.spd;
+                    }
+                    f.shieldDir = Math.atan2(dy, dx);
+                } else if (isRanged) {
+                    const idealRange = atkType.range * 0.6;
+                    if (isHurt && allies.length > 0) {
+                        // Seek cover behind tank
+                        const tank = allies.find(a => ['Tank','Paladin'].includes(a.role));
+                        if (tank) {
+                            const tdx = tank.x - target.x, tdy = tank.y - target.y;
+                            const tdist = Math.hypot(tdx, tdy);
+                            const coverX = tank.x + (tdx/tdist) * 0.06;
+                            const coverY = tank.y + (tdy/tdist) * 0.06;
+                            moveX = (coverX - f.x) * 0.02;
+                            moveY = (coverY - f.y) * 0.02;
+                        }
+                    } else if (dist < idealRange * 0.5) {
+                        moveX = -(dx / dist) * 0.01 * f.spd;
+                        moveY = -(dy / dist) * 0.01 * f.spd;
+                    } else if (dist > idealRange * 1.3) {
+                        moveX = (dx / dist) * 0.008 * f.spd;
+                        moveY = (dy / dist) * 0.008 * f.spd;
+                    }
+                } else {
+                    // Melee non-tank (Berserker, Rogue)
+                    if (dist > atkType.range) {
+                        // Close the gap faster for melee
+                        const speed = f.role === 'Berserker' ? 0.018 : 0.014;
+                        moveX = (dx / dist) * speed * f.spd;
+                        moveY = (dy / dist) * speed * f.spd;
+                    }
+                }
+                
+                // Apply movement with separation (slow reduces speed)
+                f.x += (moveX + sep.x) * speedMult;
+                f.y += (moveY + sep.y) * speedMult;
+                
+                // Avoid pillars
+                const coll = collidesWithPillar(f.x, f.y);
+                if (coll) {
+                    const cdx = f.x - coll.x, cdy = f.y - coll.y;
+                    const cdist = Math.hypot(cdx, cdy);
+                    if (cdist > 0.001) {
+                        f.x = coll.x + (cdx/cdist) * (coll.radius + 0.04);
+                        f.y = coll.y + (cdy/cdist) * (coll.radius + 0.04);
+                    }
+                }
+                
+                f.x = Math.max(0.08, Math.min(0.92, f.x));
+                f.y = Math.max(0.08, Math.min(0.92, f.y));
+                
+                // ===== ATTACK =====
+                // Stealthed rogues can't attack until they break stealth (backstab)
+                const isStealthed = f.stealthTimer > 0;
+                
+                if (dist <= atkType.range) {
+                    // Shield block check (can't block backstabs)
+                    let blocked = false;
+                    const isBackstab = f.role === 'Rogue' && f.stealthTimer === 1; // Breaking stealth this tick
+                    
+                    if (!isBackstab && target.shieldDir !== null && target.gear?.shield) {
+                        const atkAngle = Math.atan2(f.y - target.y, f.x - target.x);
+                        const diff = Math.abs(atkAngle - target.shieldDir);
+                        if ((diff < Math.PI/3 || diff > Math.PI*5/3) && m.rng.next() < 0.35) {
+                            blocked = true;
+                            showBlockEffect(target);
+                            addBattleLog(`🛡️ ${target.name} BLOCKS!`, 'block', m.teams[target.teamIdx].color);
+                        }
+                    }
+                    
+                    // Stealthed units don't attack (positioning for backstab)
+                    if (isStealthed && !isBackstab) {
+                        // Skip attack, stay hidden
+                    } else if (!blocked) {
+                        const hitChance = 0.50 + f.spd * 0.08 - target.def * 0.004;
+                        if (m.rng.next() < hitChance) {
+                            let dmg = f.atk + m.rng.int(-2, 4);
+                            let crit = m.rng.next() < 0.12;
+                            
+                            // BACKSTAB: Guaranteed crit + bonus damage!
+                            if (isBackstab) {
+                                crit = true;
+                                dmg = Math.floor(dmg * 2.5); // 2.5x backstab!
+                                addBattleLog(`🗡️ ${f.name} BACKSTABS ${target.name}!`, 'crit', '#AA44AA');
+                            }
+                            
+                            if (crit) dmg = Math.floor(dmg * 2.0);
+                            dmg = Math.max(1, dmg - Math.floor(target.def * 0.15));
+                            
+                            target.currentHp -= dmg;
+                            f.damageDealt = (f.damageDealt || 0) + dmg; // Track damage for MVP
+                            showAttackEffect(f, target, atkType, crit);
+                            showDamage(target, dmg, crit);
+                            
+                            // Sound and visual for hits
+                            if (crit) {
+                                showBigPopup(target.x, target.y, 'CRIT!', 'crit');
+                                playSound('crit');
+                                addBattleLog(`${f.name} CRITS ${target.name} for ${dmg}!`, 'crit', m.teams[f.teamIdx].color);
+                            } else {
+                                playSound('hit');
+                            }
+                            
+                            if (target.currentHp <= 0) {
+                                target.currentHp = 0;
+                                target.alive = false;
+                                f.kills = (f.kills || 0) + 1; // Track kills for MVP
+                                showBigPopup(target.x, target.y, 'KILLED!', 'kill');
+                                playSound('kill');
+                                screenShake();
+                                const tTeam = m.teams[target.teamIdx];
+                                tTeam.alive--;
+                                if (tTeam.alive === 0) {
+                                    tTeam.eliminated = true;
+                                    addBattleLog(`${tTeam.name} ELIMINATED!`, 'eliminate', tTeam.color);
+                                }
+                                addKill(f.name, target.name, m.teams[f.teamIdx].color);
+                                showDeathEffect(target);
+                            }
+                            
+                            // Friendly fire for ranged
+                            if (isRanged && m.rng.next() < 0.06) {
+                                const ff = allies.find(a => {
+                                    const adx = a.x - f.x, ady = a.y - f.y;
+                                    const adist = Math.hypot(adx, ady);
+                                    if (adist > dist) return false;
+                                    return Math.abs(adx * dy - ady * dx) / dist < 0.05;
+                                });
+                                if (ff) {
+                                    const ffDmg = Math.floor(dmg * 0.4);
+                                    ff.currentHp -= ffDmg;
+                                    showDamage(ff, ffDmg, false);
+                                    addBattleLog(`⚠️ ${f.name} hits ${ff.name}! (FF)`, 'friendly', '#FF8800');
+                                    if (ff.currentHp <= 0) {
+                                        ff.currentHp = 0; ff.alive = false;
+                                        m.teams[ff.teamIdx].alive--;
+                                        if (m.teams[ff.teamIdx].alive === 0) m.teams[ff.teamIdx].eliminated = true;
+                                        addKill(f.name + ' (FF)', ff.name, '#FF8800');
+                                        showDeathEffect(ff);
+                                    }
+                                }
+                            }
+                        } else if (m.rng.next() < 0.25) {
+                            showMiss(target);
+                        }
+                    }
+                }
+            });
+            
+            m.time += 800;
+            
+            // Time limit (3 minutes)
+            if (m.time >= MATCH_TIME) {
+                const aliveTeams = m.teams.filter(t => !t.eliminated);
+                if (aliveTeams.length > 0) {
+                    aliveTeams.sort((a, b) => {
+                        if (b.alive !== a.alive) return b.alive - a.alive;
+                        const hpA = a.fighters.reduce((s, f) => s + f.currentHp, 0);
+                        const hpB = b.fighters.reduce((s, f) => s + f.currentHp, 0);
+                        return hpB - hpA;
+                    });
+                    m.winner = aliveTeams[0].idx;
+                }
+                m.status = 'ended';
+            }
+        }
+        
+        function showAttackEffect(attacker, target, atkType, isCrit) {
+            const c = document.getElementById('fighters-container');
+            
+            if (atkType.type === 'magic') {
+                // Magic projectile
+                const proj = document.createElement('div');
+                proj.className = 'magic-projectile';
+                proj.innerHTML = atkType.emoji;
+                proj.style.cssText = `
+                    position: absolute;
+                    left: ${attacker.x * 100}%;
+                    top: ${attacker.y * 100}%;
+                    font-size: ${isCrit ? '24px' : '18px'};
+                    z-index: 50;
+                    pointer-events: none;
+                    filter: drop-shadow(0 0 8px ${atkType.color});
+                    animation: projectileFly 0.4s forwards;
+                    --tx: ${(target.x - attacker.x) * 100}%;
+                    --ty: ${(target.y - attacker.y) * 100}%;
+                `;
+                c.appendChild(proj);
+                setTimeout(() => proj.remove(), 400);
+                
+                // Impact effect
+                setTimeout(() => {
+                    const impact = document.createElement('div');
+                    impact.className = 'magic-impact';
+                    impact.style.cssText = `
+                        position: absolute;
+                        left: ${target.x * 100}%;
+                        top: ${target.y * 100}%;
+                        width: ${isCrit ? '60px' : '40px'};
+                        height: ${isCrit ? '60px' : '40px'};
+                        transform: translate(-50%, -50%);
+                        background: radial-gradient(circle, ${atkType.color}88 0%, transparent 70%);
+                        border-radius: 50%;
+                        z-index: 45;
+                        pointer-events: none;
+                        animation: impactPulse 0.3s forwards;
+                    `;
+                    c.appendChild(impact);
+                    setTimeout(() => impact.remove(), 300);
+                }, 350);
+                
+            } else if (atkType.type === 'holy') {
+                // Holy light beam
+                const beam = document.createElement('div');
+                beam.className = 'holy-beam';
+                beam.style.cssText = `
+                    position: absolute;
+                    left: ${attacker.x * 100}%;
+                    top: ${attacker.y * 100}%;
+                    width: ${Math.hypot((target.x - attacker.x) * 100, (target.y - attacker.y) * 100)}%;
+                    height: ${isCrit ? '6px' : '3px'};
+                    background: linear-gradient(90deg, ${atkType.color}, white, ${atkType.color});
+                    transform-origin: left center;
+                    transform: rotate(${Math.atan2((target.y - attacker.y), (target.x - attacker.x))}rad);
+                    z-index: 45;
+                    pointer-events: none;
+                    box-shadow: 0 0 15px ${atkType.color};
+                    animation: beamFade 0.35s forwards;
+                `;
+                c.appendChild(beam);
+                setTimeout(() => beam.remove(), 350);
+                
+            } else {
+                // Melee slash
+                const slash = document.createElement('div');
+                slash.className = 'melee-slash';
+                slash.innerHTML = isCrit ? '💥' : atkType.emoji;
+                slash.style.cssText = `
+                    position: absolute;
+                    left: ${(attacker.x + target.x) / 2 * 100}%;
+                    top: ${(attacker.y + target.y) / 2 * 100}%;
+                    font-size: ${isCrit ? '28px' : '20px'};
+                    transform: translate(-50%, -50%);
+                    z-index: 50;
+                    pointer-events: none;
+                    animation: slashPop 0.25s forwards;
+                `;
+                c.appendChild(slash);
+                setTimeout(() => slash.remove(), 250);
+                
+                // Melee connect line (brief)
+                const line = document.createElement('div');
+                line.style.cssText = `
+                    position: absolute;
+                    left: ${attacker.x * 100}%;
+                    top: ${attacker.y * 100}%;
+                    width: ${Math.hypot((target.x - attacker.x) * 100, (target.y - attacker.y) * 100)}%;
+                    height: 2px;
+                    background: ${atkType.color};
+                    transform-origin: left center;
+                    transform: rotate(${Math.atan2((target.y - attacker.y), (target.x - attacker.x))}rad);
+                    opacity: 0.6;
+                    z-index: 40;
+                    pointer-events: none;
+                    animation: attackFade 0.15s forwards;
+                `;
+                c.appendChild(line);
+                setTimeout(() => line.remove(), 150);
+            }
+        }
+        
+        function showDeathEffect(fighter) {
+            const c = document.getElementById('fighters-container');
+            const skull = document.createElement('div');
+            skull.className = 'death-effect';
+            skull.innerHTML = '💀';
+            skull.style.cssText = `
+                position: absolute;
+                left: ${fighter.x * 100}%;
+                top: ${fighter.y * 100}%;
+                font-size: 32px;
+                transform: translate(-50%, -50%);
+                z-index: 100;
+                pointer-events: none;
+                animation: deathPop 0.6s forwards;
+            `;
+            c.appendChild(skull);
+            setTimeout(() => skull.remove(), 600);
+            
+            // Leave a gravestone where they fell
+            const teamColor = state.match?.teams[fighter.teamIdx]?.color || '#888';
+            spawnGravestone(fighter.x, fighter.y, teamColor);
+        }
+        
+        function showMiss(target) {
+            const c = document.getElementById('fighters-container');
+            const miss = document.createElement('div');
+            miss.className = 'miss-text';
+            miss.textContent = 'MISS';
+            miss.style.cssText = `
+                position: absolute;
+                left: ${target.x * 100}%;
+                top: ${(target.y - 0.05) * 100}%;
+                transform: translateX(-50%);
+                font-family: 'Press Start 2P', monospace;
+                font-size: 8px;
+                color: #888;
+                z-index: 100;
+                pointer-events: none;
+                animation: dmgFloat 0.5s forwards;
+            `;
+            c.appendChild(miss);
+            setTimeout(() => miss.remove(), 500);
+        }
+        
+        function addBattleLog(text, type, color) {
+            const log = document.getElementById('battle-log');
+            if (!log) return;
+            
+            const entry = document.createElement('div');
+            entry.className = `battle-log-entry ${type}`;
+            entry.style.borderLeftColor = color || '#888';
+            entry.textContent = text;
+            log.appendChild(entry);
+            
+            // Keep last 8 entries
+            while (log.children.length > 8) {
+                log.firstChild.remove();
+            }
+            
+            // Auto-scroll
+            log.scrollTop = log.scrollHeight;
+        }
+        
+        // ============ UI FUNCTIONS ============
+        function updateBalance() {
+            document.getElementById('nav-balance').textContent = state.balance.toFixed(2);
+            document.getElementById('nav-wins').textContent = state.wins;
+            document.getElementById('nav-losses').textContent = state.losses;
+        }
+        
+        function selectTeam(idx) {
+            if (state.betPlaced || state.match?.status !== 'betting') return;
+            
+            // Use the new bet slip system
+            addToBetSlip(idx);
+            
+            // Visual feedback
+            state.selectedTeam = idx;
+            renderTeams();
+        }
+        
+        function setWager(v) {
+            state.wager = v === 'max' ? state.balance : Math.min(v, state.balance);
+            document.getElementById('wager-input').value = state.wager;
+            updatePotential();
+        }
+        
+        function updatePotential() {
+            const w = parseFloat(document.getElementById('wager-input').value) || 0;
+            state.wager = Math.min(Math.max(0, w), state.balance);
+            
+            if (state.betSlip.length > 0) {
+                // Calculate total potential payout for all bets
+                const perBet = state.wager / state.betSlip.length;
+                let totalPotential = 0;
+                state.betSlip.forEach(bet => {
+                    totalPotential += perBet * bet.odds;
+                });
+                const avgOdds = totalPotential / state.wager;
+                document.getElementById('potential-payout').textContent = `Potential: ${totalPotential.toFixed(2)} (avg ${avgOdds.toFixed(2)}x)`;
+            } else {
+                document.getElementById('potential-payout').textContent = 'Select a team to bet';
+            }
+        }
+        
+        function inspectFighter(f) {
+            state.inspectedFighter = f;
+            
+            // Highlight in team list
+            document.querySelectorAll('.team-fighter').forEach(el => el.classList.remove('inspected'));
+            document.querySelector(`.team-fighter[data-id="${f.id}"]`)?.classList.add('inspected');
+            
+            updateInspector();
+        }
+        
+        function updateInspector() {
+            const f = state.inspectedFighter;
+            if (!f) return;
+            
+            const team = state.match?.teams[f.teamIdx];
+            const content = document.getElementById('inspector-content');
+            const ability = CLASS_ABILITIES[f.role];
+            
+            // Determine AI state
+            let aiState = 'engaging';
+            let aiText = '⚔️ ENGAGING';
+            if (!f.alive) { aiState = 'dead'; aiText = '💀 DEAD'; }
+            else if (f.castingTimer > 0) { aiState = 'casting'; aiText = `✨ CASTING (${f.castingTimer})`; }
+            else if (f.stealthTimer > 0) { aiState = 'stealthed'; aiText = '🫥 STEALTHED'; }
+            else if (f.shieldDir) { aiState = 'blocking'; aiText = '🛡️ BLOCKING'; }
+            else if (f.role === 'Cleric') { aiState = 'healing'; aiText = '💚 SUPPORTING'; }
+            else if (f.currentHp / f.hp < 0.3) { aiState = 'retreating'; aiText = '🏃 RETREATING'; }
+            
+            // Build status effects
+            const statuses = [];
+            if (f.dotTimer > 0) statuses.push({ text: `🔥 BURN (${f.dotTimer})`, type: 'debuff' });
+            if (f.hotTimer > 0) statuses.push({ text: `💚 REGEN (${f.hotTimer})`, type: 'buff' });
+            if (f.slowTimer > 0) statuses.push({ text: `🐌 SLOW (${f.slowTimer})`, type: 'debuff' });
+            if (f.stealthTimer > 0) statuses.push({ text: `🫥 STEALTH (${f.stealthTimer})`, type: 'buff' });
+            if (f.gear.shield) statuses.push({ text: '🛡️ SHIELDED', type: 'neutral' });
+            
+            // Ability state
+            const cdLeft = f.abilityCooldown || 0;
+            const isOnCD = cdLeft > 0;
+            const isActive = f.castingTimer > 0 || (f.stealthTimer > 0 && f.role === 'Rogue');
+            
+            // Ability descriptions
+            const abilityDescs = {
+                'Rogue': 'Vanish into shadows when hurt',
+                'Berserker': 'Rush forward, closing the gap',
+                'Tank': 'Charge and stun enemies',
+                'Paladin': 'Divine charge with holy damage',
+                'Cleric': 'Heal wounded allies + HoT',
+                'Mage': 'AoE fire damage + burn DoT',
+                'Necromancer': 'AoE poison cloud DoT',
+                'Controller': 'AoE slow + damage'
+            };
+            
+            content.innerHTML = `
+                <div class="inspector-portrait"><img src="${IPFS}/${f.id}.png"></div>
+                <div class="inspector-name">${f.name}</div>
+                <div class="inspector-role">${f.role}</div>
+                <div class="inspector-team" style="background: ${team?.color}30; border: 1px solid ${team?.color};">${team?.name || 'Unknown'}</div>
+                
+                <!-- AI STATE -->
+                <div class="inspector-ai-state ${aiState}">
+                    <div class="inspector-ai-label">Current Action</div>
+                    <div class="inspector-ai-value">${aiText}</div>
+                </div>
+                
+                <!-- STATUS EFFECTS -->
+                ${statuses.length > 0 ? `
+                <div class="inspector-section">
+                    <div class="inspector-section-title">📊 STATUS EFFECTS</div>
+                    <div class="inspector-status-grid">
+                        ${statuses.map(s => `<div class="inspector-status ${s.type}">${s.text}</div>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                
+                <!-- HP BAR -->
+                <div class="inspector-section">
+                    <div class="inspector-section-title">❤️ HEALTH</div>
+                    <div class="inspector-stat">
+                        <span class="inspector-stat-label">HP</span>
+                        <span class="inspector-stat-value">${f.currentHp ?? f.hp} / ${f.hp}</span>
+                    </div>
+                    <div class="inspector-stat-bar"><div class="inspector-stat-fill" style="width: ${((f.currentHp ?? f.hp) / f.hp) * 100}%; background: linear-gradient(90deg, #DC143C, #32CD32);"></div></div>
+                </div>
+                
+                <!-- ABILITY -->
+                ${ability ? `
+                <div class="inspector-section">
+                    <div class="inspector-section-title">⚡ ABILITY</div>
+                    <div class="inspector-ability ${isActive ? 'active' : (isOnCD ? 'on-cooldown' : 'ready')}">
+                        <div class="inspector-ability-header">
+                            <span class="inspector-ability-name">${ability.name}</span>
+                            <span class="inspector-ability-cd ${isOnCD ? '' : 'ready'}">${isOnCD ? `CD: ${cdLeft}` : 'READY'}</span>
+                        </div>
+                        <div class="inspector-ability-desc">${abilityDescs[f.role] || 'Special ability'}</div>
+                        ${ability.castTime ? `<div class="inspector-ability-desc" style="color: #8844FF;">Cast time: ${ability.castTime} ticks</div>` : ''}
+                    </div>
+                </div>
+                ` : ''}
+                
+                <!-- COMBAT STATS -->
+                <div class="inspector-section">
+                    <div class="inspector-section-title">⚔️ STATS</div>
+                    <div class="inspector-stat">
+                        <span class="inspector-stat-label">Attack</span>
+                        <span class="inspector-stat-value" style="color: #FF6B6B;">${f.atk}</span>
+                    </div>
+                    <div class="inspector-stat">
+                        <span class="inspector-stat-label">Defense</span>
+                        <span class="inspector-stat-value" style="color: #4ECDC4;">${f.def}</span>
+                    </div>
+                    <div class="inspector-stat">
+                        <span class="inspector-stat-label">Speed</span>
+                        <span class="inspector-stat-value" style="color: #FFE66D;">${f.spd.toFixed(2)}</span>
+                    </div>
+                </div>
+                
+                <!-- EQUIPMENT -->
+                <div class="inspector-section">
+                    <div class="inspector-section-title">🛡️ GEAR</div>
+                    ${f.gear.weapon ? `<div class="inspector-gear"><span class="inspector-gear-slot">⚔️</span> <span class="inspector-gear-item">${f.gear.weapon}</span></div>` : ''}
+                    ${f.gear.armor ? `<div class="inspector-gear"><span class="inspector-gear-slot">🛡️</span> <span class="inspector-gear-item">${f.gear.armor}</span></div>` : ''}
+                    ${f.gear.shield ? `<div class="inspector-gear"><span class="inspector-gear-slot">🔰</span> <span class="inspector-gear-item">${f.gear.shield}</span></div>` : ''}
+                    ${f.gear.offhand ? `<div class="inspector-gear"><span class="inspector-gear-slot">📖</span> <span class="inspector-gear-item">${f.gear.offhand}</span></div>` : ''}
+                </div>
+            `;
+        }
+        
+        function renderTeams() {
+            const m = state.match;
+            if (!m) return;
+            
+            const list = document.getElementById('teams-list');
+            list.innerHTML = m.teams.map((t, i) => {
+                // Check if this team is in the bet slip for current bet type
+                const inSlip = state.betSlip.some(b => b.team === i && b.type === state.betType);
+                const odds = getOddsForType(i, state.betType);
+                const betTypeLabel = {
+                    'winner': '🏆',
+                    'top2': '🥈',
+                    'top3': '🥉',
+                    'firstBlood': '🩸'
+                }[state.betType] || '🏆';
+                
+                return `
+                <div class="team-card ${inSlip ? 'selected' : ''} ${t.eliminated ? 'eliminated' : ''} ${m.winner === i ? 'winner' : ''}" onclick="selectTeam(${i})">
+                    <div class="team-card-header">
+                        <div class="team-card-name">
+                            <div class="team-card-color" style="background: ${t.color};"></div>
+                            ${t.name}
+                        </div>
+                        <div class="team-card-odds">${betTypeLabel} ${odds.toFixed(2)}x</div>
+                    </div>
+                    <div class="team-card-fighters">
+                        ${t.fighters.map(f => `
+                            <div class="team-fighter ${f.alive ? '' : 'dead'} ${state.inspectedFighter?.id === f.id ? 'inspected' : ''}" 
+                                 data-id="${f.id}" 
+                                 onclick="event.stopPropagation(); inspectFighter(state.match.teams[${i}].fighters[${t.fighters.indexOf(f)}]);"
+                                 title="${f.name} - ${f.role}">
+                                <img src="${IPFS}/${f.id}.png">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="team-card-stats">
+                        <span>Alive: ${t.alive}/${TEAM_SIZE}</span>
+                        <span>Power: ${Math.round(calcTeamPower(t.fighters))}</span>
+                    </div>
+                </div>
+            `}).join('');
+            
+            document.getElementById('teams-remaining').textContent = m.teams.filter(t => !t.eliminated).length;
+        }
+        
+        function renderArena() {
+            const m = state.match;
+            if (!m) return;
+            
+            const c = document.getElementById('fighters-container');
+            
+            // Only clear and rebuild if we don't have fighters yet
+            // Otherwise just update positions for smooth animation
+            let existingTokens = c.querySelectorAll('.fighter-token');
+            
+            // Gear emoji mapping
+            const GEAR_EMOJI = {
+                // Weapons
+                'Sword': '⚔️', 'Axe': '🪓', 'Staff': '🪄', 'Bow': '🏹', 'Dagger': '🗡️',
+                'Mace': '🔨', 'Spear': '🔱', 'Wand': '✨', 'Scythe': '⚰️', 'Flail': '⛓️',
+                'Hammer': '🔨', 'Crossbow': '🎯', 'Tome': '📖', 'Orb': '🔮', 'Claw': '🦷',
+                // Armor
+                'Plate': '🛡️', 'Leather': '🧥', 'Robes': '👘', 'Chain': '⛓️', 'Scale': '🐉',
+                // Shields
+                'Shield': '🛡️', 'Buckler': '🔘', 'Tower': '🏰',
+                // Default
+                'default': '⚙️'
+            };
+            
+            function getGearEmoji(gearName) {
+                if (!gearName) return '';
+                for (const [key, emoji] of Object.entries(GEAR_EMOJI)) {
+                    if (gearName.toLowerCase().includes(key.toLowerCase())) return emoji;
+                }
+                return GEAR_EMOJI.default;
+            }
+            
+            const ROLE_ICONS = {
+                'Tank': '🛡️', 'Berserker': '⚔️', 'Mage': '✨', 'Rogue': '🗡️',
+                'Paladin': '✝️', 'Necromancer': '💀', 'Controller': '🔮', 'Cleric': '💫'
+            };
+            
+            if (existingTokens.length === 0) {
+                c.innerHTML = '';
+                m.teams.forEach(team => {
+                    team.fighters.forEach(f => {
+                        const el = document.createElement('div');
+                        // Check for lightning gear
+                        const hasLightning = Object.values(f.gear || {}).some(g => 
+                            g && (g.toLowerCase().includes('lightning') || g.toLowerCase().includes('crackling') || 
+                                  g.toLowerCase().includes('thunder') || g.toLowerCase().includes('storm'))
+                        );
+                        el.className = `fighter-token ${f.alive ? '' : 'dead'} ${hasLightning ? 'has-lightning' : ''}`;
+                        el.id = `fighter-${f.id}`;
+                        el.style.left = `${f.x * 100}%`;
+                        el.style.top = `${f.y * 100}%`;
+                        
+                        const hpPct = (f.currentHp / f.hp) * 100;
+                        const hpColor = hpPct > 60 ? '#32CD32' : hpPct > 30 ? '#FFD700' : '#DC143C';
+                        
+                        // Get gear emojis
+                        const weaponEmoji = getGearEmoji(f.gear?.weapon);
+                        const armorEmoji = getGearEmoji(f.gear?.armor);
+                        const shieldEmoji = getGearEmoji(f.gear?.shield || f.gear?.offhand);
+                        const roleIcon = ROLE_ICONS[f.role] || '⚔️';
+                        
+                        el.innerHTML = `
+                            <div class="fighter-hp"><div class="fighter-hp-fill" style="width: ${hpPct}%; background: ${hpColor};"></div></div>
+                            <div class="fighter-role-icon">${roleIcon}</div>
+                            <div class="fighter-inner" style="border-color: ${team.color}"><img src="${IPFS}/${f.id}.png"></div>
+                            <div class="fighter-gear">
+                                ${weaponEmoji ? `<span title="${f.gear?.weapon}">${weaponEmoji}</span>` : ''}
+                                ${armorEmoji ? `<span title="${f.gear?.armor}">${armorEmoji}</span>` : ''}
+                                ${shieldEmoji ? `<span title="${f.gear?.shield || f.gear?.offhand}">${shieldEmoji}</span>` : ''}
+                            </div>
+                            <div class="fighter-label">${f.name}</div>
+                        `;
+                        el.onclick = () => inspectFighter(f);
+                        c.appendChild(el);
+                    });
+                });
+            } else {
+                // Update existing tokens (smooth animation via CSS transitions)
+                m.teams.forEach(team => {
+                    team.fighters.forEach(f => {
+                        const el = document.getElementById(`fighter-${f.id}`);
+                        if (el) {
+                            el.style.left = `${f.x * 100}%`;
+                            el.style.top = `${f.y * 100}%`;
+                            
+                            // Calculate HP state
+                            const hpPct = f.currentHp / f.hp;
+                            let stateClass = '';
+                            if (!f.alive) stateClass = 'dead';
+                            else if (f.stealthTimer > 0) stateClass = 'stealthed';
+                            else if (hpPct < 0.15) stateClass = 'critical';
+                            else if (hpPct < 0.35) stateClass = 'wounded';
+                            
+                            // DoT/HoT/Casting states
+                            let dotClass = '';
+                            if (f.dotTimer > 0) dotClass = 'burning';
+                            if (f.hotTimer > 0) dotClass += ' blessed';
+                            if (f.slowTimer > 0) dotClass += ' slowed';
+                            if (f.castingTimer > 0) dotClass += ' casting';
+                            
+                            // Lightning gear check
+                            const hasLightning = Object.values(f.gear || {}).some(g => 
+                                g && (g.toLowerCase().includes('lightning') || g.toLowerCase().includes('crackling') || 
+                                      g.toLowerCase().includes('thunder') || g.toLowerCase().includes('storm'))
+                            );
+                            if (hasLightning) dotClass += ' has-lightning';
+                            
+                            el.className = `fighter-token ${stateClass} ${dotClass}`.trim();
+                            
+                            // Update HP bar
+                            const hpFill = el.querySelector('.fighter-hp-fill');
+                            if (hpFill) {
+                                const hpPercent = hpPct * 100;
+                                const hpColor = hpPercent > 60 ? '#32CD32' : hpPercent > 30 ? '#FFD700' : '#DC143C';
+                                hpFill.style.width = `${hpPercent}%`;
+                                hpFill.style.background = hpColor;
+                            }
+                            
+                            // Shield direction indicator for tanks
+                            let shieldEl = el.querySelector('.fighter-shield');
+                            if (f.shieldDir !== null && f.shieldDir !== undefined && f.gear?.shield && f.alive) {
+                                if (!shieldEl) {
+                                    shieldEl = document.createElement('div');
+                                    shieldEl.className = 'fighter-shield';
+                                    el.appendChild(shieldEl);
+                                }
+                                // Rotate shield to face threat direction
+                                const deg = (f.shieldDir * 180 / Math.PI) + 90;
+                                shieldEl.style.transform = `translateX(-50%) rotate(${deg}deg)`;
+                                shieldEl.style.display = 'block';
+                                shieldEl.style.left = '50%';
+                                shieldEl.style.top = '0';
+                            } else if (shieldEl) {
+                                shieldEl.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Render projectiles
+            renderProjectiles();
+        }
+        
+        function renderProjectiles() {
+            const c = document.getElementById('fighters-container');
+            
+            // Remove old projectile elements
+            c.querySelectorAll('.spell-projectile').forEach(el => el.remove());
+            
+            // Create projectile elements
+            activeProjectiles.forEach(proj => {
+                const el = document.createElement('div');
+                el.className = 'spell-projectile';
+                el.textContent = proj.emoji;
+                el.style.cssText = `
+                    position: absolute;
+                    left: ${proj.x * 100}%;
+                    top: ${proj.y * 100}%;
+                    transform: translate(-50%, -50%);
+                    font-size: 24px;
+                    z-index: 200;
+                    pointer-events: none;
+                    filter: drop-shadow(0 0 8px ${proj.spellType === 'fireball' ? '#FF4400' : proj.spellType === 'deathcloud' ? '#44FF88' : proj.spellType === 'mindblast' ? '#FF44FF' : '#FFD700'});
+                    animation: projectilePulse 0.3s infinite;
+                `;
+                c.appendChild(el);
+            });
+        }
+        
+        function showDamage(f, dmg, crit) {
+            const c = document.getElementById('fighters-container');
+            const el = document.createElement('div');
+            el.className = `damage-popup ${crit ? 'crit' : 'damage'}`;
+            el.style.left = `${f.x * 100}%`;
+            el.style.top = `${(f.y * 100) - 3}%`;
+            el.textContent = crit ? `${dmg}!` : `-${dmg}`;
+            c.appendChild(el);
+            setTimeout(() => el.remove(), 700);
+        }
+        
+        function addKill(killer, victim, color) {
+            // Track total kills for props bets
+            if (state.match) {
+                state.match.totalKills = (state.match.totalKills || 0) + 1;
+            }
+            
+            const feed = document.getElementById('kill-feed');
+            const el = document.createElement('div');
+            el.className = 'kill-entry';
+            el.style.borderColor = color;
+            el.innerHTML = `💀 ${killer} → ${victim}`;
+            feed.appendChild(el);
+            if (feed.children.length > 6) feed.firstChild.remove();
+        }
+        
+        function showResult() {
+            const m = state.match;
+            if (!m) return;
+            
+            const winnerTeam = m.winner !== null ? m.teams[m.winner] : null;
+            
+            // Big victory announcement!
+            if (winnerTeam) {
+                showPhaseAnnouncement(`🏆 ${winnerTeam.name.toUpperCase()} WINS! 🏆`, 'victory', 3000);
+            } else {
+                showPhaseAnnouncement('💀 DRAW! 💀', 'victory', 3000);
+            }
+            
+            // Calculate MVPs
+            const allFighters = m.teams.flatMap(t => t.fighters);
+            const damageMVP = allFighters.reduce((best, f) => (f.damageDealt || 0) > (best.damageDealt || 0) ? f : best, allFighters[0]);
+            const healingMVP = allFighters.reduce((best, f) => (f.healingDone || 0) > (best.healingDone || 0) ? f : best, allFighters[0]);
+            const overallMVP = allFighters.reduce((best, f) => {
+                const fScore = (f.damageDealt || 0) + (f.healingDone || 0) * 2 + (f.kills || 0) * 50;
+                const bScore = (best.damageDealt || 0) + (best.healingDone || 0) * 2 + (best.kills || 0) * 50;
+                return fScore > bScore ? f : best;
+            }, allFighters[0]);
+            
+            // Display MVP bar
+            const mvpBar = document.getElementById('mvp-bar');
+            mvpBar.style.display = 'flex';
+            
+            // Damage MVP
+            document.getElementById('mvp-damage-portrait').innerHTML = `<img src="${IPFS}/${damageMVP.id}.png">`;
+            document.getElementById('mvp-damage-name').textContent = damageMVP.name;
+            document.getElementById('mvp-damage-value').textContent = `${damageMVP.damageDealt || 0} DMG`;
+            
+            // Healing MVP
+            if ((healingMVP.healingDone || 0) > 0) {
+                document.getElementById('mvp-healing-portrait').innerHTML = `<img src="${IPFS}/${healingMVP.id}.png">`;
+                document.getElementById('mvp-healing-name').textContent = healingMVP.name;
+                document.getElementById('mvp-healing-value').textContent = `${healingMVP.healingDone || 0} HEAL`;
+            } else {
+                document.getElementById('mvp-healing-portrait').innerHTML = '💀';
+                document.getElementById('mvp-healing-name').textContent = 'No Heals';
+                document.getElementById('mvp-healing-value').textContent = '-';
+            }
+            
+            // Overall MVP  
+            document.getElementById('mvp-overall-portrait').innerHTML = `<img src="${IPFS}/${overallMVP.id}.png">`;
+            document.getElementById('mvp-overall-name').textContent = overallMVP.name;
+            document.getElementById('mvp-overall-value').textContent = `${overallMVP.kills || 0} KILLS`;
+            
+            // Calculate finish positions based on elimination order
+            // For now: winner = 1st, last eliminated = 2nd, etc.
+            const finishOrder = [];
+            if (m.winner !== null) finishOrder.push(m.winner);
+            // Add other teams in reverse elimination order (approximation)
+            m.teams.forEach((t, i) => {
+                if (i !== m.winner && !finishOrder.includes(i)) {
+                    finishOrder.push(i);
+                }
+            });
+            
+            document.getElementById('result-winner').textContent = winnerTeam ? `${winnerTeam.name} Wins!` : 'Draw!';
+            document.getElementById('result-winner').style.color = winnerTeam?.color || '#888';
+            
+            // Calculate multi-bet payouts
+            let totalPayout = 0;
+            let betsWon = 0;
+            let betsLost = 0;
+            
+            if (state.betPlaced && state.betSlip.length > 0) {
+                state.betSlip.forEach(bet => {
+                    let won = false;
+                    
+                    switch(bet.type) {
+                        case 'winner':
+                            won = bet.team === m.winner;
+                            break;
+                        case 'top2':
+                            won = finishOrder.indexOf(bet.team) < 2;
+                            break;
+                        case 'top3':
+                            won = finishOrder.indexOf(bet.team) < 3;
+                            break;
+                        case 'firstBlood':
+                            // Would need to track this in match - for now random
+                            won = m.rng && m.rng.next() < 0.2;
+                            break;
+                        case 'killsOver':
+                            won = (m.totalKills || 12) > 12;
+                            break;
+                        case 'killsUnder':
+                            won = (m.totalKills || 12) <= 12;
+                            break;
+                        default:
+                            won = false;
+                    }
+                    
+                    if (won) {
+                        totalPayout += bet.amount * bet.odds;
+                        betsWon++;
+                    } else {
+                        betsLost++;
+                    }
+                });
+                
+                // Update balance with winnings
+                state.balance += totalPayout;
+                
+                const netProfit = totalPayout - state.wager;
+                
+                if (netProfit > 0) {
+                    state.wins++;
+                    document.getElementById('result-title').className = 'result-title win';
+                    document.getElementById('result-title').textContent = 'WINNER!';
+                    document.getElementById('result-payout').className = 'result-payout win';
+                    document.getElementById('result-payout').textContent = `+${netProfit.toFixed(2)} (${betsWon}/${state.betSlip.length} bets)`;
+                } else if (totalPayout > 0) {
+                    // Partial win
+                    document.getElementById('result-title').className = 'result-title nobet';
+                    document.getElementById('result-title').textContent = 'PARTIAL';
+                    document.getElementById('result-payout').className = 'result-payout';
+                    document.getElementById('result-payout').textContent = `${netProfit.toFixed(2)} (${betsWon}/${state.betSlip.length} bets)`;
+                } else {
+                    state.losses++;
+                    document.getElementById('result-title').className = 'result-title lose';
+                    document.getElementById('result-title').textContent = 'DEFEAT';
+                    document.getElementById('result-payout').className = 'result-payout lose';
+                    document.getElementById('result-payout').textContent = `-${state.wager.toFixed(2)} (0/${state.betSlip.length} bets)`;
+                }
+            } else {
+                document.getElementById('result-title').className = 'result-title nobet';
+                document.getElementById('result-title').textContent = 'MATCH OVER';
+                document.getElementById('result-payout').className = 'result-payout';
+                document.getElementById('result-payout').textContent = 'No bet placed';
+            }
+            
+            updateBalance();
+            document.getElementById('result-overlay').classList.add('active');
+            
+            // Auto-advance countdown
+            let countdown = 5;
+            document.getElementById('result-next').textContent = `Next match in ${countdown}s...`;
+            
+            state.autoNextTimer = setInterval(() => {
+                countdown--;
+                document.getElementById('result-next').textContent = `Next match in ${countdown}s...`;
+                if (countdown <= 0) {
+                    skipToNext();
+                }
+            }, 1000);
+        }
+        
+        function skipToNext() {
+            if (state.autoNextTimer) {
+                clearInterval(state.autoNextTimer);
+                state.autoNextTimer = null;
+            }
+            document.getElementById('result-overlay').classList.remove('active');
+            startNewMatch();
+        }
+        
+        function startNewMatch() {
+            state.match = createMatch(state.matchNum++);
+            state.selectedTeam = null;
+            state.betPlaced = false;
+            state.wager = Math.min(10, state.balance);
+            state.inspectedFighter = null;
+            state.betSlip = []; // Clear bet slip
+            state.betType = 'winner'; // Reset to winner bets
+            activeProjectiles = []; // Clear any leftover projectiles
+            
+            document.getElementById('wager-input').value = state.wager;
+            document.getElementById('bet-btn').disabled = true;
+            document.getElementById('bet-btn').textContent = 'ADD A BET FIRST';
+            document.getElementById('kill-feed').innerHTML = '';
+            document.getElementById('battle-log').innerHTML = '';
+            document.getElementById('match-num').textContent = state.match.id.toString().padStart(3, '0');
+            document.getElementById('match-seed').textContent = state.match.seed;
+            document.getElementById('inspector-content').innerHTML = '<div class="inspector-empty"><div class="inspector-empty-icon">👆</div><div>Click a fighter to inspect</div></div>';
+            
+            // Reset bet type tabs
+            document.querySelectorAll('.bet-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-winner').classList.add('active');
+            document.getElementById('props-panel').style.display = 'none';
+            
+            // Clear prop selections
+            document.querySelectorAll('.prop-btn').forEach(b => b.classList.remove('selected'));
+            
+            // Clear fighters container for fresh render
+            document.getElementById('fighters-container').innerHTML = '';
+            
+            // Reset timers
+            lastTickTime = 0;
+            bettingTimeLeft = BET_WINDOW;
+            
+            renderTeams();
+            renderBetSlip();
+            renderArena();
+            updatePotential();
+            
+            // Hide MVP bar from previous match
+            document.getElementById('mvp-bar').style.display = 'none';
+            
+            // Announce betting phase
+            showPhaseAnnouncement('⚔️ PLACE YOUR BETS! ⚔️', 'betting', 2500);
+        }
+        
+        // Speed locked at 1x for universal time - all viewers see the same thing
+        // function setSpeed removed - no client-side speed control allowed
+        
+        // ============ GAME LOOP ============
+        let lastTickTime = 0;
+        let lastFrameTime = 0;
+        let bettingTimeLeft = BET_WINDOW;
+        const BASE_TICK_INTERVAL = 600; // ms between simulation ticks (slower = more watchable)
+        
+        function loop(timestamp) {
+            // Pause when tab is hidden
+            if (document.hidden) {
+                lastFrameTime = timestamp;
+                requestAnimationFrame(loop);
+                return;
+            }
+            
+            const m = state.match;
+            
+            // Calculate delta time (capped to prevent catch-up)
+            const deltaTime = lastFrameTime > 0 ? Math.min(timestamp - lastFrameTime, 100) : 0;
+            lastFrameTime = timestamp;
+            
+            if (m) {
+                // Betting countdown (using delta time, not Date.now)
+                if (m.status === 'betting') {
+                    bettingTimeLeft -= deltaTime;
+                    if (bettingTimeLeft <= 0) {
+                        m.status = 'live';
+                        lastTickTime = timestamp;
+                        // Disable team selection
+                        document.querySelectorAll('.team-card').forEach(c => c.style.pointerEvents = 'none');
+                        // Announce battle start!
+                        showPhaseAnnouncement('⚔️ THE BATTLE BEGINS! ⚔️', 'battle', 2000);
+                        playSound('charge');
+                    }
+                }
+                
+                // Run battle simulation at controlled pace
+                if (m.status === 'live') {
+                    const tickInterval = BASE_TICK_INTERVAL / state.speed;
+                    
+                    // Reset if first tick or way behind
+                    if (lastTickTime === 0 || (timestamp - lastTickTime) > tickInterval * 2) {
+                        lastTickTime = timestamp;
+                    }
+                    
+                    const elapsed = timestamp - lastTickTime;
+                    
+                    if (elapsed >= tickInterval) {
+                        tick(m);
+                        lastTickTime = timestamp;
+                        renderTeams();
+                    }
+                    
+                    renderArena();
+                    updateInspector(); // Live update selected fighter
+                }
+                
+                // Check for match end - use flag to prevent multiple calls
+                if (m.status === 'ended' && !m.resultShown) {
+                    m.resultShown = true;
+                    setTimeout(showResult, 800);
+                }
+                
+                updateTimer();
+            }
+            
+            requestAnimationFrame(loop);
+        }
+        
+        function updateTimer() {
+            const m = state.match;
+            if (!m) return;
+            
+            const timerEl = document.getElementById('main-timer');
+            const statusEl = document.getElementById('match-status');
+            
+            if (m.status === 'betting') {
+                const secs = Math.max(0, Math.ceil(bettingTimeLeft / 1000));
+                timerEl.textContent = `0:${secs.toString().padStart(2, '0')}`;
+                statusEl.textContent = 'BETTING OPEN';
+                statusEl.className = 'status betting';
+            } else if (m.status === 'live') {
+                const left = Math.max(0, MATCH_TIME - m.time);
+                const mins = Math.floor(left / 60000);
+                const secs = Math.floor((left % 60000) / 1000);
+                timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+                statusEl.textContent = 'LIVE BATTLE';
+                statusEl.className = 'status live';
+            } else {
+                timerEl.textContent = 'ENDED';
+                statusEl.textContent = 'MATCH OVER';
+                statusEl.className = 'status';
+            }
+        }
+        
+        // ============ INIT ============
+        updateBalance();
+        startNewMatch();
+        lastFrameTime = performance.now();
+        requestAnimationFrame(loop);
+    </script>
+</body>
+</html>

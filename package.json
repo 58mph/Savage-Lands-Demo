@@ -1,0 +1,13 @@
+{
+ "name": "savage-arena",
+ "version": "1.0.0",
+ "description": "5v5v5v5v5 Tactical Auto-Battler - HEAVY META: The Savage Lands",
+ "scripts": {
+   "deploy:vercel": "vercel --prod",
+   "deploy:surge": "surge . savage-arena.surge.sh",
+   "start": "npx serve ."
+ },
+ "keywords": ["game", "auto-battler", "nft", "chimera", "heavy-meta"],
+ "author": "ClydeTheSavage & Danno",
+ "license": "MIT"
+}

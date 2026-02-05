@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Savage Arena - Sprite Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0a0a0a; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .roster {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .character-card {
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .character-card:hover {
+            border-color: #FFD700;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+        }
+        .sprite-container {
+            width: 64px;
+            height: 128px;
+            margin: 0 auto 15px;
+            background: #000;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image-rendering: pixelated;
+        }
+        .sprite-container img {
+            width: 64px;
+            height: 128px;
+            image-rendering: pixelated;
+            animation: bounce 0.8s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .char-name {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .char-role {
+            color: #0ff;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .char-tribe {
+            color: #888;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+        .char-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            font-size: 10px;
+        }
+        .stat {
+            background: #222;
+            padding: 4px;
+            border-radius: 3px;
+        }
+        .stat-label { color: #888; }
+        .stat-value { color: #FFD700; font-weight: bold; }
+        .arena-preview {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #111;
+            border: 2px solid #8B0000;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .arena-preview h2 {
+            color: #DC143C;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .battle-scene {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px;
+            background: linear-gradient(180deg, #1a0a0a 0%, #0a0505 100%);
+            border-radius: 8px;
+        }
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .team-label {
+            color: #FFD700;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .fighters {
+            display: flex;
+            gap: 10px;
+        }
+        .fighter {
+            width: 48px;
+            height: 96px;
+            image-rendering: pixelated;
+        }
+        .fighter.team1 { transform: scaleX(-1); }
+        .vs {
+            font-size: 32px;
+            color: #DC143C;
+            text-shadow: 0 0 20px rgba(220,20,60,0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>⚔️ SAVAGE ARENA - TRIBAL WARRIORS ⚔️</h1>
+    <p class="subtitle">16×32 Pixel Art Sprites • 14 Species • 6 Roles</p>
+    
+    <div class="roster" id="roster"></div>
+    
+    <div class="arena-preview">
+        <h2>🏟️ Battle Preview</h2>
+        <div class="battle-scene">
+            <div class="team">
+                <div class="team-label">🟢 SWAMP TRIBE</div>
+                <div class="fighters">
+                    <img class="fighter" src="sprites/processed/Crocodillian_16x32.png" alt="Croc">
+                    <img class="fighter" src="sprites/processed/Frogfolk_16x32.png" alt="Frog">
+                    <img class="fighter" src="sprites/processed/Salamander_16x32.png" alt="Salamander">
+                </div>
+            </div>
+            <div class="vs">⚔️ VS ⚔️</div>
+            <div class="team">
+                <div class="team-label">🔴 SHADOW TRIBE</div>
+                <div class="fighters">
+                    <img class="fighter team1" src="sprites/processed/Black_Ratman_16x32.png" alt="Rat">
+                    <img class="fighter team1" src="sprites/processed/Raccoon_16x32.png" alt="Raccoon">
+                    <img class="fighter team1" src="sprites/processed/Possum_16x32.png" alt="Possum">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const characters = [
+            { name: "Crocodile Warrior", role: "⚔️ Warrior", tribe: "Swamp", sprite: "Crocodillian_16x32.png", hp: 120, atk: 17, def: 12, spd: 0.9 },
+            { name: "Albino Croc Shaman", role: "🔮 Shaman", tribe: "Swamp", sprite: "Albino_Crocodillian_16x32.png", hp: 63, atk: 6, def: 5, spd: 0.9 },
+            { name: "Lizard Scout", role: "👁️ Scout", tribe: "Desert", sprite: "Lizardman_16x32.png", hp: 54, atk: 10, def: 4, spd: 1.8 },
+            { name: "Salamander Brute", role: "💪 Brute", tribe: "Volcanic", sprite: "Salamander_16x32.png", hp: 169, atk: 22, def: 11, spd: 0.5 },
+            { name: "Frog Hunter", role: "🏹 Hunter", tribe: "Marsh", sprite: "Frogfolk_16x32.png", hp: 72, atk: 12, def: 6, spd: 1.4 },
+            { name: "Poison Frog Shaman", role: "🔮 Shaman", tribe: "Marsh", sprite: "Poisonous_Frogfolk_16x32.png", hp: 56, atk: 6, def: 4, spd: 1.0 },
+            { name: "Bear Warrior", role: "⚔️ Warrior", tribe: "Forest", sprite: "Bearkin_16x32.png", hp: 140, atk: 20, def: 14, spd: 0.6 },
+            { name: "Winter Bear Chief", role: "👑 Chief", tribe: "Tundra", sprite: "Winter_Bearkin_16x32.png", hp: 180, atk: 17, def: 18, spd: 0.4 },
+            { name: "Shadow Rat Scout", role: "👁️ Scout", tribe: "Shadow", sprite: "Black_Ratman_16x32.png", hp: 42, atk: 11, def: 3, spd: 2.1 },
+            { name: "Sewer Rat Hunter", role: "🏹 Hunter", tribe: "Undercity", sprite: "Brown_Ratman_16x32.png", hp: 64, atk: 10, def: 5, spd: 1.6 },
+            { name: "Plague Rat Shaman", role: "🔮 Shaman", tribe: "Plague", sprite: "White_Ratman_16x32.png", hp: 49, atk: 6, def: 3, spd: 1.1 },
+            { name: "Minotaur Brute", role: "💪 Brute", tribe: "Labyrinth", sprite: "Minotaur_16x32.png", hp: 195, atk: 25, def: 10, spd: 0.4 },
+            { name: "Possum Trickster", role: "👁️ Scout", tribe: "Woodland", sprite: "Possum_16x32.png", hp: 36, atk: 8, def: 3, spd: 2.0 },
+            { name: "Raccoon Bandit", role: "🏹 Hunter", tribe: "Woodland", sprite: "Raccoon_16x32.png", hp: 64, atk: 9, def: 6, spd: 1.4 }
+        ];
+
+        const roster = document.getElementById('roster');
+        characters.forEach(char => {
+            roster.innerHTML += `
+                <div class="character-card">
+                    <div class="sprite-container">
+                        <img src="sprites/processed/${char.sprite}" alt="${char.name}">
+                    </div>
+                    <div class="char-name">${char.name}</div>
+                    <div class="char-role">${char.role}</div>
+                    <div class="char-tribe">${char.tribe} Tribe</div>
+                    <div class="char-stats">
+                        <div class="stat"><div class="stat-label">HP</div><div class="stat-value">${char.hp}</div></div>
+                        <div class="stat"><div class="stat-label">ATK</div><div class="stat-value">${char.atk}</div></div>
+                        <div class="stat"><div class="stat-label">DEF</div><div class="stat-value">${char.def}</div></div>
+                        <div class="stat"><div class="stat-label">SPD</div><div class="stat-value">${char.spd}</div></div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

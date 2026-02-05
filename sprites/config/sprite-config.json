@@ -1,0 +1,40 @@
+{
+  "spec_version": "1.0",
+  "project": {
+    "name": "Savage Arena",
+    "namespace": "sa",
+    "sprite_width": 16,
+    "sprite_height": 32
+  },
+  "sheet": {
+    "type": "grid",
+    "sprite_w": 16,
+    "sprite_h": 32,
+    "columns": 8,
+    "rows": 4,
+    "total_width": 128,
+    "total_height": 128
+  },
+  "style_lock": {
+    "art_style": "16-bit JRPG pixel art",
+    "resolution": "16x32 sprite",
+    "outline": "1px dark outline",
+    "palette": "8-16 colors",
+    "lighting": "top-left light source",
+    "gradients": false,
+    "background": "transparent",
+    "priority": "strong readable silhouette"
+  },
+  "animations": {
+    "idle": { "frames": 1, "row": 0, "cols": [0] },
+    "walk": { "frames": 4, "row": 1, "cols": [0, 1, 2, 3] },
+    "attack": { "frames": 3, "row": 2, "cols": [0, 1, 2] },
+    "death": { "frames": 2, "row": 3, "cols": [0, 1] }
+  },
+  "frame_timing": {
+    "idle": 1000,
+    "walk": 150,
+    "attack": 100,
+    "death": 300
+  }
+}

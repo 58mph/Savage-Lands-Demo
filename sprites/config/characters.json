@@ -1,0 +1,193 @@
+{
+  "characters": [
+    {
+      "id": "sa_croc_warrior_01",
+      "species": "crocodillian",
+      "role": "warrior",
+      "display_name": "Crocodile Warrior",
+      "base_sprite": "layers/Base/Crocodillian.png",
+      "sheet": "sprites/sheets/sa_croc_warrior_01.png",
+      "tribe": "swamp",
+      "stats_modifier": { "hp": 1.2, "atk": 1.1, "def": 1.0, "spd": 0.9 },
+      "traits": ["tough_hide", "bite_attack"],
+      "palette": "swamp_green"
+    },
+    {
+      "id": "sa_croc_albino_01",
+      "species": "crocodillian_albino", 
+      "role": "shaman",
+      "display_name": "Albino Croc Shaman",
+      "base_sprite": "layers/Base/Albino_Crocodillian.png",
+      "sheet": "sprites/sheets/sa_croc_albino_01.png",
+      "tribe": "swamp",
+      "stats_modifier": { "hp": 0.9, "atk": 0.8, "def": 0.8, "spd": 1.0 },
+      "traits": ["magic_affinity", "spirit_sight"],
+      "palette": "pale_white"
+    },
+    {
+      "id": "sa_lizard_scout_01",
+      "species": "lizardman",
+      "role": "scout",
+      "display_name": "Lizard Scout",
+      "base_sprite": "layers/Base/Lizardman.png",
+      "sheet": "sprites/sheets/sa_lizard_scout_01.png",
+      "tribe": "desert",
+      "stats_modifier": { "hp": 0.9, "atk": 1.0, "def": 0.8, "spd": 1.3 },
+      "traits": ["camouflage", "quick_strike"],
+      "palette": "desert_tan"
+    },
+    {
+      "id": "sa_salamander_brute_01",
+      "species": "salamander",
+      "role": "brute",
+      "display_name": "Salamander Brute",
+      "base_sprite": "layers/Base/Salamander.png",
+      "sheet": "sprites/sheets/sa_salamander_brute_01.png",
+      "tribe": "volcanic",
+      "stats_modifier": { "hp": 1.3, "atk": 1.2, "def": 1.1, "spd": 0.7 },
+      "traits": ["fire_resist", "heavy_slam"],
+      "palette": "lava_orange"
+    },
+    {
+      "id": "sa_frog_hunter_01",
+      "species": "frogfolk",
+      "role": "hunter",
+      "display_name": "Frog Hunter",
+      "base_sprite": "layers/Base/Frogfolk.png",
+      "sheet": "sprites/sheets/sa_frog_hunter_01.png",
+      "tribe": "marsh",
+      "stats_modifier": { "hp": 0.9, "atk": 1.0, "def": 0.7, "spd": 1.2 },
+      "traits": ["leap", "tongue_grapple"],
+      "palette": "marsh_green"
+    },
+    {
+      "id": "sa_frog_poison_01",
+      "species": "frogfolk_poison",
+      "role": "shaman",
+      "display_name": "Poison Frog Shaman",
+      "base_sprite": "layers/Base/Poisonous_Frogfolk.png",
+      "sheet": "sprites/sheets/sa_frog_poison_01.png",
+      "tribe": "marsh",
+      "stats_modifier": { "hp": 0.8, "atk": 0.9, "def": 0.6, "spd": 1.1 },
+      "traits": ["poison_touch", "toxic_cloud"],
+      "palette": "toxic_purple"
+    },
+    {
+      "id": "sa_bear_warrior_01",
+      "species": "bearkin",
+      "role": "warrior",
+      "display_name": "Bear Warrior",
+      "base_sprite": "layers/Base/Bearkin.png",
+      "sheet": "sprites/sheets/sa_bear_warrior_01.png",
+      "tribe": "forest",
+      "stats_modifier": { "hp": 1.4, "atk": 1.3, "def": 1.2, "spd": 0.6 },
+      "traits": ["bear_strength", "intimidate"],
+      "palette": "forest_brown"
+    },
+    {
+      "id": "sa_bear_winter_01",
+      "species": "bearkin_winter",
+      "role": "chief",
+      "display_name": "Winter Bear Chief",
+      "base_sprite": "layers/Base/Winter_Bearkin.png",
+      "sheet": "sprites/sheets/sa_bear_winter_01.png",
+      "tribe": "tundra",
+      "stats_modifier": { "hp": 1.5, "atk": 1.2, "def": 1.3, "spd": 0.5 },
+      "traits": ["frost_aura", "rally_cry"],
+      "palette": "ice_white"
+    },
+    {
+      "id": "sa_rat_black_01",
+      "species": "ratman_black",
+      "role": "scout",
+      "display_name": "Shadow Rat Scout",
+      "base_sprite": "layers/Base/Black_Ratman.png",
+      "sheet": "sprites/sheets/sa_rat_black_01.png",
+      "tribe": "shadow",
+      "stats_modifier": { "hp": 0.7, "atk": 1.1, "def": 0.5, "spd": 1.5 },
+      "traits": ["stealth", "backstab"],
+      "palette": "shadow_black"
+    },
+    {
+      "id": "sa_rat_brown_01",
+      "species": "ratman_brown",
+      "role": "hunter",
+      "display_name": "Sewer Rat Hunter",
+      "base_sprite": "layers/Base/Brown_Ratman.png",
+      "sheet": "sprites/sheets/sa_rat_brown_01.png",
+      "tribe": "undercity",
+      "stats_modifier": { "hp": 0.8, "atk": 1.0, "def": 0.6, "spd": 1.3 },
+      "traits": ["disease_carrier", "scavenge"],
+      "palette": "sewer_brown"
+    },
+    {
+      "id": "sa_rat_white_01",
+      "species": "ratman_white",
+      "role": "shaman",
+      "display_name": "Plague Rat Shaman",
+      "base_sprite": "layers/Base/White_Ratman.png",
+      "sheet": "sprites/sheets/sa_rat_white_01.png",
+      "tribe": "plague",
+      "stats_modifier": { "hp": 0.7, "atk": 0.8, "def": 0.5, "spd": 1.2 },
+      "traits": ["plague_magic", "summon_swarm"],
+      "palette": "pale_gray"
+    },
+    {
+      "id": "sa_minotaur_brute_01",
+      "species": "minotaur",
+      "role": "brute",
+      "display_name": "Minotaur Brute",
+      "base_sprite": "layers/Base/Minotaur.png",
+      "sheet": "sprites/sheets/sa_minotaur_brute_01.png",
+      "tribe": "labyrinth",
+      "stats_modifier": { "hp": 1.5, "atk": 1.4, "def": 1.0, "spd": 0.6 },
+      "traits": ["charge", "horn_gore"],
+      "palette": "stone_gray"
+    },
+    {
+      "id": "sa_possum_scout_01",
+      "species": "possum",
+      "role": "scout",
+      "display_name": "Possum Trickster",
+      "base_sprite": "layers/Base/Possum.png",
+      "sheet": "sprites/sheets/sa_possum_scout_01.png",
+      "tribe": "woodland",
+      "stats_modifier": { "hp": 0.6, "atk": 0.8, "def": 0.5, "spd": 1.4 },
+      "traits": ["play_dead", "night_vision"],
+      "palette": "woodland_gray"
+    },
+    {
+      "id": "sa_raccoon_hunter_01",
+      "species": "raccoon",
+      "role": "hunter",
+      "display_name": "Raccoon Bandit",
+      "base_sprite": "layers/Base/Raccoon.png",
+      "sheet": "sprites/sheets/sa_raccoon_hunter_01.png",
+      "tribe": "woodland",
+      "stats_modifier": { "hp": 0.8, "atk": 0.9, "def": 0.7, "spd": 1.2 },
+      "traits": ["steal", "clever_hands"],
+      "palette": "bandit_gray"
+    }
+  ],
+  "tribes": {
+    "swamp": { "color": "#3d5c3d", "bonus": "poison_resist" },
+    "desert": { "color": "#c9a227", "bonus": "heat_resist" },
+    "volcanic": { "color": "#8b2500", "bonus": "fire_resist" },
+    "marsh": { "color": "#4a6741", "bonus": "water_affinity" },
+    "forest": { "color": "#2d5a27", "bonus": "nature_affinity" },
+    "tundra": { "color": "#a0c4d8", "bonus": "frost_resist" },
+    "shadow": { "color": "#1a1a2e", "bonus": "stealth_bonus" },
+    "undercity": { "color": "#4a3c31", "bonus": "disease_resist" },
+    "plague": { "color": "#6b4c3b", "bonus": "plague_magic" },
+    "labyrinth": { "color": "#5c5c5c", "bonus": "maze_navigation" },
+    "woodland": { "color": "#5a7247", "bonus": "foraging" }
+  },
+  "roles": {
+    "warrior": { "icon": "⚔️", "base_stats": { "hp": 100, "atk": 15, "def": 12, "spd": 1.0 } },
+    "shaman": { "icon": "🔮", "base_stats": { "hp": 70, "atk": 8, "def": 6, "spd": 0.9 } },
+    "hunter": { "icon": "🏹", "base_stats": { "hp": 80, "atk": 12, "def": 8, "spd": 1.2 } },
+    "brute": { "icon": "💪", "base_stats": { "hp": 130, "atk": 18, "def": 10, "spd": 0.7 } },
+    "scout": { "icon": "👁️", "base_stats": { "hp": 60, "atk": 10, "def": 5, "spd": 1.4 } },
+    "chief": { "icon": "👑", "base_stats": { "hp": 120, "atk": 14, "def": 14, "spd": 0.8 } }
+  }
+}

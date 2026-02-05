@@ -1,0 +1,30 @@
+2026-02-01 10:35:08,298 [INFO] 
+╔═══════════════════════════════════════╗
+║  🎰 SAVAGE ARENA TRADING BOT 🎰       ║
+║  24/7 Autonomous Betting Agent        ║
+╚═══════════════════════════════════════╝
+
+2026-02-01 10:35:08,298 [INFO] Arena URL: https://savage-arena.vercel.app
+2026-02-01 10:35:08,299 [INFO] Min confidence: 55%
+2026-02-01 10:35:08,299 [INFO] Max wager: 20% of bankroll
+2026-02-01 10:35:08,299 [INFO] Kelly fraction: 25%
+2026-02-01 10:35:08,299 [INFO] Starting trading loop...
+
+2026-02-01 10:35:09,350 [INFO] HTTP Request: GET https://savage-arena.vercel.app/api/match/current "HTTP/1.1 200 OK"
+2026-02-01 10:35:09,813 [INFO] HTTP Request: POST https://api.bankr.bot/agent/submit "HTTP/1.1 401 Unauthorized"
+2026-02-01 10:35:09,814 [ERROR] Bankr submit failed: 401
+2026-02-01 10:35:09,814 [WARNING] Insufficient balance to continue
+2026-02-01 10:35:09,814 [INFO] Trading stopped.
+2026-02-01 10:35:09,814 [INFO] 
+========== SESSION STATS ==========
+Runtime: 0.0 hours
+Bets: 0 (0W / 0L)
+Win Rate: 0.0%
+Total Wagered: 0.00 SAVAGE
+Total Won: 0.00 SAVAGE
+Profit: +0.00 SAVAGE (+0.0% ROI)
+Best Win: 0.00
+Worst Loss: 0.00
+===================================
+
+2026-02-01 10:35:09,814 [INFO] Goodbye! 🤙

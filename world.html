@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Savage Lands - World Map</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0a0a0a; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        /* MAIN MAP VIEWPORT */
+        #viewport {
+            position: absolute;
+            top: 0; left: 0; right: 250px; bottom: 0;
+            overflow: hidden;
+            cursor: grab;
+        }
+        #viewport:active { cursor: grabbing; }
+        
+        #map {
+            position: absolute;
+            /* Map is larger than viewport - draggable */
+        }
+        
+        /* TERRAIN TILES */
+        .tile {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: filter 0.2s;
+        }
+        .tile:hover { filter: brightness(1.3); cursor: pointer; }
+        .tile.plains { background: linear-gradient(135deg, #2d5a27 0%, #3d7a37 100%); }
+        .tile.forest { background: linear-gradient(135deg, #1a3d18 0%, #2d5a27 100%); }
+        .tile.mountain { background: linear-gradient(135deg, #4a4a4a 0%, #6a6a6a 50%, #fff 100%); }
+        .tile.water { background: linear-gradient(135deg, #1a3d5c 0%, #2a5d8c 100%); }
+        .tile.swamp { background: linear-gradient(135deg, #3d4a27 0%, #5a6a37 100%); }
+        .tile.desert { background: linear-gradient(135deg, #c9a227 0%, #e8c547 100%); }
+        .tile.snow { background: linear-gradient(135deg, #cce0ff 0%, #ffffff 100%); }
+        
+        /* TERRITORY OVERLAY */
+        .tile.team0 { box-shadow: inset 0 0 20px rgba(50, 205, 50, 0.5); }
+        .tile.team1 { box-shadow: inset 0 0 20px rgba(220, 20, 60, 0.5); }
+        .tile.team2 { box-shadow: inset 0 0 20px rgba(65, 105, 225, 0.5); }
+        .tile.team3 { box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.5); }
+        .tile.contested { animation: contested 1s infinite; }
+        @keyframes contested { 50% { filter: brightness(1.5); } }
+        
+        /* STRUCTURES */
+        .structure {
+            position: absolute;
+            font-size: 24px;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 4px #000;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.2s;
+        }
+        .structure:hover { transform: translate(-50%, -50%) scale(1.3); }
+        .structure.castle { font-size: 32px; }
+        .structure.village { font-size: 20px; }
+        
+        /* ARMIES */
+        .army {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .army:hover { transform: translate(-50%, -50%) scale(1.2); }
+        .army.team0 { background: rgba(50, 205, 50, 0.8); border-color: #32CD32; }
+        .army.team1 { background: rgba(220, 20, 60, 0.8); border-color: #DC143C; }
+        .army.team2 { background: rgba(65, 105, 225, 0.8); border-color: #4169E1; }
+        .army.team3 { background: rgba(255, 215, 0, 0.8); border-color: #FFD700; }
+        .army.selected { animation: pulse 0.5s infinite; box-shadow: 0 0 20px #fff; }
+        @keyframes pulse { 50% { transform: translate(-50%, -50%) scale(1.15); } }
+        
+        /* SIDEBAR */
+        #sidebar {
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 250px;
+            background: rgba(10, 10, 10, 0.95);
+            border-left: 2px solid #8B0000;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        /* MINIMAP */
+        #minimap-container {
+            background: #111;
+            border: 2px solid #8B0000;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        #minimap {
+            width: 100%;
+            aspect-ratio: 1;
+            position: relative;
+            cursor: crosshair;
+        }
+        #minimap-viewport {
+            position: absolute;
+            border: 2px solid #fff;
+            background: rgba(255,255,255,0.1);
+            pointer-events: none;
+        }
+        .minimap-poi {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .minimap-poi.castle { width: 10px; height: 10px; background: #FFD700; }
+        .minimap-poi.village { background: #888; }
+        .minimap-poi.army { background: #fff; border: 1px solid #000; }
+        
+        /* INFO PANEL */
+        .panel-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            color: #DC143C;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+            font-size: 12px;
+        }
+        .info-label { color: #888; }
+        .info-value { color: #fff; font-weight: bold; }
+        
+        /* FACTION LIST */
+        .faction {
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #333;
+            border-left: 4px solid;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .faction:hover { background: rgba(255,255,255,0.1); }
+        .faction.team0 { border-left-color: #32CD32; }
+        .faction.team1 { border-left-color: #DC143C; }
+        .faction.team2 { border-left-color: #4169E1; }
+        .faction.team3 { border-left-color: #FFD700; }
+        .faction-name { font-weight: bold; font-size: 12px; }
+        .faction-stats { font-size: 10px; color: #888; margin-top: 4px; }
+        
+        /* CONTROLS */
+        .btn {
+            background: #8B0000;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            margin: 5px 0;
+            cursor: pointer;
+            width: 100%;
+            font-size: 11px;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #a00; }
+        .btn:disabled { background: #444; cursor: not-allowed; }
+        
+        /* TURN INDICATOR */
+        #turn-display {
+            text-align: center;
+            padding: 10px;
+            background: #1a1a1a;
+            border: 2px solid #8B0000;
+            margin-bottom: 15px;
+        }
+        #turn-display .year {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 14px;
+            color: #FFD700;
+        }
+        #turn-display .season {
+            font-size: 10px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        /* EVENTS LOG */
+        #events {
+            background: #111;
+            border: 1px solid #333;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 10px;
+        }
+        .event { padding: 4px 0; border-bottom: 1px solid #222; }
+        .event.war { color: #DC143C; }
+        .event.peace { color: #32CD32; }
+        .event.battle { color: #FFD700; }
+        .event.conquest { color: #FF8C00; }
+        
+        /* TOOLTIP */
+        #tooltip {
+            position: fixed;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid #8B0000;
+            padding: 10px;
+            font-size: 11px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            max-width: 200px;
+        }
+        #tooltip .tt-title { color: #FFD700; font-weight: bold; margin-bottom: 5px; }
+        #tooltip .tt-info { color: #aaa; }
+        
+        /* BATTLE MODAL */
+        #battle-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        #battle-modal.active { display: flex; flex-direction: column; align-items: center; }
+        .battle-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .battle-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 20px;
+            color: #DC143C;
+            text-shadow: 2px 2px #000;
+        }
+        .battle-subtitle { color: #888; margin-top: 10px; }
+        .battle-teams {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+        }
+        .battle-team {
+            background: rgba(20,20,20,0.9);
+            border: 2px solid;
+            padding: 15px;
+            min-width: 350px;
+        }
+        .battle-team.attacker { border-color: #32CD32; }
+        .battle-team.defender { border-color: #DC143C; }
+        .team-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .battle-team.attacker .team-title { color: #32CD32; }
+        .battle-team.defender .team-title { color: #DC143C; }
+        .roster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .roster-fighter {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .roster-fighter:hover { border-color: #666; }
+        .roster-fighter.selected { border-color: #FFD700; background: rgba(255,215,0,0.1); }
+        .roster-fighter.king { border-color: #FFD700; border-width: 3px; }
+        .roster-fighter.dead { opacity: 0.3; pointer-events: none; }
+        .fighter-name { font-size: 9px; color: #fff; margin-bottom: 3px; }
+        .fighter-role { font-size: 8px; color: #0ff; }
+        .fighter-stats { font-size: 7px; color: #888; margin-top: 3px; }
+        .selection-count {
+            text-align: center;
+            padding: 10px;
+            color: #FFD700;
+            font-size: 12px;
+        }
+        .battle-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .battle-btn {
+            padding: 15px 30px;
+            font-size: 14px;
+            font-family: 'Press Start 2P', monospace;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .battle-btn.fight { background: #8B0000; color: #fff; }
+        .battle-btn.fight:hover { background: #a00; }
+        .battle-btn.fight:disabled { background: #444; cursor: not-allowed; }
+        .battle-btn.retreat { background: #444; color: #fff; }
+        .battle-btn.retreat:hover { background: #555; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="viewport">
+        <div id="map"></div>
+    </div>
+    
+    <div id="sidebar">
+        <div id="turn-display">
+            <div class="year">Year <span id="year">1</span></div>
+            <div class="season" id="season">Spring</div>
+        </div>
+        
+        <div id="minimap-container">
+            <div class="panel-title">🗺️ World Map</div>
+            <div id="minimap"></div>
+            <div id="minimap-viewport"></div>
+        </div>
+        
+        <div class="panel-title">⚔️ Factions</div>
+        <div id="factions"></div>
+        
+        <button class="btn" onclick="nextTurn()">⏭️ Next Turn</button>
+        <button class="btn" onclick="autoPlay()" id="auto-btn">▶️ Auto Play</button>
+        
+        <div class="panel-title" style="margin-top:15px;">📜 Events</div>
+        <div id="events"></div>
+    </div>
+    
+    <div id="tooltip"></div>
+    
+    <!-- BATTLE MODAL -->
+    <div id="battle-modal">
+        <div class="battle-header">
+            <div class="battle-title">⚔️ BATTLE! ⚔️</div>
+            <div class="battle-subtitle" id="battle-location">Battle for the Plains</div>
+        </div>
+        <div class="battle-teams">
+            <div class="battle-team attacker">
+                <div class="team-title">⚔️ YOUR ARMY</div>
+                <div class="selection-count">King: <span id="atk-king">None</span> | Army: <span id="atk-count">0</span>/14</div>
+                <div class="roster-grid" id="attacker-roster"></div>
+            </div>
+            <div class="battle-team defender">
+                <div class="team-title">🛡️ ENEMY ARMY</div>
+                <div class="selection-count">Fighters: <span id="def-count">0</span></div>
+                <div class="roster-grid" id="defender-roster"></div>
+            </div>
+        </div>
+        <div class="battle-actions">
+            <button class="battle-btn retreat" onclick="retreatFromBattle()">🏃 RETREAT</button>
+            <button class="battle-btn fight" id="fight-btn" onclick="startBattle()" disabled>⚔️ FIGHT!</button>
+        </div>
+    </div>
+
+<script>
+// ========================================
+// THE SAVAGE LANDS - WORLD MAP
+// ========================================
+
+const WORLD_SIZE = 32; // 32x32 tiles
+const TILE_SIZE = 64;
+const TERRAIN_TYPES = ['plains', 'plains', 'plains', 'forest', 'forest', 'mountain', 'water', 'swamp', 'desert'];
+const SEASONS = ['Spring', 'Summer', 'Autumn', 'Winter'];
+
+// MASTER FIGHTER ROSTER (same as autobattler)
+const ALL_FIGHTERS = [
+    {id:1,name:"Crocus III",hp:380,atk:22,def:14,spd:0.9,role:"Tank",trait:"Stalwart"},
+    {id:2,name:"Frostfang",hp:290,atk:28,def:8,spd:1.1,role:"Berserker",trait:"Frenzy"},
+    {id:3,name:"Flamekeeper",hp:250,atk:24,def:10,spd:0.85,role:"Mage",trait:"Pyromancer"},
+    {id:4,name:"Destroyer",hp:340,atk:25,def:12,spd:1.0,role:"Berserker",trait:"Rage"},
+    {id:5,name:"Venomous",hp:320,atk:26,def:11,spd:1.25,role:"Rogue",trait:"Poison"},
+    {id:6,name:"Boulderback",hp:420,atk:18,def:18,spd:0.7,role:"Tank",trait:"Ironclad"},
+    {id:7,name:"Stormcaller",hp:240,atk:30,def:6,spd:0.9,role:"Mage",trait:"Lightning"},
+    {id:8,name:"Thornhide",hp:360,atk:20,def:16,spd:0.8,role:"Tank",trait:"Thorns"},
+    {id:9,name:"Shadowdancer",hp:260,atk:32,def:5,spd:1.4,role:"Rogue",trait:"Evasion"},
+    {id:10,name:"Ironjaw",hp:400,atk:24,def:15,spd:0.75,role:"Tank",trait:"Unbreakable"},
+    {id:11,name:"Blazefury",hp:280,atk:35,def:4,spd:1.2,role:"Berserker",trait:"Bloodlust"},
+    {id:12,name:"Voidwalker",hp:220,atk:28,def:8,spd:1.0,role:"Mage",trait:"Dark Magic"},
+    {id:13,name:"Bonecrusher",hp:380,atk:26,def:13,spd:0.85,role:"Berserker",trait:"Brutal"},
+    {id:14,name:"Lightbringer",hp:300,atk:18,def:12,spd:0.9,role:"Cleric",trait:"Blessed"},
+    {id:15,name:"Dreadnought",hp:450,atk:16,def:20,spd:0.6,role:"Tank",trait:"Colossus"},
+    {id:16,name:"Whisperwind",hp:240,atk:22,def:7,spd:1.5,role:"Rogue",trait:"Swift"},
+    {id:17,name:"Emberheart",hp:260,atk:26,def:9,spd:1.0,role:"Mage",trait:"Burning"},
+    {id:18,name:"Grimfang",hp:340,atk:28,def:10,spd:1.05,role:"Berserker",trait:"Savage"},
+    {id:19,name:"Seraphim",hp:280,atk:20,def:14,spd:0.95,role:"Cleric",trait:"Divine"},
+    {id:20,name:"Nightstalker",hp:250,atk:34,def:4,spd:1.35,role:"Rogue",trait:"Assassin"},
+    {id:21,name:"Titanfall",hp:440,atk:20,def:18,spd:0.65,role:"Tank",trait:"Giant"},
+    {id:22,name:"Frostweaver",hp:230,atk:27,def:7,spd:0.9,role:"Mage",trait:"Frost"},
+    {id:23,name:"Rageclaw",hp:320,atk:30,def:8,spd:1.15,role:"Berserker",trait:"Berserk"},
+    {id:24,name:"Divine Aegis",hp:350,atk:16,def:16,spd:0.8,role:"Cleric",trait:"Guardian"},
+    {id:25,name:"Phantom",hp:220,atk:36,def:3,spd:1.45,role:"Rogue",trait:"Ghost"},
+    {id:26,name:"Earthshaker",hp:400,atk:22,def:17,spd:0.7,role:"Tank",trait:"Quake"},
+    {id:27,name:"Infernus",hp:270,atk:32,def:5,spd:1.0,role:"Mage",trait:"Hellfire"},
+    {id:28,name:"Bloodreaver",hp:300,atk:34,def:6,spd:1.2,role:"Berserker",trait:"Vampiric"},
+    {id:29,name:"Sanctuary",hp:320,atk:14,def:15,spd:0.85,role:"Cleric",trait:"Protector"},
+    {id:30,name:"Viper",hp:240,atk:30,def:6,spd:1.4,role:"Rogue",trait:"Venomous"},
+    {id:31,name:"Warsong",hp:260,atk:16,def:10,spd:1.0,role:"Bard",trait:"Inspiring"},
+    {id:32,name:"Drumcaller",hp:240,atk:14,def:8,spd:0.95,role:"Bard",trait:"Rhythmic"},
+    {id:33,name:"Bonelord",hp:220,atk:22,def:6,spd:0.85,role:"Necromancer",trait:"Summoner"},
+    {id:34,name:"Gravecaller",hp:240,atk:20,def:8,spd:0.9,role:"Necromancer",trait:"Reanimator"}
+];
+
+// FACTION DATA - each faction has a roster of fighters
+const FACTIONS = [
+    { id: 0, name: 'The Green Banner', color: '#32CD32', capital: null, territories: 0, armies: [], personality: 'Player', roster: [] },
+    { id: 1, name: 'Crimson Legion', color: '#DC143C', capital: null, territories: 0, armies: [], personality: 'Aggressive', roster: [] },
+    { id: 2, name: 'Azure Kingdom', color: '#4169E1', capital: null, territories: 0, armies: [], personality: 'Defensive', roster: [] },
+    { id: 3, name: 'Golden Horde', color: '#FFD700', capital: null, territories: 0, armies: [], personality: 'Expansionist', roster: [] }
+];
+
+// Distribute fighters to factions at start
+function initFactionRosters() {
+    const shuffled = [...ALL_FIGHTERS].sort(() => Math.random() - 0.5);
+    const perFaction = Math.floor(shuffled.length / FACTIONS.length);
+    FACTIONS.forEach((f, i) => {
+        f.roster = shuffled.slice(i * perFaction, (i + 1) * perFaction).map(fighter => ({
+            ...fighter,
+            alive: true,
+            faction: i
+        }));
+    });
+}
+
+// WORLD STATE
+let world = {
+    year: 1,
+    season: 0,
+    tiles: [],
+    structures: [],
+    armies: [],
+    events: [],
+    selectedArmy: null,
+    autoPlaying: false
+};
+
+// CAMERA
+let camera = { x: 0, y: 0 };
+let dragging = false;
+let dragStart = { x: 0, y: 0 };
+
+// ========================================
+// WORLD GENERATION
+// ========================================
+
+function generateWorld() {
+    const map = document.getElementById('map');
+    map.style.width = WORLD_SIZE * TILE_SIZE + 'px';
+    map.style.height = WORLD_SIZE * TILE_SIZE + 'px';
+    
+    // Generate terrain with noise-like patterns
+    for (let y = 0; y < WORLD_SIZE; y++) {
+        world.tiles[y] = [];
+        for (let x = 0; x < WORLD_SIZE; x++) {
+            // Simple terrain generation (replace with Perlin noise later)
+            let terrain = 'plains';
+            const r = Math.random();
+            const distFromCenter = Math.hypot(x - WORLD_SIZE/2, y - WORLD_SIZE/2) / (WORLD_SIZE/2);
+            
+            // Water around edges
+            if (x < 2 || y < 2 || x > WORLD_SIZE-3 || y > WORLD_SIZE-3) {
+                terrain = 'water';
+            } else if (r < 0.15) {
+                terrain = 'forest';
+            } else if (r < 0.22) {
+                terrain = 'mountain';
+            } else if (r < 0.27 && y > WORLD_SIZE * 0.6) {
+                terrain = 'swamp';
+            } else if (r < 0.32 && y < WORLD_SIZE * 0.4) {
+                terrain = 'snow';
+            } else if (r < 0.37 && x > WORLD_SIZE * 0.6) {
+                terrain = 'desert';
+            }
+            
+            world.tiles[y][x] = { x, y, terrain, owner: -1 };
+            
+            // Create tile element
+            const tile = document.createElement('div');
+            tile.className = `tile ${terrain}`;
+            tile.style.left = x * TILE_SIZE + 'px';
+            tile.style.top = y * TILE_SIZE + 'px';
+            tile.dataset.x = x;
+            tile.dataset.y = y;
+            tile.onclick = () => tileClick(x, y);
+            tile.onmouseover = (e) => showTooltip(e, `${terrain.toUpperCase()}\n(${x}, ${y})`);
+            tile.onmouseout = hideTooltip;
+            map.appendChild(tile);
+        }
+    }
+    
+    // Place faction capitals
+    const positions = [
+        { x: 5, y: 5 },   // Green - top left
+        { x: 26, y: 5 },  // Red - top right
+        { x: 5, y: 26 },  // Blue - bottom left
+        { x: 26, y: 26 }  // Gold - bottom right
+    ];
+    
+    FACTIONS.forEach((f, i) => {
+        const pos = positions[i];
+        // Make sure capital isn't on water
+        world.tiles[pos.y][pos.x].terrain = 'plains';
+        world.tiles[pos.y][pos.x].owner = i;
+        f.capital = { x: pos.x, y: pos.y };
+        
+        // Claim nearby tiles
+        for (let dy = -2; dy <= 2; dy++) {
+            for (let dx = -2; dx <= 2; dx++) {
+                const tx = pos.x + dx, ty = pos.y + dy;
+                if (tx >= 0 && tx < WORLD_SIZE && ty >= 0 && ty < WORLD_SIZE) {
+                    if (world.tiles[ty][tx].terrain !== 'water') {
+                        world.tiles[ty][tx].owner = i;
+                    }
+                }
+            }
+        }
+        
+        // Create castle structure
+        addStructure(pos.x, pos.y, 'castle', f.name + ' Capital', i);
+        
+        // Create starting army
+        addArmy(pos.x + 1, pos.y, i, 100);
+    });
+    
+    // Add some villages
+    for (let i = 0; i < 20; i++) {
+        const x = 3 + Math.floor(Math.random() * (WORLD_SIZE - 6));
+        const y = 3 + Math.floor(Math.random() * (WORLD_SIZE - 6));
+        if (world.tiles[y][x].terrain !== 'water' && world.tiles[y][x].terrain !== 'mountain') {
+            addStructure(x, y, 'village', 'Village', -1);
+        }
+    }
+    
+    updateTerritoryDisplay();
+    updateMinimap();
+    updateFactionList();
+    centerCamera(WORLD_SIZE/2, WORLD_SIZE/2);
+}
+
+function addStructure(x, y, type, name, owner) {
+    const s = { x, y, type, name, owner };
+    world.structures.push(s);
+    
+    const el = document.createElement('div');
+    el.className = `structure ${type}`;
+    el.textContent = type === 'castle' ? '🏰' : '🏘️';
+    el.style.left = (x + 0.5) * TILE_SIZE + 'px';
+    el.style.top = (y + 0.5) * TILE_SIZE + 'px';
+    el.onclick = (e) => { e.stopPropagation(); structureClick(s); };
+    el.onmouseover = (e) => showTooltip(e, `${name}\n${type.toUpperCase()}`);
+    el.onmouseout = hideTooltip;
+    document.getElementById('map').appendChild(el);
+}
+
+function addArmy(x, y, faction, strength) {
+    const a = { id: world.armies.length, x, y, faction, strength, moves: 2 };
+    world.armies.push(a);
+    FACTIONS[faction].armies.push(a);
+    
+    const el = document.createElement('div');
+    el.className = `army team${faction}`;
+    el.id = `army-${a.id}`;
+    el.textContent = Math.floor(strength / 10);
+    el.style.left = (x + 0.5) * TILE_SIZE + 'px';
+    el.style.top = (y + 0.5) * TILE_SIZE + 'px';
+    el.onclick = (e) => { e.stopPropagation(); armyClick(a); };
+    el.onmouseover = (e) => showTooltip(e, `${FACTIONS[faction].name}\nArmy: ${strength} troops`);
+    el.onmouseout = hideTooltip;
+    document.getElementById('map').appendChild(el);
+    
+    return a;
+}
+
+// ========================================
+// CAMERA & NAVIGATION
+// ========================================
+
+function centerCamera(tileX, tileY) {
+    const viewport = document.getElementById('viewport');
+    const vw = viewport.clientWidth;
+    const vh = viewport.clientHeight;
+    
+    camera.x = tileX * TILE_SIZE - vw / 2;
+    camera.y = tileY * TILE_SIZE - vh / 2;
+    
+    // Clamp to map bounds
+    camera.x = Math.max(0, Math.min(camera.x, WORLD_SIZE * TILE_SIZE - vw));
+    camera.y = Math.max(0, Math.min(camera.y, WORLD_SIZE * TILE_SIZE - vh));
+    
+    updateCameraPosition();
+}
+
+function updateCameraPosition() {
+    const map = document.getElementById('map');
+    map.style.transform = `translate(${-camera.x}px, ${-camera.y}px)`;
+    updateMinimapViewport();
+}
+
+// Viewport dragging
+document.getElementById('viewport').addEventListener('mousedown', (e) => {
+    dragging = true;
+    dragStart = { x: e.clientX + camera.x, y: e.clientY + camera.y };
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (dragging) {
+        camera.x = dragStart.x - e.clientX;
+        camera.y = dragStart.y - e.clientY;
+        
+        const viewport = document.getElementById('viewport');
+        const vw = viewport.clientWidth;
+        const vh = viewport.clientHeight;
+        camera.x = Math.max(0, Math.min(camera.x, WORLD_SIZE * TILE_SIZE - vw));
+        camera.y = Math.max(0, Math.min(camera.y, WORLD_SIZE * TILE_SIZE - vh));
+        
+        updateCameraPosition();
+    }
+});
+
+document.addEventListener('mouseup', () => { dragging = false; });
+
+// ========================================
+// MINIMAP
+// ========================================
+
+function updateMinimap() {
+    const mm = document.getElementById('minimap');
+    mm.innerHTML = '';
+    
+    // Draw territories as colored pixels
+    const canvas = document.createElement('canvas');
+    canvas.width = WORLD_SIZE;
+    canvas.height = WORLD_SIZE;
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.imageRendering = 'pixelated';
+    const ctx = canvas.getContext('2d');
+    
+    for (let y = 0; y < WORLD_SIZE; y++) {
+        for (let x = 0; x < WORLD_SIZE; x++) {
+            const t = world.tiles[y][x];
+            if (t.terrain === 'water') {
+                ctx.fillStyle = '#1a3d5c';
+            } else if (t.owner >= 0) {
+                ctx.fillStyle = FACTIONS[t.owner].color;
+            } else {
+                ctx.fillStyle = '#333';
+            }
+            ctx.fillRect(x, y, 1, 1);
+        }
+    }
+    mm.appendChild(canvas);
+    
+    // Add POI markers
+    world.structures.filter(s => s.type === 'castle').forEach(s => {
+        const poi = document.createElement('div');
+        poi.className = 'minimap-poi castle';
+        poi.style.left = (s.x / WORLD_SIZE * 100) + '%';
+        poi.style.top = (s.y / WORLD_SIZE * 100) + '%';
+        poi.style.background = s.owner >= 0 ? FACTIONS[s.owner].color : '#888';
+        mm.appendChild(poi);
+    });
+    
+    // Add army markers
+    world.armies.forEach(a => {
+        if (a.strength > 0) {
+            const poi = document.createElement('div');
+            poi.className = 'minimap-poi army';
+            poi.style.left = (a.x / WORLD_SIZE * 100) + '%';
+            poi.style.top = (a.y / WORLD_SIZE * 100) + '%';
+            poi.style.background = FACTIONS[a.faction].color;
+            mm.appendChild(poi);
+        }
+    });
+    
+    // Click to navigate
+    canvas.onclick = (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = Math.floor((e.clientX - rect.left) / rect.width * WORLD_SIZE);
+        const y = Math.floor((e.clientY - rect.top) / rect.height * WORLD_SIZE);
+        centerCamera(x, y);
+    };
+    
+    updateMinimapViewport();
+}
+
+function updateMinimapViewport() {
+    const viewport = document.getElementById('viewport');
+    const mmViewport = document.getElementById('minimap-viewport');
+    const mmContainer = document.getElementById('minimap');
+    
+    const vw = viewport.clientWidth / (WORLD_SIZE * TILE_SIZE);
+    const vh = viewport.clientHeight / (WORLD_SIZE * TILE_SIZE);
+    const vx = camera.x / (WORLD_SIZE * TILE_SIZE);
+    const vy = camera.y / (WORLD_SIZE * TILE_SIZE);
+    
+    mmViewport.style.left = (vx * 100) + '%';
+    mmViewport.style.top = (vy * 100) + '%';
+    mmViewport.style.width = (vw * 100) + '%';
+    mmViewport.style.height = (vh * 100) + '%';
+}
+
+// ========================================
+// TERRITORY & DISPLAY
+// ========================================
+
+function updateTerritoryDisplay() {
+    // Update tile ownership visuals
+    for (let y = 0; y < WORLD_SIZE; y++) {
+        for (let x = 0; x < WORLD_SIZE; x++) {
+            const t = world.tiles[y][x];
+            const el = document.querySelector(`.tile[data-x="${x}"][data-y="${y}"]`);
+            if (el) {
+                el.classList.remove('team0', 'team1', 'team2', 'team3');
+                if (t.owner >= 0) {
+                    el.classList.add(`team${t.owner}`);
+                }
+            }
+        }
+    }
+    
+    // Count territories
+    FACTIONS.forEach(f => f.territories = 0);
+    world.tiles.flat().forEach(t => {
+        if (t.owner >= 0) FACTIONS[t.owner].territories++;
+    });
+}
+
+function updateFactionList() {
+    const container = document.getElementById('factions');
+    container.innerHTML = FACTIONS.map(f => `
+        <div class="faction team${f.id}" onclick="centerCamera(${f.capital.x}, ${f.capital.y})">
+            <div class="faction-name">${f.name}</div>
+            <div class="faction-stats">
+                🏰 ${f.territories} tiles • ⚔️ ${f.armies.filter(a => a.strength > 0).length} armies
+            </div>
+        </div>
+    `).join('');
+}
+
+// ========================================
+// GAME LOGIC
+// ========================================
+
+function tileClick(x, y) {
+    if (world.selectedArmy) {
+        moveArmy(world.selectedArmy, x, y);
+    }
+}
+
+function armyClick(army) {
+    // Deselect previous
+    if (world.selectedArmy) {
+        document.getElementById(`army-${world.selectedArmy.id}`)?.classList.remove('selected');
+    }
+    
+    world.selectedArmy = army;
+    document.getElementById(`army-${army.id}`)?.classList.add('selected');
+}
+
+function structureClick(structure) {
+    centerCamera(structure.x, structure.y);
+    logEvent(`Viewing: ${structure.name}`);
+}
+
+function moveArmy(army, tx, ty) {
+    const dist = Math.abs(tx - army.x) + Math.abs(ty - army.y);
+    if (dist > army.moves) {
+        logEvent('Too far! Army can only move ' + army.moves + ' tiles.');
+        return;
+    }
+    
+    const targetTile = world.tiles[ty][tx];
+    if (targetTile.terrain === 'water' || targetTile.terrain === 'mountain') {
+        logEvent('Cannot move there!');
+        return;
+    }
+    
+    // Check for enemy army at destination
+    const enemyArmy = world.armies.find(a => a.x === tx && a.y === ty && a.faction !== army.faction && a.strength > 0);
+    if (enemyArmy) {
+        // BATTLE!
+        logEvent(`⚔️ BATTLE! ${FACTIONS[army.faction].name} attacks ${FACTIONS[enemyArmy.faction].name}!`, 'battle');
+        resolveBattle(army, enemyArmy);
+        return;
+    }
+    
+    // Move army
+    army.x = tx;
+    army.y = ty;
+    army.moves -= dist;
+    
+    // Claim tile
+    if (targetTile.owner !== army.faction) {
+        const oldOwner = targetTile.owner;
+        targetTile.owner = army.faction;
+        if (oldOwner >= 0) {
+            logEvent(`${FACTIONS[army.faction].name} conquers territory from ${FACTIONS[oldOwner].name}!`, 'conquest');
+        }
+    }
+    
+    // Update display
+    const el = document.getElementById(`army-${army.id}`);
+    el.style.left = (tx + 0.5) * TILE_SIZE + 'px';
+    el.style.top = (ty + 0.5) * TILE_SIZE + 'px';
+    
+    updateTerritoryDisplay();
+    updateMinimap();
+    updateFactionList();
+    
+    // Deselect
+    el.classList.remove('selected');
+    world.selectedArmy = null;
+}
+
+// Battle state
+let currentBattle = null;
+
+function resolveBattle(attacker, defender) {
+    // Open battle modal for player battles
+    if (attacker.faction === 0) {
+        // Player is attacking - show selection screen
+        currentBattle = { attacker, defender, playerKing: null, playerArmy: [] };
+        openBattleModal();
+    } else if (defender.faction === 0) {
+        // Player is defending - show selection screen
+        currentBattle = { attacker, defender, playerKing: null, playerArmy: [], isDefending: true };
+        openBattleModal();
+    } else {
+        // AI vs AI - auto resolve
+        autoResolveBattle(attacker, defender);
+    }
+}
+
+function openBattleModal() {
+    const modal = document.getElementById('battle-modal');
+    modal.classList.add('active');
+    
+    const playerFaction = currentBattle.isDefending ? currentBattle.defender.faction : currentBattle.attacker.faction;
+    const enemyFaction = currentBattle.isDefending ? currentBattle.attacker.faction : currentBattle.defender.faction;
+    
+    document.getElementById('battle-location').textContent = 
+        `${FACTIONS[playerFaction].name} vs ${FACTIONS[enemyFaction].name}`;
+    
+    // Render player roster
+    const playerRoster = FACTIONS[playerFaction].roster.filter(f => f.alive);
+    document.getElementById('attacker-roster').innerHTML = playerRoster.map(f => `
+        <div class="roster-fighter ${f.alive ? '' : 'dead'}" data-id="${f.id}" onclick="toggleFighter(${f.id})">
+            <div class="fighter-name">${f.name}</div>
+            <div class="fighter-role">${f.role}</div>
+            <div class="fighter-stats">⚔${f.atk} 🛡${f.def} ❤${f.hp}</div>
+        </div>
+    `).join('');
+    
+    // Render enemy roster (they auto-select strongest)
+    const enemyRoster = FACTIONS[enemyFaction].roster.filter(f => f.alive);
+    const enemyTeam = enemyRoster.slice(0, Math.min(15, enemyRoster.length));
+    document.getElementById('defender-roster').innerHTML = enemyTeam.map(f => `
+        <div class="roster-fighter selected">
+            <div class="fighter-name">${f.name}</div>
+            <div class="fighter-role">${f.role}</div>
+            <div class="fighter-stats">⚔${f.atk} 🛡${f.def} ❤${f.hp}</div>
+        </div>
+    `).join('');
+    document.getElementById('def-count').textContent = enemyTeam.length;
+    
+    currentBattle.enemyTeam = enemyTeam;
+    updateBattleSelection();
+}
+
+function toggleFighter(id) {
+    const roster = FACTIONS[0].roster;
+    const fighter = roster.find(f => f.id === id);
+    if (!fighter || !fighter.alive) return;
+    
+    // First selection is king
+    if (!currentBattle.playerKing) {
+        currentBattle.playerKing = fighter;
+        document.querySelector(`.roster-fighter[data-id="${id}"]`)?.classList.add('king', 'selected');
+    } else if (currentBattle.playerKing.id === id) {
+        // Deselect king
+        currentBattle.playerKing = null;
+        currentBattle.playerArmy = [];
+        document.querySelectorAll('.roster-fighter').forEach(el => el.classList.remove('king', 'selected'));
+    } else if (currentBattle.playerArmy.includes(fighter)) {
+        // Deselect from army
+        currentBattle.playerArmy = currentBattle.playerArmy.filter(f => f.id !== id);
+        document.querySelector(`.roster-fighter[data-id="${id}"]`)?.classList.remove('selected');
+    } else if (currentBattle.playerArmy.length < 14) {
+        // Add to army
+        currentBattle.playerArmy.push(fighter);
+        document.querySelector(`.roster-fighter[data-id="${id}"]`)?.classList.add('selected');
+    }
+    
+    updateBattleSelection();
+}
+
+function updateBattleSelection() {
+    document.getElementById('atk-king').textContent = currentBattle.playerKing ? currentBattle.playerKing.name : 'None';
+    document.getElementById('atk-count').textContent = currentBattle.playerArmy.length;
+    
+    const canFight = currentBattle.playerKing && currentBattle.playerArmy.length === 14;
+    document.getElementById('fight-btn').disabled = !canFight;
+    document.getElementById('fight-btn').textContent = canFight ? '⚔️ FIGHT!' : `NEED ${14 - currentBattle.playerArmy.length} MORE`;
+}
+
+function retreatFromBattle() {
+    document.getElementById('battle-modal').classList.remove('active');
+    logEvent(`${FACTIONS[0].name} retreats from battle!`, 'peace');
+    
+    // Retreat penalty - lose some territory
+    const attacker = currentBattle.attacker;
+    if (attacker.faction === 0) {
+        attacker.moves = 0;
+    }
+    
+    currentBattle = null;
+    world.selectedArmy = null;
+}
+
+function startBattle() {
+    // Run the battle with selected teams
+    const playerTeam = [currentBattle.playerKing, ...currentBattle.playerArmy];
+    const enemyTeam = currentBattle.enemyTeam;
+    
+    document.getElementById('battle-modal').classList.remove('active');
+    
+    // Simulate battle (simplified - later hook into full autobattler)
+    const playerPower = playerTeam.reduce((sum, f) => sum + f.atk + f.def + f.hp/10, 0);
+    const enemyPower = enemyTeam.reduce((sum, f) => sum + f.atk + f.def + f.hp/10, 0);
+    
+    const playerRoll = playerPower * (0.7 + Math.random() * 0.6);
+    const enemyRoll = enemyPower * (0.7 + Math.random() * 0.6);
+    
+    const playerWins = playerRoll > enemyRoll;
+    const winMargin = Math.abs(playerRoll - enemyRoll) / Math.max(playerRoll, enemyRoll);
+    
+    // Calculate casualties based on battle intensity
+    const playerCasualties = Math.floor(playerTeam.length * (playerWins ? 0.1 + winMargin * 0.2 : 0.3 + winMargin * 0.3));
+    const enemyCasualties = Math.floor(enemyTeam.length * (playerWins ? 0.3 + winMargin * 0.3 : 0.1 + winMargin * 0.2));
+    
+    // Apply casualties (random fighters die)
+    const playerDead = playerTeam.sort(() => Math.random() - 0.5).slice(0, playerCasualties);
+    const enemyDead = enemyTeam.sort(() => Math.random() - 0.5).slice(0, enemyCasualties);
+    
+    playerDead.forEach(f => { f.alive = false; });
+    enemyDead.forEach(f => { f.alive = false; });
+    
+    // Log results
+    const playerFaction = currentBattle.isDefending ? currentBattle.defender.faction : currentBattle.attacker.faction;
+    const enemyFaction = currentBattle.isDefending ? currentBattle.attacker.faction : currentBattle.defender.faction;
+    
+    if (playerWins) {
+        logEvent(`⚔️ ${FACTIONS[playerFaction].name} WINS! Lost ${playerCasualties}, killed ${enemyCasualties}`, 'battle');
+        
+        // Claim territory
+        const target = currentBattle.isDefending ? currentBattle.attacker : currentBattle.defender;
+        world.tiles[target.y][target.x].owner = playerFaction;
+        
+        // Capture surviving enemies (join your faction!)
+        const captured = enemyTeam.filter(f => f.alive);
+        captured.forEach(f => {
+            f.faction = playerFaction;
+            FACTIONS[enemyFaction].roster = FACTIONS[enemyFaction].roster.filter(x => x.id !== f.id);
+            FACTIONS[playerFaction].roster.push(f);
+        });
+        if (captured.length > 0) {
+            logEvent(`🎉 ${captured.length} enemy fighters join your cause!`, 'conquest');
+        }
+        
+        // Remove defeated army
+        if (currentBattle.isDefending) {
+            document.getElementById(`army-${currentBattle.attacker.id}`)?.remove();
+            currentBattle.attacker.strength = 0;
+        } else {
+            document.getElementById(`army-${currentBattle.defender.id}`)?.remove();
+            currentBattle.defender.strength = 0;
+        }
+    } else {
+        logEvent(`💀 ${FACTIONS[playerFaction].name} DEFEATED! Lost ${playerCasualties}, killed ${enemyCasualties}`, 'battle');
+        
+        // Player army defeated
+        if (currentBattle.isDefending) {
+            document.getElementById(`army-${currentBattle.defender.id}`)?.remove();
+            currentBattle.defender.strength = 0;
+            world.tiles[currentBattle.defender.y][currentBattle.defender.x].owner = enemyFaction;
+        } else {
+            document.getElementById(`army-${currentBattle.attacker.id}`)?.remove();
+            currentBattle.attacker.strength = 0;
+        }
+    }
+    
+    // Update displays
+    updateArmyDisplays();
+    updateTerritoryDisplay();
+    updateMinimap();
+    updateFactionList();
+    
+    currentBattle = null;
+    world.selectedArmy = null;
+}
+
+function autoResolveBattle(attacker, defender) {
+    // AI vs AI - simple resolution
+    const atkRoster = FACTIONS[attacker.faction].roster.filter(f => f.alive);
+    const defRoster = FACTIONS[defender.faction].roster.filter(f => f.alive);
+    
+    const atkPower = atkRoster.slice(0, 15).reduce((sum, f) => sum + f.atk + f.def, 0) * (0.8 + Math.random() * 0.4);
+    const defPower = defRoster.slice(0, 15).reduce((sum, f) => sum + f.atk + f.def, 0) * (0.8 + Math.random() * 0.4);
+    
+    if (atkPower > defPower) {
+        // Attacker wins
+        const casualties = Math.floor(Math.random() * 3) + 1;
+        defRoster.slice(0, casualties).forEach(f => f.alive = false);
+        
+        logEvent(`${FACTIONS[attacker.faction].name} defeats ${FACTIONS[defender.faction].name}!`, 'battle');
+        document.getElementById(`army-${defender.id}`)?.remove();
+        defender.strength = 0;
+        world.tiles[defender.y][defender.x].owner = attacker.faction;
+    } else {
+        // Defender wins
+        const casualties = Math.floor(Math.random() * 3) + 1;
+        atkRoster.slice(0, casualties).forEach(f => f.alive = false);
+        
+        logEvent(`${FACTIONS[defender.faction].name} repels ${FACTIONS[attacker.faction].name}!`, 'battle');
+        document.getElementById(`army-${attacker.id}`)?.remove();
+        attacker.strength = 0;
+    }
+    
+    updateArmyDisplays();
+    updateTerritoryDisplay();
+    updateMinimap();
+    updateFactionList();
+    world.selectedArmy = null;
+}
+
+function updateArmyDisplays() {
+    world.armies.forEach(a => {
+        const el = document.getElementById(`army-${a.id}`);
+        if (el && a.strength > 0) {
+            el.textContent = Math.floor(a.strength / 10);
+        }
+    });
+}
+
+// ========================================
+// TURN SYSTEM
+// ========================================
+
+function nextTurn() {
+    world.season = (world.season + 1) % 4;
+    if (world.season === 0) world.year++;
+    
+    document.getElementById('year').textContent = world.year;
+    document.getElementById('season').textContent = SEASONS[world.season];
+    
+    // Reset army moves
+    world.armies.forEach(a => {
+        if (a.strength > 0) a.moves = 2;
+    });
+    
+    // AI turns
+    FACTIONS.forEach((f, i) => {
+        if (i > 0) { // AI factions (player is faction 0 for now)
+            aiTurn(f);
+        }
+    });
+    
+    // Reinforce armies at capitals
+    world.structures.filter(s => s.type === 'castle' && s.owner >= 0).forEach(s => {
+        const army = world.armies.find(a => a.x === s.x && a.y === s.y && a.faction === s.owner);
+        if (army) {
+            army.strength = Math.min(200, army.strength + 10);
+        }
+    });
+    
+    updateArmyDisplays();
+    updateMinimap();
+    updateFactionList();
+    
+    logEvent(`--- Year ${world.year}, ${SEASONS[world.season]} ---`);
+}
+
+function aiTurn(faction) {
+    faction.armies.filter(a => a.strength > 0).forEach(army => {
+        // Simple AI: move toward nearest enemy territory
+        let bestMove = null;
+        let bestScore = -Infinity;
+        
+        for (let dy = -2; dy <= 2; dy++) {
+            for (let dx = -2; dx <= 2; dx++) {
+                const tx = army.x + dx, ty = army.y + dy;
+                if (tx < 0 || tx >= WORLD_SIZE || ty < 0 || ty >= WORLD_SIZE) continue;
+                const t = world.tiles[ty][tx];
+                if (t.terrain === 'water' || t.terrain === 'mountain') continue;
+                
+                let score = 0;
+                if (t.owner !== faction.id && t.owner >= 0) score += 10; // Enemy territory
+                if (t.owner === -1) score += 5; // Unclaimed
+                score -= Math.abs(dx) + Math.abs(dy); // Prefer closer
+                
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMove = { x: tx, y: ty };
+                }
+            }
+        }
+        
+        if (bestMove && Math.random() < 0.7) {
+            moveArmy(army, bestMove.x, bestMove.y);
+        }
+    });
+}
+
+let autoInterval = null;
+function autoPlay() {
+    if (world.autoPlaying) {
+        clearInterval(autoInterval);
+        world.autoPlaying = false;
+        document.getElementById('auto-btn').textContent = '▶️ Auto Play';
+    } else {
+        world.autoPlaying = true;
+        document.getElementById('auto-btn').textContent = '⏹️ Stop';
+        autoInterval = setInterval(nextTurn, 1000);
+    }
+}
+
+// ========================================
+// UI HELPERS
+// ========================================
+
+function logEvent(msg, type = '') {
+    const events = document.getElementById('events');
+    const e = document.createElement('div');
+    e.className = `event ${type}`;
+    e.textContent = msg;
+    events.insertBefore(e, events.firstChild);
+    if (events.children.length > 50) events.removeChild(events.lastChild);
+    world.events.push({ year: world.year, season: world.season, msg, type });
+}
+
+function showTooltip(e, text) {
+    const tt = document.getElementById('tooltip');
+    tt.innerHTML = text.split('\n').map((l, i) => 
+        i === 0 ? `<div class="tt-title">${l}</div>` : `<div class="tt-info">${l}</div>`
+    ).join('');
+    tt.style.left = (e.clientX + 15) + 'px';
+    tt.style.top = (e.clientY + 15) + 'px';
+    tt.style.display = 'block';
+}
+
+function hideTooltip() {
+    document.getElementById('tooltip').style.display = 'none';
+}
+
+// ========================================
+// INIT
+// ========================================
+
+initFactionRosters();
+generateWorld();
+logEvent('The Savage Lands await...');
+logEvent('Click an army to select, then click a tile to move.');
+logEvent(`Your roster: ${FACTIONS[0].roster.length} fighters`);
+</script>
+</body>
+</html>

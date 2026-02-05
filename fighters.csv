@@ -1,0 +1,39 @@
+id,name,hp,atk,def,spd,role,trait
+1,Crocus III,380,22,14,0.9,Tank,Stalwart
+2,Frostfang,290,28,8,1.1,Berserker,Frenzy
+3,Flamekeeper,250,24,10,0.85,Mage,Pyromancer
+4,Destroyer,340,25,12,1.0,Berserker,Rage
+5,Venomous,320,26,11,1.25,Rogue,Poison
+6,Boulderback,420,18,18,0.7,Tank,Ironclad
+7,Stormcaller,240,30,6,0.9,Mage,Lightning
+8,Thornhide,360,20,16,0.8,Tank,Thorns
+9,Shadowdancer,260,32,5,1.4,Rogue,Evasion
+10,Ironjaw,400,24,15,0.75,Tank,Unbreakable
+11,Blazefury,280,35,4,1.2,Berserker,Bloodlust
+12,Voidwalker,220,28,8,1.0,Mage,Dark Magic
+13,Bonecrusher,380,26,13,0.85,Berserker,Brutal
+14,Lightbringer,300,18,12,0.9,Cleric,Blessed
+15,Dreadnought,450,16,20,0.6,Tank,Colossus
+16,Whisperwind,240,22,7,1.5,Rogue,Swift
+17,Emberheart,260,26,9,1.0,Mage,Burning
+18,Grimfang,340,28,10,1.05,Berserker,Savage
+19,Seraphim,280,20,14,0.95,Cleric,Divine
+20,Nightstalker,250,34,4,1.35,Rogue,Assassin
+21,Titanfall,440,20,18,0.65,Tank,Giant
+22,Frostweaver,230,27,7,0.9,Mage,Frost
+23,Rageclaw,320,30,8,1.15,Berserker,Berserk
+24,Divine Aegis,350,16,16,0.8,Cleric,Guardian
+25,Phantom,220,36,3,1.45,Rogue,Ghost
+26,Earthshaker,400,22,17,0.7,Tank,Quake
+27,Infernus,270,32,5,1.0,Mage,Hellfire
+28,Bloodreaver,300,34,6,1.2,Berserker,Vampiric
+29,Sanctuary,320,14,15,0.85,Cleric,Protector
+30,Viper,240,30,6,1.4,Rogue,Venomous
+31,Warsong,260,16,10,1.0,Bard,Inspiring
+32,Drumcaller,240,14,8,0.95,Bard,Rhythmic
+33,Silvervice,280,18,12,1.05,Bard,Mockery
+34,Echobane,250,20,9,1.1,Bard,Dissonant
+35,Bonelord,220,22,6,0.85,Necromancer,Summoner
+36,Gravecaller,240,20,8,0.9,Necromancer,Reanimator
+37,Soulreaper,200,26,5,0.95,Necromancer,Harvester
+38,Plaguebringer,260,18,10,0.8,Necromancer,Blighted

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savage Arena - PFP Generator Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #1a1a2e; 
+            color: #fff; 
+            font-family: 'Press Start 2P', monospace;
+            padding: 20px;
+        }
+        h1 { text-align: center; margin-bottom: 20px; color: #f39c12; font-size: 18px; }
+        h2 { color: #3498db; margin: 20px 0 10px; font-size: 14px; }
+        
+        .pfp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .pfp-card {
+            background: #16213e;
+            border: 2px solid #0f3460;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .pfp-card img {
+            width: 64px;
+            height: 64px;
+            image-rendering: pixelated;
+            border-radius: 4px;
+            background: #0a0a0a;
+            margin-bottom: 8px;
+        }
+        
+        .pfp-card .name {
+            font-size: 8px;
+            color: #f39c12;
+            margin-bottom: 4px;
+        }
+        
+        .pfp-card .role {
+            font-size: 7px;
+            color: #888;
+        }
+        
+        .custom-builder {
+            background: #16213e;
+            border: 2px solid #0f3460;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .builder-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .builder-row label {
+            font-size: 9px;
+            color: #aaa;
+            width: 100px;
+        }
+        
+        .builder-row select {
+            flex: 1;
+            min-width: 150px;
+            background: #0f3460;
+            color: #fff;
+            border: 1px solid #3498db;
+            padding: 5px;
+            font-size: 10px;
+        }
+        
+        #custom-pfp {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        #custom-pfp img {
+            width: 128px;
+            height: 128px;
+            image-rendering: pixelated;
+            border: 3px solid #f39c12;
+            border-radius: 8px;
+            background: #0a0a0a;
+        }
+        
+        .loading { opacity: 0.5; }
+        
+        button {
+            background: #f39c12;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button:hover { background: #e67e22; }
+    </style>
+</head>
+<body>
+    <h1>⚔️ SAVAGE ARENA PFP GENERATOR ⚔️</h1>
+    
+    <h2>🎨 Custom Builder</h2>
+    <div class="custom-builder">
+        <div class="builder-row">
+            <label>Creature:</label>
+            <select id="sel-creature"></select>
+        </div>
+        <div class="builder-row">
+            <label>Weapon:</label>
+            <select id="sel-weapon"></select>
+        </div>
+        <div class="builder-row">
+            <label>Boots:</label>
+            <select id="sel-boots"></select>
+        </div>
+        <div class="builder-row">
+            <label>Chest:</label>
+            <select id="sel-chest"></select>
+        </div>
+        <div class="builder-row">
+            <label>Pants:</label>
+            <select id="sel-pants"></select>
+        </div>
+        <div class="builder-row">
+            <label>Gloves:</label>
+            <select id="sel-gloves"></select>
+        </div>
+        <div class="builder-row">
+            <label>Shoulders:</label>
+            <select id="sel-shoulders"></select>
+        </div>
+        <div class="builder-row">
+            <label>Belt:</label>
+            <select id="sel-belt"></select>
+        </div>
+        <div class="builder-row">
+            <label>Cape:</label>
+            <select id="sel-cape"></select>
+        </div>
+        <div class="builder-row">
+            <label>Robe:</label>
+            <select id="sel-robe"></select>
+        </div>
+        <div class="builder-row">
+            <label>Shield:</label>
+            <select id="sel-shield"></select>
+        </div>
+        <div class="builder-row">
+            <label>Effect:</label>
+            <select id="sel-effect"></select>
+        </div>
+        
+        <div id="custom-pfp">
+            <img id="custom-img" src="" alt="Custom PFP">
+            <div>
+                <button onclick="randomize()">🎲 RANDOMIZE</button>
+                <button onclick="downloadPFP()">💾 DOWNLOAD</button>
+            </div>
+        </div>
+    </div>
+    
+    <h2>👥 Role-Based Examples</h2>
+    <div class="pfp-grid" id="role-examples"></div>
+    
+    <h2>🦎 All Creatures</h2>
+    <div class="pfp-grid" id="creature-grid"></div>
+    
+    <script src="pfp-generator.js"></script>
+    <script>
+        let assetIndex = null;
+        
+        // Layer mappings
+        const SELECT_MAP = {
+            'creature': 'Base',
+            'weapon': 'Sword',
+            'boots': 'Boots',
+            'chest': 'Chest',
+            'pants': 'Pant',
+            'gloves': 'Gloves',
+            'shoulders': 'Shoulder',
+            'belt': 'Belt',
+            'cape': 'Capes',
+            'robe': 'Robes',
+            'shield': 'Shield',
+            'effect': 'Condition:Enhancement'
+        };
+        
+        async function init() {
+            // Load asset index
+            try {
+                const res = await fetch('layers/index.json');
+                assetIndex = await res.json();
+            } catch (e) {
+                console.error('Failed to load index:', e);
+                return;
+            }
+            
+            // Populate dropdowns
+            for (const [selectId, indexKey] of Object.entries(SELECT_MAP)) {
+                const select = document.getElementById(`sel-${selectId}`);
+                if (!select) continue;
+                
+                const assets = assetIndex[indexKey] || [];
+                select.innerHTML = '<option value="">-- None --</option>';
+                assets.forEach(asset => {
+                    const opt = document.createElement('option');
+                    opt.value = asset;
+                    opt.textContent = asset.replace(/_/g, ' ');
+                    select.appendChild(opt);
+                });
+                
+                select.addEventListener('change', updateCustomPFP);
+            }
+            
+            // Generate role examples
+            await generateRoleExamples();
+            
+            // Generate creature showcase
+            await generateCreatureGrid();
+            
+            // Initial custom PFP
+            randomize();
+        }
+        
+        async function generateRoleExamples() {
+            const roles = ['Tank', 'Berserker', 'Mage', 'Rogue', 'Cleric', 'Necromancer', 'Bard'];
+            const container = document.getElementById('role-examples');
+            
+            for (const role of roles) {
+                const card = document.createElement('div');
+                card.className = 'pfp-card loading';
+                card.innerHTML = `<img src=""><div class="name">${role}</div><div class="role">Default Gear</div>`;
+                container.appendChild(card);
+                
+                try {
+                    const dataUrl = await PFPGenerator.generateFighterPFP({ role }, { size: 64 });
+                    card.querySelector('img').src = dataUrl;
+                    card.classList.remove('loading');
+                } catch (e) {
+                    console.warn(`Failed for ${role}:`, e);
+                }
+            }
+        }
+        
+        async function generateCreatureGrid() {
+            const creatures = assetIndex?.Base || [];
+            const container = document.getElementById('creature-grid');
+            
+            for (const creature of creatures) {
+                const card = document.createElement('div');
+                card.className = 'pfp-card loading';
+                card.innerHTML = `<img src=""><div class="name">${creature.replace(/_/g, ' ')}</div>`;
+                container.appendChild(card);
+                
+                try {
+                    const dataUrl = await PFPGenerator.generatePFP({ creature }, { size: 64 });
+                    card.querySelector('img').src = dataUrl;
+                    card.classList.remove('loading');
+                } catch (e) {
+                    console.warn(`Failed for ${creature}:`, e);
+                }
+            }
+        }
+        
+        async function updateCustomPFP() {
+            const traits = {};
+            for (const traitName of Object.keys(SELECT_MAP)) {
+                const select = document.getElementById(`sel-${traitName}`);
+                if (select?.value) {
+                    traits[traitName] = select.value;
+                }
+            }
+            
+            try {
+                const dataUrl = await PFPGenerator.generatePFP(traits, { size: 128 });
+                document.getElementById('custom-img').src = dataUrl;
+            } catch (e) {
+                console.error('Failed to generate PFP:', e);
+            }
+        }
+        
+        function randomize() {
+            for (const [selectId, indexKey] of Object.entries(SELECT_MAP)) {
+                const select = document.getElementById(`sel-${selectId}`);
+                if (!select) continue;
+                
+                const options = select.options;
+                // 70% chance to pick something, 30% none
+                if (Math.random() < 0.7 || selectId === 'creature') {
+                    const idx = 1 + Math.floor(Math.random() * (options.length - 1));
+                    select.selectedIndex = idx;
+                } else {
+                    select.selectedIndex = 0;
+                }
+            }
+            updateCustomPFP();
+        }
+        
+        function downloadPFP() {
+            const img = document.getElementById('custom-img');
+            const link = document.createElement('a');
+            link.download = 'savage-arena-pfp.png';
+            link.href = img.src;
+            link.click();
+        }
+        
+        init();
+    </script>
+</body>
+</html>

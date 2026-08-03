@@ -15,6 +15,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SLOT_Z_INDEX } from '../src/gen/compose-core.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MANIFEST_PATH = path.join(ROOT, 'data', 'attributes.json');
@@ -49,6 +50,7 @@ function inferTags(slot, id) {
   const tags = [];
   if (/vampir/.test(id)) tags.push('vampiric');
   if (slot === 'weapons' && /dagger/.test(id)) tags.push('dagger-hybrid');
+  if (slot === 'shields') tags.push('shield');
   if (slot === 'shields' && /tower|bulwark/.test(id)) tags.push('tank');
   if (slot === 'offhands' && /tome|book/.test(id)) tags.push('cleric');
   if (slot === 'offhands' && /staff|scepter|smiter|mirror|wand/.test(id)) tags.push('caster');
@@ -69,7 +71,19 @@ function scaffoldEntry(slot, file) {
     tags: inferTags(slot, stem),
     rarityWeight: 100,
     golden: /^golden[_-]/.test(stem),
+    // paint order; defaulted by slot, individual pieces may be hand-tuned
+    zIndex: SLOT_Z_INDEX[slot] ?? 0,
   };
+  return entry;
+}
+
+// Additive-only migration of existing entries: fills fields introduced after
+// the entry was scaffolded. Never touches human-tunable values that are set.
+function migrateEntry(entry) {
+  if (entry.zIndex === undefined) entry.zIndex = SLOT_Z_INDEX[entry.slot] ?? 0;
+  if (entry.slot === 'shields' && !(entry.tags ?? []).includes('shield')) {
+    entry.tags = [...(entry.tags ?? []), 'shield'];
+  }
   return entry;
 }
 
@@ -89,9 +103,9 @@ export function scanAssets({ root = ROOT, manifestPath = MANIFEST_PATH, write = 
       const id = `${slot}/${path.basename(file, '.png')}`;
       filesOnDisk.add(id);
       if (byId.has(id)) {
-        // Existing entry: never overwrite human-edited fields, just clear the
-        // missing flag if the file reappeared.
-        const entry = byId.get(id);
+        // Existing entry: never overwrite human-edited fields; apply additive
+        // migrations and clear the missing flag if the file reappeared.
+        const entry = migrateEntry(byId.get(id));
         if (entry.missing) delete entry.missing;
       } else {
         byId.set(id, scaffoldEntry(slot, file));

@@ -13,6 +13,7 @@ import { generateFighterWith } from './compose-core.mjs';
 
 export {
   Z_ORDER,
+  SLOT_Z_INDEX,
   ARMOR_SLOTS,
   REQUIRED_SLOTS,
   OPTIONAL_SLOTS,
@@ -20,6 +21,7 @@ export {
   mulberry32,
   computeFighterId,
   deriveClass,
+  deriveStats,
   generateFighterWith,
 } from './compose-core.mjs';
 

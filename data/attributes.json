@@ -13,7 +13,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/bearkin",
@@ -29,7 +30,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/black_ratman",
@@ -45,7 +47,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/brown_ratman",
@@ -61,7 +64,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/crocodillian",
@@ -77,7 +81,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/frogfolk",
@@ -93,7 +98,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/lizardman",
@@ -109,7 +115,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/minotaur",
@@ -125,7 +132,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/poisonous_frogfolk",
@@ -141,7 +149,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/possum",
@@ -157,7 +166,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/raccoon",
@@ -173,7 +183,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/salamander",
@@ -189,7 +200,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/white_ratman",
@@ -205,7 +217,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "bases/winter_bearkin",
@@ -221,7 +234,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 10
   },
   {
     "id": "belts/brotherhood_of_blood",
@@ -237,7 +251,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/cavalry",
@@ -253,7 +268,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/chainmail",
@@ -269,7 +285,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/champions_belt",
@@ -285,7 +302,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/conquerers",
@@ -301,7 +319,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/demon_hunter",
@@ -317,7 +336,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/destroyers_belt",
@@ -333,7 +353,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/dragon_knight",
@@ -349,7 +370,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/dustmarsh",
@@ -365,7 +387,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/ebon_belt",
@@ -381,7 +404,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/fallen_kingdom_kilt",
@@ -397,7 +421,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/frogsong",
@@ -413,7 +438,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/frostrime",
@@ -429,7 +455,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/fury_belt",
@@ -445,7 +472,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_bloodbrothers_belt",
@@ -461,7 +489,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_cavalry",
@@ -477,7 +506,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_destroyers_belt",
@@ -493,7 +523,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_house_of_leo",
@@ -509,7 +540,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_imbued",
@@ -525,7 +557,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_nightstalkers_belt",
@@ -541,7 +574,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_spiked",
@@ -557,7 +591,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_studded_armor",
@@ -573,7 +608,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/golden_tanking_plate",
@@ -589,7 +625,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 90
   },
   {
     "id": "belts/healers_sash",
@@ -605,7 +642,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/heavy_marine",
@@ -621,7 +659,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/heros_waist",
@@ -637,7 +676,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/highwaymans_belt",
@@ -653,7 +693,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/holy_waistwrap",
@@ -669,7 +710,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/house_of_leo",
@@ -685,7 +727,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/hunters_plate",
@@ -701,7 +744,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/imbued_sash",
@@ -717,7 +761,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/invaders",
@@ -733,7 +778,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/invaders_orange",
@@ -749,7 +795,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/irradiated",
@@ -765,7 +812,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/jesters_belt",
@@ -781,7 +829,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/molten",
@@ -797,7 +846,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/necromancers_cinch",
@@ -813,7 +863,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/plated_belt",
@@ -829,7 +880,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/platemail_girdle",
@@ -845,7 +897,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/rogue_stalkers_wrap",
@@ -861,7 +914,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/rotknight",
@@ -877,7 +931,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/royal_blue_guard",
@@ -893,7 +948,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/sentinels_girdle",
@@ -909,7 +965,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/shadowbinders_belt",
@@ -925,7 +982,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/spiked_belt",
@@ -941,7 +999,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/strongmanss_belt",
@@ -957,7 +1016,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/studded_leather",
@@ -973,7 +1033,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/tanking_plate",
@@ -989,7 +1050,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/thieves_toolkit",
@@ -1005,7 +1067,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/travelers_belt",
@@ -1021,7 +1084,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/underworld_belt",
@@ -1037,7 +1101,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/vampires_belt",
@@ -1055,7 +1120,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/volcanic_belt",
@@ -1071,7 +1137,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "belts/wizards_wrap",
@@ -1087,7 +1154,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 90
   },
   {
     "id": "boots/adventurers_leather_boots",
@@ -1103,7 +1171,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/blue_royal_guard",
@@ -1119,7 +1188,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/boots_of_the_rush",
@@ -1135,7 +1205,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/brotherhood_of_blood",
@@ -1151,7 +1222,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/chainmail",
@@ -1167,7 +1239,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/champions_boots",
@@ -1183,7 +1256,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/conquerers_skull_crushers",
@@ -1199,7 +1273,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/demon_hunter_boots",
@@ -1215,7 +1290,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/demon_hunters_feet",
@@ -1231,7 +1307,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/destroyers_boots",
@@ -1247,7 +1324,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/dragon_kinght_boots",
@@ -1263,7 +1341,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/dragon_knight_riders",
@@ -1279,7 +1358,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/dustmarsh_stompers",
@@ -1295,7 +1375,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/ebon_boots",
@@ -1311,7 +1392,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/ebon_plate_boots",
@@ -1327,7 +1409,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/fallen_kingdom_boots",
@@ -1343,7 +1426,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/frogsong_boots",
@@ -1359,7 +1443,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/frostrime",
@@ -1375,7 +1460,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/gold_spiked_boots",
@@ -1391,7 +1477,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_bloodbrother",
@@ -1407,7 +1494,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_cavalry",
@@ -1423,7 +1511,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_destroyers_boots",
@@ -1439,7 +1528,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_house_of_leo",
@@ -1455,7 +1545,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_imbued",
@@ -1471,7 +1562,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_nightstalkers_greaves",
@@ -1487,7 +1579,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_studded",
@@ -1503,7 +1596,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/golden_tanking",
@@ -1519,7 +1613,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 50
   },
   {
     "id": "boots/healers_walkers",
@@ -1535,7 +1630,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/heavy_marine_boots",
@@ -1551,7 +1647,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/heros_boots",
@@ -1567,7 +1664,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/holy_stompers",
@@ -1583,7 +1681,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/house_of_leo_boots",
@@ -1599,7 +1698,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/hunters_plate",
@@ -1615,7 +1715,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/imbued_steel",
@@ -1631,7 +1732,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/invaders_boots",
@@ -1647,7 +1749,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/irradiated_boots",
@@ -1663,7 +1766,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/jesters_silk_boots",
@@ -1679,7 +1783,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/mana_imbued_boots",
@@ -1695,7 +1800,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/molten_legs",
@@ -1711,7 +1817,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/nightstalkers_feet",
@@ -1727,7 +1834,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/orange_invaders_boots",
@@ -1743,7 +1851,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/plated_steel_boots",
@@ -1759,7 +1868,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/rogues_boots",
@@ -1775,7 +1885,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/rotknight",
@@ -1791,7 +1902,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/spiked_plate_boots",
@@ -1807,7 +1919,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/strongmans_stompers",
@@ -1823,7 +1936,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/tanking_boots",
@@ -1839,7 +1953,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/thick_plated",
@@ -1855,7 +1970,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/thieves_sneakers",
@@ -1871,7 +1987,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/travelers_leather_boots",
@@ -1887,7 +2004,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/underworld",
@@ -1903,7 +2021,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/vampiric_boots",
@@ -1921,7 +2040,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/volcanic",
@@ -1937,7 +2057,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "boots/warforged",
@@ -1953,7 +2074,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 50
   },
   {
     "id": "capes/adeventurers_cloak",
@@ -1969,7 +2091,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/cape_of_the_protector",
@@ -1985,7 +2108,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/fine_dark_cape",
@@ -2001,7 +2125,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/kings_cloak",
@@ -2017,7 +2142,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/kings_drape",
@@ -2033,7 +2159,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/loners_cloak",
@@ -2049,7 +2176,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/nightstalkers_hood",
@@ -2065,7 +2193,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/outcasts_red_cloak",
@@ -2081,7 +2210,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/royal_silk_cape",
@@ -2097,7 +2227,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/travelers_tunic",
@@ -2113,7 +2244,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "capes/wanderers_tattered_cloak",
@@ -2129,7 +2261,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 0
   },
   {
     "id": "chest/blue_royal_guard",
@@ -2145,7 +2278,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/brotherhood_of_blood",
@@ -2161,7 +2295,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/cavalry_chestpiece",
@@ -2177,7 +2312,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/chainmail",
@@ -2193,7 +2329,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/demon_hunter",
@@ -2209,7 +2346,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/destroyer",
@@ -2225,7 +2363,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/dragon_knights_plate",
@@ -2241,7 +2380,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/dustmarsh",
@@ -2257,7 +2397,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/ebon_chestplate",
@@ -2273,7 +2414,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/fallen_kingdom_chestplate",
@@ -2289,7 +2431,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/frogsong_ribbed",
@@ -2305,7 +2448,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/frostrime",
@@ -2321,7 +2465,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/frostrime_chest",
@@ -2337,7 +2482,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/fury_chestpiece",
@@ -2353,7 +2499,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_blood_brother",
@@ -2369,7 +2516,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_cavalry",
@@ -2385,7 +2533,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_destroyer",
@@ -2401,7 +2550,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_house_of_leo",
@@ -2417,7 +2567,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_imbued_chest",
@@ -2433,7 +2584,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_nightstalker",
@@ -2449,7 +2601,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_spiked_mail",
@@ -2465,7 +2618,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_studded_armor",
@@ -2481,7 +2635,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/golden_tanking_plate",
@@ -2497,7 +2652,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 40
   },
   {
     "id": "chest/healers_holy_shirt",
@@ -2513,7 +2669,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/heavy_marine",
@@ -2529,7 +2686,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/house_of_leo_insignia_chestplate",
@@ -2545,7 +2703,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/hunters_guard",
@@ -2561,7 +2720,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/imbued",
@@ -2577,7 +2737,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/invader",
@@ -2593,7 +2754,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/invader_orange",
@@ -2609,7 +2771,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/irradiated",
@@ -2625,7 +2788,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/jesters_costume",
@@ -2641,7 +2805,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/molten_chestplate",
@@ -2657,7 +2822,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/nightstalkers_chest",
@@ -2673,7 +2839,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/platemail",
@@ -2689,7 +2856,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/rogues_leather_chest",
@@ -2705,7 +2873,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/rotknight",
@@ -2721,7 +2890,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/spiked_plate",
@@ -2737,7 +2907,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/strongmans_cinch",
@@ -2753,7 +2924,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/studded_leather_chest",
@@ -2769,7 +2941,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/tanking_plate",
@@ -2785,7 +2958,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/thick_plated_cuirass",
@@ -2801,7 +2975,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/travelers_wrap",
@@ -2817,7 +2992,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/underworld",
@@ -2833,7 +3009,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/vampiric_chestpiece",
@@ -2851,7 +3028,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/vampiric_vest",
@@ -2869,7 +3047,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/volcanic_chest",
@@ -2885,7 +3064,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/warforged_chestplate",
@@ -2901,7 +3081,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "chest/wizards_blood_tunic",
@@ -2917,7 +3098,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 40
   },
   {
     "id": "conditions/berzerker",
@@ -2933,7 +3115,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/blessed_mark",
@@ -2949,7 +3132,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/bloodlust",
@@ -2965,7 +3149,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/burned",
@@ -2981,7 +3166,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/ebon_skin",
@@ -2997,7 +3183,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/enraged",
@@ -3013,7 +3200,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/frostrime",
@@ -3029,7 +3217,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/fury_mark",
@@ -3045,7 +3234,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/holy_mark",
@@ -3061,7 +3251,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/kings_crown",
@@ -3077,7 +3268,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/mark_of_the_bear",
@@ -3093,7 +3285,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/mark_of_the_hunter",
@@ -3109,7 +3302,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/nicked",
@@ -3125,7 +3319,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/pain_is_weakness",
@@ -3141,7 +3336,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/pain_tolerance",
@@ -3157,7 +3353,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/recovering",
@@ -3173,7 +3370,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/scratched",
@@ -3189,7 +3387,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/slowed",
@@ -3205,7 +3404,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/tattoo_12",
@@ -3221,7 +3421,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/tattoo_18",
@@ -3237,7 +3438,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/tattoo_24",
@@ -3253,7 +3455,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/tattoo_6",
@@ -3269,7 +3472,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/tattoo_8",
@@ -3285,7 +3489,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/venomous",
@@ -3301,7 +3506,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "conditions/wrapped",
@@ -3317,7 +3523,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 20
   },
   {
     "id": "gloves/blood_wizards_caress",
@@ -3333,7 +3540,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/brotherhood_of_blood",
@@ -3349,7 +3557,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/cavalry",
@@ -3365,7 +3574,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/chainmail_gloves",
@@ -3381,7 +3591,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/champions_grip",
@@ -3397,7 +3608,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/conquerers_grip",
@@ -3413,7 +3625,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/demon_hunter",
@@ -3429,7 +3642,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/destroyers_gloves",
@@ -3445,7 +3659,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/dragon_knights_fists",
@@ -3461,7 +3676,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/dustmarsh_gloves",
@@ -3477,7 +3693,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/ebon_fists",
@@ -3493,7 +3710,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/ebon_plate",
@@ -3509,7 +3727,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/fallen_kingdom_gloves",
@@ -3525,7 +3744,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/frogsong",
@@ -3541,7 +3761,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/frostrime_gloves",
@@ -3557,7 +3778,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/full_plate_gloves",
@@ -3573,7 +3795,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/fury_gloves",
@@ -3589,7 +3812,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_cavalry",
@@ -3605,7 +3829,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_destroyer",
@@ -3621,7 +3846,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_hands",
@@ -3637,7 +3863,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_imbued_gauntlets",
@@ -3653,7 +3880,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_nightstalkers_gloves",
@@ -3669,7 +3897,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_plate",
@@ -3685,7 +3914,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_spiked_hands",
@@ -3701,7 +3931,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_studded_grips",
@@ -3717,7 +3948,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/golden_tanking_plate",
@@ -3733,7 +3965,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 70
   },
   {
     "id": "gloves/healers_touch",
@@ -3749,7 +3982,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/heavy_marines_gloves",
@@ -3765,7 +3999,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/heros_grip",
@@ -3781,7 +4016,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/house_of_leo_gloves",
@@ -3797,7 +4033,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/hunters_spiked_glove",
@@ -3813,7 +4050,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/imbued_silk_gloves",
@@ -3829,7 +4067,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/invaders",
@@ -3845,7 +4084,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/invaders_orange",
@@ -3861,7 +4101,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/irradiated_gloves",
@@ -3877,7 +4118,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/jesters_silk_gloves",
@@ -3893,7 +4135,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/mana_imbued_gloves",
@@ -3909,7 +4152,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/molten_gloves",
@@ -3925,7 +4169,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/necromancers_touch",
@@ -3941,7 +4186,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/nightstalkers_touch",
@@ -3957,7 +4203,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/plate_steel_gloves",
@@ -3973,7 +4220,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/platemail",
@@ -3989,7 +4237,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/rogues_gloves",
@@ -4005,7 +4254,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/royal_blue_guard",
@@ -4021,7 +4271,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/shadowbinder_gloves",
@@ -4037,7 +4288,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/spiked_steel_gauntlets",
@@ -4053,7 +4305,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/studded_leather",
@@ -4069,7 +4322,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/studded_leather_gloves",
@@ -4085,7 +4339,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/tanking_fists",
@@ -4101,7 +4356,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/thieves_fingers",
@@ -4117,7 +4373,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/travelers_gloves",
@@ -4133,7 +4390,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/vampiric_fists",
@@ -4151,7 +4409,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "gloves/volcanic_gloves",
@@ -4167,7 +4426,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 70
   },
   {
     "id": "helms/chimera_10",
@@ -4183,7 +4443,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_11",
@@ -4199,7 +4460,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_12",
@@ -4215,7 +4477,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_13",
@@ -4231,7 +4494,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_14",
@@ -4247,7 +4511,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_15",
@@ -4263,7 +4528,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_16",
@@ -4279,7 +4545,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_2",
@@ -4295,7 +4562,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_3",
@@ -4311,7 +4579,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_4",
@@ -4327,7 +4596,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_5",
@@ -4343,7 +4613,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_6",
@@ -4359,7 +4630,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_7",
@@ -4375,7 +4647,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_8",
@@ -4391,7 +4664,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "helms/chimera_9",
@@ -4407,7 +4681,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 110
   },
   {
     "id": "legs/adventurers_pants",
@@ -4423,7 +4698,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/bood_wizards_legs",
@@ -4439,7 +4715,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/breeches_of_lethal_precision",
@@ -4455,7 +4732,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/brotherhood_of_blood",
@@ -4471,7 +4749,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/bulwark_of_the_sentinel",
@@ -4487,7 +4766,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/cavalry_captains_pants",
@@ -4503,7 +4783,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/chainmail",
@@ -4519,7 +4800,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/cursed_weavers_breeches",
@@ -4535,7 +4817,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/damage_dealers_slacks",
@@ -4551,7 +4834,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/dark_enchanters_wicked_legwraps",
@@ -4567,7 +4851,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/demon_hunter_legs",
@@ -4583,7 +4868,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/destroyers_thighs",
@@ -4599,7 +4885,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/dustmarsh_pants",
@@ -4615,7 +4902,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/fallen_kingdom_pants",
@@ -4631,7 +4919,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/full_plate_greaves",
@@ -4647,7 +4936,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/fury_leggings",
@@ -4663,7 +4953,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/golden_blood_brothers_legs",
@@ -4679,7 +4970,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 30
   },
   {
     "id": "legs/golden_destroyer",
@@ -4695,7 +4987,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 30
   },
   {
     "id": "legs/golden_house_of_leo",
@@ -4711,7 +5004,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 30
   },
   {
     "id": "legs/golden_spiked_thighs",
@@ -4727,7 +5021,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 30
   },
   {
     "id": "legs/golden_studded_pants",
@@ -4743,7 +5038,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 30
   },
   {
     "id": "legs/golden_tanks_pants",
@@ -4759,7 +5055,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 30
   },
   {
     "id": "legs/grey_leiderhosen",
@@ -4775,7 +5072,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/healers_white_leggings",
@@ -4791,7 +5089,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/heavy_marine_leg_armor",
@@ -4807,7 +5106,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/highly_imbued_pants",
@@ -4823,7 +5123,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/house_of_leo_pants",
@@ -4839,7 +5140,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/hunters_pants",
@@ -4855,7 +5157,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/invaders_pants",
@@ -4871,7 +5174,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/irradiated_pants",
@@ -4887,7 +5191,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/legplates_of_eternal_valor",
@@ -4903,7 +5208,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/legwraps_of_the_marksman",
@@ -4919,7 +5225,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/lord_nighstalkers_pants",
@@ -4935,7 +5242,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/merciless_strikers_breeches",
@@ -4951,7 +5259,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/molten_pants",
@@ -4967,7 +5276,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/necromancers_pants",
@@ -4983,7 +5293,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/nightstalkers",
@@ -4999,7 +5310,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/nightstalkers_legguards",
@@ -5015,7 +5327,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/orange_invader",
@@ -5031,7 +5344,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/pants_of_blessed_serenity",
@@ -5047,7 +5361,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/pants_of_the_iron_vanguard",
@@ -5063,7 +5378,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/royal_blue_guard",
@@ -5079,7 +5395,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/rusted_chainmail",
@@ -5095,7 +5412,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/slayers_swift_leggings",
@@ -5111,7 +5429,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/spiked_mail",
@@ -5127,7 +5446,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/studded_leather",
@@ -5143,7 +5463,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/thiefs_cloth",
@@ -5159,7 +5480,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/titan_forged_legguards",
@@ -5175,7 +5497,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/trousers_of_the_nethermancer",
@@ -5191,7 +5514,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/vampiric_pants",
@@ -5209,7 +5533,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/warlocks_infernal_leggings",
@@ -5225,7 +5550,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "legs/wildgrowth_legwraps",
@@ -5241,7 +5567,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 30
   },
   {
     "id": "offhands/book_of_black_arts",
@@ -5259,7 +5586,8 @@
       "cleric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/cursed_pendant",
@@ -5275,7 +5603,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/cursed_staff",
@@ -5293,7 +5622,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/decaying_flower",
@@ -5309,7 +5639,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/eye_of_the_ice_dragon",
@@ -5325,7 +5656,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/flamewielders_staff",
@@ -5343,7 +5675,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/holy_smiter",
@@ -5361,7 +5694,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/illuminated_staff",
@@ -5379,7 +5713,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/imbued_rose",
@@ -5395,7 +5730,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/items_7",
@@ -5411,7 +5747,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/malevolent_mirror",
@@ -5429,7 +5766,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/malevolent_ruby",
@@ -5445,7 +5783,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/necromancers_staff",
@@ -5463,7 +5802,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/poison_rose",
@@ -5479,7 +5819,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/poisonous_staff",
@@ -5497,7 +5838,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/precious_rose",
@@ -5513,7 +5855,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/royal_scepter",
@@ -5531,7 +5874,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/sentient_staff",
@@ -5549,7 +5893,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/serpent_lords_staff",
@@ -5567,7 +5912,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/staff_12",
@@ -5585,7 +5931,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/staff_6",
@@ -5603,7 +5950,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/staff_of_fire",
@@ -5621,7 +5969,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/staff_of_reflection",
@@ -5639,7 +5988,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/staff_of_thorns",
@@ -5657,7 +6007,8 @@
       "caster"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "offhands/tome_of_knowledge",
@@ -5675,7 +6026,8 @@
       "cleric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 100
   },
   {
     "id": "robes/apostle_of_doom",
@@ -5693,7 +6045,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/blood_lord",
@@ -5711,7 +6064,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/brewers_guild",
@@ -5729,7 +6083,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/children_of_the_atom",
@@ -5747,7 +6102,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/dark_disciple",
@@ -5765,7 +6121,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/king_5",
@@ -5783,7 +6140,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/midnights_children",
@@ -5801,7 +6159,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/princes_ceremonial_tunic",
@@ -5819,7 +6178,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/summoners_robe",
@@ -5837,7 +6197,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/swampwalker",
@@ -5855,7 +6216,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/temple_of_the_worm",
@@ -5873,7 +6235,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "robes/underdwellers",
@@ -5891,7 +6254,8 @@
       "robe-ability"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 60
   },
   {
     "id": "shields/bloody_veterans_shield",
@@ -5905,9 +6269,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/brass_kite_shield",
@@ -5921,9 +6288,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/bulwark_of_the_titans",
@@ -5938,10 +6308,12 @@
     },
     "dmgType": null,
     "tags": [
-      "tank"
+      "tank",
+      "shield"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/coffin_shield",
@@ -5955,9 +6327,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/dragon_scale_shield",
@@ -5971,9 +6346,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/ebon_kite_shield",
@@ -5987,9 +6365,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/frogsong_shield",
@@ -6003,9 +6384,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/frost_covered_shield",
@@ -6019,9 +6403,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/frozen_heart_shield",
@@ -6035,9 +6422,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/golden_buckler",
@@ -6051,9 +6441,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 5
   },
   {
     "id": "shields/heros_shield",
@@ -6067,9 +6460,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/medium_steel_shield",
@@ -6083,9 +6479,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/mossy_wooden_shield",
@@ -6099,9 +6498,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/smouldering_iron",
@@ -6115,9 +6517,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/spiked_tower_shield",
@@ -6132,10 +6537,12 @@
     },
     "dmgType": null,
     "tags": [
-      "tank"
+      "tank",
+      "shield"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/steel_buckler",
@@ -6149,9 +6556,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/viking_shield",
@@ -6165,9 +6575,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/volcanic_slab",
@@ -6181,9 +6594,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shields/wooden_buckler",
@@ -6197,9 +6613,12 @@
       "spd": 0
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shield"
+    ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 5
   },
   {
     "id": "shieldstraps/bloody_veterans_shield_strap",
@@ -6215,7 +6634,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/brass_kite_shield_strap",
@@ -6231,7 +6651,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/bulwark_of_the_titans_strap",
@@ -6247,7 +6668,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/coffin_shield_strap",
@@ -6263,7 +6685,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/dragon_scale_shield_strap",
@@ -6279,7 +6702,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/ebon_kite_shield_strap",
@@ -6295,7 +6719,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/frogsong_shield_strap",
@@ -6311,7 +6736,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/frost_covered_shield_strap",
@@ -6327,7 +6753,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/frozen_heart_shield_strap",
@@ -6343,7 +6770,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/golden_buckler_strap",
@@ -6359,7 +6787,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/heros_shield_strap",
@@ -6375,7 +6804,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/medium_steel_shield_strap",
@@ -6391,7 +6821,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/mossy_wooden_shield_strap",
@@ -6407,7 +6838,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/smouldering_iron_strap",
@@ -6423,7 +6855,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/spiked_tower_shield_strap",
@@ -6439,7 +6872,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/steel_buckler_strap",
@@ -6455,7 +6889,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/viking_shield_strap",
@@ -6471,7 +6906,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/volcanic_slab_strap",
@@ -6487,7 +6923,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shieldstraps/wooden_buckler_strap",
@@ -6503,7 +6940,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 80
   },
   {
     "id": "shoulders/brotherhood_of_blood",
@@ -6519,7 +6957,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/cavalry",
@@ -6535,7 +6974,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/cavalry_shoulder",
@@ -6551,7 +6991,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/chainmail",
@@ -6567,7 +7008,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/champions_plate",
@@ -6583,7 +7025,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/conquerers_plate",
@@ -6599,7 +7042,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/demon_hunter",
@@ -6615,7 +7059,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/destroyers_raiment",
@@ -6631,7 +7076,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/dragon_knight_mantle",
@@ -6647,7 +7093,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/ebon_shoulders",
@@ -6663,7 +7110,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/fallen_kingdom",
@@ -6679,7 +7127,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/frogsong_mantle",
@@ -6695,7 +7144,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/frostrime",
@@ -6711,7 +7161,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/fury_shoulders",
@@ -6727,7 +7178,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_blood_brothers",
@@ -6743,7 +7195,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_cavalry",
@@ -6759,7 +7212,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_destroyer",
@@ -6775,7 +7229,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_house_of_leo_shoulders",
@@ -6791,7 +7246,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_imbued_pauldrons",
@@ -6807,7 +7263,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_nightstalkers",
@@ -6823,7 +7280,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_spiked",
@@ -6839,7 +7297,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_studded",
@@ -6855,7 +7314,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/golden_tank_shoulders",
@@ -6871,7 +7331,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 120
   },
   {
     "id": "shoulders/healers_mantle",
@@ -6887,7 +7348,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/heavy_marine_shoulders",
@@ -6903,7 +7365,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/heros_plate",
@@ -6919,7 +7382,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/holy_mantle",
@@ -6935,7 +7399,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/house_of_leo",
@@ -6951,7 +7416,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/hunters_plate",
@@ -6967,7 +7433,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/imbued_shoulderplates",
@@ -6983,7 +7450,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/invaders",
@@ -6999,7 +7467,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/invaders_orange",
@@ -7015,7 +7484,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/irradiated",
@@ -7031,7 +7501,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/jesters_coif",
@@ -7047,7 +7518,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/mana_charged",
@@ -7063,7 +7535,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/medium_plate",
@@ -7079,7 +7552,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/molten_shoulders",
@@ -7095,7 +7569,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/nightstalkers",
@@ -7111,7 +7586,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/platemail",
@@ -7127,7 +7603,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/rogues_shoulderpads",
@@ -7143,7 +7620,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/rotknight",
@@ -7159,7 +7637,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/royal_blue_guard",
@@ -7175,7 +7654,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/spiked_plate",
@@ -7191,7 +7671,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/strongmans_pauldrons",
@@ -7207,7 +7688,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/swampwalker",
@@ -7223,7 +7705,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/tanking_plate",
@@ -7239,7 +7722,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/theives_kit",
@@ -7255,7 +7739,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/thieves_reinforced_leather",
@@ -7271,7 +7756,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/travelers_shoulderpiece",
@@ -7287,7 +7773,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/underworld_plate",
@@ -7303,7 +7790,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/vampiric_shoulders",
@@ -7321,7 +7809,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/volcanic",
@@ -7337,7 +7826,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/wanderers_mantle",
@@ -7353,7 +7843,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "shoulders/wizards_bloodmantle",
@@ -7369,7 +7860,8 @@
     "dmgType": null,
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 120
   },
   {
     "id": "weapons/armor_piercer",
@@ -7385,7 +7877,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/axe_of_decay",
@@ -7401,7 +7894,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/axe_of_the_ogres",
@@ -7417,7 +7911,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/berserker_axe",
@@ -7433,7 +7928,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/bloodletter",
@@ -7449,7 +7945,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/boar_spear",
@@ -7465,7 +7962,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/bone_dagger",
@@ -7483,7 +7981,8 @@
       "dagger-hybrid"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/bone_sword",
@@ -7499,7 +7998,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/broken_crystal_sword",
@@ -7515,7 +8015,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/broken_sword",
@@ -7531,7 +8032,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/clawfist",
@@ -7547,7 +8049,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/crackling_sword",
@@ -7563,7 +8066,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/crystal_shard",
@@ -7579,7 +8083,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/cursed_battle_axe",
@@ -7595,7 +8100,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/cutlass",
@@ -7611,7 +8117,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/demonic_blade",
@@ -7627,7 +8134,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/dragon_fang",
@@ -7643,7 +8151,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/dragons_tooth",
@@ -7659,7 +8168,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/duelist_blade",
@@ -7675,7 +8185,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/ebon_longsword",
@@ -7691,7 +8202,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/energy_blade",
@@ -7707,7 +8219,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/flame_dagger",
@@ -7725,7 +8238,8 @@
       "dagger-hybrid"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/frogsong_blade",
@@ -7741,7 +8255,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/frost_axe",
@@ -7757,7 +8272,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/gladius",
@@ -7773,7 +8289,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/glass_longsword",
@@ -7789,7 +8306,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/golden_battle_axe",
@@ -7805,7 +8323,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": true
+    "golden": true,
+    "zIndex": 130
   },
   {
     "id": "weapons/knuckled_dagger",
@@ -7823,7 +8342,8 @@
       "dagger-hybrid"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/knuckled_sword",
@@ -7839,7 +8359,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/molten_axe",
@@ -7855,7 +8376,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/molten_dagger",
@@ -7873,7 +8395,8 @@
       "dagger-hybrid"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/pirate_cutlass",
@@ -7889,7 +8412,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/pirates_sword",
@@ -7905,7 +8429,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/rapier",
@@ -7921,7 +8446,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/rusty_shortsword",
@@ -7937,7 +8463,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/sage_blade",
@@ -7953,7 +8480,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/scimitar",
@@ -7969,7 +8497,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/serrated_longsword",
@@ -7985,7 +8514,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/serrated_shortsword",
@@ -8001,7 +8531,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/slimesword",
@@ -8017,7 +8548,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/snake_dagger",
@@ -8035,7 +8567,8 @@
       "dagger-hybrid"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/snake_handled_sword",
@@ -8051,7 +8584,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/steel_longsword",
@@ -8067,7 +8601,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/steel_torch",
@@ -8083,7 +8618,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/sword_of_ancient_kings",
@@ -8099,7 +8635,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/sword_of_rot",
@@ -8115,7 +8652,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/swordbreaker",
@@ -8131,7 +8669,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/throwing_lance",
@@ -8147,7 +8686,8 @@
     "dmgType": "ranged",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/vampiric_dagger",
@@ -8166,7 +8706,8 @@
       "dagger-hybrid"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/vampiric_sword",
@@ -8184,7 +8725,8 @@
       "vampiric"
     ],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/venomous_longsword",
@@ -8200,7 +8742,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/volcanic_sword",
@@ -8216,7 +8759,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/wicked_blade",
@@ -8232,7 +8776,8 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   },
   {
     "id": "weapons/wooden_torch",
@@ -8248,6 +8793,7 @@
     "dmgType": "physical",
     "tags": [],
     "rarityWeight": 100,
-    "golden": false
+    "golden": false,
+    "zIndex": 130
   }
 ]

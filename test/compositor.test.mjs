@@ -10,6 +10,8 @@ import {
   computeFighterId,
   fnv1a,
   ARMOR_SLOTS,
+  deriveClass,
+  deriveStats,
 } from '../src/gen/compose.mjs';
 import { renderFighter } from '../src/gen/render.mjs';
 import { SLOTS } from '../scripts/scan-assets.mjs';
@@ -130,6 +132,90 @@ test('5. re-roll: existingIds containing the would-be id -> different fighter', 
 test('fnv1a sanity: stable known hash values', () => {
   assert.equal(fnv1a(''), 0x811c9dc5);
   assert.equal(fnv1a('a'), 0xe40c292c);
+});
+
+test('class derivation: Knight branch and precedence', () => {
+  const armor = [
+    { slot: 'chest', id: 'chest/platemail', tags: [] },
+    { slot: 'shoulders', id: 'shoulders/platemail', tags: [] },
+    { slot: 'gloves', id: 'gloves/platemail', tags: [] },
+    { slot: 'legs', id: 'legs/chainmail', tags: [] },
+  ];
+  const base = { slot: 'bases', id: 'bases/lizardman', tags: [] };
+  const longsword = { slot: 'weapons', id: 'weapons/steel_longsword', dmgType: 'physical', tags: [] };
+
+  // full armor + longsword + kite shield -> Knight (the Plagueth case)
+  const kite = { slot: 'shields', id: 'shields/brass_kite_shield', tags: ['shield'] };
+  assert.equal(deriveClass([base, ...armor, longsword, kite]), 'Knight');
+
+  // towershield still -> Tank (precedence over Knight)
+  const tower = { slot: 'shields', id: 'shields/spiked_tower_shield', tags: ['shield', 'tank'] };
+  assert.equal(deriveClass([base, ...armor, longsword, tower]), 'Tank');
+
+  // tome offhand -> Cleric even if a shield tag somehow coexists
+  const taggedTome = { slot: 'offhands', id: 'offhands/tome_of_knowledge', tags: ['cleric', 'shield'] };
+  assert.equal(deriveClass([base, ...armor, longsword, taggedTome]), 'Cleric');
+
+  // generator-level: a rolled non-tower shield derives Knight
+  let knight = null;
+  for (let i = 0; i < 500 && !knight; i++) {
+    const f = generateFighter(`knight-${i}`);
+    const shield = f.parts.find((p) => p.slot === 'shields');
+    if (shield && !/tower|bulwark/.test(shield.id)) knight = f;
+  }
+  assert.ok(knight, 'expected to roll a non-tower shield within 500 seeds');
+  assert.equal(knight.cls, 'Knight');
+});
+
+test('distribution tripwire: offhand-empty within 10%-30% over 500 seeded fighters', () => {
+  const N = 500;
+  let offhandEmpty = 0;
+  for (let i = 0; i < N; i++) {
+    const f = generateFighter(`band-${i}`);
+    const present = new Set(f.parts.map((p) => p.slot));
+    if (!present.has('offhands') && !present.has('shields')) offhandEmpty++;
+  }
+  assert.ok(
+    offhandEmpty >= N * 0.1 && offhandEmpty <= N * 0.3,
+    `offhand-empty ${offhandEmpty}/${N} outside the 10%-30% band`
+  );
+});
+
+test('gap-bonus crit progression: 0/2/4/6/8% for 0-4 empty armor slots', () => {
+  const BIG = Number.MAX_SAFE_INTEGER;
+  const cases = [
+    [{}, 0],
+    [{ chest: BIG }, 0.02],
+    [{ chest: BIG, shoulders: BIG }, 0.04],
+    [{ chest: BIG, shoulders: BIG, gloves: BIG }, 0.06],
+    [{ chest: BIG, shoulders: BIG, gloves: BIG, legs: BIG }, 0.08],
+  ];
+  for (const [emptied, expectedCrit] of cases) {
+    // 0 = never empty; BIG = always empty — forces the exact gap count
+    const slotEmptyWeights = {
+      chest: 0, shoulders: 0, gloves: 0, legs: 0,
+      helms: 0, capes: 0, robes: 0, conditions: 0, offhand: 0,
+      ...emptied,
+    };
+    const f = generateFighter('crit-progression', { tuning: { slotEmptyWeights } });
+    assert.equal(f.stats.crit, expectedCrit, `expected crit ${expectedCrit} with ${Object.keys(emptied).length} gaps`);
+  }
+});
+
+test('UI/engine consistency: displayed stats deep-equal shared deriveStats output', () => {
+  const manifestById = new Map(manifest.map((e) => [e.id, e]));
+  for (let i = 0; i < 50; i++) {
+    const f = generateFighter(`consistency-${i}`);
+    // Reconstruct full part objects the way any consumer would, then re-derive
+    // through the single shared function.
+    const parts = f.parts.map((p) => ({
+      ...manifestById.get(p.id),
+      slot: p.slot,
+      golden: p.golden,
+    }));
+    const { stats } = deriveStats(parts, tuning);
+    assert.deepEqual(stats, f.stats, `stat mismatch for seed consistency-${i}`);
+  }
 });
 
 test('sha256 sanity: browser-safe implementation matches node:crypto', async () => {

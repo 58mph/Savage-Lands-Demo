@@ -98,13 +98,25 @@
   .stat .k { color: var(--muted); font-size: 10px; letter-spacing: 1px; }
   .stat .v { font-size: 17px; margin-top: 2px; }
 
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  /* pills wrap onto multiple lines; past ~3 rows they scroll instead of
+     pushing the equipment table off-screen */
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+    max-height: 76px; overflow-y: auto;
+  }
   .chip {
     font-size: 11px; padding: 3px 10px; border-radius: 999px;
-    border: 1px solid var(--line); color: var(--muted);
+    border: 1px solid var(--line); color: var(--muted); white-space: nowrap;
   }
   .chip.on { border-color: var(--accent); color: var(--accent); }
   .chip.gold { border-color: var(--gold); color: var(--gold); }
+
+  .badge {
+    display: inline-block; font-size: 11px; padding: 2px 8px;
+    border-radius: 6px; border: 1px solid var(--accent); color: var(--accent);
+    cursor: help;
+  }
+  .badge-sub { display: block; font-size: 9px; color: var(--muted); margin-top: 2px; }
 
   .parts { list-style: none; margin: 0 0 14px; padding: 0; font-size: 13px; }
   .parts li {
@@ -193,9 +205,11 @@
   const NATIVE = 128;
 
   // Data + generator setup ---------------------------------------------------
+  // cache: 'no-store' so a stale cached page can never pair with a stale
+  // manifest that references moved/deleted asset paths.
   const [manifest, tuning, names] = await Promise.all(
     ['attributes', 'tuning', 'names'].map((f) =>
-      fetch(`../data/${f}.json`).then((r) => {
+      fetch(`../data/${f}.json`, { cache: 'no-store' }).then((r) => {
         if (!r.ok) throw new Error(`failed to load data/${f}.json`);
         return r.json();
       })
@@ -229,7 +243,11 @@
   async function drawFighter(ctx, fighter) {
     ctx.clearRect(0, 0, NATIVE, NATIVE);
     ctx.imageSmoothingEnabled = false;
-    for (const part of fighter.parts) {
+    // paint by zIndex (per-piece manifest override wins over slot default)
+    const ordered = [...fighter.parts].sort((a, b) =>
+      (a.zIndex ?? 0) - (b.zIndex ?? 0) || a.slot.localeCompare(b.slot)
+    );
+    for (const part of ordered) {
       const entry = manifestById.get(part.id);
       const img = entry && !entry.missing ? await loadImage('../' + entry.file) : null;
       if (!img) {
@@ -291,10 +309,20 @@
     if (chips.length === 0) chips.push('<span class="chip">no modifiers</span>');
     $('f-chips').innerHTML = chips.join('');
 
-    $('f-parts').innerHTML = fighter.parts.map((p) => {
+    const dualStrikePct = Math.round(tuning.secondAttackMultiplier * 100);
+    const partRows = fighter.parts.map((p) => {
       const pretty = p.id.split('/')[1].replace(/_/g, ' ');
       return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
-    }).join('');
+    });
+    if (fighter.doubleAttack) {
+      partRows.push(
+        `<li><span class="slot">offhands</span><span>` +
+          `<span class="badge" title="Second main attack each turn (${dualStrikePct}% damage)">⚔ DUAL STRIKE</span>` +
+          `<span class="badge-sub">Second main attack each turn (${dualStrikePct}% damage)</span>` +
+          `</span></li>`
+      );
+    }
+    $('f-parts').innerHTML = partRows.join('');
 
     $('f-id').textContent = fighter.id;
     $('f-seed').textContent = fighter.seed;

@@ -71,13 +71,20 @@ async function partLayer(part, entry, width, height) {
   return pngBuffer;
 }
 
-/** Composite all part PNGs in z-order onto a transparent canvas. */
+/** Composite all part PNGs onto a transparent canvas, sorted by zIndex
+ *  (per-piece manifest override wins over the slot default). */
 export async function renderFighter(fighter) {
   const { manifestById, tuning } = loadData();
   const { width, height } = tuning.canvas;
 
+  const ordered = [...fighter.parts].sort((a, b) => {
+    const za = a.zIndex ?? manifestById.get(a.id)?.zIndex ?? 0;
+    const zb = b.zIndex ?? manifestById.get(b.id)?.zIndex ?? 0;
+    return za - zb || a.slot.localeCompare(b.slot);
+  });
+
   const layers = [];
-  for (const part of fighter.parts) {
+  for (const part of ordered) {
     layers.push({
       input: await partLayer(part, manifestById.get(part.id), width, height),
       left: 0,
@@ -108,22 +115,25 @@ export async function renderCard(fighter) {
 
   const s = fighter.stats;
   const statLine = `HP ${s.hp}  ATK ${s.atk}  DEF ${s.def}  SPD ${s.spd}`;
+  // Dual Strike percentage comes from tuning — never hardcoded.
+  const dualStrikePct = Math.round(tuning.secondAttackMultiplier * 100);
   const extras = [
     `CRIT ${Math.round((s.crit ?? 0) * 100)}%`,
-    fighter.doubleAttack ? '2xATK' : null,
+    fighter.doubleAttack ? `⚔ DUAL STRIKE ${dualStrikePct}%` : null,
     ...fighter.tags,
   ]
     .filter(Boolean)
     .join('  ');
 
+  // 6px vertical padding above the name/class block (card size unchanged).
   const frame = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${cw}" height="${ch}">
       <rect width="${cw}" height="${ch}" rx="12" fill="#1c1723"/>
       <rect x="4" y="4" width="${cw - 8}" height="${ch - 8}" rx="9"
             fill="#2a2136" stroke="#8a6d3b" stroke-width="2"/>
-      <text x="${cw / 2}" y="30" font-family="monospace" font-size="15" font-weight="bold"
+      <text x="${cw / 2}" y="36" font-family="monospace" font-size="15" font-weight="bold"
             fill="#f0e6d2" text-anchor="middle">${escapeXml(fighter.name)}</text>
-      <text x="${cw / 2}" y="48" font-family="monospace" font-size="12"
+      <text x="${cw / 2}" y="54" font-family="monospace" font-size="12"
             fill="#c8a95e" text-anchor="middle">${escapeXml(fighter.cls)}</text>
       <text x="${cw / 2}" y="${ch - 34}" font-family="monospace" font-size="12"
             fill="#f0e6d2" text-anchor="middle">${escapeXml(statLine)}</text>

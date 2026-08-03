@@ -61,6 +61,11 @@ const server = http.createServer(async (req, res) => {
       return send(res, 200, JSON.stringify(fighter), 'application/json');
     }
 
+    if (url.pathname === '/api/tuning') {
+      const tuning = fs.readFileSync(path.join(ROOT, 'data', 'tuning.json'));
+      return send(res, 200, tuning, 'application/json');
+    }
+
     if (url.pathname === '/api/card.png') {
       const fighter = cached(`f:${seed}`, () => generateFighter(seed));
       const png = await cached(`c:${seed}`, () => renderCard(fighter));

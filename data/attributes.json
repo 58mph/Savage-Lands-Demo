@@ -1,0 +1,5155 @@
+[
+  {
+    "id": "bases/albino_crocodillian",
+    "slot": "bases",
+    "file": "assets/bases/albino_crocodillian.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/bearkin",
+    "slot": "bases",
+    "file": "assets/bases/bearkin.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/black_ratman",
+    "slot": "bases",
+    "file": "assets/bases/black_ratman.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/brown_ratman",
+    "slot": "bases",
+    "file": "assets/bases/brown_ratman.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/crocodillian",
+    "slot": "bases",
+    "file": "assets/bases/crocodillian.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/frogfolk",
+    "slot": "bases",
+    "file": "assets/bases/frogfolk.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/lizardman",
+    "slot": "bases",
+    "file": "assets/bases/lizardman.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/minotaur",
+    "slot": "bases",
+    "file": "assets/bases/minotaur.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/poisonous_frogfolk",
+    "slot": "bases",
+    "file": "assets/bases/poisonous_frogfolk.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/possum",
+    "slot": "bases",
+    "file": "assets/bases/possum.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/raccoon",
+    "slot": "bases",
+    "file": "assets/bases/raccoon.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/salamander",
+    "slot": "bases",
+    "file": "assets/bases/salamander.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/white_ratman",
+    "slot": "bases",
+    "file": "assets/bases/white_ratman.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "bases/winter_bearkin",
+    "slot": "bases",
+    "file": "assets/bases/winter_bearkin.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 80,
+      "atk": 10,
+      "def": 8,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/blue_royal_guard",
+    "slot": "chest",
+    "file": "assets/chest/blue_royal_guard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/brotherhood_of_blood",
+    "slot": "chest",
+    "file": "assets/chest/brotherhood_of_blood.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/cavalry_chestpiece",
+    "slot": "chest",
+    "file": "assets/chest/cavalry_chestpiece.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/chainmail",
+    "slot": "chest",
+    "file": "assets/chest/chainmail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/demon_hunter",
+    "slot": "chest",
+    "file": "assets/chest/demon_hunter.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/destroyer",
+    "slot": "chest",
+    "file": "assets/chest/destroyer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/dragon_knights_plate",
+    "slot": "chest",
+    "file": "assets/chest/dragon_knights_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/dustmarsh",
+    "slot": "chest",
+    "file": "assets/chest/dustmarsh.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/ebon_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/ebon_chestplate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/fallen_kingdom_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/fallen_kingdom_chestplate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/frogsong_ribbed",
+    "slot": "chest",
+    "file": "assets/chest/frogsong_ribbed.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/frostrime",
+    "slot": "chest",
+    "file": "assets/chest/frostrime.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/frostrime_chest",
+    "slot": "chest",
+    "file": "assets/chest/frostrime_chest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/fury_chestpiece",
+    "slot": "chest",
+    "file": "assets/chest/fury_chestpiece.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/golden_blood_brother",
+    "slot": "chest",
+    "file": "assets/chest/golden_blood_brother.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_cavalry",
+    "slot": "chest",
+    "file": "assets/chest/golden_cavalry.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_destroyer",
+    "slot": "chest",
+    "file": "assets/chest/golden_destroyer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_house_of_leo",
+    "slot": "chest",
+    "file": "assets/chest/golden_house_of_leo.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_imbued_chest",
+    "slot": "chest",
+    "file": "assets/chest/golden_imbued_chest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_nightstalker",
+    "slot": "chest",
+    "file": "assets/chest/golden_nightstalker.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_spiked_mail",
+    "slot": "chest",
+    "file": "assets/chest/golden_spiked_mail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_studded_armor",
+    "slot": "chest",
+    "file": "assets/chest/golden_studded_armor.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/golden_tanking_plate",
+    "slot": "chest",
+    "file": "assets/chest/golden_tanking_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "chest/healers_holy_shirt",
+    "slot": "chest",
+    "file": "assets/chest/healers_holy_shirt.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/heavy_marine",
+    "slot": "chest",
+    "file": "assets/chest/heavy_marine.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/house_of_leo_insignia_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/house_of_leo_insignia_chestplate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/hunters_guard",
+    "slot": "chest",
+    "file": "assets/chest/hunters_guard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/imbued",
+    "slot": "chest",
+    "file": "assets/chest/imbued.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/invader",
+    "slot": "chest",
+    "file": "assets/chest/invader.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/invader_orange",
+    "slot": "chest",
+    "file": "assets/chest/invader_orange.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/irradiated",
+    "slot": "chest",
+    "file": "assets/chest/irradiated.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/jesters_costume",
+    "slot": "chest",
+    "file": "assets/chest/jesters_costume.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/molten_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/molten_chestplate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/nightstalkers_chest",
+    "slot": "chest",
+    "file": "assets/chest/nightstalkers_chest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/platemail",
+    "slot": "chest",
+    "file": "assets/chest/platemail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/rogues_leather_chest",
+    "slot": "chest",
+    "file": "assets/chest/rogues_leather_chest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/rotknight",
+    "slot": "chest",
+    "file": "assets/chest/rotknight.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/spiked_plate",
+    "slot": "chest",
+    "file": "assets/chest/spiked_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/strongmans_cinch",
+    "slot": "chest",
+    "file": "assets/chest/strongmans_cinch.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/studded_leather_chest",
+    "slot": "chest",
+    "file": "assets/chest/studded_leather_chest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/tanking_plate",
+    "slot": "chest",
+    "file": "assets/chest/tanking_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/thick_plated_cuirass",
+    "slot": "chest",
+    "file": "assets/chest/thick_plated_cuirass.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/travelers_wrap",
+    "slot": "chest",
+    "file": "assets/chest/travelers_wrap.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/underworld",
+    "slot": "chest",
+    "file": "assets/chest/underworld.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/vampiric_chestpiece",
+    "slot": "chest",
+    "file": "assets/chest/vampiric_chestpiece.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/vampiric_vest",
+    "slot": "chest",
+    "file": "assets/chest/vampiric_vest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/volcanic_chest",
+    "slot": "chest",
+    "file": "assets/chest/volcanic_chest.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/warforged_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/warforged_chestplate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "chest/wizards_blood_tunic",
+    "slot": "chest",
+    "file": "assets/chest/wizards_blood_tunic.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/blood_wizards_caress",
+    "slot": "gloves",
+    "file": "assets/gloves/blood_wizards_caress.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/brotherhood_of_blood",
+    "slot": "gloves",
+    "file": "assets/gloves/brotherhood_of_blood.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/cavalry",
+    "slot": "gloves",
+    "file": "assets/gloves/cavalry.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/chainmail_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/chainmail_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/champions_grip",
+    "slot": "gloves",
+    "file": "assets/gloves/champions_grip.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/conquerers_grip",
+    "slot": "gloves",
+    "file": "assets/gloves/conquerers_grip.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/demon_hunter",
+    "slot": "gloves",
+    "file": "assets/gloves/demon_hunter.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/destroyers_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/destroyers_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/dragon_knights_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/dragon_knights_fists.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/dustmarsh_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/dustmarsh_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/ebon_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/ebon_fists.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/ebon_plate",
+    "slot": "gloves",
+    "file": "assets/gloves/ebon_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/fallen_kingdom_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/fallen_kingdom_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/frogsong",
+    "slot": "gloves",
+    "file": "assets/gloves/frogsong.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/frostrime_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/frostrime_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/full_plate_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/full_plate_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/fury_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/fury_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/golden_cavalry",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_cavalry.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_destroyer",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_destroyer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_hands",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_hands.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_imbued_gauntlets",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_imbued_gauntlets.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_nightstalkers_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_nightstalkers_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_plate",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_spiked_hands",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_spiked_hands.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_studded_grips",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_studded_grips.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/golden_tanking_plate",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_tanking_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "gloves/healers_touch",
+    "slot": "gloves",
+    "file": "assets/gloves/healers_touch.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/heavy_marines_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/heavy_marines_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/heros_grip",
+    "slot": "gloves",
+    "file": "assets/gloves/heros_grip.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/house_of_leo_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/house_of_leo_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/hunters_spiked_glove",
+    "slot": "gloves",
+    "file": "assets/gloves/hunters_spiked_glove.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/imbued_silk_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/imbued_silk_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/invaders",
+    "slot": "gloves",
+    "file": "assets/gloves/invaders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/invaders_orange",
+    "slot": "gloves",
+    "file": "assets/gloves/invaders_orange.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/irradiated_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/irradiated_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/jesters_silk_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/jesters_silk_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/mana_imbued_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/mana_imbued_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/molten_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/molten_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/necromancers_touch",
+    "slot": "gloves",
+    "file": "assets/gloves/necromancers_touch.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/nightstalkers_touch",
+    "slot": "gloves",
+    "file": "assets/gloves/nightstalkers_touch.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/plate_steel_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/plate_steel_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/platemail",
+    "slot": "gloves",
+    "file": "assets/gloves/platemail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/rogues_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/rogues_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/royal_blue_guard",
+    "slot": "gloves",
+    "file": "assets/gloves/royal_blue_guard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/shadowbinder_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/shadowbinder_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/spiked_steel_gauntlets",
+    "slot": "gloves",
+    "file": "assets/gloves/spiked_steel_gauntlets.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/studded_leather",
+    "slot": "gloves",
+    "file": "assets/gloves/studded_leather.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/studded_leather_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/studded_leather_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/tanking_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/tanking_fists.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/thieves_fingers",
+    "slot": "gloves",
+    "file": "assets/gloves/thieves_fingers.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/travelers_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/travelers_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/vampiric_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/vampiric_fists.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "gloves/volcanic_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/volcanic_gloves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/adventurers_pants",
+    "slot": "legs",
+    "file": "assets/legs/adventurers_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/bood_wizards_legs",
+    "slot": "legs",
+    "file": "assets/legs/bood_wizards_legs.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/breeches_of_lethal_precision",
+    "slot": "legs",
+    "file": "assets/legs/breeches_of_lethal_precision.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/brotherhood_of_blood",
+    "slot": "legs",
+    "file": "assets/legs/brotherhood_of_blood.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/bulwark_of_the_sentinel",
+    "slot": "legs",
+    "file": "assets/legs/bulwark_of_the_sentinel.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/cavalry_captains_pants",
+    "slot": "legs",
+    "file": "assets/legs/cavalry_captains_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/chainmail",
+    "slot": "legs",
+    "file": "assets/legs/chainmail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/cursed_weavers_breeches",
+    "slot": "legs",
+    "file": "assets/legs/cursed_weavers_breeches.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/damage_dealers_slacks",
+    "slot": "legs",
+    "file": "assets/legs/damage_dealers_slacks.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/dark_enchanters_wicked_legwraps",
+    "slot": "legs",
+    "file": "assets/legs/dark_enchanters_wicked_legwraps.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/demon_hunter_legs",
+    "slot": "legs",
+    "file": "assets/legs/demon_hunter_legs.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/destroyers_thighs",
+    "slot": "legs",
+    "file": "assets/legs/destroyers_thighs.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/dustmarsh_pants",
+    "slot": "legs",
+    "file": "assets/legs/dustmarsh_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/fallen_kingdom_pants",
+    "slot": "legs",
+    "file": "assets/legs/fallen_kingdom_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/full_plate_greaves",
+    "slot": "legs",
+    "file": "assets/legs/full_plate_greaves.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/fury_leggings",
+    "slot": "legs",
+    "file": "assets/legs/fury_leggings.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/golden_blood_brothers_legs",
+    "slot": "legs",
+    "file": "assets/legs/golden_blood_brothers_legs.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "legs/golden_destroyer",
+    "slot": "legs",
+    "file": "assets/legs/golden_destroyer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "legs/golden_house_of_leo",
+    "slot": "legs",
+    "file": "assets/legs/golden_house_of_leo.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "legs/golden_spiked_thighs",
+    "slot": "legs",
+    "file": "assets/legs/golden_spiked_thighs.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "legs/golden_studded_pants",
+    "slot": "legs",
+    "file": "assets/legs/golden_studded_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "legs/golden_tanks_pants",
+    "slot": "legs",
+    "file": "assets/legs/golden_tanks_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "legs/grey_leiderhosen",
+    "slot": "legs",
+    "file": "assets/legs/grey_leiderhosen.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/healers_white_leggings",
+    "slot": "legs",
+    "file": "assets/legs/healers_white_leggings.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/heavy_marine_leg_armor",
+    "slot": "legs",
+    "file": "assets/legs/heavy_marine_leg_armor.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/highly_imbued_pants",
+    "slot": "legs",
+    "file": "assets/legs/highly_imbued_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/house_of_leo_pants",
+    "slot": "legs",
+    "file": "assets/legs/house_of_leo_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/hunters_pants",
+    "slot": "legs",
+    "file": "assets/legs/hunters_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/invaders_pants",
+    "slot": "legs",
+    "file": "assets/legs/invaders_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/irradiated_pants",
+    "slot": "legs",
+    "file": "assets/legs/irradiated_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/legplates_of_eternal_valor",
+    "slot": "legs",
+    "file": "assets/legs/legplates_of_eternal_valor.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/legwraps_of_the_marksman",
+    "slot": "legs",
+    "file": "assets/legs/legwraps_of_the_marksman.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/lord_nighstalkers_pants",
+    "slot": "legs",
+    "file": "assets/legs/lord_nighstalkers_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/merciless_strikers_breeches",
+    "slot": "legs",
+    "file": "assets/legs/merciless_strikers_breeches.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/molten_pants",
+    "slot": "legs",
+    "file": "assets/legs/molten_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/necromancers_pants",
+    "slot": "legs",
+    "file": "assets/legs/necromancers_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/nightstalkers",
+    "slot": "legs",
+    "file": "assets/legs/nightstalkers.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/nightstalkers_legguards",
+    "slot": "legs",
+    "file": "assets/legs/nightstalkers_legguards.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/orange_invader",
+    "slot": "legs",
+    "file": "assets/legs/orange_invader.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/pants_of_blessed_serenity",
+    "slot": "legs",
+    "file": "assets/legs/pants_of_blessed_serenity.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/pants_of_the_iron_vanguard",
+    "slot": "legs",
+    "file": "assets/legs/pants_of_the_iron_vanguard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/royal_blue_guard",
+    "slot": "legs",
+    "file": "assets/legs/royal_blue_guard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/rusted_chainmail",
+    "slot": "legs",
+    "file": "assets/legs/rusted_chainmail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/slayers_swift_leggings",
+    "slot": "legs",
+    "file": "assets/legs/slayers_swift_leggings.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/spiked_mail",
+    "slot": "legs",
+    "file": "assets/legs/spiked_mail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/studded_leather",
+    "slot": "legs",
+    "file": "assets/legs/studded_leather.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/thiefs_cloth",
+    "slot": "legs",
+    "file": "assets/legs/thiefs_cloth.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/titan_forged_legguards",
+    "slot": "legs",
+    "file": "assets/legs/titan_forged_legguards.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/trousers_of_the_nethermancer",
+    "slot": "legs",
+    "file": "assets/legs/trousers_of_the_nethermancer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/vampiric_pants",
+    "slot": "legs",
+    "file": "assets/legs/vampiric_pants.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/warlocks_infernal_leggings",
+    "slot": "legs",
+    "file": "assets/legs/warlocks_infernal_leggings.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "legs/wildgrowth_legwraps",
+    "slot": "legs",
+    "file": "assets/legs/wildgrowth_legwraps.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/bloody_veterans_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/bloody_veterans_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/book_of_black_arts",
+    "slot": "offhands",
+    "file": "assets/offhands/book_of_black_arts.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "cleric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/brass_kite_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/brass_kite_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/bulwark_of_the_titans",
+    "slot": "offhands",
+    "file": "assets/offhands/bulwark_of_the_titans.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "tank"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/coffin_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/coffin_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/cursed_pendant",
+    "slot": "offhands",
+    "file": "assets/offhands/cursed_pendant.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/decaying_flower",
+    "slot": "offhands",
+    "file": "assets/offhands/decaying_flower.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/dragon_scale_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/dragon_scale_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/ebon_kite_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/ebon_kite_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/eye_of_the_ice_dragon",
+    "slot": "offhands",
+    "file": "assets/offhands/eye_of_the_ice_dragon.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/frogsong_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/frogsong_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/frost_covered_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/frost_covered_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/frozen_heart_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/frozen_heart_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/golden_buckler",
+    "slot": "offhands",
+    "file": "assets/offhands/golden_buckler.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "offhands/heros_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/heros_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/imbued_rose",
+    "slot": "offhands",
+    "file": "assets/offhands/imbued_rose.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/items_7",
+    "slot": "offhands",
+    "file": "assets/offhands/items_7.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/malevolent_ruby",
+    "slot": "offhands",
+    "file": "assets/offhands/malevolent_ruby.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/medium_steel_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/medium_steel_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/mossy_wooden_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/mossy_wooden_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/poison_rose",
+    "slot": "offhands",
+    "file": "assets/offhands/poison_rose.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/precious_rose",
+    "slot": "offhands",
+    "file": "assets/offhands/precious_rose.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/smouldering_iron",
+    "slot": "offhands",
+    "file": "assets/offhands/smouldering_iron.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/spiked_tower_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/spiked_tower_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "tank"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/steel_buckler",
+    "slot": "offhands",
+    "file": "assets/offhands/steel_buckler.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/tome_of_knowledge",
+    "slot": "offhands",
+    "file": "assets/offhands/tome_of_knowledge.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "cleric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/viking_shield",
+    "slot": "offhands",
+    "file": "assets/offhands/viking_shield.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/volcanic_slab",
+    "slot": "offhands",
+    "file": "assets/offhands/volcanic_slab.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "offhands/wooden_buckler",
+    "slot": "offhands",
+    "file": "assets/offhands/wooden_buckler.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/brotherhood_of_blood",
+    "slot": "shoulders",
+    "file": "assets/shoulders/brotherhood_of_blood.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/cavalry",
+    "slot": "shoulders",
+    "file": "assets/shoulders/cavalry.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/cavalry_shoulder",
+    "slot": "shoulders",
+    "file": "assets/shoulders/cavalry_shoulder.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/chainmail",
+    "slot": "shoulders",
+    "file": "assets/shoulders/chainmail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/champions_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/champions_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/conquerers_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/conquerers_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/demon_hunter",
+    "slot": "shoulders",
+    "file": "assets/shoulders/demon_hunter.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/destroyers_raiment",
+    "slot": "shoulders",
+    "file": "assets/shoulders/destroyers_raiment.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/dragon_knight_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/dragon_knight_mantle.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/ebon_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/ebon_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/fallen_kingdom",
+    "slot": "shoulders",
+    "file": "assets/shoulders/fallen_kingdom.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/frogsong_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/frogsong_mantle.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/frostrime",
+    "slot": "shoulders",
+    "file": "assets/shoulders/frostrime.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/fury_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/fury_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/golden_blood_brothers",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_blood_brothers.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_cavalry",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_cavalry.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_destroyer",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_destroyer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_house_of_leo_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_house_of_leo_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_imbued_pauldrons",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_imbued_pauldrons.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_nightstalkers",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_nightstalkers.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_spiked",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_spiked.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_studded",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_studded.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/golden_tank_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_tank_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "shoulders/healers_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/healers_mantle.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/heavy_marine_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/heavy_marine_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/heros_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/heros_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/holy_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/holy_mantle.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/house_of_leo",
+    "slot": "shoulders",
+    "file": "assets/shoulders/house_of_leo.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/hunters_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/hunters_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/imbued_shoulderplates",
+    "slot": "shoulders",
+    "file": "assets/shoulders/imbued_shoulderplates.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/invaders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/invaders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/invaders_orange",
+    "slot": "shoulders",
+    "file": "assets/shoulders/invaders_orange.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/irradiated",
+    "slot": "shoulders",
+    "file": "assets/shoulders/irradiated.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/jesters_coif",
+    "slot": "shoulders",
+    "file": "assets/shoulders/jesters_coif.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/mana_charged",
+    "slot": "shoulders",
+    "file": "assets/shoulders/mana_charged.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/medium_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/medium_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/molten_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/molten_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/nightstalkers",
+    "slot": "shoulders",
+    "file": "assets/shoulders/nightstalkers.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/platemail",
+    "slot": "shoulders",
+    "file": "assets/shoulders/platemail.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/rogues_shoulderpads",
+    "slot": "shoulders",
+    "file": "assets/shoulders/rogues_shoulderpads.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/rotknight",
+    "slot": "shoulders",
+    "file": "assets/shoulders/rotknight.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/royal_blue_guard",
+    "slot": "shoulders",
+    "file": "assets/shoulders/royal_blue_guard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/spiked_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/spiked_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/strongmans_pauldrons",
+    "slot": "shoulders",
+    "file": "assets/shoulders/strongmans_pauldrons.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/swampwalker",
+    "slot": "shoulders",
+    "file": "assets/shoulders/swampwalker.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/tanking_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/tanking_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/theives_kit",
+    "slot": "shoulders",
+    "file": "assets/shoulders/theives_kit.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/thieves_reinforced_leather",
+    "slot": "shoulders",
+    "file": "assets/shoulders/thieves_reinforced_leather.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/travelers_shoulderpiece",
+    "slot": "shoulders",
+    "file": "assets/shoulders/travelers_shoulderpiece.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/underworld_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/underworld_plate.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/vampiric_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/vampiric_shoulders.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/volcanic",
+    "slot": "shoulders",
+    "file": "assets/shoulders/volcanic.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/wanderers_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/wanderers_mantle.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "shoulders/wizards_bloodmantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/wizards_bloodmantle.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/armor_piercer",
+    "slot": "weapons",
+    "file": "assets/weapons/armor_piercer.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/axe_of_decay",
+    "slot": "weapons",
+    "file": "assets/weapons/axe_of_decay.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/axe_of_the_ogres",
+    "slot": "weapons",
+    "file": "assets/weapons/axe_of_the_ogres.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/berserker_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/berserker_axe.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/bloodletter",
+    "slot": "weapons",
+    "file": "assets/weapons/bloodletter.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/boar_spear",
+    "slot": "weapons",
+    "file": "assets/weapons/boar_spear.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/bone_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/bone_dagger.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/bone_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/bone_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/broken_crystal_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/broken_crystal_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/broken_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/broken_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/clawfist",
+    "slot": "weapons",
+    "file": "assets/weapons/clawfist.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/crackling_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/crackling_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/crystal_shard",
+    "slot": "weapons",
+    "file": "assets/weapons/crystal_shard.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/cursed_battle_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/cursed_battle_axe.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/cursed_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/cursed_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/cutlass",
+    "slot": "weapons",
+    "file": "assets/weapons/cutlass.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/demonic_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/demonic_blade.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/dragon_fang",
+    "slot": "weapons",
+    "file": "assets/weapons/dragon_fang.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/dragons_tooth",
+    "slot": "weapons",
+    "file": "assets/weapons/dragons_tooth.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/duelist_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/duelist_blade.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/ebon_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/ebon_longsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/energy_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/energy_blade.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/flame_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/flame_dagger.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/flamewielders_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/flamewielders_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/frogsong_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/frogsong_blade.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/frost_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/frost_axe.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/gladius",
+    "slot": "weapons",
+    "file": "assets/weapons/gladius.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/glass_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/glass_longsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/golden_battle_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/golden_battle_axe.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true
+  },
+  {
+    "id": "weapons/holy_smiter",
+    "slot": "weapons",
+    "file": "assets/weapons/holy_smiter.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/illuminated_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/illuminated_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/knuckled_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/knuckled_dagger.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/knuckled_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/knuckled_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/malevolent_mirror",
+    "slot": "weapons",
+    "file": "assets/weapons/malevolent_mirror.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/molten_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/molten_axe.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/molten_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/molten_dagger.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/necromancers_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/necromancers_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/pirate_cutlass",
+    "slot": "weapons",
+    "file": "assets/weapons/pirate_cutlass.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/pirates_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/pirates_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/poisonous_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/poisonous_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/rapier",
+    "slot": "weapons",
+    "file": "assets/weapons/rapier.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/royal_scepter",
+    "slot": "weapons",
+    "file": "assets/weapons/royal_scepter.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/rusty_shortsword",
+    "slot": "weapons",
+    "file": "assets/weapons/rusty_shortsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/sage_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/sage_blade.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/scimitar",
+    "slot": "weapons",
+    "file": "assets/weapons/scimitar.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/sentient_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/sentient_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/serpent_lords_staff",
+    "slot": "weapons",
+    "file": "assets/weapons/serpent_lords_staff.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/serrated_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/serrated_longsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/serrated_shortsword",
+    "slot": "weapons",
+    "file": "assets/weapons/serrated_shortsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/slimesword",
+    "slot": "weapons",
+    "file": "assets/weapons/slimesword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/snake_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/snake_dagger.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/snake_handled_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/snake_handled_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/staff_12",
+    "slot": "weapons",
+    "file": "assets/weapons/staff_12.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/staff_6",
+    "slot": "weapons",
+    "file": "assets/weapons/staff_6.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/staff_of_fire",
+    "slot": "weapons",
+    "file": "assets/weapons/staff_of_fire.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/staff_of_reflection",
+    "slot": "weapons",
+    "file": "assets/weapons/staff_of_reflection.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/staff_of_thorns",
+    "slot": "weapons",
+    "file": "assets/weapons/staff_of_thorns.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "spell",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/steel_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/steel_longsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/steel_torch",
+    "slot": "weapons",
+    "file": "assets/weapons/steel_torch.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/sword_of_ancient_kings",
+    "slot": "weapons",
+    "file": "assets/weapons/sword_of_ancient_kings.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/sword_of_rot",
+    "slot": "weapons",
+    "file": "assets/weapons/sword_of_rot.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/swordbreaker",
+    "slot": "weapons",
+    "file": "assets/weapons/swordbreaker.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/throwing_lance",
+    "slot": "weapons",
+    "file": "assets/weapons/throwing_lance.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "ranged",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/vampiric_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/vampiric_dagger.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "vampiric",
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/vampiric_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/vampiric_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/venomous_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/venomous_longsword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/volcanic_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/volcanic_sword.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/wicked_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/wicked_blade.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  },
+  {
+    "id": "weapons/wooden_torch",
+    "slot": "weapons",
+    "file": "assets/weapons/wooden_torch.png",
+    "name": "TODO",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false
+  }
+]

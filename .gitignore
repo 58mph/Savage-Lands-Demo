@@ -1,3 +1,5 @@
 .vercel
 config/openai.json
 config/xai.json
+node_modules/
+generated/

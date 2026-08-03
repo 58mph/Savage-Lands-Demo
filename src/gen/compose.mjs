@@ -14,6 +14,8 @@ import { generateFighterWith } from './compose-core.mjs';
 export {
   Z_ORDER,
   ARMOR_SLOTS,
+  REQUIRED_SLOTS,
+  OPTIONAL_SLOTS,
   fnv1a,
   mulberry32,
   computeFighterId,

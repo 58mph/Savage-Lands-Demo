@@ -5,10 +5,35 @@
 
 import { sha256Hex } from './sha256.mjs';
 
-// z-order for compositing; also the roll order.
-export const Z_ORDER = ['bases', 'legs', 'chest', 'shoulders', 'gloves', 'weapons', 'offhands'];
+// Paint order, back -> front, matching the original Chimera template
+// (front -> back there: Sword, Shoulder, Helm, Off Hand, Belt, ShieldStrap,
+//  Gloves, Robes, Boots, Chest, Pant, Condition, Base, Shield, Capes).
+// Note the shield is held in the far hand so it renders BEHIND the base,
+// while its strap renders in front of the body.
+export const Z_ORDER = [
+  'capes',
+  'shields',
+  'bases',
+  'conditions',
+  'legs',
+  'chest',
+  'boots',
+  'robes',
+  'gloves',
+  'shieldstraps',
+  'belts',
+  'offhands',
+  'helms',
+  'shoulders',
+  'weapons',
+];
+
+// Always present on every fighter.
+export const REQUIRED_SLOTS = ['bases', 'belts', 'boots', 'weapons'];
+// Independently rolled, may be EMPTY (weighted per slot in tuning).
+export const OPTIONAL_SLOTS = ['legs', 'chest', 'shoulders', 'gloves', 'helms', 'capes', 'robes', 'conditions'];
+// Armor gaps that grant crit (max 4 -> +8% with defaults).
 export const ARMOR_SLOTS = ['chest', 'shoulders', 'gloves', 'legs'];
-const OPTIONAL_SLOTS = new Set(['chest', 'shoulders', 'gloves', 'legs', 'offhands']);
 
 // ---------------------------------------------------------------------------
 // Seeded RNG: mulberry32 over a 32-bit FNV-1a hash of the seed string.
@@ -51,19 +76,36 @@ export function computeFighterId(partIds) {
 
 export function deriveClass(parts) {
   const bySlot = Object.fromEntries(parts.map((p) => [p.slot, p]));
-  const weapon = bySlot.weapons;
+  const shield = bySlot.shields;
   const offhand = bySlot.offhands;
-  const isStaff = weapon && weapon.dmgType === 'spell';
-  const isTome = offhand && (offhand.tags.includes('cleric') || /tome|book/.test(offhand.id));
-  const isTowershield = offhand && (offhand.tags.includes('tank') || /tower|bulwark/.test(offhand.id));
+  const weapon = bySlot.weapons;
   const noArmor = ARMOR_SLOTS.every((s) => !bySlot[s]);
 
-  if (isTowershield) return 'Tank';
-  if (isStaff && isTome) return 'Cleric';
-  if (isStaff) return 'Wizard';
+  if (shield && (shield.tags.includes('tank') || /tower|bulwark/.test(shield.id))) return 'Tank';
+  if (offhand && (offhand.tags.includes('cleric') || /tome|book/.test(offhand.id))) return 'Cleric';
+  if (offhand && (offhand.tags.includes('caster') || /staff|scepter|smiter|mirror|wand/.test(offhand.id))) return 'Wizard';
   if (weapon && (weapon.dmgType === 'ranged' || /bow/.test(weapon.id))) return 'Archer';
   if (noArmor) return 'Berserker';
   return 'Rogue';
+}
+
+function toPart(entry, golden) {
+  return {
+    slot: entry.slot,
+    id: entry.id,
+    file: entry.file,
+    name: entry.name,
+    stats: entry.stats,
+    dmgType: entry.dmgType,
+    tags: entry.tags ?? [],
+    golden,
+    // tint only pieces whose art isn't already golden
+    goldenTint: golden && !entry.golden,
+  };
+}
+
+function emptyWeightFor(slot, tuning) {
+  return tuning.slotEmptyWeights?.[slot] ?? tuning.emptySlotWeight;
 }
 
 function rollParts(rng, manifest, tuning) {
@@ -71,41 +113,54 @@ function rollParts(rng, manifest, tuning) {
   for (const slot of Z_ORDER) {
     pool[slot] = manifest.filter((e) => e.slot === slot && !e.missing);
   }
-  const parts = [];
-  for (const slot of Z_ORDER) {
+  const byId = new Map(manifest.map((e) => [e.id, e]));
+  const bySlot = {};
+
+  const rollGolden = (entry) => entry.golden || rng() < tuning.goldenChance;
+  const pieceWeight = (e) => e.rarityWeight ?? tuning.pieceWeight;
+
+  // Required slots: base, belt, boots, main-hand weapon — always present.
+  for (const slot of REQUIRED_SLOTS) {
     const candidates = pool[slot];
-    if (candidates.length === 0) {
-      if (slot === 'bases' || slot === 'weapons') {
-        throw new Error(`no assets available for required slot "${slot}"`);
-      }
-      continue;
-    }
-    if (OPTIONAL_SLOTS.has(slot)) {
-      // EMPTY is a weighted outcome in the same roll as the pieces.
-      const totalPieceWeight = candidates.reduce(
-        (s, e) => s + (e.rarityWeight ?? tuning.pieceWeight),
-        0
-      );
-      if (rng() * (totalPieceWeight + tuning.emptySlotWeight) < tuning.emptySlotWeight) {
-        continue; // slot rolled EMPTY
-      }
-    }
-    const entry = weightedPick(rng, candidates, (e) => e.rarityWeight ?? tuning.pieceWeight);
-    const golden = entry.golden || rng() < tuning.goldenChance;
-    parts.push({
-      slot,
-      id: entry.id,
-      file: entry.file,
-      name: entry.name,
-      stats: entry.stats,
-      dmgType: entry.dmgType,
-      tags: entry.tags ?? [],
-      golden,
-      // tint only pieces whose art isn't already golden
-      goldenTint: golden && !entry.golden,
-    });
+    if (candidates.length === 0) throw new Error(`no assets available for required slot "${slot}"`);
+    const entry = weightedPick(rng, candidates, pieceWeight);
+    bySlot[slot] = toPart(entry, rollGolden(entry));
   }
-  return parts;
+
+  // Optional slots: EMPTY is a weighted outcome (empty weight vs the baseline
+  // piece weight, independent of pool size, so spawn rates stay tunable).
+  for (const slot of OPTIONAL_SLOTS) {
+    const candidates = pool[slot];
+    if (candidates.length === 0) continue;
+    const emptyWeight = emptyWeightFor(slot, tuning);
+    if (rng() * (tuning.pieceWeight + emptyWeight) < emptyWeight) continue; // rolled EMPTY
+    const entry = weightedPick(rng, candidates, pieceWeight);
+    bySlot[slot] = toPart(entry, rollGolden(entry));
+  }
+
+  // Off-hand: one combined roll across EMPTY | held items/staves | shields.
+  // A shield brings its strap along (rear shield layer + front strap overlay).
+  {
+    const candidates = [...pool.offhands, ...pool.shields];
+    if (candidates.length > 0) {
+      const emptyWeight = emptyWeightFor('offhand', tuning);
+      if (rng() * (tuning.pieceWeight + emptyWeight) >= emptyWeight) {
+        const entry = weightedPick(rng, candidates, pieceWeight);
+        const golden = rollGolden(entry);
+        bySlot[entry.slot] = toPart(entry, golden);
+        if (entry.slot === 'shields') {
+          const stem = entry.id.split('/')[1];
+          const strap = byId.get(`shieldstraps/${stem}_strap`);
+          if (strap && !strap.missing) {
+            // strap shares the shield's golden state; it is derived, not rolled
+            bySlot.shieldstraps = toPart(strap, golden || strap.golden);
+          }
+        }
+      }
+    }
+  }
+
+  return Z_ORDER.filter((slot) => bySlot[slot]).map((slot) => bySlot[slot]);
 }
 
 function deriveStats(parts, tuning) {
@@ -147,12 +202,13 @@ export function generateFighterWith(seed, data, opts = {}) {
 
     const { stats } = deriveStats(parts, tuning);
     const bySlot = Object.fromEntries(parts.map((p) => [p.slot, p]));
-    const doubleAttack = !bySlot.offhands; // engine consumes this flag
+    const doubleAttack = !bySlot.offhands && !bySlot.shields; // engine consumes this flag
     const tags = [...new Set(parts.flatMap((p) => p.tags ?? []))].sort();
     const dmgType = bySlot.weapons?.dmgType ?? 'physical';
-    const dmgTypes = tags.includes('dagger-hybrid')
-      ? ['physical', 'spell']
-      : [dmgType];
+    const dmgTypes = new Set([dmgType]);
+    if (tags.includes('dagger-hybrid') || tags.includes('caster') || tags.includes('cleric')) {
+      dmgTypes.add('spell');
+    }
 
     const first = names.first[Math.floor(rng() * names.first.length)];
     const epithet = names.epithet[Math.floor(rng() * names.epithet.length)];
@@ -171,7 +227,7 @@ export function generateFighterWith(seed, data, opts = {}) {
       doubleAttack,
       tags,
       dmgType,
-      dmgTypes,
+      dmgTypes: [...dmgTypes],
       seed: String(seed),
       // canonical output location — buffers are never embedded in the fighter
       image: `generated/fighters/${id}.png`,

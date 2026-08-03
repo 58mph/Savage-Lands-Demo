@@ -19,7 +19,23 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MANIFEST_PATH = path.join(ROOT, 'data', 'attributes.json');
 
-export const SLOTS = ['bases', 'chest', 'shoulders', 'gloves', 'legs', 'weapons', 'offhands'];
+export const SLOTS = [
+  'bases',
+  'belts',
+  'boots',
+  'weapons',
+  'legs',
+  'chest',
+  'shoulders',
+  'gloves',
+  'helms',
+  'capes',
+  'robes',
+  'conditions',
+  'offhands',
+  'shields',
+  'shieldstraps',
+];
 
 const BASE_STATS = { hp: 80, atk: 10, def: 8, spd: 10 };
 
@@ -33,8 +49,10 @@ function inferTags(slot, id) {
   const tags = [];
   if (/vampir/.test(id)) tags.push('vampiric');
   if (slot === 'weapons' && /dagger/.test(id)) tags.push('dagger-hybrid');
-  if (slot === 'offhands' && /tower|bulwark/.test(id)) tags.push('tank');
+  if (slot === 'shields' && /tower|bulwark/.test(id)) tags.push('tank');
   if (slot === 'offhands' && /tome|book/.test(id)) tags.push('cleric');
+  if (slot === 'offhands' && /staff|scepter|smiter|mirror|wand/.test(id)) tags.push('caster');
+  if (slot === 'robes') tags.push('robe-ability');
   return tags;
 }
 

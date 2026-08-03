@@ -1,6 +1,17 @@
 {
   "pieceWeight": 100,
   "emptySlotWeight": 25,
+  "slotEmptyWeights": {
+    "legs": 25,
+    "chest": 25,
+    "shoulders": 25,
+    "gloves": 25,
+    "helms": 150,
+    "capes": 100,
+    "robes": 400,
+    "conditions": 300,
+    "offhand": 35
+  },
   "goldenChance": 0.08,
   "goldenStatMultiplier": 1.1,
   "critPerGap": 0.02,

@@ -51,8 +51,8 @@ test('2. uniqueness: id changes iff parts change; same parts -> same id', () => 
 });
 
 test('3. gap bonuses: zero armor -> +8% crit + Berserker; empty offhand -> doubleAttack', () => {
-  // Force every optional slot to roll EMPTY.
-  const allEmpty = { emptySlotWeight: Number.MAX_SAFE_INTEGER };
+  // Force every optional slot (and the offhand/shield roll) to come up EMPTY.
+  const allEmpty = { emptySlotWeight: Number.MAX_SAFE_INTEGER, slotEmptyWeights: {} };
 
   // Find a seed whose weapon is physical (staff/bow would win the class label).
   let fighter = null;

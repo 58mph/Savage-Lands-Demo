@@ -34,12 +34,17 @@ export const Z_ORDER = Object.keys(SLOT_Z_INDEX).sort(
   (a, b) => SLOT_Z_INDEX[a] - SLOT_Z_INDEX[b]
 );
 
-// Always present on every fighter.
+// Always present on every fighter (belts too, unless a robe replaces them).
 export const REQUIRED_SLOTS = ['bases', 'belts', 'boots', 'weapons'];
 // Independently rolled, may be EMPTY (weighted per slot in tuning).
 export const OPTIONAL_SLOTS = ['legs', 'chest', 'shoulders', 'gloves', 'helms', 'capes', 'robes', 'conditions'];
 // Armor gaps that grant crit (max 4 -> +8% with defaults).
 export const ARMOR_SLOTS = ['chest', 'shoulders', 'gloves', 'legs'];
+// A robe replaces these slots entirely: robed fighters wear no belt, no
+// shoulders, no pants, no chest (boots and gloves are still allowed). The
+// robe also counts as covering chest/shoulders/legs for crit-gap and
+// Berserker purposes — otherwise every robed caster would be a crit machine.
+export const ROBE_REPLACES = ['belts', 'chest', 'shoulders', 'legs'];
 
 // ---------------------------------------------------------------------------
 // Seeded RNG: mulberry32 over a 32-bit FNV-1a hash of the seed string.
@@ -94,7 +99,7 @@ export function deriveClass(parts) {
   const shield = bySlot.shields;
   const offhand = bySlot.offhands;
   const weapon = bySlot.weapons;
-  const noArmor = ARMOR_SLOTS.every((s) => !bySlot[s]);
+  const noArmor = ARMOR_SLOTS.every((s) => !bySlot[s]) && !bySlot.robes;
   const hasTag = (p, t) => p && (p.tags ?? []).includes(t);
 
   if (shield && (hasTag(shield, 'tank') || /tower|bulwark/.test(shield.id))) return 'Tank';
@@ -140,24 +145,43 @@ function rollParts(rng, manifest, tuning) {
   const rollGolden = (entry) => entry.golden || rng() < tuning.goldenChance;
   const pieceWeight = (e) => e.rarityWeight ?? tuning.pieceWeight;
 
-  // Required slots: base, belt, boots, main-hand weapon — always present.
-  for (const slot of REQUIRED_SLOTS) {
+  const pickRequired = (slot) => {
     const candidates = pool[slot];
     if (candidates.length === 0) throw new Error(`no assets available for required slot "${slot}"`);
     const entry = weightedPick(rng, candidates, pieceWeight);
     bySlot[slot] = toPart(entry, rollGolden(entry));
-  }
-
+  };
   // Optional slots: EMPTY is a weighted outcome (empty weight vs the baseline
   // piece weight, independent of pool size, so spawn rates stay tunable).
-  for (const slot of OPTIONAL_SLOTS) {
+  const rollOptional = (slot) => {
     const candidates = pool[slot];
-    if (candidates.length === 0) continue;
+    if (candidates.length === 0) return;
     const emptyWeight = emptyWeightFor(slot, tuning);
-    if (rng() * (tuning.pieceWeight + emptyWeight) < emptyWeight) continue; // rolled EMPTY
+    if (rng() * (tuning.pieceWeight + emptyWeight) < emptyWeight) return; // rolled EMPTY
     const entry = weightedPick(rng, candidates, pieceWeight);
     bySlot[slot] = toPart(entry, rollGolden(entry));
+  };
+
+  // Guaranteed pieces first: base, boots, main-hand weapon.
+  pickRequired('bases');
+  pickRequired('boots');
+  pickRequired('weapons');
+
+  // Robe next — it decides whether the belt/chest/shoulders/legs group rolls
+  // at all. Robed fighters wear none of those; boots and gloves are allowed.
+  rollOptional('robes');
+  const robed = Boolean(bySlot.robes);
+  if (!robed) {
+    pickRequired('belts'); // belt is 100% on every un-robed fighter
+    rollOptional('legs');
+    rollOptional('chest');
+    rollOptional('shoulders');
   }
+
+  rollOptional('gloves');
+  rollOptional('helms');
+  rollOptional('capes');
+  rollOptional('conditions');
 
   // Off-hand: one combined roll across EMPTY | held items/staves | shields.
   // A shield brings its strap along (rear shield layer + front strap overlay).
@@ -206,10 +230,13 @@ export function deriveStats(parts, tuning) {
       stats[key] += (part.stats?.[key] ?? 0) * mult;
     }
   }
-  for (const key of Object.keys(stats)) stats[key] = Math.round(stats[key] * 100) / 100;
+  // integer stat lines on cards; golden bonuses still accumulate before rounding
+  for (const key of Object.keys(stats)) stats[key] = Math.round(stats[key]);
 
-  const slotsPresent = new Set(parts.map((p) => p.slot));
-  const gaps = ARMOR_SLOTS.filter((s) => !slotsPresent.has(s)).length;
+  const covered = new Set(parts.map((p) => p.slot));
+  // A robe covers chest/shoulders/legs — those never count as crit gaps.
+  if (covered.has('robes')) for (const s of ROBE_REPLACES) covered.add(s);
+  const gaps = ARMOR_SLOTS.filter((s) => !covered.has(s)).length;
   stats.crit = Math.round(gaps * tuning.critPerGap * 10000) / 10000;
   return { stats, gaps };
 }

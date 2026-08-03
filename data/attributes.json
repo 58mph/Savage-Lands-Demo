@@ -3,15 +3,17 @@
     "id": "bases/albino_crocodillian",
     "slot": "bases",
     "file": "assets/bases/albino_crocodillian.png",
-    "name": "TODO",
+    "name": "Albino Crocodillian",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
-      "spd": 10
+      "hp": 70,
+      "atk": 8,
+      "def": 6,
+      "spd": 9
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shaman"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -20,15 +22,17 @@
     "id": "bases/bearkin",
     "slot": "bases",
     "file": "assets/bases/bearkin.png",
-    "name": "TODO",
+    "name": "Bearkin",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
+      "hp": 100,
+      "atk": 15,
+      "def": 12,
       "spd": 10
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "warrior"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -37,15 +41,17 @@
     "id": "bases/black_ratman",
     "slot": "bases",
     "file": "assets/bases/black_ratman.png",
-    "name": "TODO",
+    "name": "Black Ratman",
     "stats": {
-      "hp": 80,
+      "hp": 60,
       "atk": 10,
-      "def": 8,
-      "spd": 10
+      "def": 5,
+      "spd": 14
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "scout"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -54,15 +60,17 @@
     "id": "bases/brown_ratman",
     "slot": "bases",
     "file": "assets/bases/brown_ratman.png",
-    "name": "TODO",
+    "name": "Brown Ratman",
     "stats": {
       "hp": 80,
-      "atk": 10,
+      "atk": 12,
       "def": 8,
-      "spd": 10
+      "spd": 12
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "hunter"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -71,15 +79,17 @@
     "id": "bases/crocodillian",
     "slot": "bases",
     "file": "assets/bases/crocodillian.png",
-    "name": "TODO",
+    "name": "Crocodillian",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
+      "hp": 100,
+      "atk": 15,
+      "def": 12,
       "spd": 10
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "warrior"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -88,15 +98,17 @@
     "id": "bases/frogfolk",
     "slot": "bases",
     "file": "assets/bases/frogfolk.png",
-    "name": "TODO",
+    "name": "Frogfolk",
     "stats": {
       "hp": 80,
-      "atk": 10,
+      "atk": 12,
       "def": 8,
-      "spd": 10
+      "spd": 12
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "hunter"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -105,15 +117,17 @@
     "id": "bases/lizardman",
     "slot": "bases",
     "file": "assets/bases/lizardman.png",
-    "name": "TODO",
+    "name": "Lizardman",
     "stats": {
-      "hp": 80,
+      "hp": 60,
       "atk": 10,
-      "def": 8,
-      "spd": 10
+      "def": 5,
+      "spd": 14
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "scout"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -122,15 +136,17 @@
     "id": "bases/minotaur",
     "slot": "bases",
     "file": "assets/bases/minotaur.png",
-    "name": "TODO",
+    "name": "Minotaur",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
-      "spd": 10
+      "hp": 130,
+      "atk": 18,
+      "def": 10,
+      "spd": 7
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "brute"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -139,15 +155,17 @@
     "id": "bases/poisonous_frogfolk",
     "slot": "bases",
     "file": "assets/bases/poisonous_frogfolk.png",
-    "name": "TODO",
+    "name": "Poisonous Frogfolk",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
-      "spd": 10
+      "hp": 70,
+      "atk": 8,
+      "def": 6,
+      "spd": 9
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shaman"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -156,15 +174,17 @@
     "id": "bases/possum",
     "slot": "bases",
     "file": "assets/bases/possum.png",
-    "name": "TODO",
+    "name": "Possum",
     "stats": {
-      "hp": 80,
+      "hp": 60,
       "atk": 10,
-      "def": 8,
-      "spd": 10
+      "def": 5,
+      "spd": 14
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "scout"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -173,15 +193,17 @@
     "id": "bases/raccoon",
     "slot": "bases",
     "file": "assets/bases/raccoon.png",
-    "name": "TODO",
+    "name": "Raccoon",
     "stats": {
       "hp": 80,
-      "atk": 10,
+      "atk": 12,
       "def": 8,
-      "spd": 10
+      "spd": 12
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "hunter"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -190,15 +212,17 @@
     "id": "bases/salamander",
     "slot": "bases",
     "file": "assets/bases/salamander.png",
-    "name": "TODO",
+    "name": "Salamander",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
-      "spd": 10
+      "hp": 130,
+      "atk": 18,
+      "def": 10,
+      "spd": 7
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "brute"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -207,15 +231,17 @@
     "id": "bases/white_ratman",
     "slot": "bases",
     "file": "assets/bases/white_ratman.png",
-    "name": "TODO",
+    "name": "White Ratman",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
-      "spd": 10
+      "hp": 70,
+      "atk": 8,
+      "def": 6,
+      "spd": 9
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "shaman"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -224,15 +250,17 @@
     "id": "bases/winter_bearkin",
     "slot": "bases",
     "file": "assets/bases/winter_bearkin.png",
-    "name": "TODO",
+    "name": "Winter Bearkin",
     "stats": {
-      "hp": 80,
-      "atk": 10,
-      "def": 8,
-      "spd": 10
+      "hp": 120,
+      "atk": 14,
+      "def": 14,
+      "spd": 8
     },
     "dmgType": null,
-    "tags": [],
+    "tags": [
+      "chief"
+    ],
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 10
@@ -241,11 +269,11 @@
     "id": "belts/brotherhood_of_blood",
     "slot": "belts",
     "file": "assets/belts/brotherhood_of_blood.png",
-    "name": "TODO",
+    "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -258,11 +286,11 @@
     "id": "belts/cavalry",
     "slot": "belts",
     "file": "assets/belts/cavalry.png",
-    "name": "TODO",
+    "name": "Cavalry",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -275,11 +303,11 @@
     "id": "belts/chainmail",
     "slot": "belts",
     "file": "assets/belts/chainmail.png",
-    "name": "TODO",
+    "name": "Chainmail",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -292,11 +320,11 @@
     "id": "belts/champions_belt",
     "slot": "belts",
     "file": "assets/belts/champions_belt.png",
-    "name": "TODO",
+    "name": "Champions Belt",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -309,11 +337,11 @@
     "id": "belts/conquerers",
     "slot": "belts",
     "file": "assets/belts/conquerers.png",
-    "name": "TODO",
+    "name": "Conquerers",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -326,11 +354,11 @@
     "id": "belts/demon_hunter",
     "slot": "belts",
     "file": "assets/belts/demon_hunter.png",
-    "name": "TODO",
+    "name": "Demon Hunter",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -343,11 +371,11 @@
     "id": "belts/destroyers_belt",
     "slot": "belts",
     "file": "assets/belts/destroyers_belt.png",
-    "name": "TODO",
+    "name": "Destroyers Belt",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -360,11 +388,11 @@
     "id": "belts/dragon_knight",
     "slot": "belts",
     "file": "assets/belts/dragon_knight.png",
-    "name": "TODO",
+    "name": "Dragon Knight",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -377,11 +405,11 @@
     "id": "belts/dustmarsh",
     "slot": "belts",
     "file": "assets/belts/dustmarsh.png",
-    "name": "TODO",
+    "name": "Dustmarsh",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -394,11 +422,11 @@
     "id": "belts/ebon_belt",
     "slot": "belts",
     "file": "assets/belts/ebon_belt.png",
-    "name": "TODO",
+    "name": "Ebon Belt",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -411,11 +439,11 @@
     "id": "belts/fallen_kingdom_kilt",
     "slot": "belts",
     "file": "assets/belts/fallen_kingdom_kilt.png",
-    "name": "TODO",
+    "name": "Fallen Kingdom Kilt",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -428,11 +456,11 @@
     "id": "belts/frogsong",
     "slot": "belts",
     "file": "assets/belts/frogsong.png",
-    "name": "TODO",
+    "name": "Frogsong",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -445,11 +473,11 @@
     "id": "belts/frostrime",
     "slot": "belts",
     "file": "assets/belts/frostrime.png",
-    "name": "TODO",
+    "name": "Frostrime",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -462,11 +490,11 @@
     "id": "belts/fury_belt",
     "slot": "belts",
     "file": "assets/belts/fury_belt.png",
-    "name": "TODO",
+    "name": "Fury Belt",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -479,11 +507,11 @@
     "id": "belts/golden_bloodbrothers_belt",
     "slot": "belts",
     "file": "assets/belts/golden_bloodbrothers_belt.png",
-    "name": "TODO",
+    "name": "Golden Bloodbrothers Belt",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -496,11 +524,11 @@
     "id": "belts/golden_cavalry",
     "slot": "belts",
     "file": "assets/belts/golden_cavalry.png",
-    "name": "TODO",
+    "name": "Golden Cavalry",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -513,11 +541,11 @@
     "id": "belts/golden_destroyers_belt",
     "slot": "belts",
     "file": "assets/belts/golden_destroyers_belt.png",
-    "name": "TODO",
+    "name": "Golden Destroyers Belt",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -530,11 +558,11 @@
     "id": "belts/golden_house_of_leo",
     "slot": "belts",
     "file": "assets/belts/golden_house_of_leo.png",
-    "name": "TODO",
+    "name": "Golden House of Leo",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -547,11 +575,11 @@
     "id": "belts/golden_imbued",
     "slot": "belts",
     "file": "assets/belts/golden_imbued.png",
-    "name": "TODO",
+    "name": "Golden Imbued",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -564,11 +592,11 @@
     "id": "belts/golden_nightstalkers_belt",
     "slot": "belts",
     "file": "assets/belts/golden_nightstalkers_belt.png",
-    "name": "TODO",
+    "name": "Golden Nightstalkers Belt",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -581,11 +609,11 @@
     "id": "belts/golden_spiked",
     "slot": "belts",
     "file": "assets/belts/golden_spiked.png",
-    "name": "TODO",
+    "name": "Golden Spiked",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -598,11 +626,11 @@
     "id": "belts/golden_studded_armor",
     "slot": "belts",
     "file": "assets/belts/golden_studded_armor.png",
-    "name": "TODO",
+    "name": "Golden Studded Armor",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -615,11 +643,11 @@
     "id": "belts/golden_tanking_plate",
     "slot": "belts",
     "file": "assets/belts/golden_tanking_plate.png",
-    "name": "TODO",
+    "name": "Golden Tanking Plate",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -632,11 +660,11 @@
     "id": "belts/healers_sash",
     "slot": "belts",
     "file": "assets/belts/healers_sash.png",
-    "name": "TODO",
+    "name": "Healers Sash",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -649,11 +677,11 @@
     "id": "belts/heavy_marine",
     "slot": "belts",
     "file": "assets/belts/heavy_marine.png",
-    "name": "TODO",
+    "name": "Heavy Marine",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -666,11 +694,11 @@
     "id": "belts/heros_waist",
     "slot": "belts",
     "file": "assets/belts/heros_waist.png",
-    "name": "TODO",
+    "name": "Heros Waist",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -683,11 +711,11 @@
     "id": "belts/highwaymans_belt",
     "slot": "belts",
     "file": "assets/belts/highwaymans_belt.png",
-    "name": "TODO",
+    "name": "Highwaymans Belt",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -700,11 +728,11 @@
     "id": "belts/holy_waistwrap",
     "slot": "belts",
     "file": "assets/belts/holy_waistwrap.png",
-    "name": "TODO",
+    "name": "Holy Waistwrap",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -717,11 +745,11 @@
     "id": "belts/house_of_leo",
     "slot": "belts",
     "file": "assets/belts/house_of_leo.png",
-    "name": "TODO",
+    "name": "House of Leo",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -734,11 +762,11 @@
     "id": "belts/hunters_plate",
     "slot": "belts",
     "file": "assets/belts/hunters_plate.png",
-    "name": "TODO",
+    "name": "Hunters Plate",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -751,11 +779,11 @@
     "id": "belts/imbued_sash",
     "slot": "belts",
     "file": "assets/belts/imbued_sash.png",
-    "name": "TODO",
+    "name": "Imbued Sash",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -768,11 +796,11 @@
     "id": "belts/invaders",
     "slot": "belts",
     "file": "assets/belts/invaders.png",
-    "name": "TODO",
+    "name": "Invaders",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -785,11 +813,11 @@
     "id": "belts/invaders_orange",
     "slot": "belts",
     "file": "assets/belts/invaders_orange.png",
-    "name": "TODO",
+    "name": "Invaders Orange",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -802,11 +830,11 @@
     "id": "belts/irradiated",
     "slot": "belts",
     "file": "assets/belts/irradiated.png",
-    "name": "TODO",
+    "name": "Irradiated",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -819,11 +847,11 @@
     "id": "belts/jesters_belt",
     "slot": "belts",
     "file": "assets/belts/jesters_belt.png",
-    "name": "TODO",
+    "name": "Jesters Belt",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -836,11 +864,11 @@
     "id": "belts/molten",
     "slot": "belts",
     "file": "assets/belts/molten.png",
-    "name": "TODO",
+    "name": "Molten",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -853,11 +881,11 @@
     "id": "belts/necromancers_cinch",
     "slot": "belts",
     "file": "assets/belts/necromancers_cinch.png",
-    "name": "TODO",
+    "name": "Necromancers Cinch",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -870,11 +898,11 @@
     "id": "belts/plated_belt",
     "slot": "belts",
     "file": "assets/belts/plated_belt.png",
-    "name": "TODO",
+    "name": "Plated Belt",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -887,11 +915,11 @@
     "id": "belts/platemail_girdle",
     "slot": "belts",
     "file": "assets/belts/platemail_girdle.png",
-    "name": "TODO",
+    "name": "Platemail Girdle",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -904,11 +932,11 @@
     "id": "belts/rogue_stalkers_wrap",
     "slot": "belts",
     "file": "assets/belts/rogue_stalkers_wrap.png",
-    "name": "TODO",
+    "name": "Rogue Stalkers Wrap",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -921,11 +949,11 @@
     "id": "belts/rotknight",
     "slot": "belts",
     "file": "assets/belts/rotknight.png",
-    "name": "TODO",
+    "name": "Rotknight",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -938,11 +966,11 @@
     "id": "belts/royal_blue_guard",
     "slot": "belts",
     "file": "assets/belts/royal_blue_guard.png",
-    "name": "TODO",
+    "name": "Royal Blue Guard",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -955,11 +983,11 @@
     "id": "belts/sentinels_girdle",
     "slot": "belts",
     "file": "assets/belts/sentinels_girdle.png",
-    "name": "TODO",
+    "name": "Sentinels Girdle",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -972,11 +1000,11 @@
     "id": "belts/shadowbinders_belt",
     "slot": "belts",
     "file": "assets/belts/shadowbinders_belt.png",
-    "name": "TODO",
+    "name": "Shadowbinders Belt",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -989,11 +1017,11 @@
     "id": "belts/spiked_belt",
     "slot": "belts",
     "file": "assets/belts/spiked_belt.png",
-    "name": "TODO",
+    "name": "Spiked Belt",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1006,11 +1034,11 @@
     "id": "belts/strongmanss_belt",
     "slot": "belts",
     "file": "assets/belts/strongmanss_belt.png",
-    "name": "TODO",
+    "name": "Strongmanss Belt",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1023,11 +1051,11 @@
     "id": "belts/studded_leather",
     "slot": "belts",
     "file": "assets/belts/studded_leather.png",
-    "name": "TODO",
+    "name": "Studded Leather",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1040,11 +1068,11 @@
     "id": "belts/tanking_plate",
     "slot": "belts",
     "file": "assets/belts/tanking_plate.png",
-    "name": "TODO",
+    "name": "Tanking Plate",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -1057,11 +1085,11 @@
     "id": "belts/thieves_toolkit",
     "slot": "belts",
     "file": "assets/belts/thieves_toolkit.png",
-    "name": "TODO",
+    "name": "Thieves Toolkit",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -1074,11 +1102,11 @@
     "id": "belts/travelers_belt",
     "slot": "belts",
     "file": "assets/belts/travelers_belt.png",
-    "name": "TODO",
+    "name": "Travelers Belt",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -1091,11 +1119,11 @@
     "id": "belts/underworld_belt",
     "slot": "belts",
     "file": "assets/belts/underworld_belt.png",
-    "name": "TODO",
+    "name": "Underworld Belt",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1108,11 +1136,11 @@
     "id": "belts/vampires_belt",
     "slot": "belts",
     "file": "assets/belts/vampires_belt.png",
-    "name": "TODO",
+    "name": "Vampires Belt",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1127,11 +1155,11 @@
     "id": "belts/volcanic_belt",
     "slot": "belts",
     "file": "assets/belts/volcanic_belt.png",
-    "name": "TODO",
+    "name": "Volcanic Belt",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1144,11 +1172,11 @@
     "id": "belts/wizards_wrap",
     "slot": "belts",
     "file": "assets/belts/wizards_wrap.png",
-    "name": "TODO",
+    "name": "Wizards Wrap",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -1161,12 +1189,12 @@
     "id": "boots/adventurers_leather_boots",
     "slot": "boots",
     "file": "assets/boots/adventurers_leather_boots.png",
-    "name": "TODO",
+    "name": "Adventurers Leather Boots",
     "stats": {
-      "hp": 0,
+      "hp": 2,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1178,12 +1206,12 @@
     "id": "boots/blue_royal_guard",
     "slot": "boots",
     "file": "assets/boots/blue_royal_guard.png",
-    "name": "TODO",
+    "name": "Blue Royal Guard",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1195,12 +1223,12 @@
     "id": "boots/boots_of_the_rush",
     "slot": "boots",
     "file": "assets/boots/boots_of_the_rush.png",
-    "name": "TODO",
+    "name": "Boots of the Rush",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 4
     },
     "dmgType": null,
     "tags": [],
@@ -1212,12 +1240,12 @@
     "id": "boots/brotherhood_of_blood",
     "slot": "boots",
     "file": "assets/boots/brotherhood_of_blood.png",
-    "name": "TODO",
+    "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1229,12 +1257,12 @@
     "id": "boots/chainmail",
     "slot": "boots",
     "file": "assets/boots/chainmail.png",
-    "name": "TODO",
+    "name": "Chainmail",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1246,12 +1274,12 @@
     "id": "boots/champions_boots",
     "slot": "boots",
     "file": "assets/boots/champions_boots.png",
-    "name": "TODO",
+    "name": "Champions Boots",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1263,12 +1291,12 @@
     "id": "boots/conquerers_skull_crushers",
     "slot": "boots",
     "file": "assets/boots/conquerers_skull_crushers.png",
-    "name": "TODO",
+    "name": "Conquerers Skull Crushers",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 4
     },
     "dmgType": null,
     "tags": [],
@@ -1280,12 +1308,12 @@
     "id": "boots/demon_hunter_boots",
     "slot": "boots",
     "file": "assets/boots/demon_hunter_boots.png",
-    "name": "TODO",
+    "name": "Demon Hunter Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1297,12 +1325,12 @@
     "id": "boots/demon_hunters_feet",
     "slot": "boots",
     "file": "assets/boots/demon_hunters_feet.png",
-    "name": "TODO",
+    "name": "Demon Hunters Feet",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1314,12 +1342,12 @@
     "id": "boots/destroyers_boots",
     "slot": "boots",
     "file": "assets/boots/destroyers_boots.png",
-    "name": "TODO",
+    "name": "Destroyers Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1331,12 +1359,12 @@
     "id": "boots/dragon_kinght_boots",
     "slot": "boots",
     "file": "assets/boots/dragon_kinght_boots.png",
-    "name": "TODO",
+    "name": "Dragon Kinght Boots",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1348,12 +1376,12 @@
     "id": "boots/dragon_knight_riders",
     "slot": "boots",
     "file": "assets/boots/dragon_knight_riders.png",
-    "name": "TODO",
+    "name": "Dragon Knight Riders",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1365,12 +1393,12 @@
     "id": "boots/dustmarsh_stompers",
     "slot": "boots",
     "file": "assets/boots/dustmarsh_stompers.png",
-    "name": "TODO",
+    "name": "Dustmarsh Stompers",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1382,12 +1410,12 @@
     "id": "boots/ebon_boots",
     "slot": "boots",
     "file": "assets/boots/ebon_boots.png",
-    "name": "TODO",
+    "name": "Ebon Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1399,12 +1427,12 @@
     "id": "boots/ebon_plate_boots",
     "slot": "boots",
     "file": "assets/boots/ebon_plate_boots.png",
-    "name": "TODO",
+    "name": "Ebon Plate Boots",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 4,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1416,12 +1444,12 @@
     "id": "boots/fallen_kingdom_boots",
     "slot": "boots",
     "file": "assets/boots/fallen_kingdom_boots.png",
-    "name": "TODO",
+    "name": "Fallen Kingdom Boots",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1433,12 +1461,12 @@
     "id": "boots/frogsong_boots",
     "slot": "boots",
     "file": "assets/boots/frogsong_boots.png",
-    "name": "TODO",
+    "name": "Frogsong Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1450,12 +1478,12 @@
     "id": "boots/frostrime",
     "slot": "boots",
     "file": "assets/boots/frostrime.png",
-    "name": "TODO",
+    "name": "Frostrime",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1467,12 +1495,12 @@
     "id": "boots/gold_spiked_boots",
     "slot": "boots",
     "file": "assets/boots/gold_spiked_boots.png",
-    "name": "TODO",
+    "name": "Gold Spiked Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1484,12 +1512,12 @@
     "id": "boots/golden_bloodbrother",
     "slot": "boots",
     "file": "assets/boots/golden_bloodbrother.png",
-    "name": "TODO",
+    "name": "Golden Bloodbrother",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1501,12 +1529,12 @@
     "id": "boots/golden_cavalry",
     "slot": "boots",
     "file": "assets/boots/golden_cavalry.png",
-    "name": "TODO",
+    "name": "Golden Cavalry",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1518,12 +1546,12 @@
     "id": "boots/golden_destroyers_boots",
     "slot": "boots",
     "file": "assets/boots/golden_destroyers_boots.png",
-    "name": "TODO",
+    "name": "Golden Destroyers Boots",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1535,12 +1563,12 @@
     "id": "boots/golden_house_of_leo",
     "slot": "boots",
     "file": "assets/boots/golden_house_of_leo.png",
-    "name": "TODO",
+    "name": "Golden House of Leo",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1552,12 +1580,12 @@
     "id": "boots/golden_imbued",
     "slot": "boots",
     "file": "assets/boots/golden_imbued.png",
-    "name": "TODO",
+    "name": "Golden Imbued",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1569,12 +1597,12 @@
     "id": "boots/golden_nightstalkers_greaves",
     "slot": "boots",
     "file": "assets/boots/golden_nightstalkers_greaves.png",
-    "name": "TODO",
+    "name": "Golden Nightstalkers Greaves",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 4
     },
     "dmgType": null,
     "tags": [],
@@ -1586,12 +1614,12 @@
     "id": "boots/golden_studded",
     "slot": "boots",
     "file": "assets/boots/golden_studded.png",
-    "name": "TODO",
+    "name": "Golden Studded",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1603,12 +1631,12 @@
     "id": "boots/golden_tanking",
     "slot": "boots",
     "file": "assets/boots/golden_tanking.png",
-    "name": "TODO",
+    "name": "Golden Tanking",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 4,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1620,12 +1648,12 @@
     "id": "boots/healers_walkers",
     "slot": "boots",
     "file": "assets/boots/healers_walkers.png",
-    "name": "TODO",
+    "name": "Healers Walkers",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1637,12 +1665,12 @@
     "id": "boots/heavy_marine_boots",
     "slot": "boots",
     "file": "assets/boots/heavy_marine_boots.png",
-    "name": "TODO",
+    "name": "Heavy Marine Boots",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1654,12 +1682,12 @@
     "id": "boots/heros_boots",
     "slot": "boots",
     "file": "assets/boots/heros_boots.png",
-    "name": "TODO",
+    "name": "Heros Boots",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1671,12 +1699,12 @@
     "id": "boots/holy_stompers",
     "slot": "boots",
     "file": "assets/boots/holy_stompers.png",
-    "name": "TODO",
+    "name": "Holy Stompers",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1688,12 +1716,12 @@
     "id": "boots/house_of_leo_boots",
     "slot": "boots",
     "file": "assets/boots/house_of_leo_boots.png",
-    "name": "TODO",
+    "name": "House of Leo Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1705,12 +1733,12 @@
     "id": "boots/hunters_plate",
     "slot": "boots",
     "file": "assets/boots/hunters_plate.png",
-    "name": "TODO",
+    "name": "Hunters Plate",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1722,12 +1750,12 @@
     "id": "boots/imbued_steel",
     "slot": "boots",
     "file": "assets/boots/imbued_steel.png",
-    "name": "TODO",
+    "name": "Imbued Steel",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1739,12 +1767,12 @@
     "id": "boots/invaders_boots",
     "slot": "boots",
     "file": "assets/boots/invaders_boots.png",
-    "name": "TODO",
+    "name": "Invaders Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1756,12 +1784,12 @@
     "id": "boots/irradiated_boots",
     "slot": "boots",
     "file": "assets/boots/irradiated_boots.png",
-    "name": "TODO",
+    "name": "Irradiated Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1773,12 +1801,12 @@
     "id": "boots/jesters_silk_boots",
     "slot": "boots",
     "file": "assets/boots/jesters_silk_boots.png",
-    "name": "TODO",
+    "name": "Jesters Silk Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 4
     },
     "dmgType": null,
     "tags": [],
@@ -1790,12 +1818,12 @@
     "id": "boots/mana_imbued_boots",
     "slot": "boots",
     "file": "assets/boots/mana_imbued_boots.png",
-    "name": "TODO",
+    "name": "Mana Imbued Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1807,12 +1835,12 @@
     "id": "boots/molten_legs",
     "slot": "boots",
     "file": "assets/boots/molten_legs.png",
-    "name": "TODO",
+    "name": "Molten Legs",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1824,12 +1852,12 @@
     "id": "boots/nightstalkers_feet",
     "slot": "boots",
     "file": "assets/boots/nightstalkers_feet.png",
-    "name": "TODO",
+    "name": "Nightstalkers Feet",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 4
     },
     "dmgType": null,
     "tags": [],
@@ -1841,12 +1869,12 @@
     "id": "boots/orange_invaders_boots",
     "slot": "boots",
     "file": "assets/boots/orange_invaders_boots.png",
-    "name": "TODO",
+    "name": "Orange Invaders Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1858,12 +1886,12 @@
     "id": "boots/plated_steel_boots",
     "slot": "boots",
     "file": "assets/boots/plated_steel_boots.png",
-    "name": "TODO",
+    "name": "Plated Steel Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1875,12 +1903,12 @@
     "id": "boots/rogues_boots",
     "slot": "boots",
     "file": "assets/boots/rogues_boots.png",
-    "name": "TODO",
+    "name": "Rogues Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 4
     },
     "dmgType": null,
     "tags": [],
@@ -1892,12 +1920,12 @@
     "id": "boots/rotknight",
     "slot": "boots",
     "file": "assets/boots/rotknight.png",
-    "name": "TODO",
+    "name": "Rotknight",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1909,12 +1937,12 @@
     "id": "boots/spiked_plate_boots",
     "slot": "boots",
     "file": "assets/boots/spiked_plate_boots.png",
-    "name": "TODO",
+    "name": "Spiked Plate Boots",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1926,12 +1954,12 @@
     "id": "boots/strongmans_stompers",
     "slot": "boots",
     "file": "assets/boots/strongmans_stompers.png",
-    "name": "TODO",
+    "name": "Strongmans Stompers",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -1943,12 +1971,12 @@
     "id": "boots/tanking_boots",
     "slot": "boots",
     "file": "assets/boots/tanking_boots.png",
-    "name": "TODO",
+    "name": "Tanking Boots",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 4,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1960,12 +1988,12 @@
     "id": "boots/thick_plated",
     "slot": "boots",
     "file": "assets/boots/thick_plated.png",
-    "name": "TODO",
+    "name": "Thick Plated",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -1977,12 +2005,12 @@
     "id": "boots/thieves_sneakers",
     "slot": "boots",
     "file": "assets/boots/thieves_sneakers.png",
-    "name": "TODO",
+    "name": "Thieves Sneakers",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -1994,12 +2022,12 @@
     "id": "boots/travelers_leather_boots",
     "slot": "boots",
     "file": "assets/boots/travelers_leather_boots.png",
-    "name": "TODO",
+    "name": "Travelers Leather Boots",
     "stats": {
-      "hp": 0,
+      "hp": 2,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -2011,12 +2039,12 @@
     "id": "boots/underworld",
     "slot": "boots",
     "file": "assets/boots/underworld.png",
-    "name": "TODO",
+    "name": "Underworld",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -2028,12 +2056,12 @@
     "id": "boots/vampiric_boots",
     "slot": "boots",
     "file": "assets/boots/vampiric_boots.png",
-    "name": "TODO",
+    "name": "Vampiric Boots",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [
@@ -2047,12 +2075,12 @@
     "id": "boots/volcanic",
     "slot": "boots",
     "file": "assets/boots/volcanic.png",
-    "name": "TODO",
+    "name": "Volcanic",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -2064,12 +2092,12 @@
     "id": "boots/warforged",
     "slot": "boots",
     "file": "assets/boots/warforged.png",
-    "name": "TODO",
+    "name": "Warforged",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 3,
+      "spd": 3
     },
     "dmgType": null,
     "tags": [],
@@ -2081,12 +2109,12 @@
     "id": "capes/adeventurers_cloak",
     "slot": "capes",
     "file": "assets/capes/adeventurers_cloak.png",
-    "name": "TODO",
+    "name": "Adeventurers Cloak",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2098,12 +2126,12 @@
     "id": "capes/cape_of_the_protector",
     "slot": "capes",
     "file": "assets/capes/cape_of_the_protector.png",
-    "name": "TODO",
+    "name": "Cape of the Protector",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2115,12 +2143,12 @@
     "id": "capes/fine_dark_cape",
     "slot": "capes",
     "file": "assets/capes/fine_dark_cape.png",
-    "name": "TODO",
+    "name": "Fine Dark Cape",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2132,12 +2160,12 @@
     "id": "capes/kings_cloak",
     "slot": "capes",
     "file": "assets/capes/kings_cloak.png",
-    "name": "TODO",
+    "name": "Kings Cloak",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2149,12 +2177,12 @@
     "id": "capes/kings_drape",
     "slot": "capes",
     "file": "assets/capes/kings_drape.png",
-    "name": "TODO",
+    "name": "Kings Drape",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2166,12 +2194,12 @@
     "id": "capes/loners_cloak",
     "slot": "capes",
     "file": "assets/capes/loners_cloak.png",
-    "name": "TODO",
+    "name": "Loners Cloak",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2183,12 +2211,12 @@
     "id": "capes/nightstalkers_hood",
     "slot": "capes",
     "file": "assets/capes/nightstalkers_hood.png",
-    "name": "TODO",
+    "name": "Nightstalkers Hood",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -2200,12 +2228,12 @@
     "id": "capes/outcasts_red_cloak",
     "slot": "capes",
     "file": "assets/capes/outcasts_red_cloak.png",
-    "name": "TODO",
+    "name": "Outcasts Red Cloak",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2217,12 +2245,12 @@
     "id": "capes/royal_silk_cape",
     "slot": "capes",
     "file": "assets/capes/royal_silk_cape.png",
-    "name": "TODO",
+    "name": "Royal Silk Cape",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -2234,12 +2262,12 @@
     "id": "capes/travelers_tunic",
     "slot": "capes",
     "file": "assets/capes/travelers_tunic.png",
-    "name": "TODO",
+    "name": "Travelers Tunic",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2251,12 +2279,12 @@
     "id": "capes/wanderers_tattered_cloak",
     "slot": "capes",
     "file": "assets/capes/wanderers_tattered_cloak.png",
-    "name": "TODO",
+    "name": "Wanderers Tattered Cloak",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -2268,11 +2296,11 @@
     "id": "chest/blue_royal_guard",
     "slot": "chest",
     "file": "assets/chest/blue_royal_guard.png",
-    "name": "TODO",
+    "name": "Blue Royal Guard",
     "stats": {
-      "hp": 0,
+      "hp": 19,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2285,11 +2313,11 @@
     "id": "chest/brotherhood_of_blood",
     "slot": "chest",
     "file": "assets/chest/brotherhood_of_blood.png",
-    "name": "TODO",
+    "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 0,
+      "hp": 19,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2302,11 +2330,11 @@
     "id": "chest/cavalry_chestpiece",
     "slot": "chest",
     "file": "assets/chest/cavalry_chestpiece.png",
-    "name": "TODO",
+    "name": "Cavalry Chestpiece",
     "stats": {
-      "hp": 0,
+      "hp": 16,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2319,11 +2347,11 @@
     "id": "chest/chainmail",
     "slot": "chest",
     "file": "assets/chest/chainmail.png",
-    "name": "TODO",
+    "name": "Chainmail",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2336,11 +2364,11 @@
     "id": "chest/demon_hunter",
     "slot": "chest",
     "file": "assets/chest/demon_hunter.png",
-    "name": "TODO",
+    "name": "Demon Hunter",
     "stats": {
-      "hp": 0,
+      "hp": 21,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2353,11 +2381,11 @@
     "id": "chest/destroyer",
     "slot": "chest",
     "file": "assets/chest/destroyer.png",
-    "name": "TODO",
+    "name": "Destroyer",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2370,11 +2398,11 @@
     "id": "chest/dragon_knights_plate",
     "slot": "chest",
     "file": "assets/chest/dragon_knights_plate.png",
-    "name": "TODO",
+    "name": "Dragon Knights Plate",
     "stats": {
-      "hp": 0,
+      "hp": 24,
       "atk": 0,
-      "def": 0,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2387,11 +2415,11 @@
     "id": "chest/dustmarsh",
     "slot": "chest",
     "file": "assets/chest/dustmarsh.png",
-    "name": "TODO",
+    "name": "Dustmarsh",
     "stats": {
-      "hp": 0,
+      "hp": 20,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2404,11 +2432,11 @@
     "id": "chest/ebon_chestplate",
     "slot": "chest",
     "file": "assets/chest/ebon_chestplate.png",
-    "name": "TODO",
+    "name": "Ebon Chestplate",
     "stats": {
-      "hp": 0,
+      "hp": 27,
       "atk": 0,
-      "def": 0,
+      "def": 9,
       "spd": 0
     },
     "dmgType": null,
@@ -2421,11 +2449,11 @@
     "id": "chest/fallen_kingdom_chestplate",
     "slot": "chest",
     "file": "assets/chest/fallen_kingdom_chestplate.png",
-    "name": "TODO",
+    "name": "Fallen Kingdom Chestplate",
     "stats": {
-      "hp": 0,
+      "hp": 30,
       "atk": 0,
-      "def": 0,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -2438,11 +2466,11 @@
     "id": "chest/frogsong_ribbed",
     "slot": "chest",
     "file": "assets/chest/frogsong_ribbed.png",
-    "name": "TODO",
+    "name": "Frogsong Ribbed",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2455,11 +2483,11 @@
     "id": "chest/frostrime",
     "slot": "chest",
     "file": "assets/chest/frostrime.png",
-    "name": "TODO",
+    "name": "Frostrime",
     "stats": {
-      "hp": 0,
+      "hp": 20,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2472,11 +2500,11 @@
     "id": "chest/frostrime_chest",
     "slot": "chest",
     "file": "assets/chest/frostrime_chest.png",
-    "name": "TODO",
+    "name": "Frostrime Chest",
     "stats": {
-      "hp": 0,
+      "hp": 22,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2489,11 +2517,11 @@
     "id": "chest/fury_chestpiece",
     "slot": "chest",
     "file": "assets/chest/fury_chestpiece.png",
-    "name": "TODO",
+    "name": "Fury Chestpiece",
     "stats": {
-      "hp": 0,
+      "hp": 18,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2506,11 +2534,11 @@
     "id": "chest/golden_blood_brother",
     "slot": "chest",
     "file": "assets/chest/golden_blood_brother.png",
-    "name": "TODO",
+    "name": "Golden Blood Brother",
     "stats": {
-      "hp": 0,
+      "hp": 24,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2523,11 +2551,11 @@
     "id": "chest/golden_cavalry",
     "slot": "chest",
     "file": "assets/chest/golden_cavalry.png",
-    "name": "TODO",
+    "name": "Golden Cavalry",
     "stats": {
-      "hp": 0,
+      "hp": 26,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2540,11 +2568,11 @@
     "id": "chest/golden_destroyer",
     "slot": "chest",
     "file": "assets/chest/golden_destroyer.png",
-    "name": "TODO",
+    "name": "Golden Destroyer",
     "stats": {
-      "hp": 0,
+      "hp": 23,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2557,11 +2585,11 @@
     "id": "chest/golden_house_of_leo",
     "slot": "chest",
     "file": "assets/chest/golden_house_of_leo.png",
-    "name": "TODO",
+    "name": "Golden House of Leo",
     "stats": {
-      "hp": 0,
+      "hp": 26,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2574,11 +2602,11 @@
     "id": "chest/golden_imbued_chest",
     "slot": "chest",
     "file": "assets/chest/golden_imbued_chest.png",
-    "name": "TODO",
+    "name": "Golden Imbued Chest",
     "stats": {
-      "hp": 0,
+      "hp": 24,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2591,11 +2619,11 @@
     "id": "chest/golden_nightstalker",
     "slot": "chest",
     "file": "assets/chest/golden_nightstalker.png",
-    "name": "TODO",
+    "name": "Golden Nightstalker",
     "stats": {
-      "hp": 0,
+      "hp": 26,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -2608,11 +2636,11 @@
     "id": "chest/golden_spiked_mail",
     "slot": "chest",
     "file": "assets/chest/golden_spiked_mail.png",
-    "name": "TODO",
+    "name": "Golden Spiked Mail",
     "stats": {
-      "hp": 0,
+      "hp": 25,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2625,11 +2653,11 @@
     "id": "chest/golden_studded_armor",
     "slot": "chest",
     "file": "assets/chest/golden_studded_armor.png",
-    "name": "TODO",
+    "name": "Golden Studded Armor",
     "stats": {
-      "hp": 0,
+      "hp": 26,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2642,11 +2670,11 @@
     "id": "chest/golden_tanking_plate",
     "slot": "chest",
     "file": "assets/chest/golden_tanking_plate.png",
-    "name": "TODO",
+    "name": "Golden Tanking Plate",
     "stats": {
-      "hp": 0,
+      "hp": 33,
       "atk": 0,
-      "def": 0,
+      "def": 11,
       "spd": 0
     },
     "dmgType": null,
@@ -2659,11 +2687,11 @@
     "id": "chest/healers_holy_shirt",
     "slot": "chest",
     "file": "assets/chest/healers_holy_shirt.png",
-    "name": "TODO",
+    "name": "Healers Holy Shirt",
     "stats": {
-      "hp": 0,
+      "hp": 29,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2676,11 +2704,11 @@
     "id": "chest/heavy_marine",
     "slot": "chest",
     "file": "assets/chest/heavy_marine.png",
-    "name": "TODO",
+    "name": "Heavy Marine",
     "stats": {
-      "hp": 0,
+      "hp": 25,
       "atk": 0,
-      "def": 0,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2693,11 +2721,11 @@
     "id": "chest/house_of_leo_insignia_chestplate",
     "slot": "chest",
     "file": "assets/chest/house_of_leo_insignia_chestplate.png",
-    "name": "TODO",
+    "name": "House of Leo Insignia Chestplate",
     "stats": {
-      "hp": 0,
+      "hp": 24,
       "atk": 0,
-      "def": 0,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2710,11 +2738,11 @@
     "id": "chest/hunters_guard",
     "slot": "chest",
     "file": "assets/chest/hunters_guard.png",
-    "name": "TODO",
+    "name": "Hunters Guard",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2727,11 +2755,11 @@
     "id": "chest/imbued",
     "slot": "chest",
     "file": "assets/chest/imbued.png",
-    "name": "TODO",
+    "name": "Imbued",
     "stats": {
-      "hp": 0,
+      "hp": 18,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -2744,11 +2772,11 @@
     "id": "chest/invader",
     "slot": "chest",
     "file": "assets/chest/invader.png",
-    "name": "TODO",
+    "name": "Invader",
     "stats": {
-      "hp": 0,
+      "hp": 20,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2761,11 +2789,11 @@
     "id": "chest/invader_orange",
     "slot": "chest",
     "file": "assets/chest/invader_orange.png",
-    "name": "TODO",
+    "name": "Invader Orange",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2778,11 +2806,11 @@
     "id": "chest/irradiated",
     "slot": "chest",
     "file": "assets/chest/irradiated.png",
-    "name": "TODO",
+    "name": "Irradiated",
     "stats": {
-      "hp": 0,
+      "hp": 16,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -2795,11 +2823,11 @@
     "id": "chest/jesters_costume",
     "slot": "chest",
     "file": "assets/chest/jesters_costume.png",
-    "name": "TODO",
+    "name": "Jesters Costume",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -2812,11 +2840,11 @@
     "id": "chest/molten_chestplate",
     "slot": "chest",
     "file": "assets/chest/molten_chestplate.png",
-    "name": "TODO",
+    "name": "Molten Chestplate",
     "stats": {
-      "hp": 0,
+      "hp": 28,
       "atk": 0,
-      "def": 0,
+      "def": 9,
       "spd": 0
     },
     "dmgType": null,
@@ -2829,11 +2857,11 @@
     "id": "chest/nightstalkers_chest",
     "slot": "chest",
     "file": "assets/chest/nightstalkers_chest.png",
-    "name": "TODO",
+    "name": "Nightstalkers Chest",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -2846,11 +2874,11 @@
     "id": "chest/platemail",
     "slot": "chest",
     "file": "assets/chest/platemail.png",
-    "name": "TODO",
+    "name": "Platemail",
     "stats": {
-      "hp": 0,
+      "hp": 21,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2863,11 +2891,11 @@
     "id": "chest/rogues_leather_chest",
     "slot": "chest",
     "file": "assets/chest/rogues_leather_chest.png",
-    "name": "TODO",
+    "name": "Rogues Leather Chest",
     "stats": {
-      "hp": 0,
+      "hp": 19,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -2880,11 +2908,11 @@
     "id": "chest/rotknight",
     "slot": "chest",
     "file": "assets/chest/rotknight.png",
-    "name": "TODO",
+    "name": "Rotknight",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2897,11 +2925,11 @@
     "id": "chest/spiked_plate",
     "slot": "chest",
     "file": "assets/chest/spiked_plate.png",
-    "name": "TODO",
+    "name": "Spiked Plate",
     "stats": {
-      "hp": 0,
+      "hp": 20,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2914,11 +2942,11 @@
     "id": "chest/strongmans_cinch",
     "slot": "chest",
     "file": "assets/chest/strongmans_cinch.png",
-    "name": "TODO",
+    "name": "Strongmans Cinch",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2931,11 +2959,11 @@
     "id": "chest/studded_leather_chest",
     "slot": "chest",
     "file": "assets/chest/studded_leather_chest.png",
-    "name": "TODO",
+    "name": "Studded Leather Chest",
     "stats": {
-      "hp": 0,
+      "hp": 18,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2948,11 +2976,11 @@
     "id": "chest/tanking_plate",
     "slot": "chest",
     "file": "assets/chest/tanking_plate.png",
-    "name": "TODO",
+    "name": "Tanking Plate",
     "stats": {
-      "hp": 0,
+      "hp": 29,
       "atk": 0,
-      "def": 0,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -2965,11 +2993,11 @@
     "id": "chest/thick_plated_cuirass",
     "slot": "chest",
     "file": "assets/chest/thick_plated_cuirass.png",
-    "name": "TODO",
+    "name": "Thick Plated Cuirass",
     "stats": {
-      "hp": 0,
+      "hp": 21,
       "atk": 0,
-      "def": 0,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2982,11 +3010,11 @@
     "id": "chest/travelers_wrap",
     "slot": "chest",
     "file": "assets/chest/travelers_wrap.png",
-    "name": "TODO",
+    "name": "Travelers Wrap",
     "stats": {
-      "hp": 0,
+      "hp": 13,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -2999,11 +3027,11 @@
     "id": "chest/underworld",
     "slot": "chest",
     "file": "assets/chest/underworld.png",
-    "name": "TODO",
+    "name": "Underworld",
     "stats": {
-      "hp": 0,
+      "hp": 18,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -3016,11 +3044,11 @@
     "id": "chest/vampiric_chestpiece",
     "slot": "chest",
     "file": "assets/chest/vampiric_chestpiece.png",
-    "name": "TODO",
+    "name": "Vampiric Chestpiece",
     "stats": {
-      "hp": 0,
+      "hp": 19,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -3035,11 +3063,11 @@
     "id": "chest/vampiric_vest",
     "slot": "chest",
     "file": "assets/chest/vampiric_vest.png",
-    "name": "TODO",
+    "name": "Vampiric Vest",
     "stats": {
-      "hp": 0,
+      "hp": 18,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -3054,11 +3082,11 @@
     "id": "chest/volcanic_chest",
     "slot": "chest",
     "file": "assets/chest/volcanic_chest.png",
-    "name": "TODO",
+    "name": "Volcanic Chest",
     "stats": {
-      "hp": 0,
+      "hp": 23,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -3071,11 +3099,11 @@
     "id": "chest/warforged_chestplate",
     "slot": "chest",
     "file": "assets/chest/warforged_chestplate.png",
-    "name": "TODO",
+    "name": "Warforged Chestplate",
     "stats": {
-      "hp": 0,
+      "hp": 25,
       "atk": 0,
-      "def": 0,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -3088,11 +3116,11 @@
     "id": "chest/wizards_blood_tunic",
     "slot": "chest",
     "file": "assets/chest/wizards_blood_tunic.png",
-    "name": "TODO",
+    "name": "Wizards Blood Tunic",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -3105,10 +3133,10 @@
     "id": "conditions/berzerker",
     "slot": "conditions",
     "file": "assets/conditions/berzerker.png",
-    "name": "TODO",
+    "name": "Berzerker",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -3122,11 +3150,11 @@
     "id": "conditions/blessed_mark",
     "slot": "conditions",
     "file": "assets/conditions/blessed_mark.png",
-    "name": "TODO",
+    "name": "Blessed Mark",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -3139,10 +3167,10 @@
     "id": "conditions/bloodlust",
     "slot": "conditions",
     "file": "assets/conditions/bloodlust.png",
-    "name": "TODO",
+    "name": "Bloodlust",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -3156,10 +3184,10 @@
     "id": "conditions/burned",
     "slot": "conditions",
     "file": "assets/conditions/burned.png",
-    "name": "TODO",
+    "name": "Burned",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": -4,
+      "atk": 2,
       "def": 0,
       "spd": 0
     },
@@ -3173,11 +3201,11 @@
     "id": "conditions/ebon_skin",
     "slot": "conditions",
     "file": "assets/conditions/ebon_skin.png",
-    "name": "TODO",
+    "name": "Ebon Skin",
     "stats": {
       "hp": 0,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -3190,10 +3218,10 @@
     "id": "conditions/enraged",
     "slot": "conditions",
     "file": "assets/conditions/enraged.png",
-    "name": "TODO",
+    "name": "Enraged",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -3207,12 +3235,12 @@
     "id": "conditions/frostrime",
     "slot": "conditions",
     "file": "assets/conditions/frostrime.png",
-    "name": "TODO",
+    "name": "Frostrime",
     "stats": {
       "hp": 0,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [],
@@ -3224,10 +3252,10 @@
     "id": "conditions/fury_mark",
     "slot": "conditions",
     "file": "assets/conditions/fury_mark.png",
-    "name": "TODO",
+    "name": "Fury Mark",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -3241,11 +3269,11 @@
     "id": "conditions/holy_mark",
     "slot": "conditions",
     "file": "assets/conditions/holy_mark.png",
-    "name": "TODO",
+    "name": "Holy Mark",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
+      "def": 1,
       "spd": 0
     },
     "dmgType": null,
@@ -3258,12 +3286,12 @@
     "id": "conditions/kings_crown",
     "slot": "conditions",
     "file": "assets/conditions/kings_crown.png",
-    "name": "TODO",
+    "name": "Kings Crown",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 2,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3275,9 +3303,9 @@
     "id": "conditions/mark_of_the_bear",
     "slot": "conditions",
     "file": "assets/conditions/mark_of_the_bear.png",
-    "name": "TODO",
+    "name": "Mark of the Bear",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
       "def": 0,
       "spd": 0
@@ -3292,12 +3320,12 @@
     "id": "conditions/mark_of_the_hunter",
     "slot": "conditions",
     "file": "assets/conditions/mark_of_the_hunter.png",
-    "name": "TODO",
+    "name": "Mark of the Hunter",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 2,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3309,10 +3337,10 @@
     "id": "conditions/nicked",
     "slot": "conditions",
     "file": "assets/conditions/nicked.png",
-    "name": "TODO",
+    "name": "Nicked",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": -2,
+      "atk": 1,
       "def": 0,
       "spd": 0
     },
@@ -3326,10 +3354,10 @@
     "id": "conditions/pain_is_weakness",
     "slot": "conditions",
     "file": "assets/conditions/pain_is_weakness.png",
-    "name": "TODO",
+    "name": "Pain Is Weakness",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": -2,
+      "atk": 2,
       "def": 0,
       "spd": 0
     },
@@ -3343,9 +3371,9 @@
     "id": "conditions/pain_tolerance",
     "slot": "conditions",
     "file": "assets/conditions/pain_tolerance.png",
-    "name": "TODO",
+    "name": "Pain Tolerance",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
       "def": 0,
       "spd": 0
@@ -3360,12 +3388,12 @@
     "id": "conditions/recovering",
     "slot": "conditions",
     "file": "assets/conditions/recovering.png",
-    "name": "TODO",
+    "name": "Recovering",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": null,
     "tags": [],
@@ -3377,10 +3405,10 @@
     "id": "conditions/scratched",
     "slot": "conditions",
     "file": "assets/conditions/scratched.png",
-    "name": "TODO",
+    "name": "Scratched",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": -1,
+      "atk": 1,
       "def": 0,
       "spd": 0
     },
@@ -3394,12 +3422,12 @@
     "id": "conditions/slowed",
     "slot": "conditions",
     "file": "assets/conditions/slowed.png",
-    "name": "TODO",
+    "name": "Slowed",
     "stats": {
       "hp": 0,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 2,
+      "spd": -2
     },
     "dmgType": null,
     "tags": [],
@@ -3411,12 +3439,12 @@
     "id": "conditions/tattoo_12",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_12.png",
-    "name": "TODO",
+    "name": "Tattoo 12",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 1,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3428,12 +3456,12 @@
     "id": "conditions/tattoo_18",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_18.png",
-    "name": "TODO",
+    "name": "Tattoo 18",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 1,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3445,12 +3473,12 @@
     "id": "conditions/tattoo_24",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_24.png",
-    "name": "TODO",
+    "name": "Tattoo 24",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 1,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3462,12 +3490,12 @@
     "id": "conditions/tattoo_6",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_6.png",
-    "name": "TODO",
+    "name": "Tattoo 6",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 1,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3479,12 +3507,12 @@
     "id": "conditions/tattoo_8",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_8.png",
-    "name": "TODO",
+    "name": "Tattoo 8",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 1,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3496,10 +3524,10 @@
     "id": "conditions/venomous",
     "slot": "conditions",
     "file": "assets/conditions/venomous.png",
-    "name": "TODO",
+    "name": "Venomous",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": -1,
+      "atk": 2,
       "def": 0,
       "spd": 0
     },
@@ -3513,11 +3541,11 @@
     "id": "conditions/wrapped",
     "slot": "conditions",
     "file": "assets/conditions/wrapped.png",
-    "name": "TODO",
+    "name": "Wrapped",
     "stats": {
       "hp": 0,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -3530,12 +3558,12 @@
     "id": "gloves/blood_wizards_caress",
     "slot": "gloves",
     "file": "assets/gloves/blood_wizards_caress.png",
-    "name": "TODO",
+    "name": "Blood Wizards Caress",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3547,12 +3575,12 @@
     "id": "gloves/brotherhood_of_blood",
     "slot": "gloves",
     "file": "assets/gloves/brotherhood_of_blood.png",
-    "name": "TODO",
+    "name": "Brotherhood of Blood",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3564,12 +3592,12 @@
     "id": "gloves/cavalry",
     "slot": "gloves",
     "file": "assets/gloves/cavalry.png",
-    "name": "TODO",
+    "name": "Cavalry",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3581,12 +3609,12 @@
     "id": "gloves/chainmail_gloves",
     "slot": "gloves",
     "file": "assets/gloves/chainmail_gloves.png",
-    "name": "TODO",
+    "name": "Chainmail Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3598,12 +3626,12 @@
     "id": "gloves/champions_grip",
     "slot": "gloves",
     "file": "assets/gloves/champions_grip.png",
-    "name": "TODO",
+    "name": "Champions Grip",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3615,12 +3643,12 @@
     "id": "gloves/conquerers_grip",
     "slot": "gloves",
     "file": "assets/gloves/conquerers_grip.png",
-    "name": "TODO",
+    "name": "Conquerers Grip",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3632,12 +3660,12 @@
     "id": "gloves/demon_hunter",
     "slot": "gloves",
     "file": "assets/gloves/demon_hunter.png",
-    "name": "TODO",
+    "name": "Demon Hunter",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3649,12 +3677,12 @@
     "id": "gloves/destroyers_gloves",
     "slot": "gloves",
     "file": "assets/gloves/destroyers_gloves.png",
-    "name": "TODO",
+    "name": "Destroyers Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3666,12 +3694,12 @@
     "id": "gloves/dragon_knights_fists",
     "slot": "gloves",
     "file": "assets/gloves/dragon_knights_fists.png",
-    "name": "TODO",
+    "name": "Dragon Knights Fists",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3683,12 +3711,12 @@
     "id": "gloves/dustmarsh_gloves",
     "slot": "gloves",
     "file": "assets/gloves/dustmarsh_gloves.png",
-    "name": "TODO",
+    "name": "Dustmarsh Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3700,12 +3728,12 @@
     "id": "gloves/ebon_fists",
     "slot": "gloves",
     "file": "assets/gloves/ebon_fists.png",
-    "name": "TODO",
+    "name": "Ebon Fists",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3717,12 +3745,12 @@
     "id": "gloves/ebon_plate",
     "slot": "gloves",
     "file": "assets/gloves/ebon_plate.png",
-    "name": "TODO",
+    "name": "Ebon Plate",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3734,12 +3762,12 @@
     "id": "gloves/fallen_kingdom_gloves",
     "slot": "gloves",
     "file": "assets/gloves/fallen_kingdom_gloves.png",
-    "name": "TODO",
+    "name": "Fallen Kingdom Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3751,12 +3779,12 @@
     "id": "gloves/frogsong",
     "slot": "gloves",
     "file": "assets/gloves/frogsong.png",
-    "name": "TODO",
+    "name": "Frogsong",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3768,12 +3796,12 @@
     "id": "gloves/frostrime_gloves",
     "slot": "gloves",
     "file": "assets/gloves/frostrime_gloves.png",
-    "name": "TODO",
+    "name": "Frostrime Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3785,11 +3813,11 @@
     "id": "gloves/full_plate_gloves",
     "slot": "gloves",
     "file": "assets/gloves/full_plate_gloves.png",
-    "name": "TODO",
+    "name": "Full Plate Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
+      "atk": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -3802,12 +3830,12 @@
     "id": "gloves/fury_gloves",
     "slot": "gloves",
     "file": "assets/gloves/fury_gloves.png",
-    "name": "TODO",
+    "name": "Fury Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3819,12 +3847,12 @@
     "id": "gloves/golden_cavalry",
     "slot": "gloves",
     "file": "assets/gloves/golden_cavalry.png",
-    "name": "TODO",
+    "name": "Golden Cavalry",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3836,12 +3864,12 @@
     "id": "gloves/golden_destroyer",
     "slot": "gloves",
     "file": "assets/gloves/golden_destroyer.png",
-    "name": "TODO",
+    "name": "Golden Destroyer",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 4,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3853,12 +3881,12 @@
     "id": "gloves/golden_hands",
     "slot": "gloves",
     "file": "assets/gloves/golden_hands.png",
-    "name": "TODO",
+    "name": "Golden Hands",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3870,12 +3898,12 @@
     "id": "gloves/golden_imbued_gauntlets",
     "slot": "gloves",
     "file": "assets/gloves/golden_imbued_gauntlets.png",
-    "name": "TODO",
+    "name": "Golden Imbued Gauntlets",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3887,12 +3915,12 @@
     "id": "gloves/golden_nightstalkers_gloves",
     "slot": "gloves",
     "file": "assets/gloves/golden_nightstalkers_gloves.png",
-    "name": "TODO",
+    "name": "Golden Nightstalkers Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -3904,12 +3932,12 @@
     "id": "gloves/golden_plate",
     "slot": "gloves",
     "file": "assets/gloves/golden_plate.png",
-    "name": "TODO",
+    "name": "Golden Plate",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 4,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3921,12 +3949,12 @@
     "id": "gloves/golden_spiked_hands",
     "slot": "gloves",
     "file": "assets/gloves/golden_spiked_hands.png",
-    "name": "TODO",
+    "name": "Golden Spiked Hands",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 5,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3938,12 +3966,12 @@
     "id": "gloves/golden_studded_grips",
     "slot": "gloves",
     "file": "assets/gloves/golden_studded_grips.png",
-    "name": "TODO",
+    "name": "Golden Studded Grips",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3955,12 +3983,12 @@
     "id": "gloves/golden_tanking_plate",
     "slot": "gloves",
     "file": "assets/gloves/golden_tanking_plate.png",
-    "name": "TODO",
+    "name": "Golden Tanking Plate",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 4,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3972,12 +4000,12 @@
     "id": "gloves/healers_touch",
     "slot": "gloves",
     "file": "assets/gloves/healers_touch.png",
-    "name": "TODO",
+    "name": "Healers Touch",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -3989,11 +4017,11 @@
     "id": "gloves/heavy_marines_gloves",
     "slot": "gloves",
     "file": "assets/gloves/heavy_marines_gloves.png",
-    "name": "TODO",
+    "name": "Heavy Marines Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
+      "atk": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4006,12 +4034,12 @@
     "id": "gloves/heros_grip",
     "slot": "gloves",
     "file": "assets/gloves/heros_grip.png",
-    "name": "TODO",
+    "name": "Heros Grip",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4023,12 +4051,12 @@
     "id": "gloves/house_of_leo_gloves",
     "slot": "gloves",
     "file": "assets/gloves/house_of_leo_gloves.png",
-    "name": "TODO",
+    "name": "House of Leo Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4040,12 +4068,12 @@
     "id": "gloves/hunters_spiked_glove",
     "slot": "gloves",
     "file": "assets/gloves/hunters_spiked_glove.png",
-    "name": "TODO",
+    "name": "Hunters Spiked Glove",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4057,12 +4085,12 @@
     "id": "gloves/imbued_silk_gloves",
     "slot": "gloves",
     "file": "assets/gloves/imbued_silk_gloves.png",
-    "name": "TODO",
+    "name": "Imbued Silk Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -4074,12 +4102,12 @@
     "id": "gloves/invaders",
     "slot": "gloves",
     "file": "assets/gloves/invaders.png",
-    "name": "TODO",
+    "name": "Invaders",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4091,12 +4119,12 @@
     "id": "gloves/invaders_orange",
     "slot": "gloves",
     "file": "assets/gloves/invaders_orange.png",
-    "name": "TODO",
+    "name": "Invaders Orange",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4108,12 +4136,12 @@
     "id": "gloves/irradiated_gloves",
     "slot": "gloves",
     "file": "assets/gloves/irradiated_gloves.png",
-    "name": "TODO",
+    "name": "Irradiated Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4125,12 +4153,12 @@
     "id": "gloves/jesters_silk_gloves",
     "slot": "gloves",
     "file": "assets/gloves/jesters_silk_gloves.png",
-    "name": "TODO",
+    "name": "Jesters Silk Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -4142,12 +4170,12 @@
     "id": "gloves/mana_imbued_gloves",
     "slot": "gloves",
     "file": "assets/gloves/mana_imbued_gloves.png",
-    "name": "TODO",
+    "name": "Mana Imbued Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4159,12 +4187,12 @@
     "id": "gloves/molten_gloves",
     "slot": "gloves",
     "file": "assets/gloves/molten_gloves.png",
-    "name": "TODO",
+    "name": "Molten Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4176,12 +4204,12 @@
     "id": "gloves/necromancers_touch",
     "slot": "gloves",
     "file": "assets/gloves/necromancers_touch.png",
-    "name": "TODO",
+    "name": "Necromancers Touch",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4193,12 +4221,12 @@
     "id": "gloves/nightstalkers_touch",
     "slot": "gloves",
     "file": "assets/gloves/nightstalkers_touch.png",
-    "name": "TODO",
+    "name": "Nightstalkers Touch",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -4210,12 +4238,12 @@
     "id": "gloves/plate_steel_gloves",
     "slot": "gloves",
     "file": "assets/gloves/plate_steel_gloves.png",
-    "name": "TODO",
+    "name": "Plate Steel Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4227,12 +4255,12 @@
     "id": "gloves/platemail",
     "slot": "gloves",
     "file": "assets/gloves/platemail.png",
-    "name": "TODO",
+    "name": "Platemail",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4244,12 +4272,12 @@
     "id": "gloves/rogues_gloves",
     "slot": "gloves",
     "file": "assets/gloves/rogues_gloves.png",
-    "name": "TODO",
+    "name": "Rogues Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -4261,12 +4289,12 @@
     "id": "gloves/royal_blue_guard",
     "slot": "gloves",
     "file": "assets/gloves/royal_blue_guard.png",
-    "name": "TODO",
+    "name": "Royal Blue Guard",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4278,12 +4306,12 @@
     "id": "gloves/shadowbinder_gloves",
     "slot": "gloves",
     "file": "assets/gloves/shadowbinder_gloves.png",
-    "name": "TODO",
+    "name": "Shadowbinder Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -4295,12 +4323,12 @@
     "id": "gloves/spiked_steel_gauntlets",
     "slot": "gloves",
     "file": "assets/gloves/spiked_steel_gauntlets.png",
-    "name": "TODO",
+    "name": "Spiked Steel Gauntlets",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4312,12 +4340,12 @@
     "id": "gloves/studded_leather",
     "slot": "gloves",
     "file": "assets/gloves/studded_leather.png",
-    "name": "TODO",
+    "name": "Studded Leather",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4329,12 +4357,12 @@
     "id": "gloves/studded_leather_gloves",
     "slot": "gloves",
     "file": "assets/gloves/studded_leather_gloves.png",
-    "name": "TODO",
+    "name": "Studded Leather Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4346,12 +4374,12 @@
     "id": "gloves/tanking_fists",
     "slot": "gloves",
     "file": "assets/gloves/tanking_fists.png",
-    "name": "TODO",
+    "name": "Tanking Fists",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 4,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4363,12 +4391,12 @@
     "id": "gloves/thieves_fingers",
     "slot": "gloves",
     "file": "assets/gloves/thieves_fingers.png",
-    "name": "TODO",
+    "name": "Thieves Fingers",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 1,
+      "spd": 2
     },
     "dmgType": null,
     "tags": [],
@@ -4380,12 +4408,12 @@
     "id": "gloves/travelers_gloves",
     "slot": "gloves",
     "file": "assets/gloves/travelers_gloves.png",
-    "name": "TODO",
+    "name": "Travelers Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4397,12 +4425,12 @@
     "id": "gloves/vampiric_fists",
     "slot": "gloves",
     "file": "assets/gloves/vampiric_fists.png",
-    "name": "TODO",
+    "name": "Vampiric Fists",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 3,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -4416,12 +4444,12 @@
     "id": "gloves/volcanic_gloves",
     "slot": "gloves",
     "file": "assets/gloves/volcanic_gloves.png",
-    "name": "TODO",
+    "name": "Volcanic Gloves",
     "stats": {
       "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "atk": 2,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [],
@@ -4433,11 +4461,11 @@
     "id": "helms/chimera_10",
     "slot": "helms",
     "file": "assets/helms/chimera_10.png",
-    "name": "TODO",
+    "name": "Chimera 10",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4450,11 +4478,11 @@
     "id": "helms/chimera_11",
     "slot": "helms",
     "file": "assets/helms/chimera_11.png",
-    "name": "TODO",
+    "name": "Chimera 11",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4467,11 +4495,11 @@
     "id": "helms/chimera_12",
     "slot": "helms",
     "file": "assets/helms/chimera_12.png",
-    "name": "TODO",
+    "name": "Chimera 12",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4484,11 +4512,11 @@
     "id": "helms/chimera_13",
     "slot": "helms",
     "file": "assets/helms/chimera_13.png",
-    "name": "TODO",
+    "name": "Chimera 13",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4501,11 +4529,11 @@
     "id": "helms/chimera_14",
     "slot": "helms",
     "file": "assets/helms/chimera_14.png",
-    "name": "TODO",
+    "name": "Chimera 14",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4518,11 +4546,11 @@
     "id": "helms/chimera_15",
     "slot": "helms",
     "file": "assets/helms/chimera_15.png",
-    "name": "TODO",
+    "name": "Chimera 15",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4535,11 +4563,11 @@
     "id": "helms/chimera_16",
     "slot": "helms",
     "file": "assets/helms/chimera_16.png",
-    "name": "TODO",
+    "name": "Chimera 16",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4552,11 +4580,11 @@
     "id": "helms/chimera_2",
     "slot": "helms",
     "file": "assets/helms/chimera_2.png",
-    "name": "TODO",
+    "name": "Chimera 2",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4569,11 +4597,11 @@
     "id": "helms/chimera_3",
     "slot": "helms",
     "file": "assets/helms/chimera_3.png",
-    "name": "TODO",
+    "name": "Chimera 3",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4586,11 +4614,11 @@
     "id": "helms/chimera_4",
     "slot": "helms",
     "file": "assets/helms/chimera_4.png",
-    "name": "TODO",
+    "name": "Chimera 4",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4603,11 +4631,11 @@
     "id": "helms/chimera_5",
     "slot": "helms",
     "file": "assets/helms/chimera_5.png",
-    "name": "TODO",
+    "name": "Chimera 5",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4620,11 +4648,11 @@
     "id": "helms/chimera_6",
     "slot": "helms",
     "file": "assets/helms/chimera_6.png",
-    "name": "TODO",
+    "name": "Chimera 6",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4637,11 +4665,11 @@
     "id": "helms/chimera_7",
     "slot": "helms",
     "file": "assets/helms/chimera_7.png",
-    "name": "TODO",
+    "name": "Chimera 7",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4654,11 +4682,11 @@
     "id": "helms/chimera_8",
     "slot": "helms",
     "file": "assets/helms/chimera_8.png",
-    "name": "TODO",
+    "name": "Chimera 8",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4671,11 +4699,11 @@
     "id": "helms/chimera_9",
     "slot": "helms",
     "file": "assets/helms/chimera_9.png",
-    "name": "TODO",
+    "name": "Chimera 9",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4688,11 +4716,11 @@
     "id": "legs/adventurers_pants",
     "slot": "legs",
     "file": "assets/legs/adventurers_pants.png",
-    "name": "TODO",
+    "name": "Adventurers Pants",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -4705,11 +4733,11 @@
     "id": "legs/bood_wizards_legs",
     "slot": "legs",
     "file": "assets/legs/bood_wizards_legs.png",
-    "name": "TODO",
+    "name": "Bood Wizards Legs",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4722,11 +4750,11 @@
     "id": "legs/breeches_of_lethal_precision",
     "slot": "legs",
     "file": "assets/legs/breeches_of_lethal_precision.png",
-    "name": "TODO",
+    "name": "Breeches of Lethal Precision",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4739,11 +4767,11 @@
     "id": "legs/brotherhood_of_blood",
     "slot": "legs",
     "file": "assets/legs/brotherhood_of_blood.png",
-    "name": "TODO",
+    "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4756,11 +4784,11 @@
     "id": "legs/bulwark_of_the_sentinel",
     "slot": "legs",
     "file": "assets/legs/bulwark_of_the_sentinel.png",
-    "name": "TODO",
+    "name": "Bulwark of the Sentinel",
     "stats": {
-      "hp": 0,
+      "hp": 15,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4773,11 +4801,11 @@
     "id": "legs/cavalry_captains_pants",
     "slot": "legs",
     "file": "assets/legs/cavalry_captains_pants.png",
-    "name": "TODO",
+    "name": "Cavalry Captains Pants",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4790,11 +4818,11 @@
     "id": "legs/chainmail",
     "slot": "legs",
     "file": "assets/legs/chainmail.png",
-    "name": "TODO",
+    "name": "Chainmail",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4807,11 +4835,11 @@
     "id": "legs/cursed_weavers_breeches",
     "slot": "legs",
     "file": "assets/legs/cursed_weavers_breeches.png",
-    "name": "TODO",
+    "name": "Cursed Weavers Breeches",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4824,11 +4852,11 @@
     "id": "legs/damage_dealers_slacks",
     "slot": "legs",
     "file": "assets/legs/damage_dealers_slacks.png",
-    "name": "TODO",
+    "name": "Damage Dealers Slacks",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -4841,11 +4869,11 @@
     "id": "legs/dark_enchanters_wicked_legwraps",
     "slot": "legs",
     "file": "assets/legs/dark_enchanters_wicked_legwraps.png",
-    "name": "TODO",
+    "name": "Dark Enchanters Wicked Legwraps",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -4858,11 +4886,11 @@
     "id": "legs/demon_hunter_legs",
     "slot": "legs",
     "file": "assets/legs/demon_hunter_legs.png",
-    "name": "TODO",
+    "name": "Demon Hunter Legs",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4875,11 +4903,11 @@
     "id": "legs/destroyers_thighs",
     "slot": "legs",
     "file": "assets/legs/destroyers_thighs.png",
-    "name": "TODO",
+    "name": "Destroyers Thighs",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4892,11 +4920,11 @@
     "id": "legs/dustmarsh_pants",
     "slot": "legs",
     "file": "assets/legs/dustmarsh_pants.png",
-    "name": "TODO",
+    "name": "Dustmarsh Pants",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4909,11 +4937,11 @@
     "id": "legs/fallen_kingdom_pants",
     "slot": "legs",
     "file": "assets/legs/fallen_kingdom_pants.png",
-    "name": "TODO",
+    "name": "Fallen Kingdom Pants",
     "stats": {
-      "hp": 0,
+      "hp": 14,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4926,11 +4954,11 @@
     "id": "legs/full_plate_greaves",
     "slot": "legs",
     "file": "assets/legs/full_plate_greaves.png",
-    "name": "TODO",
+    "name": "Full Plate Greaves",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4943,11 +4971,11 @@
     "id": "legs/fury_leggings",
     "slot": "legs",
     "file": "assets/legs/fury_leggings.png",
-    "name": "TODO",
+    "name": "Fury Leggings",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4960,11 +4988,11 @@
     "id": "legs/golden_blood_brothers_legs",
     "slot": "legs",
     "file": "assets/legs/golden_blood_brothers_legs.png",
-    "name": "TODO",
+    "name": "Golden Blood Brothers Legs",
     "stats": {
-      "hp": 0,
+      "hp": 14,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4977,11 +5005,11 @@
     "id": "legs/golden_destroyer",
     "slot": "legs",
     "file": "assets/legs/golden_destroyer.png",
-    "name": "TODO",
+    "name": "Golden Destroyer",
     "stats": {
-      "hp": 0,
+      "hp": 15,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4994,11 +5022,11 @@
     "id": "legs/golden_house_of_leo",
     "slot": "legs",
     "file": "assets/legs/golden_house_of_leo.png",
-    "name": "TODO",
+    "name": "Golden House of Leo",
     "stats": {
-      "hp": 0,
+      "hp": 15,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5011,11 +5039,11 @@
     "id": "legs/golden_spiked_thighs",
     "slot": "legs",
     "file": "assets/legs/golden_spiked_thighs.png",
-    "name": "TODO",
+    "name": "Golden Spiked Thighs",
     "stats": {
-      "hp": 0,
+      "hp": 13,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5028,11 +5056,11 @@
     "id": "legs/golden_studded_pants",
     "slot": "legs",
     "file": "assets/legs/golden_studded_pants.png",
-    "name": "TODO",
+    "name": "Golden Studded Pants",
     "stats": {
-      "hp": 0,
+      "hp": 13,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5045,11 +5073,11 @@
     "id": "legs/golden_tanks_pants",
     "slot": "legs",
     "file": "assets/legs/golden_tanks_pants.png",
-    "name": "TODO",
+    "name": "Golden Tanks Pants",
     "stats": {
-      "hp": 0,
+      "hp": 13,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5062,11 +5090,11 @@
     "id": "legs/grey_leiderhosen",
     "slot": "legs",
     "file": "assets/legs/grey_leiderhosen.png",
-    "name": "TODO",
+    "name": "Grey Leiderhosen",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -5079,11 +5107,11 @@
     "id": "legs/healers_white_leggings",
     "slot": "legs",
     "file": "assets/legs/healers_white_leggings.png",
-    "name": "TODO",
+    "name": "Healers White Leggings",
     "stats": {
-      "hp": 0,
+      "hp": 14,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5096,11 +5124,11 @@
     "id": "legs/heavy_marine_leg_armor",
     "slot": "legs",
     "file": "assets/legs/heavy_marine_leg_armor.png",
-    "name": "TODO",
+    "name": "Heavy Marine Leg Armor",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5113,11 +5141,11 @@
     "id": "legs/highly_imbued_pants",
     "slot": "legs",
     "file": "assets/legs/highly_imbued_pants.png",
-    "name": "TODO",
+    "name": "Highly Imbued Pants",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5130,11 +5158,11 @@
     "id": "legs/house_of_leo_pants",
     "slot": "legs",
     "file": "assets/legs/house_of_leo_pants.png",
-    "name": "TODO",
+    "name": "House of Leo Pants",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5147,11 +5175,11 @@
     "id": "legs/hunters_pants",
     "slot": "legs",
     "file": "assets/legs/hunters_pants.png",
-    "name": "TODO",
+    "name": "Hunters Pants",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5164,11 +5192,11 @@
     "id": "legs/invaders_pants",
     "slot": "legs",
     "file": "assets/legs/invaders_pants.png",
-    "name": "TODO",
+    "name": "Invaders Pants",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5181,11 +5209,11 @@
     "id": "legs/irradiated_pants",
     "slot": "legs",
     "file": "assets/legs/irradiated_pants.png",
-    "name": "TODO",
+    "name": "Irradiated Pants",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5198,11 +5226,11 @@
     "id": "legs/legplates_of_eternal_valor",
     "slot": "legs",
     "file": "assets/legs/legplates_of_eternal_valor.png",
-    "name": "TODO",
+    "name": "Legplates of Eternal Valor",
     "stats": {
-      "hp": 0,
+      "hp": 14,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5215,11 +5243,11 @@
     "id": "legs/legwraps_of_the_marksman",
     "slot": "legs",
     "file": "assets/legs/legwraps_of_the_marksman.png",
-    "name": "TODO",
+    "name": "Legwraps of the Marksman",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -5232,11 +5260,11 @@
     "id": "legs/lord_nighstalkers_pants",
     "slot": "legs",
     "file": "assets/legs/lord_nighstalkers_pants.png",
-    "name": "TODO",
+    "name": "Lord Nighstalkers Pants",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5249,11 +5277,11 @@
     "id": "legs/merciless_strikers_breeches",
     "slot": "legs",
     "file": "assets/legs/merciless_strikers_breeches.png",
-    "name": "TODO",
+    "name": "Merciless Strikers Breeches",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5266,11 +5294,11 @@
     "id": "legs/molten_pants",
     "slot": "legs",
     "file": "assets/legs/molten_pants.png",
-    "name": "TODO",
+    "name": "Molten Pants",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5283,11 +5311,11 @@
     "id": "legs/necromancers_pants",
     "slot": "legs",
     "file": "assets/legs/necromancers_pants.png",
-    "name": "TODO",
+    "name": "Necromancers Pants",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -5300,11 +5328,11 @@
     "id": "legs/nightstalkers",
     "slot": "legs",
     "file": "assets/legs/nightstalkers.png",
-    "name": "TODO",
+    "name": "Nightstalkers",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -5317,11 +5345,11 @@
     "id": "legs/nightstalkers_legguards",
     "slot": "legs",
     "file": "assets/legs/nightstalkers_legguards.png",
-    "name": "TODO",
+    "name": "Nightstalkers Legguards",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -5334,11 +5362,11 @@
     "id": "legs/orange_invader",
     "slot": "legs",
     "file": "assets/legs/orange_invader.png",
-    "name": "TODO",
+    "name": "Orange Invader",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5351,11 +5379,11 @@
     "id": "legs/pants_of_blessed_serenity",
     "slot": "legs",
     "file": "assets/legs/pants_of_blessed_serenity.png",
-    "name": "TODO",
+    "name": "Pants of Blessed Serenity",
     "stats": {
-      "hp": 0,
+      "hp": 15,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5368,11 +5396,11 @@
     "id": "legs/pants_of_the_iron_vanguard",
     "slot": "legs",
     "file": "assets/legs/pants_of_the_iron_vanguard.png",
-    "name": "TODO",
+    "name": "Pants of the Iron Vanguard",
     "stats": {
-      "hp": 0,
+      "hp": 13,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5385,11 +5413,11 @@
     "id": "legs/royal_blue_guard",
     "slot": "legs",
     "file": "assets/legs/royal_blue_guard.png",
-    "name": "TODO",
+    "name": "Royal Blue Guard",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5402,11 +5430,11 @@
     "id": "legs/rusted_chainmail",
     "slot": "legs",
     "file": "assets/legs/rusted_chainmail.png",
-    "name": "TODO",
+    "name": "Rusted Chainmail",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5419,11 +5447,11 @@
     "id": "legs/slayers_swift_leggings",
     "slot": "legs",
     "file": "assets/legs/slayers_swift_leggings.png",
-    "name": "TODO",
+    "name": "Slayers Swift Leggings",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -5436,11 +5464,11 @@
     "id": "legs/spiked_mail",
     "slot": "legs",
     "file": "assets/legs/spiked_mail.png",
-    "name": "TODO",
+    "name": "Spiked Mail",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5453,11 +5481,11 @@
     "id": "legs/studded_leather",
     "slot": "legs",
     "file": "assets/legs/studded_leather.png",
-    "name": "TODO",
+    "name": "Studded Leather",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5470,11 +5498,11 @@
     "id": "legs/thiefs_cloth",
     "slot": "legs",
     "file": "assets/legs/thiefs_cloth.png",
-    "name": "TODO",
+    "name": "Thiefs Cloth",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5487,11 +5515,11 @@
     "id": "legs/titan_forged_legguards",
     "slot": "legs",
     "file": "assets/legs/titan_forged_legguards.png",
-    "name": "TODO",
+    "name": "Titan Forged Legguards",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5504,11 +5532,11 @@
     "id": "legs/trousers_of_the_nethermancer",
     "slot": "legs",
     "file": "assets/legs/trousers_of_the_nethermancer.png",
-    "name": "TODO",
+    "name": "Trousers of the Nethermancer",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5521,11 +5549,11 @@
     "id": "legs/vampiric_pants",
     "slot": "legs",
     "file": "assets/legs/vampiric_pants.png",
-    "name": "TODO",
+    "name": "Vampiric Pants",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5540,11 +5568,11 @@
     "id": "legs/warlocks_infernal_leggings",
     "slot": "legs",
     "file": "assets/legs/warlocks_infernal_leggings.png",
-    "name": "TODO",
+    "name": "Warlocks Infernal Leggings",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5557,11 +5585,11 @@
     "id": "legs/wildgrowth_legwraps",
     "slot": "legs",
     "file": "assets/legs/wildgrowth_legwraps.png",
-    "name": "TODO",
+    "name": "Wildgrowth Legwraps",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5574,10 +5602,10 @@
     "id": "offhands/book_of_black_arts",
     "slot": "offhands",
     "file": "assets/offhands/book_of_black_arts.png",
-    "name": "TODO",
+    "name": "Book of Black Arts",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 6,
+      "atk": 2,
       "def": 0,
       "spd": 0
     },
@@ -5593,10 +5621,10 @@
     "id": "offhands/cursed_pendant",
     "slot": "offhands",
     "file": "assets/offhands/cursed_pendant.png",
-    "name": "TODO",
+    "name": "Cursed Pendant",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 4,
       "def": 0,
       "spd": 0
     },
@@ -5610,12 +5638,12 @@
     "id": "offhands/cursed_staff",
     "slot": "offhands",
     "file": "assets/offhands/cursed_staff.png",
-    "name": "TODO",
+    "name": "Cursed Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5629,10 +5657,10 @@
     "id": "offhands/decaying_flower",
     "slot": "offhands",
     "file": "assets/offhands/decaying_flower.png",
-    "name": "TODO",
+    "name": "Decaying Flower",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -5646,10 +5674,10 @@
     "id": "offhands/eye_of_the_ice_dragon",
     "slot": "offhands",
     "file": "assets/offhands/eye_of_the_ice_dragon.png",
-    "name": "TODO",
+    "name": "Eye of the Ice Dragon",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 5,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -5663,12 +5691,12 @@
     "id": "offhands/flamewielders_staff",
     "slot": "offhands",
     "file": "assets/offhands/flamewielders_staff.png",
-    "name": "TODO",
+    "name": "Flamewielders Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5682,12 +5710,12 @@
     "id": "offhands/holy_smiter",
     "slot": "offhands",
     "file": "assets/offhands/holy_smiter.png",
-    "name": "TODO",
+    "name": "Holy Smiter",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5701,12 +5729,12 @@
     "id": "offhands/illuminated_staff",
     "slot": "offhands",
     "file": "assets/offhands/illuminated_staff.png",
-    "name": "TODO",
+    "name": "Illuminated Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5720,10 +5748,10 @@
     "id": "offhands/imbued_rose",
     "slot": "offhands",
     "file": "assets/offhands/imbued_rose.png",
-    "name": "TODO",
+    "name": "Imbued Rose",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 4,
       "def": 0,
       "spd": 0
     },
@@ -5737,10 +5765,10 @@
     "id": "offhands/items_7",
     "slot": "offhands",
     "file": "assets/offhands/items_7.png",
-    "name": "TODO",
+    "name": "Items 7",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -5754,12 +5782,12 @@
     "id": "offhands/malevolent_mirror",
     "slot": "offhands",
     "file": "assets/offhands/malevolent_mirror.png",
-    "name": "TODO",
+    "name": "Malevolent Mirror",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5773,10 +5801,10 @@
     "id": "offhands/malevolent_ruby",
     "slot": "offhands",
     "file": "assets/offhands/malevolent_ruby.png",
-    "name": "TODO",
+    "name": "Malevolent Ruby",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -5790,12 +5818,12 @@
     "id": "offhands/necromancers_staff",
     "slot": "offhands",
     "file": "assets/offhands/necromancers_staff.png",
-    "name": "TODO",
+    "name": "Necromancers Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5809,10 +5837,10 @@
     "id": "offhands/poison_rose",
     "slot": "offhands",
     "file": "assets/offhands/poison_rose.png",
-    "name": "TODO",
+    "name": "Poison Rose",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -5826,12 +5854,12 @@
     "id": "offhands/poisonous_staff",
     "slot": "offhands",
     "file": "assets/offhands/poisonous_staff.png",
-    "name": "TODO",
+    "name": "Poisonous Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5845,10 +5873,10 @@
     "id": "offhands/precious_rose",
     "slot": "offhands",
     "file": "assets/offhands/precious_rose.png",
-    "name": "TODO",
+    "name": "Precious Rose",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 4,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },
@@ -5862,12 +5890,12 @@
     "id": "offhands/royal_scepter",
     "slot": "offhands",
     "file": "assets/offhands/royal_scepter.png",
-    "name": "TODO",
+    "name": "Royal Scepter",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5881,12 +5909,12 @@
     "id": "offhands/sentient_staff",
     "slot": "offhands",
     "file": "assets/offhands/sentient_staff.png",
-    "name": "TODO",
+    "name": "Sentient Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5900,12 +5928,12 @@
     "id": "offhands/serpent_lords_staff",
     "slot": "offhands",
     "file": "assets/offhands/serpent_lords_staff.png",
-    "name": "TODO",
+    "name": "Serpent Lords Staff",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5919,12 +5947,12 @@
     "id": "offhands/staff_12",
     "slot": "offhands",
     "file": "assets/offhands/staff_12.png",
-    "name": "TODO",
+    "name": "Staff 12",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5938,12 +5966,12 @@
     "id": "offhands/staff_6",
     "slot": "offhands",
     "file": "assets/offhands/staff_6.png",
-    "name": "TODO",
+    "name": "Staff 6",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5957,12 +5985,12 @@
     "id": "offhands/staff_of_fire",
     "slot": "offhands",
     "file": "assets/offhands/staff_of_fire.png",
-    "name": "TODO",
+    "name": "Staff of Fire",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5976,12 +6004,12 @@
     "id": "offhands/staff_of_reflection",
     "slot": "offhands",
     "file": "assets/offhands/staff_of_reflection.png",
-    "name": "TODO",
+    "name": "Staff of Reflection",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -5995,12 +6023,12 @@
     "id": "offhands/staff_of_thorns",
     "slot": "offhands",
     "file": "assets/offhands/staff_of_thorns.png",
-    "name": "TODO",
+    "name": "Staff of Thorns",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 5,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6014,10 +6042,10 @@
     "id": "offhands/tome_of_knowledge",
     "slot": "offhands",
     "file": "assets/offhands/tome_of_knowledge.png",
-    "name": "TODO",
+    "name": "Tome of Knowledge",
     "stats": {
-      "hp": 0,
-      "atk": 0,
+      "hp": 6,
+      "atk": 2,
       "def": 0,
       "spd": 0
     },
@@ -6033,12 +6061,12 @@
     "id": "robes/apostle_of_doom",
     "slot": "robes",
     "file": "assets/robes/apostle_of_doom.png",
-    "name": "TODO",
+    "name": "Apostle of Doom",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 10,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6052,12 +6080,12 @@
     "id": "robes/blood_lord",
     "slot": "robes",
     "file": "assets/robes/blood_lord.png",
-    "name": "TODO",
+    "name": "Blood Lord",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 10,
+      "atk": 6,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6071,12 +6099,12 @@
     "id": "robes/brewers_guild",
     "slot": "robes",
     "file": "assets/robes/brewers_guild.png",
-    "name": "TODO",
+    "name": "Brewers Guild",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 11,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6090,12 +6118,12 @@
     "id": "robes/children_of_the_atom",
     "slot": "robes",
     "file": "assets/robes/children_of_the_atom.png",
-    "name": "TODO",
+    "name": "Children of the Atom",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 10,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6109,12 +6137,12 @@
     "id": "robes/dark_disciple",
     "slot": "robes",
     "file": "assets/robes/dark_disciple.png",
-    "name": "TODO",
+    "name": "Dark Disciple",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 9,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6128,12 +6156,12 @@
     "id": "robes/king_5",
     "slot": "robes",
     "file": "assets/robes/king_5.png",
-    "name": "TODO",
+    "name": "King 5",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 13,
+      "atk": 5,
+      "def": 3,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6147,12 +6175,12 @@
     "id": "robes/midnights_children",
     "slot": "robes",
     "file": "assets/robes/midnights_children.png",
-    "name": "TODO",
+    "name": "Midnights Children",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 11,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6166,12 +6194,12 @@
     "id": "robes/princes_ceremonial_tunic",
     "slot": "robes",
     "file": "assets/robes/princes_ceremonial_tunic.png",
-    "name": "TODO",
+    "name": "Princes Ceremonial Tunic",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 10,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6185,12 +6213,12 @@
     "id": "robes/summoners_robe",
     "slot": "robes",
     "file": "assets/robes/summoners_robe.png",
-    "name": "TODO",
+    "name": "Summoners Robe",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 9,
+      "atk": 5,
+      "def": 1,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6204,12 +6232,12 @@
     "id": "robes/swampwalker",
     "slot": "robes",
     "file": "assets/robes/swampwalker.png",
-    "name": "TODO",
+    "name": "Swampwalker",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 11,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6223,12 +6251,12 @@
     "id": "robes/temple_of_the_worm",
     "slot": "robes",
     "file": "assets/robes/temple_of_the_worm.png",
-    "name": "TODO",
+    "name": "Temple of the Worm",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 10,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6242,12 +6270,12 @@
     "id": "robes/underdwellers",
     "slot": "robes",
     "file": "assets/robes/underdwellers.png",
-    "name": "TODO",
+    "name": "Underdwellers",
     "stats": {
-      "hp": 0,
-      "atk": 0,
-      "def": 0,
-      "spd": 0
+      "hp": 9,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
     },
     "dmgType": null,
     "tags": [
@@ -6261,12 +6289,12 @@
     "id": "shields/bloody_veterans_shield",
     "slot": "shields",
     "file": "assets/shields/bloody_veterans_shield.png",
-    "name": "TODO",
+    "name": "Bloody Veterans Shield",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 6,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6280,12 +6308,12 @@
     "id": "shields/brass_kite_shield",
     "slot": "shields",
     "file": "assets/shields/brass_kite_shield.png",
-    "name": "TODO",
+    "name": "Brass Kite Shield",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 6,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6299,12 +6327,12 @@
     "id": "shields/bulwark_of_the_titans",
     "slot": "shields",
     "file": "assets/shields/bulwark_of_the_titans.png",
-    "name": "TODO",
+    "name": "Bulwark of the Titans",
     "stats": {
-      "hp": 0,
+      "hp": 21,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 16,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6319,12 +6347,12 @@
     "id": "shields/coffin_shield",
     "slot": "shields",
     "file": "assets/shields/coffin_shield.png",
-    "name": "TODO",
+    "name": "Coffin Shield",
     "stats": {
-      "hp": 0,
+      "hp": 15,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 9,
+      "spd": -2
     },
     "dmgType": null,
     "tags": [
@@ -6338,12 +6366,12 @@
     "id": "shields/dragon_scale_shield",
     "slot": "shields",
     "file": "assets/shields/dragon_scale_shield.png",
-    "name": "TODO",
+    "name": "Dragon Scale Shield",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 7,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6357,12 +6385,12 @@
     "id": "shields/ebon_kite_shield",
     "slot": "shields",
     "file": "assets/shields/ebon_kite_shield.png",
-    "name": "TODO",
+    "name": "Ebon Kite Shield",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 8,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6376,12 +6404,12 @@
     "id": "shields/frogsong_shield",
     "slot": "shields",
     "file": "assets/shields/frogsong_shield.png",
-    "name": "TODO",
+    "name": "Frogsong Shield",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 6,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6395,12 +6423,12 @@
     "id": "shields/frost_covered_shield",
     "slot": "shields",
     "file": "assets/shields/frost_covered_shield.png",
-    "name": "TODO",
+    "name": "Frost Covered Shield",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 7,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6414,12 +6442,12 @@
     "id": "shields/frozen_heart_shield",
     "slot": "shields",
     "file": "assets/shields/frozen_heart_shield.png",
-    "name": "TODO",
+    "name": "Frozen Heart Shield",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 6,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6433,11 +6461,11 @@
     "id": "shields/golden_buckler",
     "slot": "shields",
     "file": "assets/shields/golden_buckler.png",
-    "name": "TODO",
+    "name": "Golden Buckler",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -6452,12 +6480,12 @@
     "id": "shields/heros_shield",
     "slot": "shields",
     "file": "assets/shields/heros_shield.png",
-    "name": "TODO",
+    "name": "Heros Shield",
     "stats": {
-      "hp": 0,
+      "hp": 15,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 8,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6471,12 +6499,12 @@
     "id": "shields/medium_steel_shield",
     "slot": "shields",
     "file": "assets/shields/medium_steel_shield.png",
-    "name": "TODO",
+    "name": "Medium Steel Shield",
     "stats": {
-      "hp": 0,
+      "hp": 11,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 9,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6490,12 +6518,12 @@
     "id": "shields/mossy_wooden_shield",
     "slot": "shields",
     "file": "assets/shields/mossy_wooden_shield.png",
-    "name": "TODO",
+    "name": "Mossy Wooden Shield",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 5,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6509,11 +6537,11 @@
     "id": "shields/smouldering_iron",
     "slot": "shields",
     "file": "assets/shields/smouldering_iron.png",
-    "name": "TODO",
+    "name": "Smouldering Iron",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -6528,12 +6556,12 @@
     "id": "shields/spiked_tower_shield",
     "slot": "shields",
     "file": "assets/shields/spiked_tower_shield.png",
-    "name": "TODO",
+    "name": "Spiked Tower Shield",
     "stats": {
-      "hp": 0,
+      "hp": 17,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 13,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6548,11 +6576,11 @@
     "id": "shields/steel_buckler",
     "slot": "shields",
     "file": "assets/shields/steel_buckler.png",
-    "name": "TODO",
+    "name": "Steel Buckler",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -6567,12 +6595,12 @@
     "id": "shields/viking_shield",
     "slot": "shields",
     "file": "assets/shields/viking_shield.png",
-    "name": "TODO",
+    "name": "Viking Shield",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 8,
+      "spd": -1
     },
     "dmgType": null,
     "tags": [
@@ -6586,12 +6614,12 @@
     "id": "shields/volcanic_slab",
     "slot": "shields",
     "file": "assets/shields/volcanic_slab.png",
-    "name": "TODO",
+    "name": "Volcanic Slab",
     "stats": {
-      "hp": 0,
+      "hp": 18,
       "atk": 0,
-      "def": 0,
-      "spd": 0
+      "def": 12,
+      "spd": -3
     },
     "dmgType": null,
     "tags": [
@@ -6605,11 +6633,11 @@
     "id": "shields/wooden_buckler",
     "slot": "shields",
     "file": "assets/shields/wooden_buckler.png",
-    "name": "TODO",
+    "name": "Wooden Buckler",
     "stats": {
-      "hp": 0,
+      "hp": 3,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -6624,7 +6652,7 @@
     "id": "shieldstraps/bloody_veterans_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/bloody_veterans_shield_strap.png",
-    "name": "TODO",
+    "name": "Bloody Veterans Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6641,7 +6669,7 @@
     "id": "shieldstraps/brass_kite_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/brass_kite_shield_strap.png",
-    "name": "TODO",
+    "name": "Brass Kite Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6658,7 +6686,7 @@
     "id": "shieldstraps/bulwark_of_the_titans_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/bulwark_of_the_titans_strap.png",
-    "name": "TODO",
+    "name": "Bulwark of the Titans Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6675,7 +6703,7 @@
     "id": "shieldstraps/coffin_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/coffin_shield_strap.png",
-    "name": "TODO",
+    "name": "Coffin Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6692,7 +6720,7 @@
     "id": "shieldstraps/dragon_scale_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/dragon_scale_shield_strap.png",
-    "name": "TODO",
+    "name": "Dragon Scale Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6709,7 +6737,7 @@
     "id": "shieldstraps/ebon_kite_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/ebon_kite_shield_strap.png",
-    "name": "TODO",
+    "name": "Ebon Kite Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6726,7 +6754,7 @@
     "id": "shieldstraps/frogsong_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/frogsong_shield_strap.png",
-    "name": "TODO",
+    "name": "Frogsong Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6743,7 +6771,7 @@
     "id": "shieldstraps/frost_covered_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/frost_covered_shield_strap.png",
-    "name": "TODO",
+    "name": "Frost Covered Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6760,7 +6788,7 @@
     "id": "shieldstraps/frozen_heart_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/frozen_heart_shield_strap.png",
-    "name": "TODO",
+    "name": "Frozen Heart Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6777,7 +6805,7 @@
     "id": "shieldstraps/golden_buckler_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/golden_buckler_strap.png",
-    "name": "TODO",
+    "name": "Golden Buckler Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6794,7 +6822,7 @@
     "id": "shieldstraps/heros_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/heros_shield_strap.png",
-    "name": "TODO",
+    "name": "Heros Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6811,7 +6839,7 @@
     "id": "shieldstraps/medium_steel_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/medium_steel_shield_strap.png",
-    "name": "TODO",
+    "name": "Medium Steel Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6828,7 +6856,7 @@
     "id": "shieldstraps/mossy_wooden_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/mossy_wooden_shield_strap.png",
-    "name": "TODO",
+    "name": "Mossy Wooden Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6845,7 +6873,7 @@
     "id": "shieldstraps/smouldering_iron_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/smouldering_iron_strap.png",
-    "name": "TODO",
+    "name": "Smouldering Iron Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6862,7 +6890,7 @@
     "id": "shieldstraps/spiked_tower_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/spiked_tower_shield_strap.png",
-    "name": "TODO",
+    "name": "Spiked Tower Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6879,7 +6907,7 @@
     "id": "shieldstraps/steel_buckler_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/steel_buckler_strap.png",
-    "name": "TODO",
+    "name": "Steel Buckler Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6896,7 +6924,7 @@
     "id": "shieldstraps/viking_shield_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/viking_shield_strap.png",
-    "name": "TODO",
+    "name": "Viking Shield Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6913,7 +6941,7 @@
     "id": "shieldstraps/volcanic_slab_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/volcanic_slab_strap.png",
-    "name": "TODO",
+    "name": "Volcanic Slab Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6930,7 +6958,7 @@
     "id": "shieldstraps/wooden_buckler_strap",
     "slot": "shieldstraps",
     "file": "assets/shieldstraps/wooden_buckler_strap.png",
-    "name": "TODO",
+    "name": "Wooden Buckler Strap",
     "stats": {
       "hp": 0,
       "atk": 0,
@@ -6947,11 +6975,11 @@
     "id": "shoulders/brotherhood_of_blood",
     "slot": "shoulders",
     "file": "assets/shoulders/brotherhood_of_blood.png",
-    "name": "TODO",
+    "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -6964,11 +6992,11 @@
     "id": "shoulders/cavalry",
     "slot": "shoulders",
     "file": "assets/shoulders/cavalry.png",
-    "name": "TODO",
+    "name": "Cavalry",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -6981,11 +7009,11 @@
     "id": "shoulders/cavalry_shoulder",
     "slot": "shoulders",
     "file": "assets/shoulders/cavalry_shoulder.png",
-    "name": "TODO",
+    "name": "Cavalry Shoulder",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -6998,11 +7026,11 @@
     "id": "shoulders/chainmail",
     "slot": "shoulders",
     "file": "assets/shoulders/chainmail.png",
-    "name": "TODO",
+    "name": "Chainmail",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7015,11 +7043,11 @@
     "id": "shoulders/champions_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/champions_plate.png",
-    "name": "TODO",
+    "name": "Champions Plate",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7032,11 +7060,11 @@
     "id": "shoulders/conquerers_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/conquerers_plate.png",
-    "name": "TODO",
+    "name": "Conquerers Plate",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7049,11 +7077,11 @@
     "id": "shoulders/demon_hunter",
     "slot": "shoulders",
     "file": "assets/shoulders/demon_hunter.png",
-    "name": "TODO",
+    "name": "Demon Hunter",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7066,11 +7094,11 @@
     "id": "shoulders/destroyers_raiment",
     "slot": "shoulders",
     "file": "assets/shoulders/destroyers_raiment.png",
-    "name": "TODO",
+    "name": "Destroyers Raiment",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7083,11 +7111,11 @@
     "id": "shoulders/dragon_knight_mantle",
     "slot": "shoulders",
     "file": "assets/shoulders/dragon_knight_mantle.png",
-    "name": "TODO",
+    "name": "Dragon Knight Mantle",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7100,11 +7128,11 @@
     "id": "shoulders/ebon_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/ebon_shoulders.png",
-    "name": "TODO",
+    "name": "Ebon Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7117,11 +7145,11 @@
     "id": "shoulders/fallen_kingdom",
     "slot": "shoulders",
     "file": "assets/shoulders/fallen_kingdom.png",
-    "name": "TODO",
+    "name": "Fallen Kingdom",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7134,11 +7162,11 @@
     "id": "shoulders/frogsong_mantle",
     "slot": "shoulders",
     "file": "assets/shoulders/frogsong_mantle.png",
-    "name": "TODO",
+    "name": "Frogsong Mantle",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7151,11 +7179,11 @@
     "id": "shoulders/frostrime",
     "slot": "shoulders",
     "file": "assets/shoulders/frostrime.png",
-    "name": "TODO",
+    "name": "Frostrime",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7168,11 +7196,11 @@
     "id": "shoulders/fury_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/fury_shoulders.png",
-    "name": "TODO",
+    "name": "Fury Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7185,11 +7213,11 @@
     "id": "shoulders/golden_blood_brothers",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_blood_brothers.png",
-    "name": "TODO",
+    "name": "Golden Blood Brothers",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7202,11 +7230,11 @@
     "id": "shoulders/golden_cavalry",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_cavalry.png",
-    "name": "TODO",
+    "name": "Golden Cavalry",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7219,11 +7247,11 @@
     "id": "shoulders/golden_destroyer",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_destroyer.png",
-    "name": "TODO",
+    "name": "Golden Destroyer",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7236,11 +7264,11 @@
     "id": "shoulders/golden_house_of_leo_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_house_of_leo_shoulders.png",
-    "name": "TODO",
+    "name": "Golden House of Leo Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7253,11 +7281,11 @@
     "id": "shoulders/golden_imbued_pauldrons",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_imbued_pauldrons.png",
-    "name": "TODO",
+    "name": "Golden Imbued Pauldrons",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7270,11 +7298,11 @@
     "id": "shoulders/golden_nightstalkers",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_nightstalkers.png",
-    "name": "TODO",
+    "name": "Golden Nightstalkers",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7287,11 +7315,11 @@
     "id": "shoulders/golden_spiked",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_spiked.png",
-    "name": "TODO",
+    "name": "Golden Spiked",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7304,11 +7332,11 @@
     "id": "shoulders/golden_studded",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_studded.png",
-    "name": "TODO",
+    "name": "Golden Studded",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7321,11 +7349,11 @@
     "id": "shoulders/golden_tank_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/golden_tank_shoulders.png",
-    "name": "TODO",
+    "name": "Golden Tank Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7338,11 +7366,11 @@
     "id": "shoulders/healers_mantle",
     "slot": "shoulders",
     "file": "assets/shoulders/healers_mantle.png",
-    "name": "TODO",
+    "name": "Healers Mantle",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7355,11 +7383,11 @@
     "id": "shoulders/heavy_marine_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/heavy_marine_shoulders.png",
-    "name": "TODO",
+    "name": "Heavy Marine Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7372,11 +7400,11 @@
     "id": "shoulders/heros_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/heros_plate.png",
-    "name": "TODO",
+    "name": "Heros Plate",
     "stats": {
-      "hp": 0,
+      "hp": 12,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7389,11 +7417,11 @@
     "id": "shoulders/holy_mantle",
     "slot": "shoulders",
     "file": "assets/shoulders/holy_mantle.png",
-    "name": "TODO",
+    "name": "Holy Mantle",
     "stats": {
-      "hp": 0,
+      "hp": 9,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7406,11 +7434,11 @@
     "id": "shoulders/house_of_leo",
     "slot": "shoulders",
     "file": "assets/shoulders/house_of_leo.png",
-    "name": "TODO",
+    "name": "House of Leo",
     "stats": {
-      "hp": 0,
+      "hp": 5,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7423,11 +7451,11 @@
     "id": "shoulders/hunters_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/hunters_plate.png",
-    "name": "TODO",
+    "name": "Hunters Plate",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7440,11 +7468,11 @@
     "id": "shoulders/imbued_shoulderplates",
     "slot": "shoulders",
     "file": "assets/shoulders/imbued_shoulderplates.png",
-    "name": "TODO",
+    "name": "Imbued Shoulderplates",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7457,11 +7485,11 @@
     "id": "shoulders/invaders",
     "slot": "shoulders",
     "file": "assets/shoulders/invaders.png",
-    "name": "TODO",
+    "name": "Invaders",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7474,11 +7502,11 @@
     "id": "shoulders/invaders_orange",
     "slot": "shoulders",
     "file": "assets/shoulders/invaders_orange.png",
-    "name": "TODO",
+    "name": "Invaders Orange",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7491,11 +7519,11 @@
     "id": "shoulders/irradiated",
     "slot": "shoulders",
     "file": "assets/shoulders/irradiated.png",
-    "name": "TODO",
+    "name": "Irradiated",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7508,11 +7536,11 @@
     "id": "shoulders/jesters_coif",
     "slot": "shoulders",
     "file": "assets/shoulders/jesters_coif.png",
-    "name": "TODO",
+    "name": "Jesters Coif",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7525,11 +7553,11 @@
     "id": "shoulders/mana_charged",
     "slot": "shoulders",
     "file": "assets/shoulders/mana_charged.png",
-    "name": "TODO",
+    "name": "Mana Charged",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7542,11 +7570,11 @@
     "id": "shoulders/medium_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/medium_plate.png",
-    "name": "TODO",
+    "name": "Medium Plate",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7559,11 +7587,11 @@
     "id": "shoulders/molten_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/molten_shoulders.png",
-    "name": "TODO",
+    "name": "Molten Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7576,11 +7604,11 @@
     "id": "shoulders/nightstalkers",
     "slot": "shoulders",
     "file": "assets/shoulders/nightstalkers.png",
-    "name": "TODO",
+    "name": "Nightstalkers",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7593,11 +7621,11 @@
     "id": "shoulders/platemail",
     "slot": "shoulders",
     "file": "assets/shoulders/platemail.png",
-    "name": "TODO",
+    "name": "Platemail",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7610,11 +7638,11 @@
     "id": "shoulders/rogues_shoulderpads",
     "slot": "shoulders",
     "file": "assets/shoulders/rogues_shoulderpads.png",
-    "name": "TODO",
+    "name": "Rogues Shoulderpads",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7627,11 +7655,11 @@
     "id": "shoulders/rotknight",
     "slot": "shoulders",
     "file": "assets/shoulders/rotknight.png",
-    "name": "TODO",
+    "name": "Rotknight",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7644,11 +7672,11 @@
     "id": "shoulders/royal_blue_guard",
     "slot": "shoulders",
     "file": "assets/shoulders/royal_blue_guard.png",
-    "name": "TODO",
+    "name": "Royal Blue Guard",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7661,11 +7689,11 @@
     "id": "shoulders/spiked_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/spiked_plate.png",
-    "name": "TODO",
+    "name": "Spiked Plate",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7678,11 +7706,11 @@
     "id": "shoulders/strongmans_pauldrons",
     "slot": "shoulders",
     "file": "assets/shoulders/strongmans_pauldrons.png",
-    "name": "TODO",
+    "name": "Strongmans Pauldrons",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7695,11 +7723,11 @@
     "id": "shoulders/swampwalker",
     "slot": "shoulders",
     "file": "assets/shoulders/swampwalker.png",
-    "name": "TODO",
+    "name": "Swampwalker",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7712,11 +7740,11 @@
     "id": "shoulders/tanking_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/tanking_plate.png",
-    "name": "TODO",
+    "name": "Tanking Plate",
     "stats": {
-      "hp": 0,
+      "hp": 10,
       "atk": 0,
-      "def": 0,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7729,11 +7757,11 @@
     "id": "shoulders/theives_kit",
     "slot": "shoulders",
     "file": "assets/shoulders/theives_kit.png",
-    "name": "TODO",
+    "name": "Theives Kit",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7746,11 +7774,11 @@
     "id": "shoulders/thieves_reinforced_leather",
     "slot": "shoulders",
     "file": "assets/shoulders/thieves_reinforced_leather.png",
-    "name": "TODO",
+    "name": "Thieves Reinforced Leather",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7763,11 +7791,11 @@
     "id": "shoulders/travelers_shoulderpiece",
     "slot": "shoulders",
     "file": "assets/shoulders/travelers_shoulderpiece.png",
-    "name": "TODO",
+    "name": "Travelers Shoulderpiece",
     "stats": {
-      "hp": 0,
+      "hp": 4,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7780,11 +7808,11 @@
     "id": "shoulders/underworld_plate",
     "slot": "shoulders",
     "file": "assets/shoulders/underworld_plate.png",
-    "name": "TODO",
+    "name": "Underworld Plate",
     "stats": {
-      "hp": 0,
+      "hp": 7,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7797,11 +7825,11 @@
     "id": "shoulders/vampiric_shoulders",
     "slot": "shoulders",
     "file": "assets/shoulders/vampiric_shoulders.png",
-    "name": "TODO",
+    "name": "Vampiric Shoulders",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7816,11 +7844,11 @@
     "id": "shoulders/volcanic",
     "slot": "shoulders",
     "file": "assets/shoulders/volcanic.png",
-    "name": "TODO",
+    "name": "Volcanic",
     "stats": {
-      "hp": 0,
+      "hp": 8,
       "atk": 0,
-      "def": 0,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7833,11 +7861,11 @@
     "id": "shoulders/wanderers_mantle",
     "slot": "shoulders",
     "file": "assets/shoulders/wanderers_mantle.png",
-    "name": "TODO",
+    "name": "Wanderers Mantle",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7850,11 +7878,11 @@
     "id": "shoulders/wizards_bloodmantle",
     "slot": "shoulders",
     "file": "assets/shoulders/wizards_bloodmantle.png",
-    "name": "TODO",
+    "name": "Wizards Bloodmantle",
     "stats": {
-      "hp": 0,
+      "hp": 6,
       "atk": 0,
-      "def": 0,
+      "def": 2,
       "spd": 0
     },
     "dmgType": null,
@@ -7867,10 +7895,10 @@
     "id": "weapons/armor_piercer",
     "slot": "weapons",
     "file": "assets/weapons/armor_piercer.png",
-    "name": "TODO",
+    "name": "Armor Piercer",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
       "spd": 0
     },
@@ -7884,12 +7912,12 @@
     "id": "weapons/axe_of_decay",
     "slot": "weapons",
     "file": "assets/weapons/axe_of_decay.png",
-    "name": "TODO",
+    "name": "Axe of Decay",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 10,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -7901,12 +7929,12 @@
     "id": "weapons/axe_of_the_ogres",
     "slot": "weapons",
     "file": "assets/weapons/axe_of_the_ogres.png",
-    "name": "TODO",
+    "name": "Axe of the Ogres",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 11,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -7918,12 +7946,12 @@
     "id": "weapons/berserker_axe",
     "slot": "weapons",
     "file": "assets/weapons/berserker_axe.png",
-    "name": "TODO",
+    "name": "Berserker Axe",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 16,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -7935,10 +7963,10 @@
     "id": "weapons/bloodletter",
     "slot": "weapons",
     "file": "assets/weapons/bloodletter.png",
-    "name": "TODO",
+    "name": "Bloodletter",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 12,
       "def": 0,
       "spd": 0
     },
@@ -7952,12 +7980,12 @@
     "id": "weapons/boar_spear",
     "slot": "weapons",
     "file": "assets/weapons/boar_spear.png",
-    "name": "TODO",
+    "name": "Boar Spear",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": "physical",
     "tags": [],
@@ -7969,12 +7997,12 @@
     "id": "weapons/bone_dagger",
     "slot": "weapons",
     "file": "assets/weapons/bone_dagger.png",
-    "name": "TODO",
+    "name": "Bone Dagger",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [
@@ -7988,10 +8016,10 @@
     "id": "weapons/bone_sword",
     "slot": "weapons",
     "file": "assets/weapons/bone_sword.png",
-    "name": "TODO",
+    "name": "Bone Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
       "spd": 0
     },
@@ -8005,10 +8033,10 @@
     "id": "weapons/broken_crystal_sword",
     "slot": "weapons",
     "file": "assets/weapons/broken_crystal_sword.png",
-    "name": "TODO",
+    "name": "Broken Crystal Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
       "spd": 0
     },
@@ -8022,10 +8050,10 @@
     "id": "weapons/broken_sword",
     "slot": "weapons",
     "file": "assets/weapons/broken_sword.png",
-    "name": "TODO",
+    "name": "Broken Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
       "spd": 0
     },
@@ -8039,10 +8067,10 @@
     "id": "weapons/clawfist",
     "slot": "weapons",
     "file": "assets/weapons/clawfist.png",
-    "name": "TODO",
+    "name": "Clawfist",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8056,10 +8084,10 @@
     "id": "weapons/crackling_sword",
     "slot": "weapons",
     "file": "assets/weapons/crackling_sword.png",
-    "name": "TODO",
+    "name": "Crackling Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8073,12 +8101,12 @@
     "id": "weapons/crystal_shard",
     "slot": "weapons",
     "file": "assets/weapons/crystal_shard.png",
-    "name": "TODO",
+    "name": "Crystal Shard",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [],
@@ -8090,12 +8118,12 @@
     "id": "weapons/cursed_battle_axe",
     "slot": "weapons",
     "file": "assets/weapons/cursed_battle_axe.png",
-    "name": "TODO",
+    "name": "Cursed Battle Axe",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 17,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -8107,10 +8135,10 @@
     "id": "weapons/cutlass",
     "slot": "weapons",
     "file": "assets/weapons/cutlass.png",
-    "name": "TODO",
+    "name": "Cutlass",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8124,10 +8152,10 @@
     "id": "weapons/demonic_blade",
     "slot": "weapons",
     "file": "assets/weapons/demonic_blade.png",
-    "name": "TODO",
+    "name": "Demonic Blade",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 11,
       "def": 0,
       "spd": 0
     },
@@ -8141,12 +8169,12 @@
     "id": "weapons/dragon_fang",
     "slot": "weapons",
     "file": "assets/weapons/dragon_fang.png",
-    "name": "TODO",
+    "name": "Dragon Fang",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [],
@@ -8158,10 +8186,10 @@
     "id": "weapons/dragons_tooth",
     "slot": "weapons",
     "file": "assets/weapons/dragons_tooth.png",
-    "name": "TODO",
+    "name": "Dragons Tooth",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 10,
       "def": 0,
       "spd": 0
     },
@@ -8175,10 +8203,10 @@
     "id": "weapons/duelist_blade",
     "slot": "weapons",
     "file": "assets/weapons/duelist_blade.png",
-    "name": "TODO",
+    "name": "Duelist Blade",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8192,10 +8220,10 @@
     "id": "weapons/ebon_longsword",
     "slot": "weapons",
     "file": "assets/weapons/ebon_longsword.png",
-    "name": "TODO",
+    "name": "Ebon Longsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8209,10 +8237,10 @@
     "id": "weapons/energy_blade",
     "slot": "weapons",
     "file": "assets/weapons/energy_blade.png",
-    "name": "TODO",
+    "name": "Energy Blade",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8226,12 +8254,12 @@
     "id": "weapons/flame_dagger",
     "slot": "weapons",
     "file": "assets/weapons/flame_dagger.png",
-    "name": "TODO",
+    "name": "Flame Dagger",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [
@@ -8245,10 +8273,10 @@
     "id": "weapons/frogsong_blade",
     "slot": "weapons",
     "file": "assets/weapons/frogsong_blade.png",
-    "name": "TODO",
+    "name": "Frogsong Blade",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8262,12 +8290,12 @@
     "id": "weapons/frost_axe",
     "slot": "weapons",
     "file": "assets/weapons/frost_axe.png",
-    "name": "TODO",
+    "name": "Frost Axe",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 13,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -8279,10 +8307,10 @@
     "id": "weapons/gladius",
     "slot": "weapons",
     "file": "assets/weapons/gladius.png",
-    "name": "TODO",
+    "name": "Gladius",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8296,10 +8324,10 @@
     "id": "weapons/glass_longsword",
     "slot": "weapons",
     "file": "assets/weapons/glass_longsword.png",
-    "name": "TODO",
+    "name": "Glass Longsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8313,12 +8341,12 @@
     "id": "weapons/golden_battle_axe",
     "slot": "weapons",
     "file": "assets/weapons/golden_battle_axe.png",
-    "name": "TODO",
+    "name": "Golden Battle Axe",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 16,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -8330,12 +8358,12 @@
     "id": "weapons/knuckled_dagger",
     "slot": "weapons",
     "file": "assets/weapons/knuckled_dagger.png",
-    "name": "TODO",
+    "name": "Knuckled Dagger",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [
@@ -8349,10 +8377,10 @@
     "id": "weapons/knuckled_sword",
     "slot": "weapons",
     "file": "assets/weapons/knuckled_sword.png",
-    "name": "TODO",
+    "name": "Knuckled Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8366,12 +8394,12 @@
     "id": "weapons/molten_axe",
     "slot": "weapons",
     "file": "assets/weapons/molten_axe.png",
-    "name": "TODO",
+    "name": "Molten Axe",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 12,
       "def": 0,
-      "spd": 0
+      "spd": -1
     },
     "dmgType": "physical",
     "tags": [],
@@ -8383,12 +8411,12 @@
     "id": "weapons/molten_dagger",
     "slot": "weapons",
     "file": "assets/weapons/molten_dagger.png",
-    "name": "TODO",
+    "name": "Molten Dagger",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
-      "spd": 0
+      "spd": 3
     },
     "dmgType": "physical",
     "tags": [
@@ -8402,10 +8430,10 @@
     "id": "weapons/pirate_cutlass",
     "slot": "weapons",
     "file": "assets/weapons/pirate_cutlass.png",
-    "name": "TODO",
+    "name": "Pirate Cutlass",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8419,10 +8447,10 @@
     "id": "weapons/pirates_sword",
     "slot": "weapons",
     "file": "assets/weapons/pirates_sword.png",
-    "name": "TODO",
+    "name": "Pirates Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8436,10 +8464,10 @@
     "id": "weapons/rapier",
     "slot": "weapons",
     "file": "assets/weapons/rapier.png",
-    "name": "TODO",
+    "name": "Rapier",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8453,10 +8481,10 @@
     "id": "weapons/rusty_shortsword",
     "slot": "weapons",
     "file": "assets/weapons/rusty_shortsword.png",
-    "name": "TODO",
+    "name": "Rusty Shortsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
       "spd": 0
     },
@@ -8470,10 +8498,10 @@
     "id": "weapons/sage_blade",
     "slot": "weapons",
     "file": "assets/weapons/sage_blade.png",
-    "name": "TODO",
+    "name": "Sage Blade",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 7,
       "def": 0,
       "spd": 0
     },
@@ -8487,10 +8515,10 @@
     "id": "weapons/scimitar",
     "slot": "weapons",
     "file": "assets/weapons/scimitar.png",
-    "name": "TODO",
+    "name": "Scimitar",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8504,10 +8532,10 @@
     "id": "weapons/serrated_longsword",
     "slot": "weapons",
     "file": "assets/weapons/serrated_longsword.png",
-    "name": "TODO",
+    "name": "Serrated Longsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 12,
       "def": 0,
       "spd": 0
     },
@@ -8521,10 +8549,10 @@
     "id": "weapons/serrated_shortsword",
     "slot": "weapons",
     "file": "assets/weapons/serrated_shortsword.png",
-    "name": "TODO",
+    "name": "Serrated Shortsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 14,
       "def": 0,
       "spd": 0
     },
@@ -8538,10 +8566,10 @@
     "id": "weapons/slimesword",
     "slot": "weapons",
     "file": "assets/weapons/slimesword.png",
-    "name": "TODO",
+    "name": "Slimesword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8555,12 +8583,12 @@
     "id": "weapons/snake_dagger",
     "slot": "weapons",
     "file": "assets/weapons/snake_dagger.png",
-    "name": "TODO",
+    "name": "Snake Dagger",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 6,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [
@@ -8574,10 +8602,10 @@
     "id": "weapons/snake_handled_sword",
     "slot": "weapons",
     "file": "assets/weapons/snake_handled_sword.png",
-    "name": "TODO",
+    "name": "Snake Handled Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8591,10 +8619,10 @@
     "id": "weapons/steel_longsword",
     "slot": "weapons",
     "file": "assets/weapons/steel_longsword.png",
-    "name": "TODO",
+    "name": "Steel Longsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8608,10 +8636,10 @@
     "id": "weapons/steel_torch",
     "slot": "weapons",
     "file": "assets/weapons/steel_torch.png",
-    "name": "TODO",
+    "name": "Steel Torch",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 4,
       "def": 0,
       "spd": 0
     },
@@ -8625,10 +8653,10 @@
     "id": "weapons/sword_of_ancient_kings",
     "slot": "weapons",
     "file": "assets/weapons/sword_of_ancient_kings.png",
-    "name": "TODO",
+    "name": "Sword of Ancient Kings",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 11,
       "def": 0,
       "spd": 0
     },
@@ -8642,10 +8670,10 @@
     "id": "weapons/sword_of_rot",
     "slot": "weapons",
     "file": "assets/weapons/sword_of_rot.png",
-    "name": "TODO",
+    "name": "Sword of Rot",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8659,10 +8687,10 @@
     "id": "weapons/swordbreaker",
     "slot": "weapons",
     "file": "assets/weapons/swordbreaker.png",
-    "name": "TODO",
+    "name": "Swordbreaker",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8676,12 +8704,12 @@
     "id": "weapons/throwing_lance",
     "slot": "weapons",
     "file": "assets/weapons/throwing_lance.png",
-    "name": "TODO",
+    "name": "Throwing Lance",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
-      "spd": 0
+      "spd": 1
     },
     "dmgType": "ranged",
     "tags": [],
@@ -8693,12 +8721,12 @@
     "id": "weapons/vampiric_dagger",
     "slot": "weapons",
     "file": "assets/weapons/vampiric_dagger.png",
-    "name": "TODO",
+    "name": "Vampiric Dagger",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 10,
       "def": 0,
-      "spd": 0
+      "spd": 2
     },
     "dmgType": "physical",
     "tags": [
@@ -8713,10 +8741,10 @@
     "id": "weapons/vampiric_sword",
     "slot": "weapons",
     "file": "assets/weapons/vampiric_sword.png",
-    "name": "TODO",
+    "name": "Vampiric Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 13,
       "def": 0,
       "spd": 0
     },
@@ -8732,10 +8760,10 @@
     "id": "weapons/venomous_longsword",
     "slot": "weapons",
     "file": "assets/weapons/venomous_longsword.png",
-    "name": "TODO",
+    "name": "Venomous Longsword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 8,
       "def": 0,
       "spd": 0
     },
@@ -8749,10 +8777,10 @@
     "id": "weapons/volcanic_sword",
     "slot": "weapons",
     "file": "assets/weapons/volcanic_sword.png",
-    "name": "TODO",
+    "name": "Volcanic Sword",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 9,
       "def": 0,
       "spd": 0
     },
@@ -8766,10 +8794,10 @@
     "id": "weapons/wicked_blade",
     "slot": "weapons",
     "file": "assets/weapons/wicked_blade.png",
-    "name": "TODO",
+    "name": "Wicked Blade",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 13,
       "def": 0,
       "spd": 0
     },
@@ -8783,10 +8811,10 @@
     "id": "weapons/wooden_torch",
     "slot": "weapons",
     "file": "assets/weapons/wooden_torch.png",
-    "name": "TODO",
+    "name": "Wooden Torch",
     "stats": {
       "hp": 0,
-      "atk": 0,
+      "atk": 3,
       "def": 0,
       "spd": 0
     },

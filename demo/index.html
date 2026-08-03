@@ -311,7 +311,8 @@
 
     const dualStrikePct = Math.round(tuning.secondAttackMultiplier * 100);
     const partRows = fighter.parts.map((p) => {
-      const pretty = p.id.split('/')[1].replace(/_/g, ' ');
+      const entry = manifestById.get(p.id);
+      const pretty = entry && entry.name !== 'TODO' ? entry.name : p.id.split('/')[1].replace(/_/g, ' ');
       return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
     });
     if (fighter.doubleAttack) {

@@ -174,11 +174,52 @@ test('distribution tripwire: offhand-empty within 10%-30% over 500 seeded fighte
     const f = generateFighter(`band-${i}`);
     const present = new Set(f.parts.map((p) => p.slot));
     if (!present.has('offhands') && !present.has('shields')) offhandEmpty++;
+    // off-hand exclusivity: a held item and a shield can never coexist
+    assert.ok(
+      !(present.has('offhands') && present.has('shields')),
+      `fighter band-${i} has both an off-hand item and a shield`
+    );
   }
   assert.ok(
     offhandEmpty >= N * 0.1 && offhandEmpty <= N * 0.3,
     `offhand-empty ${offhandEmpty}/${N} outside the 10%-30% band`
   );
+});
+
+test('robe rule: robed fighters have no belt/chest/shoulders/legs, keep boots+gloves', () => {
+  // robes: 0 -> never empty -> every fighter is robed
+  const alwaysRobed = { slotEmptyWeights: { robes: 0 } };
+  for (let i = 0; i < 100; i++) {
+    const f = generateFighter(`robe-${i}`, { tuning: alwaysRobed });
+    const present = new Set(f.parts.map((p) => p.slot));
+    assert.ok(present.has('robes'), `robe-${i} should be robed`);
+    for (const slot of ['belts', 'chest', 'shoulders', 'legs']) {
+      assert.ok(!present.has(slot), `robed fighter robe-${i} must not have ${slot}`);
+    }
+    assert.ok(present.has('boots'), 'boots are always allowed and required');
+    // robe covers chest/shoulders/legs: only a bare-glove gap can grant crit
+    assert.ok(f.stats.crit <= 0.02, `robed crit ${f.stats.crit} exceeds the gloves-only gap`);
+    assert.notEqual(f.cls, 'Berserker', 'a robe counts as armor coverage');
+  }
+  // un-robed fighters always wear a belt
+  const neverRobed = { slotEmptyWeights: { robes: Number.MAX_SAFE_INTEGER } };
+  for (let i = 0; i < 50; i++) {
+    const f = generateFighter(`unrobed-${i}`, { tuning: neverRobed });
+    assert.ok(f.parts.some((p) => p.slot === 'belts'), `un-robed unrobed-${i} must wear a belt`);
+  }
+});
+
+test('species stat identity: bases carry archetype blocks, gear scales fighters', () => {
+  const byId = new Map(manifest.map((e) => [e.id, e]));
+  assert.deepEqual(byId.get('bases/possum').stats, { hp: 60, atk: 10, def: 5, spd: 14 }); // scout
+  assert.deepEqual(byId.get('bases/minotaur').stats, { hp: 130, atk: 18, def: 10, spd: 7 }); // brute
+  // no more flat "everyone 80/10/8/10": stats must vary across fighters
+  const totals = new Set();
+  for (let i = 0; i < 50; i++) {
+    const f = generateFighter(`scaling-${i}`);
+    totals.add(`${f.stats.hp}/${f.stats.atk}/${f.stats.def}/${f.stats.spd}`);
+  }
+  assert.ok(totals.size > 25, `expected varied stat lines, got ${totals.size} unique of 50`);
 });
 
 test('gap-bonus crit progression: 0/2/4/6/8% for 0-4 empty armor slots', () => {
@@ -191,10 +232,11 @@ test('gap-bonus crit progression: 0/2/4/6/8% for 0-4 empty armor slots', () => {
     [{ chest: BIG, shoulders: BIG, gloves: BIG, legs: BIG }, 0.08],
   ];
   for (const [emptied, expectedCrit] of cases) {
-    // 0 = never empty; BIG = always empty — forces the exact gap count
+    // 0 = never empty; BIG = always empty — forces the exact gap count.
+    // robes stays BIG (always empty) so the robe-coverage rule can't mask gaps.
     const slotEmptyWeights = {
       chest: 0, shoulders: 0, gloves: 0, legs: 0,
-      helms: 0, capes: 0, robes: 0, conditions: 0, offhand: 0,
+      helms: 0, capes: 0, robes: BIG, conditions: 0, offhand: 0,
       ...emptied,
     };
     const f = generateFighter('crit-progression', { tuning: { slotEmptyWeights } });

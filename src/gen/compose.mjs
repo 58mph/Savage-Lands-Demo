@@ -17,6 +17,7 @@ export {
   ARMOR_SLOTS,
   REQUIRED_SLOTS,
   OPTIONAL_SLOTS,
+  ROBE_REPLACES,
   fnv1a,
   mulberry32,
   computeFighterId,

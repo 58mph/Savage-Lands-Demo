@@ -132,6 +132,8 @@
   .sum-row .v { flex: 1; }
   .ability { margin-bottom: 4px; }
   .ability .a-name { color: var(--gold-bright); }
+  .ability .a-kind { color: var(--muted); font-size: 9px; margin-left: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .ability .a-kind .pip { color: var(--accent); }
   .ability .a-desc { color: var(--muted); font-size: 10px; display: block; }
   .syn .a-name { color: var(--accent); }
   .res-chip {
@@ -228,9 +230,14 @@
 
   function gearSummaryHtml(fighter) {
     const critPct = Math.round(fighter.stats.crit * 100);
+    // cost = moves out of the fighter's turn (tuning.combat.actionsPerTurn)
+    const costLabel = (a) =>
+      a.kind === 'passive'
+        ? 'passive'
+        : `${a.kind} <span class="pip">${'◆'.repeat(a.cost)}</span>`;
     const abilities = fighter.abilities.length
       ? fighter.abilities.map((a) =>
-          `<div class="ability"><span class="a-name">${a.name}</span><span class="a-desc">${a.desc}</span></div>`
+          `<div class="ability"><span class="a-name">${a.name}</span><span class="a-kind">${costLabel(a)}</span><span class="a-desc">${a.desc}</span></div>`
         ).join('')
       : '<span class="none">none</span>';
     const synergies = fighter.synergies.length
@@ -281,10 +288,12 @@
       return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
     });
     if (fighter.doubleAttack) {
+      const moves = tuning.combat?.actionsPerTurn ?? 2;
+      const dualText = `Each turn has ${moves} moves — a free hand lets the 2nd move be another main-hand attack (${dualStrikePct}% damage)`;
       partRows.push(
         `<li><span class="slot">offhands</span><span>` +
-          `<span class="badge" title="Second main attack each turn (${dualStrikePct}% damage)">⚔ DUAL STRIKE</span>` +
-          `<span class="badge-sub">Second main attack each turn (${dualStrikePct}% damage)</span>` +
+          `<span class="badge" title="${dualText}">⚔ DUAL STRIKE</span>` +
+          `<span class="badge-sub">${dualText}</span>` +
           `</span></li>`
       );
     }

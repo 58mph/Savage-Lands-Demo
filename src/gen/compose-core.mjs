@@ -367,7 +367,14 @@ export function generateFighterWith(seed, data, opts = {}) {
       dmgTypes: [...dmgTypes],
       abilities: parts
         .filter((p) => p.ability)
-        .map((p) => ({ source: p.id, name: p.ability.name, desc: p.ability.desc })),
+        .map((p) => ({
+          source: p.id,
+          name: p.ability.name,
+          desc: p.ability.desc,
+          kind: p.ability.kind ?? 'spell',
+          // moves consumed from the fighter's turn (0 = always-on passive)
+          cost: p.ability.cost ?? 1,
+        })),
       synergies: deriveSynergies(parts),
       resistances: deriveResistances(parts),
       seed: String(seed),

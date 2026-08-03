@@ -16,5 +16,9 @@
   "goldenStatMultiplier": 1.1,
   "critPerGap": 0.02,
   "secondAttackMultiplier": 0.6,
+  "combat": {
+    "actionsPerTurn": 2,
+    "heavyAbilityCost": 2
+  },
   "canvas": { "width": 128, "height": 128 }
 }

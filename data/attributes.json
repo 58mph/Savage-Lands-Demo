@@ -4475,7 +4475,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Serpent's Reflex",
-      "desc": "Chance to counterattack when struck"
+      "desc": "Chance to counterattack when struck",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4496,7 +4498,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Undying",
-      "desc": "Survive a killing blow once per battle"
+      "desc": "Survive a killing blow once per battle",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4517,7 +4521,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Flame Aura",
-      "desc": "Melee attackers take burn damage"
+      "desc": "Melee attackers take burn damage",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4538,7 +4544,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Bite Down",
-      "desc": "Bonus damage against wounded enemies"
+      "desc": "Bonus damage against wounded enemies",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4559,7 +4567,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Duskwatch",
-      "desc": "Improved accuracy — rarely miss"
+      "desc": "Improved accuracy — rarely miss",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4580,7 +4590,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Bulwark",
-      "desc": "The first hit you take each battle is halved"
+      "desc": "The first hit you take each battle is halved",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4601,7 +4613,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Second Wind",
-      "desc": "Heal once upon falling below half HP"
+      "desc": "Heal once upon falling below half HP",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4622,7 +4636,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Warcry",
-      "desc": "Open the battle by boosting your ATK"
+      "desc": "Open the battle by boosting your ATK",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -4643,7 +4659,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Deflect",
-      "desc": "Chance to ignore a physical hit entirely"
+      "desc": "Chance to ignore a physical hit entirely",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4664,7 +4682,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Terrify",
-      "desc": "Frighten a foe, lowering its ATK"
+      "desc": "Frighten a foe, lowering its ATK",
+      "kind": "debuff",
+      "cost": 1
     }
   },
   {
@@ -4685,7 +4705,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Bog Ward",
-      "desc": "Strong resistance to poison"
+      "desc": "Strong resistance to poison",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4706,7 +4728,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Scavenge",
-      "desc": "Heal a little whenever an enemy falls"
+      "desc": "Heal a little whenever an enemy falls",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4727,7 +4751,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Ignite",
-      "desc": "Your attacks have a chance to burn"
+      "desc": "Your attacks have a chance to burn",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4748,7 +4774,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Chill Touch",
-      "desc": "Your attacks have a chance to slow"
+      "desc": "Your attacks have a chance to slow",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -4769,7 +4797,9 @@
     "zIndex": 110,
     "ability": {
       "name": "Nightstalk",
-      "desc": "Bonus crit chance on your first strike"
+      "desc": "Bonus crit chance on your first strike",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -5678,7 +5708,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Shadow Bolt",
-      "desc": "Dark blast that saps the target’s strength"
+      "desc": "Dark blast that saps the target’s strength",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -5718,7 +5750,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Hex",
-      "desc": "Curse a target, lowering its ATK and DEF"
+      "desc": "Curse a target, lowering its ATK and DEF",
+      "kind": "debuff",
+      "cost": 1
     }
   },
   {
@@ -5775,7 +5809,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Flame Wave",
-      "desc": "Scorch all enemies for light spell damage"
+      "desc": "Scorch all enemies for light spell damage",
+      "kind": "spell",
+      "cost": 2
     }
   },
   {
@@ -5798,7 +5834,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Smite",
-      "desc": "Holy strike that heals you for part of the damage"
+      "desc": "Holy strike that heals you for part of the damage",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -5821,7 +5859,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Radiance",
-      "desc": "Blind enemies, reducing their accuracy"
+      "desc": "Blind enemies, reducing their accuracy",
+      "kind": "debuff",
+      "cost": 1
     }
   },
   {
@@ -5878,7 +5918,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Mirror Curse",
-      "desc": "Reflect a portion of all damage taken"
+      "desc": "Reflect a portion of all damage taken",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -5918,7 +5960,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Raise Skeleton",
-      "desc": "Summon a skeleton to fight alongside you"
+      "desc": "Summon a skeleton to fight alongside you",
+      "kind": "summon",
+      "cost": 2
     }
   },
   {
@@ -5958,7 +6002,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Venom Bolt",
-      "desc": "Poison a target, dealing damage over time"
+      "desc": "Poison a target, dealing damage over time",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -5998,7 +6044,9 @@
     "zIndex": 100,
     "ability": {
       "name": "King's Decree",
-      "desc": "Rally: your side gains ATK for 2 turns"
+      "desc": "Rally: your side gains ATK for 2 turns",
+      "kind": "buff",
+      "cost": 2
     }
   },
   {
@@ -6021,7 +6069,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Mind Spike",
-      "desc": "Psychic strike that ignores armor"
+      "desc": "Psychic strike that ignores armor",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -6044,7 +6094,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Serpent Strike",
-      "desc": "A venomous lash that may stun"
+      "desc": "A venomous lash that may stun",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -6067,7 +6119,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Void Bolt",
-      "desc": "Unstable void damage that ignores resistances"
+      "desc": "Unstable void damage that ignores resistances",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -6090,7 +6144,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Ember Spray",
-      "desc": "A cone of embers with a chance to burn"
+      "desc": "A cone of embers with a chance to burn",
+      "kind": "spell",
+      "cost": 1
     }
   },
   {
@@ -6113,7 +6169,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Fireball",
-      "desc": "Hurl a fireball for heavy spell damage"
+      "desc": "Hurl a fireball for heavy spell damage",
+      "kind": "spell",
+      "cost": 2
     }
   },
   {
@@ -6136,7 +6194,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Spell Reflect",
-      "desc": "Bounce the next enemy spell back at its caster"
+      "desc": "Bounce the next enemy spell back at its caster",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -6159,7 +6219,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Thorn Burst",
-      "desc": "Attackers take damage in return this turn"
+      "desc": "Attackers take damage in return this turn",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -6182,7 +6244,9 @@
     "zIndex": 100,
     "ability": {
       "name": "Heal",
-      "desc": "Restore HP to the most wounded ally"
+      "desc": "Restore HP to the most wounded ally",
+      "kind": "heal",
+      "cost": 1
     }
   },
   {
@@ -6205,7 +6269,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Doomsay",
-      "desc": "Curse an enemy: its ATK decays each turn"
+      "desc": "Curse an enemy: its ATK decays each turn",
+      "kind": "debuff",
+      "cost": 1
     }
   },
   {
@@ -6228,7 +6294,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Blood Frenzy",
-      "desc": "Gain ATK while below half HP"
+      "desc": "Gain ATK while below half HP",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {
@@ -6251,7 +6319,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Battle Brew",
-      "desc": "Chug a brew: heal now, hiccup later"
+      "desc": "Chug a brew: heal now, hiccup later",
+      "kind": "heal",
+      "cost": 1
     }
   },
   {
@@ -6274,7 +6344,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Radiant Burst",
-      "desc": "Irradiate all enemies for spell damage"
+      "desc": "Irradiate all enemies for spell damage",
+      "kind": "spell",
+      "cost": 2
     }
   },
   {
@@ -6297,7 +6369,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Dark Pact",
-      "desc": "Sacrifice HP to empower your next attack"
+      "desc": "Sacrifice HP to empower your next attack",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -6320,7 +6394,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Last Command",
-      "desc": "Once per battle, rally the whole team"
+      "desc": "Once per battle, rally the whole team",
+      "kind": "buff",
+      "cost": 2
     }
   },
   {
@@ -6343,7 +6419,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Shadowstep",
-      "desc": "Slip into shadow and dodge the next attack"
+      "desc": "Slip into shadow and dodge the next attack",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -6366,7 +6444,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Rally",
-      "desc": "Inspire allies, raising their DEF"
+      "desc": "Inspire allies, raising their DEF",
+      "kind": "buff",
+      "cost": 2
     }
   },
   {
@@ -6389,7 +6469,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Summon Familiar",
-      "desc": "Call a minor familiar that pesters enemies"
+      "desc": "Call a minor familiar that pesters enemies",
+      "kind": "summon",
+      "cost": 2
     }
   },
   {
@@ -6412,7 +6494,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Bog Meld",
-      "desc": "Meld with the mire — much harder to hit"
+      "desc": "Meld with the mire — much harder to hit",
+      "kind": "buff",
+      "cost": 1
     }
   },
   {
@@ -6435,7 +6519,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Burrow",
-      "desc": "Vanish underground, then strike from below"
+      "desc": "Vanish underground, then strike from below",
+      "kind": "spell",
+      "cost": 2
     }
   },
   {
@@ -6458,7 +6544,9 @@
     "zIndex": 60,
     "ability": {
       "name": "Ambush",
-      "desc": "Your first attack each battle is a guaranteed crit"
+      "desc": "Your first attack each battle is a guaranteed crit",
+      "kind": "passive",
+      "cost": 0
     }
   },
   {

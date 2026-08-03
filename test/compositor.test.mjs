@@ -272,6 +272,18 @@ test('gear extras: abilities on staff/tome/robe/helm, synergies and resistances 
       (e.slot === 'offhands' && /staff|scepter|smiter|mirror|wand|tome|book/.test(stem));
     if (shouldHave) {
       assert.ok(e.ability?.name && e.ability?.desc, `${e.id} is missing an ability`);
+      // action economy: every ability declares a kind and a move cost
+      assert.ok(
+        ['spell', 'heal', 'buff', 'debuff', 'summon', 'passive'].includes(e.ability.kind),
+        `${e.id} ability has invalid kind "${e.ability.kind}"`
+      );
+      assert.ok(
+        Number.isInteger(e.ability.cost) && e.ability.cost >= 0 && e.ability.cost <= 2,
+        `${e.id} ability has invalid cost ${e.ability.cost}`
+      );
+      // passives are free; active abilities consume 1-2 of the turn's moves
+      if (e.ability.kind === 'passive') assert.equal(e.ability.cost, 0);
+      else assert.ok(e.ability.cost >= 1);
     }
     assert.notEqual(e.name, 'TODO', `${e.id} still has a TODO name`);
     assert.ok(!/^(Chimera|Staff|Items|Tattoo|King) \d+$/.test(e.name), `${e.id} kept placeholder name "${e.name}"`);

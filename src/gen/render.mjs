@@ -124,6 +124,7 @@ export async function renderCard(fighter) {
   ]
     .filter(Boolean)
     .join('  ');
+  const abilityLine = (fighter.abilities ?? []).map((a) => `✦ ${a.name}`).join('  ');
 
   // 6px vertical padding above the name/class block (card size unchanged).
   const frame = Buffer.from(
@@ -135,10 +136,12 @@ export async function renderCard(fighter) {
             fill="#f0e6d2" text-anchor="middle">${escapeXml(fighter.name)}</text>
       <text x="${cw / 2}" y="54" font-family="monospace" font-size="12"
             fill="#c8a95e" text-anchor="middle">${escapeXml(fighter.cls)}</text>
-      <text x="${cw / 2}" y="${ch - 34}" font-family="monospace" font-size="12"
+      <text x="${cw / 2}" y="${ch - 48}" font-family="monospace" font-size="12"
             fill="#f0e6d2" text-anchor="middle">${escapeXml(statLine)}</text>
-      <text x="${cw / 2}" y="${ch - 16}" font-family="monospace" font-size="10"
+      <text x="${cw / 2}" y="${ch - 30}" font-family="monospace" font-size="10"
             fill="#9c8db0" text-anchor="middle">${escapeXml(extras)}</text>
+      <text x="${cw / 2}" y="${ch - 14}" font-family="monospace" font-size="10"
+            fill="#c8a95e" text-anchor="middle">${escapeXml(abilityLine)}</text>
     </svg>`
   );
 

@@ -1359,7 +1359,7 @@
     "id": "boots/dragon_kinght_boots",
     "slot": "boots",
     "file": "assets/boots/dragon_kinght_boots.png",
-    "name": "Dragon Kinght Boots",
+    "name": "Dragon Knight Boots",
     "stats": {
       "hp": 4,
       "atk": 0,
@@ -2109,7 +2109,7 @@
     "id": "capes/adeventurers_cloak",
     "slot": "capes",
     "file": "assets/capes/adeventurers_cloak.png",
-    "name": "Adeventurers Cloak",
+    "name": "Adventurer's Cloak",
     "stats": {
       "hp": 4,
       "atk": 0,
@@ -3439,7 +3439,7 @@
     "id": "conditions/tattoo_12",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_12.png",
-    "name": "Tattoo 12",
+    "name": "Warpaint of the Raven",
     "stats": {
       "hp": 0,
       "atk": 1,
@@ -3456,7 +3456,7 @@
     "id": "conditions/tattoo_18",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_18.png",
-    "name": "Tattoo 18",
+    "name": "Warpaint of the Wolf",
     "stats": {
       "hp": 0,
       "atk": 1,
@@ -3473,7 +3473,7 @@
     "id": "conditions/tattoo_24",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_24.png",
-    "name": "Tattoo 24",
+    "name": "Warpaint of the Sun",
     "stats": {
       "hp": 0,
       "atk": 1,
@@ -3490,7 +3490,7 @@
     "id": "conditions/tattoo_6",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_6.png",
-    "name": "Tattoo 6",
+    "name": "Warpaint of the Boar",
     "stats": {
       "hp": 0,
       "atk": 1,
@@ -3507,7 +3507,7 @@
     "id": "conditions/tattoo_8",
     "slot": "conditions",
     "file": "assets/conditions/tattoo_8.png",
-    "name": "Tattoo 8",
+    "name": "Warpaint of the Serpent",
     "stats": {
       "hp": 0,
       "atk": 1,
@@ -4461,7 +4461,7 @@
     "id": "helms/chimera_10",
     "slot": "helms",
     "file": "assets/helms/chimera_10.png",
-    "name": "Chimera 10",
+    "name": "Serpent Coif",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4472,13 +4472,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Serpent's Reflex",
+      "desc": "Chance to counterattack when struck"
+    }
   },
   {
     "id": "helms/chimera_11",
     "slot": "helms",
     "file": "assets/helms/chimera_11.png",
-    "name": "Chimera 11",
+    "name": "Grave Sentinel Helm",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4489,13 +4493,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Undying",
+      "desc": "Survive a killing blow once per battle"
+    }
   },
   {
     "id": "helms/chimera_12",
     "slot": "helms",
     "file": "assets/helms/chimera_12.png",
-    "name": "Chimera 12",
+    "name": "Ember Crown",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4506,13 +4514,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Flame Aura",
+      "desc": "Melee attackers take burn damage"
+    }
   },
   {
     "id": "helms/chimera_13",
     "slot": "helms",
     "file": "assets/helms/chimera_13.png",
-    "name": "Chimera 13",
+    "name": "Ironfang Helm",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4523,13 +4535,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Bite Down",
+      "desc": "Bonus damage against wounded enemies"
+    }
   },
   {
     "id": "helms/chimera_14",
     "slot": "helms",
     "file": "assets/helms/chimera_14.png",
-    "name": "Chimera 14",
+    "name": "Duskwatch Helm",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4540,13 +4556,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Duskwatch",
+      "desc": "Improved accuracy — rarely miss"
+    }
   },
   {
     "id": "helms/chimera_15",
     "slot": "helms",
     "file": "assets/helms/chimera_15.png",
-    "name": "Chimera 15",
+    "name": "Tidebreaker Helm",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4557,13 +4577,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Bulwark",
+      "desc": "The first hit you take each battle is halved"
+    }
   },
   {
     "id": "helms/chimera_16",
     "slot": "helms",
     "file": "assets/helms/chimera_16.png",
-    "name": "Chimera 16",
+    "name": "Champion's Greathelm",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4574,13 +4598,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Second Wind",
+      "desc": "Heal once upon falling below half HP"
+    }
   },
   {
     "id": "helms/chimera_2",
     "slot": "helms",
     "file": "assets/helms/chimera_2.png",
-    "name": "Chimera 2",
+    "name": "Warlord's Visage",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4591,13 +4619,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Warcry",
+      "desc": "Open the battle by boosting your ATK"
+    }
   },
   {
     "id": "helms/chimera_3",
     "slot": "helms",
     "file": "assets/helms/chimera_3.png",
-    "name": "Chimera 3",
+    "name": "Gilded Sallet",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4608,13 +4640,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Deflect",
+      "desc": "Chance to ignore a physical hit entirely"
+    }
   },
   {
     "id": "helms/chimera_4",
     "slot": "helms",
     "file": "assets/helms/chimera_4.png",
-    "name": "Chimera 4",
+    "name": "Bonecrown",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4625,13 +4661,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Terrify",
+      "desc": "Frighten a foe, lowering its ATK"
+    }
   },
   {
     "id": "helms/chimera_5",
     "slot": "helms",
     "file": "assets/helms/chimera_5.png",
-    "name": "Chimera 5",
+    "name": "Swampsteel Barbute",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4642,13 +4682,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Bog Ward",
+      "desc": "Strong resistance to poison"
+    }
   },
   {
     "id": "helms/chimera_6",
     "slot": "helms",
     "file": "assets/helms/chimera_6.png",
-    "name": "Chimera 6",
+    "name": "Ratcatcher's Cowl",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4659,13 +4703,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Scavenge",
+      "desc": "Heal a little whenever an enemy falls"
+    }
   },
   {
     "id": "helms/chimera_7",
     "slot": "helms",
     "file": "assets/helms/chimera_7.png",
-    "name": "Chimera 7",
+    "name": "Molten Crest",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4676,13 +4724,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Ignite",
+      "desc": "Your attacks have a chance to burn"
+    }
   },
   {
     "id": "helms/chimera_8",
     "slot": "helms",
     "file": "assets/helms/chimera_8.png",
-    "name": "Chimera 8",
+    "name": "Frostbitten Casque",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4693,13 +4745,17 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Chill Touch",
+      "desc": "Your attacks have a chance to slow"
+    }
   },
   {
     "id": "helms/chimera_9",
     "slot": "helms",
     "file": "assets/helms/chimera_9.png",
-    "name": "Chimera 9",
+    "name": "Night Warden's Helm",
     "stats": {
       "hp": 5,
       "atk": 0,
@@ -4710,7 +4766,11 @@
     "tags": [],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 110
+    "zIndex": 110,
+    "ability": {
+      "name": "Nightstalk",
+      "desc": "Bonus crit chance on your first strike"
+    }
   },
   {
     "id": "legs/adventurers_pants",
@@ -5615,7 +5675,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Shadow Bolt",
+      "desc": "Dark blast that saps the target’s strength"
+    }
   },
   {
     "id": "offhands/cursed_pendant",
@@ -5651,7 +5715,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Hex",
+      "desc": "Curse a target, lowering its ATK and DEF"
+    }
   },
   {
     "id": "offhands/decaying_flower",
@@ -5704,7 +5772,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Flame Wave",
+      "desc": "Scorch all enemies for light spell damage"
+    }
   },
   {
     "id": "offhands/holy_smiter",
@@ -5723,7 +5795,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Smite",
+      "desc": "Holy strike that heals you for part of the damage"
+    }
   },
   {
     "id": "offhands/illuminated_staff",
@@ -5742,7 +5818,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Radiance",
+      "desc": "Blind enemies, reducing their accuracy"
+    }
   },
   {
     "id": "offhands/imbued_rose",
@@ -5765,7 +5845,7 @@
     "id": "offhands/items_7",
     "slot": "offhands",
     "file": "assets/offhands/items_7.png",
-    "name": "Items 7",
+    "name": "Whispering Idol",
     "stats": {
       "hp": 4,
       "atk": 3,
@@ -5795,7 +5875,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Mirror Curse",
+      "desc": "Reflect a portion of all damage taken"
+    }
   },
   {
     "id": "offhands/malevolent_ruby",
@@ -5831,7 +5915,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Raise Skeleton",
+      "desc": "Summon a skeleton to fight alongside you"
+    }
   },
   {
     "id": "offhands/poison_rose",
@@ -5867,7 +5955,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Venom Bolt",
+      "desc": "Poison a target, dealing damage over time"
+    }
   },
   {
     "id": "offhands/precious_rose",
@@ -5903,7 +5995,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "King's Decree",
+      "desc": "Rally: your side gains ATK for 2 turns"
+    }
   },
   {
     "id": "offhands/sentient_staff",
@@ -5922,7 +6018,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Mind Spike",
+      "desc": "Psychic strike that ignores armor"
+    }
   },
   {
     "id": "offhands/serpent_lords_staff",
@@ -5941,13 +6041,17 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Serpent Strike",
+      "desc": "A venomous lash that may stun"
+    }
   },
   {
     "id": "offhands/staff_12",
     "slot": "offhands",
     "file": "assets/offhands/staff_12.png",
-    "name": "Staff 12",
+    "name": "Voidcaller Staff",
     "stats": {
       "hp": 0,
       "atk": 5,
@@ -5960,13 +6064,17 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Void Bolt",
+      "desc": "Unstable void damage that ignores resistances"
+    }
   },
   {
     "id": "offhands/staff_6",
     "slot": "offhands",
     "file": "assets/offhands/staff_6.png",
-    "name": "Staff 6",
+    "name": "Emberwood Staff",
     "stats": {
       "hp": 0,
       "atk": 5,
@@ -5979,7 +6087,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Ember Spray",
+      "desc": "A cone of embers with a chance to burn"
+    }
   },
   {
     "id": "offhands/staff_of_fire",
@@ -5998,7 +6110,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Fireball",
+      "desc": "Hurl a fireball for heavy spell damage"
+    }
   },
   {
     "id": "offhands/staff_of_reflection",
@@ -6017,7 +6133,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Spell Reflect",
+      "desc": "Bounce the next enemy spell back at its caster"
+    }
   },
   {
     "id": "offhands/staff_of_thorns",
@@ -6036,7 +6156,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Thorn Burst",
+      "desc": "Attackers take damage in return this turn"
+    }
   },
   {
     "id": "offhands/tome_of_knowledge",
@@ -6055,7 +6179,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 100
+    "zIndex": 100,
+    "ability": {
+      "name": "Heal",
+      "desc": "Restore HP to the most wounded ally"
+    }
   },
   {
     "id": "robes/apostle_of_doom",
@@ -6074,7 +6202,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Doomsay",
+      "desc": "Curse an enemy: its ATK decays each turn"
+    }
   },
   {
     "id": "robes/blood_lord",
@@ -6093,7 +6225,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Blood Frenzy",
+      "desc": "Gain ATK while below half HP"
+    }
   },
   {
     "id": "robes/brewers_guild",
@@ -6112,7 +6248,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Battle Brew",
+      "desc": "Chug a brew: heal now, hiccup later"
+    }
   },
   {
     "id": "robes/children_of_the_atom",
@@ -6131,7 +6271,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Radiant Burst",
+      "desc": "Irradiate all enemies for spell damage"
+    }
   },
   {
     "id": "robes/dark_disciple",
@@ -6150,13 +6294,17 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Dark Pact",
+      "desc": "Sacrifice HP to empower your next attack"
+    }
   },
   {
     "id": "robes/king_5",
     "slot": "robes",
     "file": "assets/robes/king_5.png",
-    "name": "King 5",
+    "name": "Raiment of the Deposed King",
     "stats": {
       "hp": 13,
       "atk": 5,
@@ -6169,7 +6317,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Last Command",
+      "desc": "Once per battle, rally the whole team"
+    }
   },
   {
     "id": "robes/midnights_children",
@@ -6188,7 +6340,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Shadowstep",
+      "desc": "Slip into shadow and dodge the next attack"
+    }
   },
   {
     "id": "robes/princes_ceremonial_tunic",
@@ -6207,7 +6363,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Rally",
+      "desc": "Inspire allies, raising their DEF"
+    }
   },
   {
     "id": "robes/summoners_robe",
@@ -6226,7 +6386,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Summon Familiar",
+      "desc": "Call a minor familiar that pesters enemies"
+    }
   },
   {
     "id": "robes/swampwalker",
@@ -6245,7 +6409,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Bog Meld",
+      "desc": "Meld with the mire — much harder to hit"
+    }
   },
   {
     "id": "robes/temple_of_the_worm",
@@ -6264,7 +6432,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Burrow",
+      "desc": "Vanish underground, then strike from below"
+    }
   },
   {
     "id": "robes/underdwellers",
@@ -6283,7 +6455,11 @@
     ],
     "rarityWeight": 100,
     "golden": false,
-    "zIndex": 60
+    "zIndex": 60,
+    "ability": {
+      "name": "Ambush",
+      "desc": "Your first attack each battle is a guaranteed crit"
+    }
   },
   {
     "id": "shields/bloody_veterans_shield",

@@ -260,6 +260,49 @@ test('UI/engine consistency: displayed stats deep-equal shared deriveStats outpu
   }
 });
 
+test('gear extras: abilities on staff/tome/robe/helm, synergies and resistances derive', async () => {
+  const { deriveResistances, deriveSynergies } = await import('../src/gen/compose.mjs');
+
+  // manifest: every robe, helm, staff and tome carries an ability
+  for (const e of manifest) {
+    const stem = e.id.split('/')[1];
+    const shouldHave =
+      e.slot === 'robes' ||
+      e.slot === 'helms' ||
+      (e.slot === 'offhands' && /staff|scepter|smiter|mirror|wand|tome|book/.test(stem));
+    if (shouldHave) {
+      assert.ok(e.ability?.name && e.ability?.desc, `${e.id} is missing an ability`);
+    }
+    assert.notEqual(e.name, 'TODO', `${e.id} still has a TODO name`);
+    assert.ok(!/^(Chimera|Staff|Items|Tattoo|King) \d+$/.test(e.name), `${e.id} kept placeholder name "${e.name}"`);
+  }
+
+  // fighter abilities come exactly from its ability-bearing parts
+  const byId = new Map(manifest.map((e) => [e.id, e]));
+  for (let i = 0; i < 50; i++) {
+    const f = generateFighter(`gear-extras-${i}`);
+    const expected = f.parts.filter((p) => byId.get(p.id)?.ability).map((p) => p.id);
+    assert.deepEqual(f.abilities.map((a) => a.source), expected);
+  }
+
+  // resistances: frost gear grants frost resist, capped at 40%
+  const frostParts = Array.from({ length: 12 }, (_, i) => ({
+    slot: 'chest', id: `chest/frostrime_piece_${i}`, tags: [],
+  }));
+  assert.equal(deriveResistances(frostParts).frost, 0.4);
+
+  // synergies: two same-family pieces form a set; robe + staff = Battlemage
+  const syn = deriveSynergies([
+    { slot: 'boots', id: 'boots/frostrime', tags: [] },
+    { slot: 'gloves', id: 'gloves/frostrime_gloves', tags: [] },
+    { slot: 'robes', id: 'robes/summoners_robe', tags: ['robe-ability'] },
+    { slot: 'offhands', id: 'offhands/staff_of_fire', tags: ['caster'] },
+  ]);
+  const names = syn.map((s) => s.name);
+  assert.ok(names.includes('Frostrime Set'), `expected Frostrime Set in ${names}`);
+  assert.ok(names.includes('Battlemage'), `expected Battlemage in ${names}`);
+});
+
 test('sha256 sanity: browser-safe implementation matches node:crypto', async () => {
   const { sha256Hex } = await import('../src/gen/sha256.mjs');
   const crypto = await import('node:crypto');

@@ -118,6 +118,30 @@
   }
   .badge-sub { display: block; font-size: 9px; color: var(--muted); margin-top: 2px; }
 
+  .summary {
+    background: var(--panel-2); border-radius: 10px;
+    padding: 10px 12px; margin-bottom: 14px;
+  }
+  .summary h3 {
+    margin: 0 0 8px; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .sum-row { display: flex; gap: 8px; margin: 5px 0; font-size: 12px; align-items: baseline; }
+  .sum-row .k {
+    flex: 0 0 88px; color: var(--muted); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .sum-row .v { flex: 1; }
+  .ability { margin-bottom: 4px; }
+  .ability .a-name { color: var(--gold-bright); }
+  .ability .a-desc { color: var(--muted); font-size: 10px; display: block; }
+  .syn .a-name { color: var(--accent); }
+  .res-chip {
+    display: inline-block; font-size: 10px; padding: 2px 8px; margin: 0 4px 4px 0;
+    border-radius: 999px; border: 1px solid var(--line); color: var(--text);
+  }
+  .none { color: var(--muted); font-size: 11px; }
+
   .parts { list-style: none; margin: 0 0 14px; padding: 0; font-size: 13px; }
   .parts li {
     display: flex; justify-content: space-between; gap: 10px;
@@ -178,6 +202,8 @@
 
       <div class="statgrid" id="f-stats"></div>
       <div class="chips" id="f-chips"></div>
+
+      <div class="summary" id="f-summary"></div>
 
       <ul class="parts" id="f-parts"></ul>
 
@@ -279,6 +305,31 @@
   // UI -----------------------------------------------------------------------
   const STAT_KEYS = [['hp', 'HP'], ['atk', 'ATK'], ['def', 'DEF'], ['spd', 'SPD']];
 
+  function gearSummaryHtml(fighter) {
+    const critPct = Math.round(fighter.stats.crit * 100);
+    const abilities = fighter.abilities.length
+      ? fighter.abilities.map((a) =>
+          `<div class="ability"><span class="a-name">${a.name}</span><span class="a-desc">${a.desc}</span></div>`
+        ).join('')
+      : '<span class="none">none</span>';
+    const synergies = fighter.synergies.length
+      ? fighter.synergies.map((s) =>
+          `<div class="ability syn"><span class="a-name">${s.name}</span><span class="a-desc">${s.desc}</span></div>`
+        ).join('')
+      : '<span class="none">none</span>';
+    const resKeys = Object.keys(fighter.resistances);
+    const resistances = resKeys.length
+      ? resKeys.map((k) =>
+          `<span class="res-chip">${k.toUpperCase()} ${Math.round(fighter.resistances[k] * 100)}%</span>`
+        ).join('')
+      : '<span class="none">none</span>';
+    return `<h3>Gear Summary</h3>
+      <div class="sum-row"><span class="k">Crit</span><span class="v">${critPct}%</span></div>
+      <div class="sum-row"><span class="k">Abilities</span><span class="v">${abilities}</span></div>
+      <div class="sum-row"><span class="k">Synergy</span><span class="v">${synergies}</span></div>
+      <div class="sum-row"><span class="k">Resists</span><span class="v">${resistances}</span></div>`;
+  }
+
   async function load(seed) {
     $('seed').value = seed;
     history.replaceState(null, '', '#seed=' + encodeURIComponent(seed));
@@ -308,6 +359,8 @@
     for (const tag of fighter.tags) chips.push(`<span class="chip gold">${tag}</span>`);
     if (chips.length === 0) chips.push('<span class="chip">no modifiers</span>');
     $('f-chips').innerHTML = chips.join('');
+
+    $('f-summary').innerHTML = gearSummaryHtml(fighter);
 
     const dualStrikePct = Math.round(tuning.secondAttackMultiplier * 100);
     const partRows = fighter.parts.map((p) => {

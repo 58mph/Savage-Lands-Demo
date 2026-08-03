@@ -23,6 +23,8 @@ export {
   computeFighterId,
   deriveClass,
   deriveStats,
+  deriveResistances,
+  deriveSynergies,
   generateFighterWith,
 } from './compose-core.mjs';
 

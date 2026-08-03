@@ -120,11 +120,85 @@ function toPart(entry, golden) {
     stats: entry.stats,
     dmgType: entry.dmgType,
     tags: entry.tags ?? [],
+    ability: entry.ability ?? null,
     zIndex: entry.zIndex ?? SLOT_Z_INDEX[entry.slot] ?? 0,
     golden,
     // tint only pieces whose art isn't already golden
     goldenTint: golden && !entry.golden,
   };
+}
+
+// --- Gear-derived extras (single source for UI and engine) -----------------
+
+const RESIST_PATTERNS = {
+  fire: /molten|volcanic|flame|fire|smoulder|ember|burn/,
+  frost: /frost|frozen|ice|winter|chill/,
+  poison: /poison|venom|irradiated|slime|rot|decay/,
+  shadow: /ebon|night|shadow|dark|cursed|demon|nether|midnight|void/,
+  holy: /holy|blessed|healer|sage|annoint|radiant|illuminated/,
+};
+const RESIST_PER_PIECE = 0.05;
+const RESIST_CAP = 0.4;
+
+/** Elemental resistances from gear themes: +5% per matching piece, cap 40%. */
+export function deriveResistances(parts) {
+  const res = {};
+  for (const part of parts) {
+    const stem = part.id.split('/')[1];
+    for (const [kind, re] of Object.entries(RESIST_PATTERNS)) {
+      if (re.test(stem)) res[kind] = Math.min(RESIST_CAP, (res[kind] ?? 0) + RESIST_PER_PIECE);
+    }
+  }
+  for (const k of Object.keys(res)) res[k] = Math.round(res[k] * 100) / 100;
+  return res;
+}
+
+// generic first tokens that don't indicate a gear family
+const FAMILY_STOPWORDS = new Set([
+  'the', 'of', 'medium', 'full', 'plate', 'plated', 'steel', 'staff', 'sword', 'mark',
+]);
+
+/** Set synergies: 2+ gear pieces sharing a name family, plus special combos. */
+export function deriveSynergies(parts) {
+  const families = {};
+  for (const part of parts) {
+    if (part.slot === 'bases' || part.slot === 'shieldstraps' || part.slot === 'conditions') continue;
+    const token = part.id.split('/')[1].split('_')[0];
+    if (token.length < 4 || FAMILY_STOPWORDS.has(token)) continue;
+    (families[token] = families[token] ?? []).push(part.id);
+  }
+
+  const synergies = [];
+  for (const [token, pieces] of Object.entries(families)) {
+    if (pieces.length < 2) continue;
+    const label = token[0].toUpperCase() + token.slice(1);
+    synergies.push({ name: `${label} Set`, pieces, desc: `${pieces.length} matching ${label} pieces` });
+  }
+
+  const allTags = parts.flatMap((p) => p.tags ?? []);
+  const has = (t) => allTags.includes(t);
+  if (has('caster') && parts.some((p) => p.slot === 'robes')) {
+    synergies.push({
+      name: 'Battlemage',
+      pieces: parts.filter((p) => p.slot === 'robes' || (p.tags ?? []).includes('caster')).map((p) => p.id),
+      desc: 'Robe + caster off-hand: spells hit harder',
+    });
+  }
+  if (allTags.filter((t) => t === 'vampiric').length >= 2) {
+    synergies.push({
+      name: 'Bloodpact',
+      pieces: parts.filter((p) => (p.tags ?? []).includes('vampiric')).map((p) => p.id),
+      desc: 'Two or more vampiric pieces: stronger lifesteal',
+    });
+  }
+  if (has('dagger-hybrid') && has('caster')) {
+    synergies.push({
+      name: 'Spellblade',
+      pieces: parts.filter((p) => (p.tags ?? []).some((t) => t === 'dagger-hybrid' || t === 'caster')).map((p) => p.id),
+      desc: 'Dagger + caster off-hand: strikes carry spell damage',
+    });
+  }
+  return synergies.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function emptyWeightFor(slot, tuning) {
@@ -291,6 +365,11 @@ export function generateFighterWith(seed, data, opts = {}) {
       tags,
       dmgType,
       dmgTypes: [...dmgTypes],
+      abilities: parts
+        .filter((p) => p.ability)
+        .map((p) => ({ source: p.id, name: p.ability.name, desc: p.ability.desc })),
+      synergies: deriveSynergies(parts),
+      resistances: deriveResistances(parts),
       seed: String(seed),
       // canonical output location — buffers are never embedded in the fighter
       image: `generated/fighters/${id}.png`,

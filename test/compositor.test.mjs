@@ -131,3 +131,15 @@ test('fnv1a sanity: stable known hash values', () => {
   assert.equal(fnv1a(''), 0x811c9dc5);
   assert.equal(fnv1a('a'), 0xe40c292c);
 });
+
+test('sha256 sanity: browser-safe implementation matches node:crypto', async () => {
+  const { sha256Hex } = await import('../src/gen/sha256.mjs');
+  const crypto = await import('node:crypto');
+  const cases = ['', 'abc', 'weapons/steel_longsword\nbases/frogfolk', 'x'.repeat(200), '⚔️ Ωmega'];
+  for (let i = 0; i < 100; i++) {
+    cases.push(crypto.randomBytes(1 + (i % 90)).toString('base64'));
+  }
+  for (const s of cases) {
+    assert.equal(sha256Hex(s), crypto.createHash('sha256').update(s, 'utf8').digest('hex'));
+  }
+});

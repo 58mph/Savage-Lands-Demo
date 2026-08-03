@@ -52,7 +52,7 @@ const server = http.createServer(async (req, res) => {
     const seed = url.searchParams.get('seed') ?? 'test';
 
     if (url.pathname === '/' || url.pathname === '/index.html') {
-      const html = fs.readFileSync(path.join(ROOT, 'demo', 'index.html'));
+      const html = fs.readFileSync(path.join(ROOT, 'demo', 'server.html'));
       return send(res, 200, html, 'text/html; charset=utf-8');
     }
 

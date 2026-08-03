@@ -66,25 +66,23 @@
   }
   @media (max-width: 800px) { .stage { grid-template-columns: 1fr; } }
 
-  .card {
-    background: var(--panel-2); border: 2px solid #8a6d3b; border-radius: 14px;
-    padding: 18px 14px; text-align: center;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-  }
-  .card .name { font-weight: bold; font-size: 16px; }
-  .card .cls-line { color: var(--gold); font-size: 12px; margin: 4px 0 10px; }
-  #sprite {
-    width: 256px; height: 256px; max-width: 100%;
+  .card-holder { text-align: center; }
+  #card {
+    width: 100%; max-width: 320px;
     image-rendering: pixelated;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    background: var(--panel);
+    min-height: 200px;
   }
-  .card .statline { font-size: 12px; margin-top: 10px; }
-  .card .extras { font-size: 10px; color: var(--muted); margin-top: 5px; }
 
   .panel {
     background: var(--panel); border: 1px solid var(--line);
     border-radius: 12px; padding: 18px 20px;
   }
-  .panel h2 { margin: 0 0 2px; font-size: 20px; color: var(--gold-bright); }
+  .panel h2 {
+    margin: 0 0 2px; font-size: 20px; color: var(--gold-bright);
+  }
   .cls { color: var(--gold); font-size: 13px; margin-bottom: 14px; }
 
   .statgrid {
@@ -125,23 +123,22 @@
     display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 10px;
   }
-  .gallery canvas {
+  .gallery img {
     width: 100%; image-rendering: pixelated; border-radius: 8px;
     cursor: pointer; border: 1px solid transparent;
     transition: transform 0.1s ease, border-color 0.1s ease;
     background: var(--panel);
   }
-  .gallery canvas:hover { transform: translateY(-3px); border-color: var(--gold); }
+  .gallery img:hover { transform: translateY(-3px); border-color: var(--gold); }
 
   footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 11px; }
-  footer a { color: var(--muted); }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>⚔ Fighter Compositor</h1>
-    <p>Deterministic, seeded fighter generation — same seed, same fighter, everywhere, forever.</p>
+    <p>Deterministic, seeded fighter generation — same seed, same fighter, byte-identical pixels. Forever.</p>
   </header>
 
   <div class="controls">
@@ -152,12 +149,8 @@
   </div>
 
   <div class="stage">
-    <div class="card">
-      <div class="name" id="c-name">—</div>
-      <div class="cls-line" id="c-cls">—</div>
-      <canvas id="sprite" width="128" height="128"></canvas>
-      <div class="statline" id="c-stats">—</div>
-      <div class="extras" id="c-extras"></div>
+    <div class="card-holder">
+      <img id="card" alt="fighter card" />
     </div>
 
     <div class="panel" id="details">
@@ -181,101 +174,25 @@
 
   <footer>
     Savage Arena · HEAVY META: The Savage Lands ·
-    static demo, composited in your browser by the same generator core that feeds the battle engine
+    rendered server-side by the same pipeline that feeds the battle engine
   </footer>
 </div>
 
 <script type="module">
-  import { generateFighterWith } from '../src/gen/compose-core.mjs';
-
   const $ = (id) => document.getElementById(id);
   const GALLERY_N = 12;
-  const NATIVE = 128;
 
-  // Data + generator setup ---------------------------------------------------
-  const [manifest, tuning, names] = await Promise.all(
-    ['attributes', 'tuning', 'names'].map((f) =>
-      fetch(`../data/${f}.json`).then((r) => {
-        if (!r.ok) throw new Error(`failed to load data/${f}.json`);
-        return r.json();
-      })
-    )
-  );
-  const data = { manifest, tuning, names };
-  const manifestById = new Map(manifest.map((e) => [e.id, e]));
-  const gen = (seed) => generateFighterWith(seed, data);
-
-  // Canvas compositing (mirrors src/gen/render.mjs) ---------------------------
-  const imageCache = new Map();
-  function loadImage(src) {
-    if (!imageCache.has(src)) {
-      imageCache.set(
-        src,
-        new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => resolve(img);
-          img.onerror = () => resolve(null); // asset-fallback: placeholder, never throw
-          img.src = src;
-        })
-      );
-    }
-    return imageCache.get(src);
-  }
-
-  const scratch = document.createElement('canvas');
-  scratch.width = scratch.height = NATIVE;
-  const sctx = scratch.getContext('2d');
-
-  async function drawFighter(ctx, fighter) {
-    ctx.clearRect(0, 0, NATIVE, NATIVE);
-    ctx.imageSmoothingEnabled = false;
-    for (const part of fighter.parts) {
-      const entry = manifestById.get(part.id);
-      const img = entry && !entry.missing ? await loadImage('../' + entry.file) : null;
-      if (!img) {
-        ctx.strokeStyle = '#ff00ff';
-        ctx.setLineDash([4, 3]);
-        ctx.strokeRect(2, 2, NATIVE - 4, NATIVE - 4);
-        ctx.setLineDash([]);
-        ctx.fillStyle = '#ff00ff';
-        ctx.font = '9px monospace';
-        ctx.textAlign = 'center';
-        ctx.fillText(part.id, NATIVE / 2, NATIVE / 2);
-        continue;
-      }
-      if (part.goldenTint) {
-        // subtle gold tint masked to the piece's own alpha
-        sctx.clearRect(0, 0, NATIVE, NATIVE);
-        sctx.drawImage(img, 0, 0);
-        sctx.globalCompositeOperation = 'source-atop';
-        sctx.fillStyle = 'rgba(255, 200, 40, 0.35)';
-        sctx.fillRect(0, 0, NATIVE, NATIVE);
-        sctx.globalCompositeOperation = 'source-over';
-        ctx.drawImage(scratch, 0, 0);
-      } else {
-        ctx.drawImage(img, 0, 0);
-      }
-    }
-  }
-
-  // UI -----------------------------------------------------------------------
-  const STAT_KEYS = [['hp', 'HP'], ['atk', 'ATK'], ['def', 'DEF'], ['spd', 'SPD']];
+  const STAT_KEYS = [
+    ['hp', 'HP'], ['atk', 'ATK'], ['def', 'DEF'], ['spd', 'SPD'],
+  ];
 
   async function load(seed) {
     $('seed').value = seed;
     history.replaceState(null, '', '#seed=' + encodeURIComponent(seed));
 
-    const fighter = gen(seed);
-    await drawFighter($('sprite').getContext('2d'), fighter);
+    $('card').src = '/api/card.png?seed=' + encodeURIComponent(seed);
 
-    const critPct = Math.round(fighter.stats.crit * 100) + '%';
-
-    $('c-name').textContent = fighter.name;
-    $('c-cls').textContent = fighter.cls;
-    $('c-stats').textContent =
-      `HP ${fighter.stats.hp}  ATK ${fighter.stats.atk}  DEF ${fighter.stats.def}  SPD ${fighter.stats.spd}`;
-    $('c-extras').textContent =
-      [`CRIT ${critPct}`, fighter.doubleAttack ? '2xATK' : null, ...fighter.tags].filter(Boolean).join('  ');
+    const fighter = await fetch('/api/fighter?seed=' + encodeURIComponent(seed)).then((r) => r.json());
 
     $('f-name').textContent = fighter.name;
     $('f-cls').textContent = fighter.cls + ' · ' + fighter.dmgTypes.join(' + ');
@@ -283,7 +200,7 @@
     $('f-stats').innerHTML = STAT_KEYS.map(([k, label]) =>
       `<div class="stat"><div class="k">${label}</div><div class="v">${fighter.stats[k]}</div></div>`
     ).join('') +
-      `<div class="stat"><div class="k">CRIT</div><div class="v">${critPct}</div></div>`;
+      `<div class="stat"><div class="k">CRIT</div><div class="v">${Math.round(fighter.stats.crit * 100)}%</div></div>`;
 
     const chips = [];
     if (fighter.doubleAttack) chips.push('<span class="chip on">double attack</span>');
@@ -300,18 +217,11 @@
     $('f-seed').textContent = fighter.seed;
   }
 
-  async function buildGallery(seed) {
-    const gallery = $('gallery');
-    gallery.innerHTML = '';
-    for (let i = 0; i < GALLERY_N; i++) {
+  function buildGallery(seed) {
+    $('gallery').innerHTML = Array.from({ length: GALLERY_N }, (_, i) => {
       const s = `${seed}:${i}`;
-      const canvas = document.createElement('canvas');
-      canvas.width = canvas.height = NATIVE;
-      canvas.title = s;
-      canvas.dataset.seed = s;
-      gallery.appendChild(canvas);
-      drawFighter(canvas.getContext('2d'), gen(s));
-    }
+      return `<img loading="lazy" src="/api/sprite.png?seed=${encodeURIComponent(s)}" title="${s}" data-seed="${s}" alt="fighter ${s}" />`;
+    }).join('');
   }
 
   $('go').addEventListener('click', () => {

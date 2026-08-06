@@ -353,9 +353,10 @@ export function generateFighterWith(seed, data, opts = {}) {
       id,
       name: `${first} ${epithet}`,
       cls: deriveClass(parts),
-      parts: parts.map(({ slot, id: partId, zIndex, golden, goldenTint }) => ({
+      parts: parts.map(({ slot, id: partId, name, zIndex, golden, goldenTint }) => ({
         slot,
         id: partId,
+        name,
         zIndex,
         golden,
         goldenTint,

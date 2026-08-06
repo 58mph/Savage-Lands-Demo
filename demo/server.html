@@ -283,10 +283,14 @@
     $('f-summary').innerHTML = gearSummaryHtml(fighter);
 
     const dualStrikePct = Math.round(tuning.secondAttackMultiplier * 100);
-    const partRows = fighter.parts.map((p) => {
-      const pretty = p.id.split('/')[1].replace(/_/g, ' ');
-      return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
-    });
+    const partRows = fighter.parts
+      // straps are part of their shield, never shown as their own item
+      .filter((p) => p.slot !== 'shieldstraps')
+      .map((p) => {
+        const pretty =
+          p.name && p.name !== 'TODO' ? p.name : p.id.split('/')[1].replace(/_/g, ' ');
+        return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
+      });
     if (fighter.doubleAttack) {
       const moves = tuning.combat?.actionsPerTurn ?? 2;
       const dualText = `Each turn has ${moves} moves — a free hand lets the 2nd move be another main-hand attack (${dualStrikePct}% damage)`;

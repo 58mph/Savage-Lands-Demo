@@ -289,12 +289,16 @@ test('gear extras: abilities on staff/tome/robe/helm, synergies and resistances 
     assert.ok(!/^(Chimera|Staff|Items|Tattoo|King) \d+$/.test(e.name), `${e.id} kept placeholder name "${e.name}"`);
   }
 
-  // fighter abilities come exactly from its ability-bearing parts
+  // fighter abilities come exactly from its ability-bearing parts, and every
+  // part carries its display name (no raw ids leaking into UIs)
   const byId = new Map(manifest.map((e) => [e.id, e]));
   for (let i = 0; i < 50; i++) {
     const f = generateFighter(`gear-extras-${i}`);
     const expected = f.parts.filter((p) => byId.get(p.id)?.ability).map((p) => p.id);
     assert.deepEqual(f.abilities.map((a) => a.source), expected);
+    for (const p of f.parts) {
+      assert.ok(p.name && p.name !== 'TODO', `part ${p.id} has no display name`);
+    }
   }
 
   // resistances: frost gear grants frost resist, capped at 40%

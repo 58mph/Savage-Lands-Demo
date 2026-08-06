@@ -53,7 +53,8 @@ for (const key of ['atk', 'def']) {
   console.log(`\ntop 5 by ${key.toUpperCase()}:`);
   for (const f of topBy(key)) {
     console.log(`  ${String(f.stats[key]).padStart(6)}  ${f.name} (${f.cls}, seed ${f.seed})`);
-    console.log(`          ${f.parts.map((p) => p.id + (p.golden ? '★' : '')).join(', ')}`);
+    const shown = f.parts.filter((p) => p.slot !== 'shieldstraps'); // strap = part of the shield
+    console.log(`          ${shown.map((p) => p.id + (p.golden ? '★' : '')).join(', ')}`);
   }
 }
 

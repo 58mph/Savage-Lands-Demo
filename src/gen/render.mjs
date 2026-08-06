@@ -126,22 +126,31 @@ export async function renderCard(fighter) {
     .join('  ');
   const abilityLine = (fighter.abilities ?? []).map((a) => `✦ ${a.name}`).join('  ');
 
+  // Savage Arena unified theme: parchment card with bronze/gold trim.
   // 6px vertical padding above the name/class block (card size unchanged).
   const frame = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${cw}" height="${ch}">
-      <rect width="${cw}" height="${ch}" rx="12" fill="#1c1723"/>
-      <rect x="4" y="4" width="${cw - 8}" height="${ch - 8}" rx="9"
-            fill="#2a2136" stroke="#8a6d3b" stroke-width="2"/>
+      <defs>
+        <linearGradient id="parch" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e8d9b8"/>
+          <stop offset="1" stop-color="#cdb98f"/>
+        </linearGradient>
+      </defs>
+      <rect width="${cw}" height="${ch}" rx="12" fill="#2e2013"/>
+      <rect x="3" y="3" width="${cw - 6}" height="${ch - 6}" rx="10"
+            fill="url(#parch)" stroke="#8b4513" stroke-width="3"/>
+      <rect x="8" y="8" width="${cw - 16}" height="${ch - 16}" rx="7"
+            fill="none" stroke="#c9aa6d" stroke-width="1.5" opacity="0.8"/>
       <text x="${cw / 2}" y="36" font-family="monospace" font-size="15" font-weight="bold"
-            fill="#f0e6d2" text-anchor="middle">${escapeXml(fighter.name)}</text>
-      <text x="${cw / 2}" y="54" font-family="monospace" font-size="12"
-            fill="#c8a95e" text-anchor="middle">${escapeXml(fighter.cls)}</text>
-      <text x="${cw / 2}" y="${ch - 48}" font-family="monospace" font-size="12"
-            fill="#f0e6d2" text-anchor="middle">${escapeXml(statLine)}</text>
+            fill="#2e2013" text-anchor="middle">${escapeXml(fighter.name)}</text>
+      <text x="${cw / 2}" y="54" font-family="monospace" font-size="12" font-weight="bold"
+            fill="#8b4513" text-anchor="middle">${escapeXml(fighter.cls)}</text>
+      <text x="${cw / 2}" y="${ch - 48}" font-family="monospace" font-size="12" font-weight="bold"
+            fill="#2e2013" text-anchor="middle">${escapeXml(statLine)}</text>
       <text x="${cw / 2}" y="${ch - 30}" font-family="monospace" font-size="10"
-            fill="#9c8db0" text-anchor="middle">${escapeXml(extras)}</text>
+            fill="#6d5a3c" text-anchor="middle">${escapeXml(extras)}</text>
       <text x="${cw / 2}" y="${ch - 14}" font-family="monospace" font-size="10"
-            fill="#c8a95e" text-anchor="middle">${escapeXml(abilityLine)}</text>
+            fill="#7b5f1e" text-anchor="middle">${escapeXml(abilityLine)}</text>
     </svg>`
   );
 

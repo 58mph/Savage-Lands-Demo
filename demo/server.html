@@ -7,21 +7,22 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E%E2%9A%94%3C/text%3E%3C/svg%3E" />
 <style>
   :root {
-    --bg: #0e0b12;
-    --panel: #1c1723;
-    --panel-2: #2a2136;
-    --line: #3a2f4a;
-    --gold: #c8a95e;
+    /* Savage Arena unified theme: warm earth + metallics (matches /game/) */
+    --bg: #171008;
+    --panel: #3a2b18;
+    --panel-2: #4a3521;
+    --line: #6b5b3e;
+    --gold: #c9aa6d;
     --gold-bright: #f0d080;
-    --text: #f0e6d2;
-    --muted: #9c8db0;
+    --text: #e8d9b8;
+    --muted: #a0826d;
     --accent: #7ee0a3;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     background:
-      radial-gradient(1200px 600px at 70% -10%, #241b31 0%, var(--bg) 60%);
+      radial-gradient(1400px 700px at 50% -10%, #3d2f1c 0%, #2e2013 55%, var(--bg) 100%);
     color: var(--text);
     font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
     min-height: 100vh;
@@ -35,6 +36,7 @@
     letter-spacing: 2px;
     color: var(--gold-bright);
     text-transform: uppercase;
+    text-shadow: 0 2px 0 #5e4413, 0 4px 8px rgba(0,0,0,.7);
   }
   header p { margin: 0; color: var(--muted); font-size: 13px; }
 

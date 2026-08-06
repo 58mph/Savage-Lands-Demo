@@ -53,7 +53,7 @@ const composites = cards.map((buf, i) => ({
 const outPath = path.join(ROOT, out);
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 await sharp({
-  create: { width: sheetW, height: sheetH, channels: 4, background: { r: 14, g: 11, b: 18, alpha: 1 } },
+  create: { width: sheetW, height: sheetH, channels: 4, background: { r: 46, g: 32, b: 19, alpha: 1 } },
 })
   .composite(composites)
   .png()

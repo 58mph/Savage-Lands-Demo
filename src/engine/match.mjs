@@ -93,7 +93,7 @@ export function formatMatchLog(match) {
     let text = null;
     switch (e.type) {
       case 'round-start': text = `— Round ${e.round} begins —`; break;
-      case 'damage': text = `${n(e.unit)} ${e.action === 'dual-strike' ? 'dual-strikes' : 'hits'} ${n(e.target)} for ${e.dmg}`; break;
+      case 'damage': text = `${n(e.unit)} ${e.crit ? 'CRITS' : e.action === 'dual-strike' ? 'dual-strikes' : 'hits'} ${n(e.target)} for ${e.dmg}${e.crit ? '!' : ''}`; break;
       case 'cast': text = `${n(e.unit)} casts ${e.ability}${e.target ? ` on ${n(e.target)}` : ''}`; break;
       case 'heal': text = `${n(e.unit)} heals ${e.amount} (${e.source})`; break;
       case 'death': text = `${n(e.unit)} falls!`; break;

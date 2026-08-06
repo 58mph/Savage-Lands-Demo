@@ -22,7 +22,7 @@ function coverMult(target, targetTeam) {
 }
 
 /** Apply damage with negation, Play Dead / Undying, death triggers. */
-function applyDamage(attacker, target, dmg, state, events, label) {
+function applyDamage(attacker, target, dmg, state, events, label, meta = {}) {
   const team = state.teams[target.team];
   const foes = state.teams[attacker.team];
 
@@ -45,7 +45,7 @@ function applyDamage(attacker, target, dmg, state, events, label) {
 
   target.hp -= dmg;
   attacker.dmgDealt += dmg;
-  events.push({ type: 'damage', unit: attacker.id, target: target.id, dmg, action: label });
+  events.push({ type: 'damage', unit: attacker.id, target: target.id, dmg, action: label, ...meta });
 
   // Berserker counter-heal: heal back 15% of damage taken while fighting
   if (target.hp > 0 && target.fx.counterHeal) {
@@ -179,7 +179,7 @@ export function resolveStrike(attacker, target, state, rng, multiplier = 1.0) {
   }
 
   const dealt = applyDamage(attacker, target, dmg, state, events,
-    multiplier < 1 ? 'dual-strike' : 'attack');
+    multiplier < 1 ? 'dual-strike' : 'attack', { crit });
   attacker.strikesMade++;
 
   if (dealt > 0 && attacker.alive) {

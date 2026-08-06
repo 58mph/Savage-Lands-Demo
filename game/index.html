@@ -7,121 +7,299 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E%E2%9A%94%3C/text%3E%3C/svg%3E" />
 <style>
   :root {
-    --bg: #0e0b12; --panel: #1c1723; --panel-2: #2a2136; --line: #3a2f4a;
-    --gold: #c8a95e; --gold-bright: #f0d080; --text: #f0e6d2; --muted: #9c8db0;
-    --accent: #7ee0a3; --red: #e07e7e; --hp: #6fbf73; --hp-low: #d9534f;
+    /* warm earth */
+    --sand: #d4a574; --sand-dark: #a0826d; --dirt: #8b6f47; --dirt-deep: #5e4a30;
+    --wood: #4a3521; --wood-dark: #2e2013; --ink: #1a1a1a;
+    /* metallics */
+    --gold: #c9aa6d; --gold-bright: #f0d080; --bronze: #8b4513; --silver: #d3d3d3;
+    /* jewels */
+    --jred: #dc143c; --jblue: #1e90ff; --jgreen: #32cd32; --jpurple: #8b00ff;
+    --atk-orange: #e07818;
+    --leaf: #228b22; --leaf-bright: #3cb371;
+    --parchment: #e8d9b8; --parchment-dark: #cdb98f;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; color: var(--text);
-    background: radial-gradient(1200px 600px at 70% -10%, #241b31 0%, var(--bg) 60%);
+    margin: 0; min-height: 100vh; color: var(--parchment);
+    background:
+      radial-gradient(1400px 700px at 50% -10%, #3d2f1c 0%, var(--wood-dark) 55%, #171008 100%);
     font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
   }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 22px 16px 60px; }
-  header { text-align: center; margin-bottom: 18px; }
-  header h1 { margin: 0 0 4px; font-size: 24px; letter-spacing: 2px; color: var(--gold-bright); text-transform: uppercase; }
-  header p { margin: 0; color: var(--muted); font-size: 12px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 18px 14px 50px; }
+
+  header { text-align: center; margin-bottom: 14px; }
+  header h1 {
+    margin: 0; font-size: 30px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold-bright);
+    text-shadow: 0 2px 0 #5e4413, 0 4px 8px rgba(0,0,0,.7);
+  }
+  header p { margin: 3px 0 0; color: var(--sand-dark); font-size: 12px; }
 
   button {
-    background: linear-gradient(180deg, #3a2f4a, #2a2136); color: var(--text);
-    border: 1px solid var(--gold); border-radius: 8px; padding: 10px 18px;
-    font: inherit; font-size: 14px; cursor: pointer;
+    background: linear-gradient(180deg, #6b5232, #4a3521 60%, #3a2917);
+    color: var(--parchment); border: 2px solid var(--gold);
+    border-radius: 10px; padding: 10px 20px; font: inherit; font-size: 14px;
+    cursor: pointer; text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 4px 10px rgba(0,0,0,.5);
   }
-  button:hover:not(:disabled) { box-shadow: 0 0 12px rgba(200,169,94,0.35); }
-  button:disabled { opacity: 0.35; cursor: default; }
-  button.secondary { border-color: var(--line); }
+  button:hover:not(:disabled) { box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 14px rgba(201,170,109,.55); }
+  button:disabled { opacity: .35; cursor: default; }
+  button.secondary { border-color: #6b5b3e; }
 
   .screen { display: none; }
   .screen.active { display: block; }
 
-  /* ---- draft ---- */
-  .draft-status { text-align: center; margin-bottom: 14px; color: var(--muted); font-size: 13px; }
-  .draft-status b { color: var(--gold); }
+  /* ================= ornate panel base ================= */
+  .ornate {
+    border: 3px solid var(--bronze);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #55401f, var(--wood) 30%, var(--wood-dark));
+    box-shadow:
+      inset 0 0 0 2px rgba(201,170,109,.55),
+      inset 0 0 0 5px rgba(0,0,0,.45),
+      0 10px 26px rgba(0,0,0,.6);
+  }
+
+  /* ================= draft ================= */
+  .draft-status {
+    text-align: center; margin: 0 auto 14px; max-width: 560px; padding: 8px 14px;
+    font-size: 13px; color: var(--parchment);
+  }
+  .draft-status b { color: var(--gold-bright); }
   .pool {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 10px; margin-bottom: 20px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px; margin-bottom: 20px;
   }
   .fcard {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
-    padding: 10px; cursor: pointer; text-align: center; position: relative;
-    transition: transform .08s ease, border-color .08s ease;
+    background: linear-gradient(180deg, var(--parchment), var(--parchment-dark));
+    border: 3px solid var(--bronze); border-radius: 12px;
+    box-shadow: inset 0 0 0 2px rgba(201,170,109,.7), 0 12px 14px -6px rgba(0,0,0,.4);
+    padding: 12px 8px 10px; cursor: pointer; text-align: center; color: var(--ink);
+    transition: transform .08s ease, box-shadow .08s ease; position: relative;
   }
-  .fcard:hover { transform: translateY(-2px); border-color: var(--gold); }
-  .fcard.picked { opacity: 0.28; pointer-events: none; }
-  .fcard canvas { width: 96px; height: 96px; image-rendering: pixelated; }
-  .fcard .fname { font-size: 12px; font-weight: bold; margin-top: 2px; }
-  .fcard .fcls { font-size: 10px; color: var(--gold); }
-  .fcard .fstat { font-size: 10px; color: var(--muted); margin-top: 3px; }
-  .fcard .fab { font-size: 9px; color: var(--accent); margin-top: 2px; min-height: 11px; }
+  .fcard:hover { transform: translateY(-3px); box-shadow: inset 0 0 0 2px rgba(201,170,109,.9), 0 0 16px rgba(240,208,128,.5), 0 14px 16px -6px rgba(0,0,0,.5); }
+  .fcard.picked { opacity: .3; pointer-events: none; filter: grayscale(.6); }
+  .fcard .fname { font-size: 12px; font-weight: bold; margin-top: 6px; color: #2e2013; }
+  .fcard .fcls { font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  .fcard .gems { display: flex; justify-content: center; gap: 5px; margin-top: 6px; }
+  .gem {
+    min-width: 30px; padding: 2px 5px; border-radius: 8px; font-size: 11px; font-weight: bold;
+    color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.85);
+    border: 1px solid rgba(0,0,0,.55); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 3px rgba(0,0,0,.35);
+  }
+  .gem.atk { background: linear-gradient(180deg, #f09030, var(--atk-orange)); }
+  .gem.hp { background: linear-gradient(180deg, #e8506e, var(--jred)); }
+  .gem.def { background: linear-gradient(180deg, #b8c4d0, #7f8f9f); }
+  .gem.spd { background: linear-gradient(180deg, #58d858, #2aa32a); }
+  .fcard .fab { font-size: 9px; color: #6b4c86; margin-top: 5px; min-height: 11px; font-weight: bold; }
 
-  .picks-title { color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: center; margin: 6px 0 8px; }
-  .picks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 720px; margin: 0 auto 18px; }
-  .pickslot {
-    background: var(--panel-2); border: 1px dashed var(--line); border-radius: 10px;
-    min-height: 118px; display: flex; flex-direction: column; align-items: center;
-    justify-content: center; font-size: 11px; color: var(--muted); cursor: pointer; padding: 6px;
+  /* oval portrait frame — beveled metallic + class inlay */
+  .oval-wrap { display: inline-block; position: relative; filter: drop-shadow(0 12px 10px rgba(0,0,0,.4)); }
+  .oval {
+    width: 86px; height: 112px; border-radius: 50%;
+    padding: 5px; position: relative;
+    background:
+      linear-gradient(155deg, #f5e6c4 0%, var(--gold) 22%, #7a5c28 50%, var(--gold) 78%, #f5e6c4 100%);
+    box-shadow: inset 0 2px 3px rgba(255,255,255,.5), inset 0 -3px 5px rgba(0,0,0,.55);
   }
-  .pickslot.filled { border-style: solid; border-color: var(--gold); color: var(--text); }
-  .pickslot canvas { width: 64px; height: 64px; image-rendering: pixelated; }
+  .oval .inlay {
+    width: 100%; height: 100%; border-radius: 50%; padding: 3px;
+    background: var(--cls, var(--gold));
+    box-shadow: inset 0 0 4px rgba(0,0,0,.6);
+  }
+  .oval .porthole {
+    width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, #cdb98f 0%, #9d855e 70%, #6d5a3c 100%);
+    display: flex; align-items: flex-start; justify-content: center;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,.5);
+  }
+  .oval canvas { width: 150%; height: auto; image-rendering: pixelated; margin-top: -4%; }
+
+  .picks-title {
+    color: var(--gold); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    text-align: center; margin: 8px 0 10px; text-shadow: 0 1px 3px rgba(0,0,0,.8);
+  }
+  .picks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 720px; margin: 0 auto 18px; }
+  .pickslot {
+    border: 2px dashed #7a6544; border-radius: 12px; min-height: 150px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--sand-dark); cursor: pointer; padding: 8px 4px;
+    background: rgba(0,0,0,.25);
+  }
+  .pickslot.filled {
+    border-style: solid; border-color: var(--gold);
+    background: linear-gradient(180deg, rgba(212,165,116,.15), rgba(0,0,0,.3));
+    color: var(--parchment);
+  }
+  .pickslot .fcls { font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: 1px; }
+  .pickslot .oval { width: 62px; height: 80px; }
   .draft-actions { text-align: center; }
 
-  /* ---- spectate ---- */
-  .battle { display: grid; grid-template-columns: 240px 1fr 240px; gap: 14px; align-items: start; }
-  .teampanel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
-  .teampanel h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-  .teampanel h3.you { color: var(--accent); }
-  .teampanel h3.cpu { color: var(--red); }
-  .urow { display: flex; gap: 8px; align-items: center; padding: 5px 2px; border-bottom: 1px dashed var(--line); }
-  .urow:last-child { border-bottom: none; }
-  .urow canvas { width: 40px; height: 40px; image-rendering: pixelated; flex: 0 0 40px; }
-  .urow.dead { opacity: 0.3; filter: grayscale(1); }
-  .uinfo { flex: 1; min-width: 0; }
-  .uname { font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ucls { font-size: 9px; color: var(--gold); }
-  .hpbar { height: 7px; background: #17121e; border-radius: 4px; overflow: hidden; margin-top: 3px; }
-  .hpbar i { display: block; height: 100%; background: var(--hp); border-radius: 4px; transition: width .25s ease; }
-  .hpbar i.low { background: var(--hp-low); }
-  .hptext { font-size: 9px; color: var(--muted); margin-top: 1px; }
+  /* ================= spectate: the arena board ================= */
+  .board-grid { display: grid; grid-template-columns: 1fr 300px; gap: 14px; align-items: stretch; }
 
-  .logpanel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; height: 480px; }
-  .log-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; color: var(--muted); }
-  #log { flex: 1; overflow-y: auto; font-size: 12px; line-height: 1.75; }
-  #log div { opacity: 0.85; }
-  #log .hit { color: var(--text); }
-  #log .heal { color: var(--accent); }
-  #log .death { color: var(--red); font-weight: bold; }
-  #log .cast { color: var(--gold); }
-  #log .round { color: var(--gold-bright); text-align: center; margin: 4px 0; }
-  .controls { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
-  .controls button { padding: 7px 14px; font-size: 12px; }
-  .controls button.on { border-color: var(--accent); color: var(--accent); }
-
-  /* ---- results ---- */
-  .banner { text-align: center; border-radius: 12px; padding: 26px 16px; margin-bottom: 18px; border: 1px solid var(--line); background: var(--panel); }
-  .banner.win { border-color: var(--accent); }
-  .banner.loss { border-color: var(--red); }
-  .banner h2 { margin: 0 0 6px; font-size: 26px; }
-  .banner.win h2 { color: var(--accent); }
-  .banner.loss h2 { color: var(--red); }
-  .banner p { margin: 0; color: var(--muted); font-size: 13px; }
-  .loot { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 16px 0 22px; }
-  .lootcard { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; text-align: center; font-size: 12px; }
-  .lootcard .rar-common { color: var(--muted); } .lootcard .rar-rare { color: #7ec8e0; } .lootcard .rar-epic { color: #c07ee0; }
-  .lootcard .r { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
-  .results-party { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 720px; margin: 0 auto 20px; }
-  .results-actions { text-align: center; }
-  .seednote { text-align: center; color: var(--muted); font-size: 10px; margin-top: 14px; word-break: break-all; }
-
-  #loading { text-align: center; color: var(--muted); padding: 60px 0; }
-
-  @media (max-width: 900px) {
-    .battle { grid-template-columns: 1fr 1fr; }
-    .logpanel { grid-column: 1 / -1; order: 3; height: 320px; }
+  .board { position: relative; padding: 10px; }
+  .side-banner {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 16px; margin: 0 18px; border-radius: 10px 10px 0 0;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold;
   }
-  @media (max-width: 620px) {
-    .picks, .results-party { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .side-banner.enemy {
+    background: linear-gradient(180deg, #6e2020, #481414);
+    border: 2px solid #8c3a2a; border-bottom: none; color: #f0b8a8;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+  }
+  .side-banner.player {
+    background: linear-gradient(0deg, #1e3a5e, #142944);
+    border: 2px solid #2a5a8c; border-top: none; color: #a8d0f0;
+    border-radius: 0 0 10px 10px; margin-top: 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+  }
+  .side-banner .score { color: var(--gold-bright); }
+
+  .arena {
+    position: relative; border-radius: 12px; overflow: hidden;
+    border: 4px solid var(--bronze);
+    box-shadow:
+      inset 0 0 0 3px rgba(201,170,109,.6),
+      inset 0 0 60px rgba(0,0,0,.35),
+      0 14px 30px rgba(0,0,0,.6);
+    background:
+      radial-gradient(340px 190px at 22% 32%, rgba(139,111,71,.5) 0%, transparent 70%),
+      radial-gradient(300px 170px at 74% 64%, rgba(139,111,71,.45) 0%, transparent 70%),
+      radial-gradient(220px 120px at 55% 20%, rgba(160,130,90,.4) 0%, transparent 70%),
+      repeating-conic-gradient(rgba(0,0,0,.03) 0% 25%, transparent 0% 50%) 0 0/9px 9px,
+      linear-gradient(180deg, #c89c6a, var(--sand) 40%, #c39a68 75%, #b58c5c);
+    padding: 18px 12px;
+    min-height: 460px;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 10px;
+  }
+  .arena::after { /* soft vignette */
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    box-shadow: inset 0 0 90px rgba(46,32,19,.55); border-radius: 8px;
+  }
+  .foliage { position: absolute; pointer-events: none; opacity: .9; z-index: 2; }
+
+  /* V formation: vanguard nearest the center line, flanks behind, backline rear */
+  .formation { display: flex; flex-direction: column; gap: 4px; position: relative; z-index: 3; }
+  .frow { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .frow.flank { gap: 90px; }
+  .frow.back { gap: 46px; }
+
+  .board.shake { animation: shake .3s; }
+  @keyframes shake {
+    0%, 100% { transform: translate(0,0) rotate(0); }
+    25% { transform: translate(-4px,-3px) rotate(.4deg); }
+    50% { transform: translate(4px,3px) rotate(-.4deg); }
+    75% { transform: translate(-3px,3px) rotate(.3deg); }
+  }
+
+  .unit { position: relative; width: 96px; text-align: center; transition: transform .18s ease; }
+  .unit .oval { width: 78px; height: 102px; margin: 0 auto; }
+  .unit.dead { filter: grayscale(1) brightness(.75); opacity: .55; }
+  .unit.dead .porthole::after { content: '💀'; position: absolute; font-size: 30px; top: 34px; left: 0; right: 0; }
+  .unit.acting .oval { box-shadow: inset 0 2px 3px rgba(255,255,255,.5), inset 0 -3px 5px rgba(0,0,0,.55), 0 0 18px 4px rgba(240,208,128,.85); }
+  .unit .porthole { position: relative; }
+
+  .statbox {
+    position: absolute; bottom: 26px; min-width: 27px; height: 26px; line-height: 24px;
+    font-size: 13px; font-weight: bold; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.9);
+    border-radius: 9px; border: 2px solid rgba(0,0,0,.6); padding: 0 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 3px 5px rgba(0,0,0,.5); z-index: 5;
+  }
+  .statbox.atk { left: 0; background: linear-gradient(180deg, #f09030, var(--atk-orange)); }
+  .statbox.hp { right: 0; background: linear-gradient(180deg, #e8506e, var(--jred)); }
+
+  .nameplate {
+    margin-top: 3px; font-size: 9px; color: var(--ink); font-weight: bold;
+    background: linear-gradient(180deg, var(--parchment), var(--parchment-dark));
+    border: 1px solid var(--bronze); border-radius: 7px; padding: 2px 3px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  }
+  .hpbar { height: 5px; background: rgba(26,26,26,.55); border-radius: 3px; overflow: hidden; margin-top: 3px; border: 1px solid rgba(0,0,0,.4); }
+  .hpbar i { display: block; height: 100%; background: linear-gradient(180deg, #58d858, #2aa32a); transition: width .25s ease; }
+  .hpbar i.low { background: linear-gradient(180deg, #e8506e, var(--jred)); }
+
+  /* fx layer */
+  #fxlayer { position: absolute; inset: 0; pointer-events: none; z-index: 20; }
+  .fx-burst {
+    position: absolute; font-size: 40px; transform: translate(-50%, -50%) scale(.3) rotate(-20deg);
+    animation: burst .45s ease-out forwards; filter: drop-shadow(0 0 6px rgba(255,180,40,.9));
+  }
+  @keyframes burst {
+    40% { transform: translate(-50%, -50%) scale(1.35) rotate(10deg); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(.9) rotate(18deg); opacity: 0; }
+  }
+  .fx-float {
+    position: absolute; font-size: 17px; font-weight: bold; transform: translate(-50%, -50%);
+    animation: floatUp .8s ease-out forwards; text-shadow: 0 2px 3px rgba(0,0,0,.85); z-index: 21;
+  }
+  .fx-float.dmg { color: #ff5a4a; }
+  .fx-float.heal { color: #6ef07e; }
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translate(-50%, -40%) scale(.7); }
+    25% { opacity: 1; transform: translate(-50%, -70%) scale(1.15); }
+    100% { opacity: 0; transform: translate(-50%, -150%) scale(1); }
+  }
+  .fx-orb {
+    position: absolute; width: 14px; height: 14px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #cfe8ff, var(--jblue) 60%, #0a4a8c);
+    box-shadow: 0 0 12px 3px rgba(30,144,255,.8);
+  }
+  .unit.lunge-up { transform: translateY(-14px) scale(1.06); }
+  .unit.lunge-down { transform: translateY(14px) scale(1.06); }
+
+  /* log panel */
+  .logpanel { display: flex; flex-direction: column; padding: 12px; }
+  .log-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; color: var(--gold); }
+  #log {
+    flex: 1; overflow-y: auto; font-size: 11.5px; line-height: 1.8; min-height: 260px;
+    background: rgba(0,0,0,.3); border: 1px solid rgba(201,170,109,.3); border-radius: 8px; padding: 8px;
+  }
+  #log div { border-left: 3px solid rgba(201,170,109,.25); padding-left: 8px; margin-bottom: 2px; border-radius: 2px; }
+  #log .hit { color: var(--parchment); }
+  #log .heal { color: #7ee0a3; border-left-color: rgba(126,224,163,.5); }
+  #log .death { color: #ff7a6a; font-weight: bold; border-left-color: #ff7a6a; }
+  #log .cast { color: var(--gold-bright); border-left-color: rgba(240,208,128,.5); }
+  #log .round { color: var(--gold-bright); text-align: center; margin: 4px 0; letter-spacing: 1px; border-left: none; }
+  #log .crit {
+    color: #ffb347; font-weight: bold; border-left-color: #f39c12;
+    background: rgba(243,156,18,.12); animation: critFlash .45s;
+  }
+  @keyframes critFlash { 0%,100% { background: rgba(243,156,18,.12); } 50% { background: rgba(243,156,18,.4); } }
+  .controls { display: flex; gap: 6px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .controls button { padding: 7px 12px; font-size: 12px; }
+  .controls button.on { border-color: var(--gold-bright); color: var(--gold-bright); }
+
+  /* ================= results ================= */
+  .banner { text-align: center; padding: 30px 16px; margin-bottom: 18px; }
+  .banner h2 { margin: 0 0 6px; font-size: 32px; letter-spacing: 2px; text-shadow: 0 3px 6px rgba(0,0,0,.7); }
+  .banner.win h2 { color: var(--gold-bright); }
+  .banner.loss h2 { color: #ff7a6a; }
+  .banner p { margin: 0; color: var(--sand); font-size: 13px; }
+  .loot { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 14px 0 24px; }
+  .lootcard {
+    background: linear-gradient(180deg, var(--parchment), var(--parchment-dark));
+    border: 3px solid var(--bronze); border-radius: 10px; padding: 12px 20px;
+    text-align: center; font-size: 12px; color: var(--ink); font-weight: bold;
+    box-shadow: inset 0 0 0 2px rgba(201,170,109,.7), 0 10px 12px -5px rgba(0,0,0,.5);
+  }
+  .lootcard .r { font-size: 9px; text-transform: uppercase; letter-spacing: 2px; margin-top: 3px; }
+  .rar-common { color: #6d5a3c; } .rar-rare { color: #1565c0; } .rar-epic { color: #7b1fa2; }
+  .results-party { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 720px; margin: 0 auto 20px; }
+  .results-actions { text-align: center; }
+  .seednote { text-align: center; color: var(--sand-dark); font-size: 10px; margin-top: 14px; word-break: break-all; }
+
+  #loading { text-align: center; color: var(--sand); padding: 60px 0; }
+
+  @media (max-width: 980px) { .board-grid { grid-template-columns: 1fr; } .logpanel { min-height: 240px; } }
+  @media (max-width: 640px) {
     .pool { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-    .battle { grid-template-columns: 1fr; }
+    .row { gap: 6px; } .unit { width: 72px; } .unit .oval { width: 62px; height: 82px; }
+    .statbox { bottom: 20px; min-width: 23px; height: 22px; line-height: 20px; font-size: 11px; }
+    .arena { min-height: 380px; }
+    .picks, .results-party { gap: 5px; }
   }
 </style>
 </head>
@@ -136,24 +314,46 @@
 
   <!-- DRAFT -->
   <section id="draft" class="screen">
-    <div class="draft-status">
+    <div class="draft-status ornate">
       Draft round <b id="d-round">1</b>/3 — pick <b id="d-need">1</b> more
       (party <b id="d-count">0</b>/5)
     </div>
     <div class="pool" id="pool"></div>
     <div class="picks-title">Your party — click a slot to unpick</div>
     <div class="picks" id="picks"></div>
-    <div class="draft-actions">
-      <button id="d-next" disabled>NEXT ROUND</button>
-    </div>
+    <div class="draft-actions"><button id="d-next" disabled>NEXT ROUND</button></div>
   </section>
 
   <!-- SPECTATE -->
   <section id="spectate" class="screen">
-    <div class="battle">
-      <div class="teampanel"><h3 class="you">Your party</h3><div id="teamA"></div></div>
-      <div class="logpanel">
-        <div class="log-head"><span id="s-round">Round 1</span><span id="s-turn">turn 0</span></div>
+    <div class="board-grid">
+      <div class="board">
+        <div class="side-banner enemy"><span>☠ Enemy Team</span><span class="score" id="s-round">Round 1</span></div>
+        <div class="arena" id="arena">
+          <svg class="foliage" style="top:-6px;left:-6px" width="150" height="90" viewBox="0 0 150 90">
+            <g fill="#228b22"><ellipse cx="18" cy="18" rx="42" ry="20" transform="rotate(-24 18 18)"/><ellipse cx="52" cy="12" rx="34" ry="14" transform="rotate(-8 52 12)"/><ellipse cx="14" cy="52" rx="16" ry="34" transform="rotate(14 14 52)"/></g>
+            <g fill="#3cb371"><ellipse cx="34" cy="24" rx="22" ry="9" transform="rotate(-18 34 24)"/><ellipse cx="10" cy="40" rx="9" ry="20" transform="rotate(10 10 40)"/></g>
+          </svg>
+          <svg class="foliage" style="top:-6px;right:-6px;transform:scaleX(-1)" width="150" height="90" viewBox="0 0 150 90">
+            <g fill="#228b22"><ellipse cx="18" cy="18" rx="42" ry="20" transform="rotate(-24 18 18)"/><ellipse cx="52" cy="12" rx="34" ry="14" transform="rotate(-8 52 12)"/><ellipse cx="14" cy="52" rx="16" ry="34" transform="rotate(14 14 52)"/></g>
+            <g fill="#3cb371"><ellipse cx="34" cy="24" rx="22" ry="9" transform="rotate(-18 34 24)"/><ellipse cx="10" cy="40" rx="9" ry="20" transform="rotate(10 10 40)"/></g>
+          </svg>
+          <svg class="foliage" style="bottom:-6px;left:-6px;transform:scaleY(-1)" width="130" height="70" viewBox="0 0 130 70">
+            <g fill="#228b22"><ellipse cx="16" cy="16" rx="36" ry="17" transform="rotate(-22 16 16)"/><ellipse cx="10" cy="44" rx="12" ry="26" transform="rotate(12 10 44)"/></g>
+            <g fill="#3cb371"><ellipse cx="30" cy="20" rx="18" ry="8" transform="rotate(-16 30 20)"/></g>
+          </svg>
+          <svg class="foliage" style="bottom:-6px;right:-6px;transform:scale(-1,-1)" width="130" height="70" viewBox="0 0 130 70">
+            <g fill="#228b22"><ellipse cx="16" cy="16" rx="36" ry="17" transform="rotate(-22 16 16)"/><ellipse cx="10" cy="44" rx="12" ry="26" transform="rotate(12 10 44)"/></g>
+            <g fill="#3cb371"><ellipse cx="30" cy="20" rx="18" ry="8" transform="rotate(-16 30 20)"/></g>
+          </svg>
+          <div class="formation" id="teamB"></div>
+          <div class="formation" id="teamA"></div>
+          <div id="fxlayer"></div>
+        </div>
+        <div class="side-banner player"><span>🛡 Your Party</span><span class="score" id="s-turn">turn 0</span></div>
+      </div>
+      <aside class="logpanel ornate">
+        <div class="log-head"><span>Battle Log</span></div>
         <div id="log"></div>
         <div class="controls">
           <button id="s-play" class="on">⏸ Pause</button>
@@ -162,17 +362,16 @@
           <button id="s-2" class="secondary">2×</button>
           <button id="s-skip" class="secondary">⏭ Skip</button>
         </div>
-      </div>
-      <div class="teampanel"><h3 class="cpu">Enemy team</h3><div id="teamB"></div></div>
-    </div>
-    <div class="results-actions" style="margin-top:14px">
-      <button id="s-results" style="display:none">SEE RESULTS →</button>
+        <div class="results-actions" style="margin-top:10px">
+          <button id="s-results" style="display:none">SEE RESULTS →</button>
+        </div>
+      </aside>
     </div>
   </section>
 
   <!-- RESULTS -->
   <section id="results" class="screen">
-    <div class="banner" id="r-banner">
+    <div class="banner ornate" id="r-banner">
       <h2 id="r-title">VICTORY</h2>
       <p id="r-sub">2-0 · round 2 · wipe</p>
     </div>
@@ -192,6 +391,13 @@
   const $ = (id) => document.getElementById(id);
   const NATIVE = 128;
 
+  // class colors for the frame inlay band
+  const CLASS_COLORS = {
+    Tank: '#9fb4c7', Knight: '#8b4513', Cleric: '#f0d080', Wizard: '#1e90ff',
+    Battlemage: '#8b00ff', Rogue: '#32cd32', Archer: '#228b22', Berserker: '#dc143c',
+  };
+  const clsColor = (cls) => CLASS_COLORS[cls] ?? '#c9aa6d';
+
   // ---- data ----------------------------------------------------------------
   const [manifest, tuning, names] = await Promise.all(
     ['attributes', 'tuning', 'names'].map((f) =>
@@ -204,7 +410,7 @@
   const data = { manifest, tuning, names };
   const manifestById = new Map(manifest.map((e) => [e.id, e]));
 
-  // ---- sprite compositing (same approach as the demo) ------------------------
+  // ---- sprite compositing -----------------------------------------------------
   const imageCache = new Map();
   const loadImage = (src) => {
     if (!imageCache.has(src)) {
@@ -250,8 +456,29 @@
     return c;
   };
 
+  /** Beveled metallic oval with class-colored inlay around the sprite. */
+  function mkOval(fighter, cls) {
+    const wrap = document.createElement('div');
+    wrap.className = 'oval-wrap';
+    const oval = document.createElement('div');
+    oval.className = 'oval';
+    const inlay = document.createElement('div');
+    inlay.className = 'inlay';
+    inlay.style.setProperty('--cls', clsColor(cls ?? fighter.cls));
+    inlay.style.background = clsColor(cls ?? fighter.cls);
+    const hole = document.createElement('div');
+    hole.className = 'porthole';
+    const cv = mkCanvas();
+    drawFighter(cv, fighter);
+    hole.appendChild(cv);
+    inlay.appendChild(hole);
+    oval.appendChild(inlay);
+    wrap.appendChild(oval);
+    return wrap;
+  }
+
   // ---- game state ------------------------------------------------------------
-  const PICKS_PER_ROUND = [1, 2, 2]; // snake draft 1 -> 2 -> 2
+  const PICKS_PER_ROUND = [1, 2, 2];
   let gameSeed, draftRound, picks, pool, existingIds;
   let match, lines, cursor, playing, speed, timer, hp, cpuTeam;
 
@@ -271,7 +498,7 @@
     return f;
   };
 
-  // ---- draft ------------------------------------------------------------------
+  // ---- draft --------------------------------------------------------------------
   function nextDraftRound() {
     draftRound++;
     pool = Array.from({ length: 10 }, (_, i) =>
@@ -280,9 +507,7 @@
     renderDraft();
   }
 
-  function picksNeeded() {
-    return PICKS_PER_ROUND.slice(0, draftRound).reduce((a, b) => a + b, 0);
-  }
+  const picksNeeded = () => PICKS_PER_ROUND.slice(0, draftRound).reduce((a, b) => a + b, 0);
 
   function renderDraft() {
     $('d-round').textContent = draftRound;
@@ -294,14 +519,18 @@
     for (const f of pool) {
       const card = document.createElement('div');
       card.className = 'fcard' + (picks.includes(f) ? ' picked' : '');
-      const cv = mkCanvas();
-      drawFighter(cv, f);
-      card.appendChild(cv);
+      card.appendChild(mkOval(f));
       const ab = f.abilities.map((a) => a.name).slice(0, 2).join(' · ');
       card.insertAdjacentHTML(
         'beforeend',
-        `<div class="fname">${f.name}</div><div class="fcls">${f.cls}</div>
-         <div class="fstat">HP ${f.stats.hp} ATK ${f.stats.atk} DEF ${f.stats.def} SPD ${f.stats.spd}</div>
+        `<div class="fname">${f.name}</div>
+         <div class="fcls" style="color:${clsColor(f.cls)}">${f.cls}</div>
+         <div class="gems">
+           <span class="gem atk" title="Attack">⚔${f.stats.atk}</span>
+           <span class="gem hp" title="Health">❤${f.stats.hp}</span>
+           <span class="gem def" title="Defense">🛡${f.stats.def}</span>
+           <span class="gem spd" title="Speed">»${f.stats.spd}</span>
+         </div>
          <div class="fab">${ab || (f.doubleAttack ? '⚔ dual strike' : '')}</div>`
       );
       card.onclick = () => {
@@ -319,12 +548,9 @@
       const slot = document.createElement('div');
       slot.className = 'pickslot' + (f ? ' filled' : '');
       if (f) {
-        const cv = mkCanvas();
-        drawFighter(cv, f);
-        slot.appendChild(cv);
-        slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls">${f.cls}</div>`);
+        slot.appendChild(mkOval(f));
+        slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls" style="color:${clsColor(f.cls)}">${f.cls}</div>`);
         slot.onclick = () => {
-          // unpick only if drafted this round (can't rewind previous rounds)
           if (i >= picksNeeded() - PICKS_PER_ROUND[draftRound - 1]) {
             picks.splice(i, 1);
             renderDraft();
@@ -342,7 +568,7 @@
     btn.onclick = draftRound < 3 ? nextDraftRound : startMatch;
   }
 
-  // ---- spectate -----------------------------------------------------------------
+  // ---- spectate --------------------------------------------------------------------
   async function startMatch() {
     cpuTeam = Array.from({ length: 5 }, (_, i) => gen(`cpu-${gameSeed}-${i}`));
     match = await runMatch(picks, cpuTeam, `match-${gameSeed}`);
@@ -361,38 +587,49 @@
     tick();
   }
 
-  function unitFighter(id) {
-    const idx = Number(id.slice(1));
-    return id[0] === 'A' ? picks[idx] : cpuTeam[idx];
+  const unitFighter = (id) => (id[0] === 'A' ? picks[Number(id.slice(1))] : cpuTeam[Number(id.slice(1))]);
+  const unitInfo = (id) => [...match.teams.A, ...match.teams.B].find((x) => x.id === id);
+
+  function mkUnit(u) {
+    const f = unitFighter(u.id);
+    const unit = document.createElement('div');
+    unit.className = 'unit' + (hp[u.id] <= 0 ? ' dead' : '');
+    unit.id = `u-${u.id}`;
+    const wrap = mkOval(f, u.cls);
+    wrap.insertAdjacentHTML(
+      'beforeend',
+      `<span class="statbox atk">${f.stats.atk}</span><span class="statbox hp">${Math.max(0, hp[u.id])}</span>`
+    );
+    unit.appendChild(wrap);
+    const frac = Math.max(0, hp[u.id]) / u.hpMax;
+    unit.insertAdjacentHTML(
+      'beforeend',
+      `<div class="nameplate" title="${u.name} — ${u.cls} (${u.slot === 'V' ? 'vanguard' : u.slot === 'F' ? 'flank' : 'backline'})">${u.name}</div>
+       <div class="hpbar"><i class="${frac < 0.35 ? 'low' : ''}" style="width:${frac * 100}%"></i></div>`
+    );
+    return unit;
   }
 
   function renderTeams() {
+    // V formation: vanguard nearest the center line of the arena.
+    // enemy (top half): back -> flank -> vanguard; player (bottom): mirrored.
     for (const side of ['A', 'B']) {
       const el = $(side === 'A' ? 'teamA' : 'teamB');
       el.innerHTML = '';
-      for (const u of match.teams[side]) {
+      const order = side === 'B' ? ['B', 'F', 'V'] : ['V', 'F', 'B'];
+      for (const slot of order) {
+        const units = match.teams[side].filter((u) => u.slot === slot);
+        if (units.length === 0) continue;
         const row = document.createElement('div');
-        row.className = 'urow' + (hp[u.id] <= 0 ? ' dead' : '');
-        row.id = `u-${u.id}`;
-        const cv = mkCanvas();
-        drawFighter(cv, unitFighter(u.id));
-        row.appendChild(cv);
-        const frac = Math.max(0, hp[u.id]) / u.hpMax;
-        row.insertAdjacentHTML(
-          'beforeend',
-          `<div class="uinfo">
-             <div class="uname">${u.name}</div><div class="ucls">${u.cls} · ${u.slot}</div>
-             <div class="hpbar"><i class="${frac < 0.35 ? 'low' : ''}" style="width:${frac * 100}%"></i></div>
-             <div class="hptext">${Math.max(0, hp[u.id])}/${u.hpMax}</div>
-           </div>`
-        );
+        row.className = `frow ${slot === 'V' ? 'van' : slot === 'F' ? 'flank' : 'back'}`;
+        for (const u of units) row.appendChild(mkUnit(u));
         el.appendChild(row);
       }
     }
   }
 
   function updateUnit(id) {
-    const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === id);
+    const u = unitInfo(id);
     const row = $(`u-${id}`);
     if (!u || !row) return;
     const frac = Math.max(0, hp[id]) / u.hpMax;
@@ -400,17 +637,88 @@
     const bar = row.querySelector('.hpbar i');
     bar.style.width = `${frac * 100}%`;
     bar.classList.toggle('low', frac < 0.35);
-    row.querySelector('.hptext').textContent = `${Math.max(0, hp[id])}/${u.hpMax}`;
+    row.querySelector('.statbox.hp').textContent = Math.max(0, hp[id]);
+  }
+
+  // ---- battle fx --------------------------------------------------------------
+  const arena = () => $('arena');
+  function ovalCenter(id) {
+    const row = $(`u-${id}`);
+    if (!row) return null;
+    const a = arena().getBoundingClientRect();
+    const r = row.querySelector('.oval').getBoundingClientRect();
+    return { x: r.left + r.width / 2 - a.left, y: r.top + r.height / 2 - a.top };
+  }
+  function fxAt(x, y, html, cls, ttl) {
+    const el = document.createElement('div');
+    el.className = cls;
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+    el.innerHTML = html;
+    $('fxlayer').appendChild(el);
+    setTimeout(() => el.remove(), ttl);
+  }
+  function fxBurst(id) {
+    const c = ovalCenter(id);
+    if (c) fxAt(c.x, c.y, '💥', 'fx-burst', 500);
+  }
+  function fxFloat(id, text, kind) {
+    const c = ovalCenter(id);
+    if (c) fxAt(c.x + (Math.random() * 22 - 11), c.y - 18, text, `fx-float ${kind}`, 850);
+  }
+  function fxLunge(attackerId) {
+    const el = $(`u-${attackerId}`);
+    if (!el) return;
+    const cls = attackerId[0] === 'A' ? 'lunge-up' : 'lunge-down';
+    el.classList.add(cls, 'acting');
+    setTimeout(() => el.classList.remove(cls), 190 / speed);
+    setTimeout(() => el.classList.remove('acting'), 420 / speed);
+  }
+  function fxProjectile(fromId, toId) {
+    const a = ovalCenter(fromId);
+    const b = ovalCenter(toId);
+    if (!a || !b) return;
+    const orb = document.createElement('div');
+    orb.className = 'fx-orb';
+    orb.style.left = `${a.x}px`;
+    orb.style.top = `${a.y}px`;
+    $('fxlayer').appendChild(orb);
+    orb.animate(
+      [{ transform: 'translate(-50%,-50%)' }, { transform: `translate(${b.x - a.x - 7}px, ${b.y - a.y - 7}px)` }],
+      { duration: 220 / speed, easing: 'ease-in' }
+    ).onfinish = () => orb.remove();
+  }
+
+  function playFx(raw) {
+    switch (raw.type) {
+      case 'damage': {
+        const f = raw.unit ? unitFighter(raw.unit) : null;
+        const ranged = f && (f.dmgType === 'ranged' || raw.action?.includes('spell'));
+        fxLunge(raw.unit);
+        if (ranged) fxProjectile(raw.unit, raw.target);
+        setTimeout(() => { fxBurst(raw.target); fxFloat(raw.target, `-${raw.dmg}`, 'dmg'); }, (ranged ? 200 : 90) / speed);
+        break;
+      }
+      case 'retaliate': case 'familiar': case 'dot':
+        fxFloat(raw.target ?? raw.unit, `-${raw.dmg}`, 'dmg');
+        break;
+      case 'heal': case 'bloodlust':
+        fxFloat(raw.unit, `+${raw.amount ?? raw.heal ?? 0} ✨`, 'heal');
+        break;
+      case 'cast':
+        fxLunge(raw.unit);
+        fxFloat(raw.unit, `✨ ${raw.ability}`, 'heal');
+        break;
+      case 'death':
+        fxBurst(raw.unit);
+        break;
+    }
   }
 
   function applyRaw(raw) {
     switch (raw.type) {
       case 'round-start':
-        for (const id of Object.keys(hp)) {
-          const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === id);
-          hp[id] = u.hpMax;
-          updateUnit(id);
-        }
+        for (const id of Object.keys(hp)) { hp[id] = unitInfo(id).hpMax; updateUnit(id); }
         $('s-round').textContent = `Round ${raw.round}`;
         break;
       case 'damage': case 'retaliate': case 'familiar':
@@ -421,18 +729,14 @@
         hp[raw.unit] = Math.max(0, hp[raw.unit] - raw.dmg);
         updateUnit(raw.unit);
         break;
-      case 'heal': case 'bloodlust': {
-        const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === raw.unit);
-        hp[raw.unit] = Math.min(u.hpMax, hp[raw.unit] + (raw.amount ?? raw.heal ?? 0));
+      case 'heal': case 'bloodlust':
+        hp[raw.unit] = Math.min(unitInfo(raw.unit).hpMax, hp[raw.unit] + (raw.amount ?? raw.heal ?? 0));
         updateUnit(raw.unit);
         break;
-      }
-      case 'survive': {
-        const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === raw.unit);
-        hp[raw.unit] = Math.round(u.hpMax * 0.2);
+      case 'survive':
+        hp[raw.unit] = Math.round(unitInfo(raw.unit).hpMax * 0.2);
         updateUnit(raw.unit);
         break;
-      }
       case 'pact':
         hp[raw.unit] = Math.max(1, hp[raw.unit] - raw.cost);
         updateUnit(raw.unit);
@@ -444,15 +748,88 @@
     }
   }
 
-  function lineClass(raw) {
-    if (raw.type === 'death') return 'death';
-    if (raw.type === 'heal' || raw.type === 'bloodlust' || raw.type === 'survive') return 'heal';
-    if (raw.type === 'cast' || raw.type === 'pact') return 'cast';
-    if (raw.type === 'round-start' || raw.type === 'round-end') return 'round';
-    return 'hit';
+  const lineClass = (raw) =>
+    raw.type === 'damage' && raw.crit ? 'crit'
+    : raw.type === 'death' ? 'death'
+    : raw.type === 'heal' || raw.type === 'bloodlust' || raw.type === 'survive' ? 'heal'
+    : raw.type === 'cast' || raw.type === 'pact' ? 'cast'
+    : raw.type === 'round-start' || raw.type === 'round-end' ? 'round'
+    : 'hit';
+
+  // ---- visceral battle narration (deterministic: same seed, same story) -----
+  const GORE = {
+    attack: [
+      (a, d, n) => `${a} cleaves ${d} across the ribs for ${n} — blood pooling`,
+      (a, d, n) => `${a} slams ${d} for ${n} — jaw cracks sideways`,
+      (a, d, n) => `${a} pierces ${d} for ${n} — deep puncture, internal bleeding`,
+      (a, d, n) => `${a} crushes ${d}'s arm for ${n} — it hangs limp`,
+      (a, d, n) => `${a} slashes ${d} for ${n} — a gasping chest wound`,
+      (a, d, n) => `${a} stomps ${d} for ${n} — kneecap splinters`,
+      (a, d, n) => `${a} rakes ${d}'s face for ${n} — vision blurring`,
+      (a, d, n) => `${a} batters ${d} for ${n} — ribs groan under the blow`,
+    ],
+    crit: [
+      (a, d, n) => `${a} CLEAVES ${d} for ${n} — ribs cracked clean through!`,
+      (a, d, n) => `${a} SMASHES ${d}'s skull for ${n} — teeth scattered!`,
+      (a, d, n) => `${a} IMPALES ${d} for ${n} — critical hemorrhage!`,
+      (a, d, n) => `${a} OBLITERATES ${d}'s guard for ${n} — bone protruding!`,
+      (a, d, n) => `${a} TEARS THROUGH ${d} for ${n} — arterial spray!`,
+    ],
+    dual: [
+      (a, d, n) => `${a}'s off-hand whirls into ${d} for ${n} more`,
+      (a, d, n) => `${a} strikes ${d} again for ${n} — no time to breathe`,
+      (a, d, n) => `${a}'s second blade finds ${d} for ${n}`,
+    ],
+    death: [
+      (d) => `${d} collapses — too many wounds, consciousness fading`,
+      (d) => `${d} drops where they stand — the sand drinks deep`,
+      (d) => `${d} crumples — the arena falls silent a beat`,
+      (d) => `${d} falls and does not rise`,
+    ],
+    heal: [
+      (u, n, src) => `${u} knits flesh back together — +${n} (${src})`,
+      (u, n, src) => `${u}'s wounds seal before your eyes — +${n} (${src})`,
+      (u, n, src) => `vitality surges through ${u} — +${n} (${src})`,
+    ],
+  };
+  const pickLine = (arr, key) => arr[fnv1a(key) % arr.length];
+
+  function narrate(line) {
+    const raw = line.raw;
+    const key = `${line.turn}|${raw.unit ?? ''}|${raw.target ?? ''}`;
+    const n = (id) => unitInfo(id)?.name ?? id;
+    switch (raw.type) {
+      case 'damage': {
+        if (raw.action === 'on-hit') return line.event;
+        const bank = raw.crit ? GORE.crit : raw.action === 'dual-strike' ? GORE.dual : GORE.attack;
+        // spells keep their spell name front and center
+        if (!['attack', 'dual-strike'].includes(raw.action)) {
+          return `${n(raw.unit)}'s ${raw.action} sears ${n(raw.target)} for ${raw.dmg}`;
+        }
+        return pickLine(bank, key)(n(raw.unit), n(raw.target), raw.dmg);
+      }
+      case 'death':
+        return pickLine(GORE.death, key)(n(raw.unit));
+      case 'heal':
+        return pickLine(GORE.heal, key)(n(raw.unit), raw.amount, raw.source);
+      case 'bloodlust':
+        return `${n(raw.unit)} tastes blood — BLOODLUST: +${raw.heal} HP, +${raw.atkStack} ATK and climbing`;
+      case 'survive':
+        return `${n(raw.unit)} refuses to die — ${raw.how}!`;
+      default:
+        return line.event;
+    }
   }
 
-  function step() {
+  function shakeBoard() {
+    const b = document.querySelector('.board');
+    b.classList.remove('shake');
+    void b.offsetWidth; // restart animation
+    b.classList.add('shake');
+    setTimeout(() => b.classList.remove('shake'), 320);
+  }
+
+  function step(animate = false) {
     if (cursor >= lines.length) {
       playing = false;
       clearTimeout(timer);
@@ -461,18 +838,22 @@
       return;
     }
     const line = lines[cursor++];
+    if (animate) {
+      playFx(line.raw);
+      if (line.raw.type === 'damage' && line.raw.crit) shakeBoard();
+    }
     applyRaw(line.raw);
     $('s-turn').textContent = `turn ${line.turn}/${lines.length}`;
     const log = $('log');
-    log.insertAdjacentHTML('beforeend', `<div class="${lineClass(line.raw)}">${line.event}</div>`);
+    log.insertAdjacentHTML('beforeend', `<div class="${lineClass(line.raw)}">${narrate(line)}</div>`);
     log.scrollTop = log.scrollHeight;
   }
 
   function tick() {
     clearTimeout(timer);
     if (!playing) return;
-    step();
-    if (playing) timer = setTimeout(tick, 320 / speed);
+    step(true);
+    if (playing) timer = setTimeout(tick, 340 / speed);
   }
 
   $('s-play').onclick = () => {
@@ -490,8 +871,8 @@
   $('s-skip').onclick = () => {
     playing = false;
     clearTimeout(timer);
-    while (cursor < lines.length) step();
-    step(); // one extra call hits the end-of-log branch and reveals SEE RESULTS
+    while (cursor < lines.length) step(false);
+    step(false); // hits the end-of-log branch and reveals SEE RESULTS
   };
   document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' && $('spectate').classList.contains('active')) {
@@ -505,7 +886,7 @@
   function showResults() {
     const won = match.winner === 'A';
     const last = match.rounds[match.rounds.length - 1];
-    $('r-banner').className = `banner ${won ? 'win' : 'loss'}`;
+    $('r-banner').className = `banner ornate ${won ? 'win' : 'loss'}`;
     $('r-title').textContent = won ? '🏆 VICTORY' : '💀 DEFEAT';
     $('r-sub').textContent = `${match.score.A}-${match.score.B} · ${match.rounds.length} round${match.rounds.length > 1 ? 's' : ''} · last: ${last.how}`;
 
@@ -514,23 +895,23 @@
     for (const f of picks) {
       const slot = document.createElement('div');
       slot.className = 'pickslot filled';
-      const cv = mkCanvas();
-      drawFighter(cv, f);
-      slot.appendChild(cv);
-      slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls">${f.cls}</div>`);
+      slot.appendChild(mkOval(f));
+      slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls" style="color:${clsColor(f.cls)}">${f.cls}</div>`);
       party.appendChild(slot);
     }
 
     const loot = $('r-loot');
     loot.innerHTML = '';
-    const drops = won ? match.drops : match.drops.slice(0, 1); // losers get scraps
+    const drops = won ? match.drops : match.drops.slice(0, 1);
+    const rarIcon = { common: '⚔️', rare: '💎', epic: '👑' };
     for (const d of drops) {
       loot.insertAdjacentHTML(
         'beforeend',
-        `<div class="lootcard"><div class="rar-${d.rarity}">${d.item}</div><div class="r rar-${d.rarity}">${d.rarity}</div></div>`
+        `<div class="lootcard"><div class="rar-${d.rarity}">${rarIcon[d.rarity] ?? '⚔️'} ${d.item}</div><div class="r rar-${d.rarity}">${d.rarity}</div></div>`
       );
     }
     if (!won) loot.insertAdjacentHTML('beforeend', `<div class="lootcard"><div class="rar-common">…the rest went to the victor</div></div>`);
+    loot.insertAdjacentHTML('beforeend', `<div class="lootcard" style="border-color:#2aa32a"><div style="color:#1e7a1e">✦ +${won ? 100 : 25} XP</div><div class="r" style="color:#2aa32a">experience</div></div>`);
 
     $('r-seed').textContent = `verifiable seed: match-${gameSeed} — same seed, same battle, forever`;
     show('results');

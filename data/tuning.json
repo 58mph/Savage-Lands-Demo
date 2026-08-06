@@ -12,13 +12,19 @@
     "conditions": 300,
     "offhand": 35
   },
+  "berserkerChance": 0.03,
   "goldenChance": 0.08,
   "goldenStatMultiplier": 1.1,
   "critPerGap": 0.02,
   "secondAttackMultiplier": 0.6,
   "combat": {
-    "actionsPerTurn": 2,
-    "heavyAbilityCost": 2
+    "actionsPerTurn": 1,
+    "cyclesPerRound": 12,
+    "defEffectiveness": 0.5,
+    "critMult": 2,
+    "cover": { "vanguard": 0.4, "flank": 0.2 },
+    "initiativeDie": 20,
+    "roundsPerMatch": 3
   },
   "canvas": { "width": 128, "height": 128 }
 }

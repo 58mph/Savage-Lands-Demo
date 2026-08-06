@@ -309,11 +309,9 @@
 
   function gearSummaryHtml(fighter) {
     const critPct = Math.round(fighter.stats.crit * 100);
-    // cost = moves out of the fighter's turn (tuning.combat.actionsPerTurn)
+    // one action per turn (locked): casting replaces the attack, 1x/round
     const costLabel = (a) =>
-      a.kind === 'passive'
-        ? 'passive'
-        : `${a.kind} <span class="pip">${'◆'.repeat(a.cost)}</span>`;
+      a.kind === 'passive' ? 'passive' : `${a.kind} · 1×/round`;
     const abilities = fighter.abilities.length
       ? fighter.abilities.map((a) =>
           `<div class="ability"><span class="a-name">${a.name}</span><span class="a-kind">${costLabel(a)}</span><span class="a-desc">${a.desc}</span></div>`
@@ -379,8 +377,7 @@
         return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
       });
     if (fighter.doubleAttack) {
-      const moves = tuning.combat?.actionsPerTurn ?? 2;
-      const dualText = `Each turn has ${moves} moves — a free hand lets the 2nd move be another main-hand attack (${dualStrikePct}% damage)`;
+      const dualText = `Free hand: every attack swings twice — the second lands at ${dualStrikePct}% damage (after armor)`;
       partRows.push(
         `<li><span class="slot">offhands</span><span>` +
           `<span class="badge" title="${dualText}">⚔ DUAL STRIKE</span>` +

@@ -188,7 +188,8 @@ test('distribution tripwire: offhand-empty within 10%-30% over 500 seeded fighte
 
 test('robe rule: robed fighters have no belt/chest/shoulders/legs, keep boots+gloves', () => {
   // robes: 0 -> never empty -> every fighter is robed
-  const alwaysRobed = { slotEmptyWeights: { robes: 0 } };
+  // (berserkerChance 0 so the bare-armor spawn roll can't skip the robe)
+  const alwaysRobed = { slotEmptyWeights: { robes: 0 }, berserkerChance: 0 };
   for (let i = 0; i < 100; i++) {
     const f = generateFighter(`robe-${i}`, { tuning: alwaysRobed });
     const present = new Set(f.parts.map((p) => p.slot));
@@ -202,7 +203,10 @@ test('robe rule: robed fighters have no belt/chest/shoulders/legs, keep boots+gl
     assert.notEqual(f.cls, 'Berserker', 'a robe counts as armor coverage');
   }
   // un-robed fighters always wear a belt
-  const neverRobed = { slotEmptyWeights: { robes: Number.MAX_SAFE_INTEGER } };
+  const neverRobed = {
+    slotEmptyWeights: { robes: Number.MAX_SAFE_INTEGER },
+    berserkerChance: 0,
+  };
   for (let i = 0; i < 50; i++) {
     const f = generateFighter(`unrobed-${i}`, { tuning: neverRobed });
     assert.ok(f.parts.some((p) => p.slot === 'belts'), `un-robed unrobed-${i} must wear a belt`);
@@ -211,8 +215,8 @@ test('robe rule: robed fighters have no belt/chest/shoulders/legs, keep boots+gl
 
 test('species stat identity: bases carry archetype blocks, gear scales fighters', () => {
   const byId = new Map(manifest.map((e) => [e.id, e]));
-  assert.deepEqual(byId.get('bases/possum').stats, { hp: 60, atk: 10, def: 5, spd: 14 }); // scout
-  assert.deepEqual(byId.get('bases/minotaur').stats, { hp: 130, atk: 18, def: 10, spd: 7 }); // brute
+  assert.deepEqual(byId.get('bases/possum').stats, { hp: 78, atk: 12, def: 6, spd: 14 }); // scout
+  assert.deepEqual(byId.get('bases/minotaur').stats, { hp: 110, atk: 15, def: 9, spd: 7 }); // brute
   // no more flat "everyone 80/10/8/10": stats must vary across fighters
   const totals = new Set();
   for (let i = 0; i < 50; i++) {
@@ -239,7 +243,9 @@ test('gap-bonus crit progression: 0/2/4/6/8% for 0-4 empty armor slots', () => {
       helms: 0, capes: 0, robes: BIG, conditions: 0, offhand: 0,
       ...emptied,
     };
-    const f = generateFighter('crit-progression', { tuning: { slotEmptyWeights } });
+    const f = generateFighter('crit-progression', {
+      tuning: { slotEmptyWeights, berserkerChance: 0 },
+    });
     assert.equal(f.stats.crit, expectedCrit, `expected crit ${expectedCrit} with ${Object.keys(emptied).length} gaps`);
   }
 });

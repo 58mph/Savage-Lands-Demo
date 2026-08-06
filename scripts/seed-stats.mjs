@@ -19,13 +19,16 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MANIFEST_PATH = path.join(ROOT, 'data', 'attributes.json');
 
 // --- Species archetypes (per sprites/DESIGN.md roles) ----------------------
+// Compressed power budget (engine calibration): flavor differences stay,
+// but no archetype doubles another's raw budget — BALANCE-FINAL wants all
+// species inside a 45-53% winrate band.
 const ARCHETYPES = {
-  warrior: { hp: 100, atk: 15, def: 12, spd: 10 },
-  shaman: { hp: 70, atk: 8, def: 6, spd: 9 },
-  hunter: { hp: 80, atk: 12, def: 8, spd: 12 },
-  brute: { hp: 130, atk: 18, def: 10, spd: 7 },
-  scout: { hp: 60, atk: 10, def: 5, spd: 14 },
-  chief: { hp: 120, atk: 14, def: 14, spd: 8 },
+  warrior: { hp: 92, atk: 13, def: 11, spd: 10 },
+  shaman: { hp: 84, atk: 12, def: 7, spd: 9 },
+  hunter: { hp: 85, atk: 12, def: 8, spd: 12 },
+  brute: { hp: 110, atk: 15, def: 9, spd: 7 },
+  scout: { hp: 78, atk: 12, def: 6, spd: 14 },
+  chief: { hp: 105, atk: 13, def: 12, spd: 8 },
 };
 const SPECIES = {
   crocodillian: 'warrior',
@@ -77,9 +80,9 @@ function applyLeans(stem, base) {
 
 function weaponBase(stem, dmgType) {
   if (/dagger|shard|sliver|fang(?!s)/.test(stem)) return { atk: 6, spd: 2 };
-  if (/axe/.test(stem)) return { atk: 11, spd: -1 };
+  if (/axe/.test(stem)) return { atk: 10, spd: -1 };
   if (/spear|lance/.test(stem)) return { atk: 8, spd: 1 };
-  if (/torch/.test(stem)) return { atk: 4, spd: 0 };
+  if (/torch/.test(stem)) return { atk: 5, spd: 0 };
   if (dmgType === 'ranged') return { atk: 7, spd: 1 };
   return { atk: 8, spd: 0 }; // swords, blades, maces
 }
@@ -91,9 +94,9 @@ function offhandBase(stem) {
 }
 
 function shieldBase(stem) {
-  if (/tower|bulwark|slab|coffin/.test(stem)) return { hp: 14, def: 9, spd: -2 };
-  if (/buckler/.test(stem)) return { hp: 4, def: 4, spd: 0 };
-  return { hp: 8, def: 6, spd: -1 }; // kite, round, viking...
+  if (/tower|bulwark|slab|coffin/.test(stem)) return { hp: 14, def: 8, spd: -2 };
+  if (/buckler/.test(stem)) return { hp: 5, def: 5, spd: 0 };
+  return { hp: 9, def: 7, spd: -1 }; // kite, round, viking...
 }
 
 // Condition marks: small permanent quirks, some double-edged.
@@ -122,15 +125,15 @@ function conditionBase(stem) {
 }
 
 const SLOT_BASE = {
-  chest: () => ({ hp: 18, def: 5 }),
-  robes: () => ({ hp: 10, atk: 4, def: 2, spd: 1 }),
-  shoulders: () => ({ hp: 6, def: 3 }),
+  chest: () => ({ hp: 20, def: 6 }),
+  robes: () => ({ hp: 13, atk: 4, def: 3, spd: 1 }),
+  shoulders: () => ({ hp: 7, def: 4 }),
   gloves: () => ({ atk: 2, def: 2, spd: 1 }),
-  legs: () => ({ hp: 10, def: 3 }),
-  boots: () => ({ hp: 3, def: 2, spd: 2 }),
-  belts: () => ({ hp: 6, def: 2 }),
-  helms: () => ({ hp: 5, def: 4 }),
-  capes: () => ({ hp: 4, def: 1, spd: 1 }),
+  legs: () => ({ hp: 12, def: 4 }),
+  boots: () => ({ hp: 4, def: 2, spd: 2 }),
+  belts: () => ({ hp: 7, def: 2 }),
+  helms: () => ({ hp: 6, def: 5 }),
+  capes: () => ({ hp: 5, def: 1, spd: 1 }),
   shieldstraps: () => ({}),
 };
 
@@ -164,7 +167,24 @@ function displayName(id) {
     .replace(/\b(Of|The|Le)\b/g, (m) => m.toLowerCase());
 }
 
+// --- Spawn-rate overrides (BALANCE-FINAL design bands): tower shields,
+// tomes and the ranged weapon get boosted rarityWeight so Tank / Cleric /
+// Archer spawn at meaningful rates. Applied while the weight is still the
+// scaffold default (human-set weights win).
+const SPAWN_WEIGHTS = {
+  'shields/spiked_tower_shield': 300,
+  'shields/bulwark_of_the_titans': 300,
+  'offhands/tome_of_knowledge': 400,
+  'offhands/book_of_black_arts': 400,
+  'weapons/throwing_lance': 300,
+};
+
 // ---------------------------------------------------------------------------
+// --force re-bakes every machine-generated stat block (names and human
+// tuning are preserved). Used for engine calibration passes; without it,
+// only unfilled scaffolds are touched.
+const FORCE = process.argv.includes('--force');
+
 const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
 const isZero = (s) => ['hp', 'atk', 'def', 'spd'].every((k) => !(s?.[k] ?? 0));
 const BASE_SCAFFOLD = JSON.stringify({ hp: 80, atk: 10, def: 8, spd: 10 });
@@ -176,9 +196,13 @@ for (const entry of manifest) {
     entry.name = displayName(entry.id);
     namesFilled++;
   }
+  if (SPAWN_WEIGHTS[entry.id] && (entry.rarityWeight === 100 || FORCE)) {
+    entry.rarityWeight = SPAWN_WEIGHTS[entry.id];
+  }
+  if ((entry.tags ?? []).includes('prestige')) continue; // prestige stats live in seed-prestige
   if (entry.slot === 'bases') {
     // scaffold blocks (uniform 80/10/8/10) are ours to replace; tuned ones stay
-    if (JSON.stringify(entry.stats) === BASE_SCAFFOLD || isZero(entry.stats)) {
+    if (FORCE || JSON.stringify(entry.stats) === BASE_SCAFFOLD || isZero(entry.stats)) {
       const stem = entry.id.split('/')[1];
       const role = SPECIES[stem];
       const arch = ARCHETYPES[role] ?? ARCHETYPES.hunter;
@@ -186,7 +210,7 @@ for (const entry of manifest) {
       entry.tags = [...new Set([...(entry.tags ?? []), role ?? 'hunter'])];
       statsFilled++;
     }
-  } else if (isZero(entry.stats)) {
+  } else if (FORCE || isZero(entry.stats)) {
     entry.stats = itemStats(entry);
     statsFilled++;
   }

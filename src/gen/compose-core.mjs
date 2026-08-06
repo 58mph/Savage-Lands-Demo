@@ -88,7 +88,8 @@ export function computeFighterId(partIds) {
 // Precedence, first match wins:
 //   towershield -> Tank
 //   tome offhand -> Cleric
-//   staff offhand -> Wizard
+//   staff offhand + robe -> Wizard (full caster)
+//   staff offhand + armor -> Battlemage (melee weapon + caster off-hand hybrid)
 //   bow/ranged weapon -> Archer
 //   any other shield -> Knight
 //   zero armor pieces -> Berserker
@@ -104,7 +105,9 @@ export function deriveClass(parts) {
 
   if (shield && (hasTag(shield, 'tank') || /tower|bulwark/.test(shield.id))) return 'Tank';
   if (offhand && (hasTag(offhand, 'cleric') || /tome|book/.test(offhand.id))) return 'Cleric';
-  if (offhand && (hasTag(offhand, 'caster') || /staff|scepter|smiter|mirror|wand/.test(offhand.id))) return 'Wizard';
+  if (offhand && (hasTag(offhand, 'caster') || /staff|scepter|smiter|mirror|wand/.test(offhand.id))) {
+    return bySlot.robes ? 'Wizard' : 'Battlemage';
+  }
   if (weapon && (weapon.dmgType === 'ranged' || /bow/.test(weapon.id))) return 'Archer';
   if (hasTag(shield, 'shield') || hasTag(offhand, 'shield')) return 'Knight';
   if (noArmor) return 'Berserker';
@@ -241,18 +244,25 @@ function rollParts(rng, manifest, tuning) {
   pickRequired('boots');
   pickRequired('weapons');
 
+  // Berserker roll: a small chance the fighter spawns with the bare-armor
+  // loadout (no robe, no armor pieces) — the high-risk carry archetype needs
+  // a real spawn rate (~3%) that independent slot rolls can't produce.
+  const berserk = rng() < (tuning.berserkerChance ?? 0);
+
   // Robe next — it decides whether the belt/chest/shoulders/legs group rolls
   // at all. Robed fighters wear none of those; boots and gloves are allowed.
-  rollOptional('robes');
+  if (!berserk) rollOptional('robes');
   const robed = Boolean(bySlot.robes);
   if (!robed) {
     pickRequired('belts'); // belt is 100% on every un-robed fighter
-    rollOptional('legs');
-    rollOptional('chest');
-    rollOptional('shoulders');
+    if (!berserk) {
+      rollOptional('legs');
+      rollOptional('chest');
+      rollOptional('shoulders');
+    }
   }
 
-  rollOptional('gloves');
+  if (!berserk) rollOptional('gloves');
   rollOptional('helms');
   rollOptional('capes');
   rollOptional('conditions');

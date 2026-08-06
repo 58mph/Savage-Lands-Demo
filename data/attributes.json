@@ -5,9 +5,9 @@
     "file": "assets/bases/albino_crocodillian.png",
     "name": "Albino Crocodillian",
     "stats": {
-      "hp": 70,
-      "atk": 8,
-      "def": 6,
+      "hp": 84,
+      "atk": 12,
+      "def": 7,
       "spd": 9
     },
     "dmgType": null,
@@ -24,9 +24,9 @@
     "file": "assets/bases/bearkin.png",
     "name": "Bearkin",
     "stats": {
-      "hp": 100,
-      "atk": 15,
-      "def": 12,
+      "hp": 92,
+      "atk": 13,
+      "def": 11,
       "spd": 10
     },
     "dmgType": null,
@@ -43,9 +43,9 @@
     "file": "assets/bases/black_ratman.png",
     "name": "Black Ratman",
     "stats": {
-      "hp": 60,
-      "atk": 10,
-      "def": 5,
+      "hp": 78,
+      "atk": 12,
+      "def": 6,
       "spd": 14
     },
     "dmgType": null,
@@ -62,7 +62,7 @@
     "file": "assets/bases/brown_ratman.png",
     "name": "Brown Ratman",
     "stats": {
-      "hp": 80,
+      "hp": 85,
       "atk": 12,
       "def": 8,
       "spd": 12
@@ -81,9 +81,9 @@
     "file": "assets/bases/crocodillian.png",
     "name": "Crocodillian",
     "stats": {
-      "hp": 100,
-      "atk": 15,
-      "def": 12,
+      "hp": 92,
+      "atk": 13,
+      "def": 11,
       "spd": 10
     },
     "dmgType": null,
@@ -100,7 +100,7 @@
     "file": "assets/bases/frogfolk.png",
     "name": "Frogfolk",
     "stats": {
-      "hp": 80,
+      "hp": 85,
       "atk": 12,
       "def": 8,
       "spd": 12
@@ -119,9 +119,9 @@
     "file": "assets/bases/lizardman.png",
     "name": "Lizardman",
     "stats": {
-      "hp": 60,
-      "atk": 10,
-      "def": 5,
+      "hp": 78,
+      "atk": 12,
+      "def": 6,
       "spd": 14
     },
     "dmgType": null,
@@ -138,9 +138,9 @@
     "file": "assets/bases/minotaur.png",
     "name": "Minotaur",
     "stats": {
-      "hp": 130,
-      "atk": 18,
-      "def": 10,
+      "hp": 110,
+      "atk": 15,
+      "def": 9,
       "spd": 7
     },
     "dmgType": null,
@@ -157,9 +157,9 @@
     "file": "assets/bases/poisonous_frogfolk.png",
     "name": "Poisonous Frogfolk",
     "stats": {
-      "hp": 70,
-      "atk": 8,
-      "def": 6,
+      "hp": 84,
+      "atk": 12,
+      "def": 7,
       "spd": 9
     },
     "dmgType": null,
@@ -176,9 +176,9 @@
     "file": "assets/bases/possum.png",
     "name": "Possum",
     "stats": {
-      "hp": 60,
-      "atk": 10,
-      "def": 5,
+      "hp": 78,
+      "atk": 12,
+      "def": 6,
       "spd": 14
     },
     "dmgType": null,
@@ -195,7 +195,7 @@
     "file": "assets/bases/raccoon.png",
     "name": "Raccoon",
     "stats": {
-      "hp": 80,
+      "hp": 85,
       "atk": 12,
       "def": 8,
       "spd": 12
@@ -214,9 +214,9 @@
     "file": "assets/bases/salamander.png",
     "name": "Salamander",
     "stats": {
-      "hp": 130,
-      "atk": 18,
-      "def": 10,
+      "hp": 110,
+      "atk": 15,
+      "def": 9,
       "spd": 7
     },
     "dmgType": null,
@@ -233,9 +233,9 @@
     "file": "assets/bases/white_ratman.png",
     "name": "White Ratman",
     "stats": {
-      "hp": 70,
-      "atk": 8,
-      "def": 6,
+      "hp": 84,
+      "atk": 12,
+      "def": 7,
       "spd": 9
     },
     "dmgType": null,
@@ -252,9 +252,9 @@
     "file": "assets/bases/winter_bearkin.png",
     "name": "Winter Bearkin",
     "stats": {
-      "hp": 120,
-      "atk": 14,
-      "def": 14,
+      "hp": 105,
+      "atk": 13,
+      "def": 12,
       "spd": 8
     },
     "dmgType": null,
@@ -271,7 +271,7 @@
     "file": "assets/belts/brotherhood_of_blood.png",
     "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -288,7 +288,7 @@
     "file": "assets/belts/cavalry.png",
     "name": "Cavalry",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -305,7 +305,7 @@
     "file": "assets/belts/chainmail.png",
     "name": "Chainmail",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -322,7 +322,7 @@
     "file": "assets/belts/champions_belt.png",
     "name": "Champions Belt",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -339,7 +339,7 @@
     "file": "assets/belts/conquerers.png",
     "name": "Conquerers",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -356,7 +356,7 @@
     "file": "assets/belts/demon_hunter.png",
     "name": "Demon Hunter",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -373,7 +373,7 @@
     "file": "assets/belts/destroyers_belt.png",
     "name": "Destroyers Belt",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -390,7 +390,7 @@
     "file": "assets/belts/dragon_knight.png",
     "name": "Dragon Knight",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -407,7 +407,7 @@
     "file": "assets/belts/dustmarsh.png",
     "name": "Dustmarsh",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -424,7 +424,7 @@
     "file": "assets/belts/ebon_belt.png",
     "name": "Ebon Belt",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -441,7 +441,7 @@
     "file": "assets/belts/fallen_kingdom_kilt.png",
     "name": "Fallen Kingdom Kilt",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -458,7 +458,7 @@
     "file": "assets/belts/frogsong.png",
     "name": "Frogsong",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -475,7 +475,7 @@
     "file": "assets/belts/frostrime.png",
     "name": "Frostrime",
     "stats": {
-      "hp": 6,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -492,7 +492,7 @@
     "file": "assets/belts/fury_belt.png",
     "name": "Fury Belt",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -509,7 +509,7 @@
     "file": "assets/belts/golden_bloodbrothers_belt.png",
     "name": "Golden Bloodbrothers Belt",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -526,7 +526,7 @@
     "file": "assets/belts/golden_cavalry.png",
     "name": "Golden Cavalry",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -543,7 +543,7 @@
     "file": "assets/belts/golden_destroyers_belt.png",
     "name": "Golden Destroyers Belt",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -560,7 +560,7 @@
     "file": "assets/belts/golden_house_of_leo.png",
     "name": "Golden House of Leo",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -577,7 +577,7 @@
     "file": "assets/belts/golden_imbued.png",
     "name": "Golden Imbued",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -594,7 +594,7 @@
     "file": "assets/belts/golden_nightstalkers_belt.png",
     "name": "Golden Nightstalkers Belt",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
       "def": 1,
       "spd": 0
@@ -611,7 +611,7 @@
     "file": "assets/belts/golden_spiked.png",
     "name": "Golden Spiked",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -628,7 +628,7 @@
     "file": "assets/belts/golden_studded_armor.png",
     "name": "Golden Studded Armor",
     "stats": {
-      "hp": 8,
+      "hp": 10,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -645,7 +645,7 @@
     "file": "assets/belts/golden_tanking_plate.png",
     "name": "Golden Tanking Plate",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
       "def": 4,
       "spd": 0
@@ -662,7 +662,7 @@
     "file": "assets/belts/healers_sash.png",
     "name": "Healers Sash",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -679,7 +679,7 @@
     "file": "assets/belts/heavy_marine.png",
     "name": "Heavy Marine",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -696,7 +696,7 @@
     "file": "assets/belts/heros_waist.png",
     "name": "Heros Waist",
     "stats": {
-      "hp": 12,
+      "hp": 13,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -713,7 +713,7 @@
     "file": "assets/belts/highwaymans_belt.png",
     "name": "Highwaymans Belt",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -730,7 +730,7 @@
     "file": "assets/belts/holy_waistwrap.png",
     "name": "Holy Waistwrap",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -747,7 +747,7 @@
     "file": "assets/belts/house_of_leo.png",
     "name": "House of Leo",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -764,7 +764,7 @@
     "file": "assets/belts/hunters_plate.png",
     "name": "Hunters Plate",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -781,7 +781,7 @@
     "file": "assets/belts/imbued_sash.png",
     "name": "Imbued Sash",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -798,7 +798,7 @@
     "file": "assets/belts/invaders.png",
     "name": "Invaders",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -832,7 +832,7 @@
     "file": "assets/belts/irradiated.png",
     "name": "Irradiated",
     "stats": {
-      "hp": 6,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -849,7 +849,7 @@
     "file": "assets/belts/jesters_belt.png",
     "name": "Jesters Belt",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 1,
       "spd": 0
@@ -866,7 +866,7 @@
     "file": "assets/belts/molten.png",
     "name": "Molten",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -883,7 +883,7 @@
     "file": "assets/belts/necromancers_cinch.png",
     "name": "Necromancers Cinch",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -900,7 +900,7 @@
     "file": "assets/belts/plated_belt.png",
     "name": "Plated Belt",
     "stats": {
-      "hp": 8,
+      "hp": 10,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -917,7 +917,7 @@
     "file": "assets/belts/platemail_girdle.png",
     "name": "Platemail Girdle",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -934,7 +934,7 @@
     "file": "assets/belts/rogue_stalkers_wrap.png",
     "name": "Rogue Stalkers Wrap",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 1,
       "spd": 0
@@ -968,7 +968,7 @@
     "file": "assets/belts/royal_blue_guard.png",
     "name": "Royal Blue Guard",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -985,7 +985,7 @@
     "file": "assets/belts/sentinels_girdle.png",
     "name": "Sentinels Girdle",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1002,7 +1002,7 @@
     "file": "assets/belts/shadowbinders_belt.png",
     "name": "Shadowbinders Belt",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 1,
       "spd": 0
@@ -1019,7 +1019,7 @@
     "file": "assets/belts/spiked_belt.png",
     "name": "Spiked Belt",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1036,7 +1036,7 @@
     "file": "assets/belts/strongmanss_belt.png",
     "name": "Strongmanss Belt",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1053,7 +1053,7 @@
     "file": "assets/belts/studded_leather.png",
     "name": "Studded Leather",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1070,7 +1070,7 @@
     "file": "assets/belts/tanking_plate.png",
     "name": "Tanking Plate",
     "stats": {
-      "hp": 10,
+      "hp": 11,
       "atk": 0,
       "def": 4,
       "spd": 0
@@ -1087,7 +1087,7 @@
     "file": "assets/belts/thieves_toolkit.png",
     "name": "Thieves Toolkit",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 1,
       "spd": 0
@@ -1104,7 +1104,7 @@
     "file": "assets/belts/travelers_belt.png",
     "name": "Travelers Belt",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 0
@@ -1121,7 +1121,7 @@
     "file": "assets/belts/underworld_belt.png",
     "name": "Underworld Belt",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1138,7 +1138,7 @@
     "file": "assets/belts/vampires_belt.png",
     "name": "Vampires Belt",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1157,7 +1157,7 @@
     "file": "assets/belts/volcanic_belt.png",
     "name": "Volcanic Belt",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1174,7 +1174,7 @@
     "file": "assets/belts/wizards_wrap.png",
     "name": "Wizards Wrap",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -1191,7 +1191,7 @@
     "file": "assets/boots/adventurers_leather_boots.png",
     "name": "Adventurers Leather Boots",
     "stats": {
-      "hp": 2,
+      "hp": 3,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1208,7 +1208,7 @@
     "file": "assets/boots/blue_royal_guard.png",
     "name": "Blue Royal Guard",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1225,7 +1225,7 @@
     "file": "assets/boots/boots_of_the_rush.png",
     "name": "Boots of the Rush",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 4
@@ -1242,7 +1242,7 @@
     "file": "assets/boots/brotherhood_of_blood.png",
     "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1259,7 +1259,7 @@
     "file": "assets/boots/chainmail.png",
     "name": "Chainmail",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1276,7 +1276,7 @@
     "file": "assets/boots/champions_boots.png",
     "name": "Champions Boots",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1293,7 +1293,7 @@
     "file": "assets/boots/conquerers_skull_crushers.png",
     "name": "Conquerers Skull Crushers",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 4
@@ -1310,7 +1310,7 @@
     "file": "assets/boots/demon_hunter_boots.png",
     "name": "Demon Hunter Boots",
     "stats": {
-      "hp": 3,
+      "hp": 5,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1327,7 +1327,7 @@
     "file": "assets/boots/demon_hunters_feet.png",
     "name": "Demon Hunters Feet",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1344,7 +1344,7 @@
     "file": "assets/boots/destroyers_boots.png",
     "name": "Destroyers Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1361,7 +1361,7 @@
     "file": "assets/boots/dragon_kinght_boots.png",
     "name": "Dragon Knight Boots",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1378,7 +1378,7 @@
     "file": "assets/boots/dragon_knight_riders.png",
     "name": "Dragon Knight Riders",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1395,7 +1395,7 @@
     "file": "assets/boots/dustmarsh_stompers.png",
     "name": "Dustmarsh Stompers",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1412,7 +1412,7 @@
     "file": "assets/boots/ebon_boots.png",
     "name": "Ebon Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1429,7 +1429,7 @@
     "file": "assets/boots/ebon_plate_boots.png",
     "name": "Ebon Plate Boots",
     "stats": {
-      "hp": 5,
+      "hp": 7,
       "atk": 0,
       "def": 4,
       "spd": 1
@@ -1446,7 +1446,7 @@
     "file": "assets/boots/fallen_kingdom_boots.png",
     "name": "Fallen Kingdom Boots",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1463,7 +1463,7 @@
     "file": "assets/boots/frogsong_boots.png",
     "name": "Frogsong Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1480,7 +1480,7 @@
     "file": "assets/boots/frostrime.png",
     "name": "Frostrime",
     "stats": {
-      "hp": 3,
+      "hp": 5,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1497,7 +1497,7 @@
     "file": "assets/boots/gold_spiked_boots.png",
     "name": "Gold Spiked Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1514,7 +1514,7 @@
     "file": "assets/boots/golden_bloodbrother.png",
     "name": "Golden Bloodbrother",
     "stats": {
-      "hp": 4,
+      "hp": 6,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1531,7 +1531,7 @@
     "file": "assets/boots/golden_cavalry.png",
     "name": "Golden Cavalry",
     "stats": {
-      "hp": 4,
+      "hp": 6,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1548,7 +1548,7 @@
     "file": "assets/boots/golden_destroyers_boots.png",
     "name": "Golden Destroyers Boots",
     "stats": {
-      "hp": 4,
+      "hp": 6,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1565,7 +1565,7 @@
     "file": "assets/boots/golden_house_of_leo.png",
     "name": "Golden House of Leo",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1582,7 +1582,7 @@
     "file": "assets/boots/golden_imbued.png",
     "name": "Golden Imbued",
     "stats": {
-      "hp": 4,
+      "hp": 6,
       "atk": 0,
       "def": 2,
       "spd": 3
@@ -1599,7 +1599,7 @@
     "file": "assets/boots/golden_nightstalkers_greaves.png",
     "name": "Golden Nightstalkers Greaves",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 4
@@ -1616,7 +1616,7 @@
     "file": "assets/boots/golden_studded.png",
     "name": "Golden Studded",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -1633,7 +1633,7 @@
     "file": "assets/boots/golden_tanking.png",
     "name": "Golden Tanking",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 4,
       "spd": 1
@@ -1650,7 +1650,7 @@
     "file": "assets/boots/healers_walkers.png",
     "name": "Healers Walkers",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1667,7 +1667,7 @@
     "file": "assets/boots/heavy_marine_boots.png",
     "name": "Heavy Marine Boots",
     "stats": {
-      "hp": 4,
+      "hp": 6,
       "atk": 0,
       "def": 3,
       "spd": 1
@@ -1684,7 +1684,7 @@
     "file": "assets/boots/heros_boots.png",
     "name": "Heros Boots",
     "stats": {
-      "hp": 5,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1701,7 +1701,7 @@
     "file": "assets/boots/holy_stompers.png",
     "name": "Holy Stompers",
     "stats": {
-      "hp": 4,
+      "hp": 6,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1718,7 +1718,7 @@
     "file": "assets/boots/house_of_leo_boots.png",
     "name": "House of Leo Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1735,7 +1735,7 @@
     "file": "assets/boots/hunters_plate.png",
     "name": "Hunters Plate",
     "stats": {
-      "hp": 3,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 1
@@ -1752,7 +1752,7 @@
     "file": "assets/boots/imbued_steel.png",
     "name": "Imbued Steel",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 1
@@ -1769,7 +1769,7 @@
     "file": "assets/boots/invaders_boots.png",
     "name": "Invaders Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1786,7 +1786,7 @@
     "file": "assets/boots/irradiated_boots.png",
     "name": "Irradiated Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1803,7 +1803,7 @@
     "file": "assets/boots/jesters_silk_boots.png",
     "name": "Jesters Silk Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 4
@@ -1820,7 +1820,7 @@
     "file": "assets/boots/mana_imbued_boots.png",
     "name": "Mana Imbued Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 3
@@ -1837,7 +1837,7 @@
     "file": "assets/boots/molten_legs.png",
     "name": "Molten Legs",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1854,7 +1854,7 @@
     "file": "assets/boots/nightstalkers_feet.png",
     "name": "Nightstalkers Feet",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 4
@@ -1871,7 +1871,7 @@
     "file": "assets/boots/orange_invaders_boots.png",
     "name": "Orange Invaders Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1888,7 +1888,7 @@
     "file": "assets/boots/plated_steel_boots.png",
     "name": "Plated Steel Boots",
     "stats": {
-      "hp": 3,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 1
@@ -1905,7 +1905,7 @@
     "file": "assets/boots/rogues_boots.png",
     "name": "Rogues Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 4
@@ -1922,7 +1922,7 @@
     "file": "assets/boots/rotknight.png",
     "name": "Rotknight",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1939,7 +1939,7 @@
     "file": "assets/boots/spiked_plate_boots.png",
     "name": "Spiked Plate Boots",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 1
@@ -1956,7 +1956,7 @@
     "file": "assets/boots/strongmans_stompers.png",
     "name": "Strongmans Stompers",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -1973,7 +1973,7 @@
     "file": "assets/boots/tanking_boots.png",
     "name": "Tanking Boots",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
       "def": 4,
       "spd": 1
@@ -1990,7 +1990,7 @@
     "file": "assets/boots/thick_plated.png",
     "name": "Thick Plated",
     "stats": {
-      "hp": 3,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 1
@@ -2007,7 +2007,7 @@
     "file": "assets/boots/thieves_sneakers.png",
     "name": "Thieves Sneakers",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 3
@@ -2024,7 +2024,7 @@
     "file": "assets/boots/travelers_leather_boots.png",
     "name": "Travelers Leather Boots",
     "stats": {
-      "hp": 2,
+      "hp": 3,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -2041,7 +2041,7 @@
     "file": "assets/boots/underworld.png",
     "name": "Underworld",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -2058,7 +2058,7 @@
     "file": "assets/boots/vampiric_boots.png",
     "name": "Vampiric Boots",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -2077,7 +2077,7 @@
     "file": "assets/boots/volcanic.png",
     "name": "Volcanic",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 2,
       "spd": 2
@@ -2094,7 +2094,7 @@
     "file": "assets/boots/warforged.png",
     "name": "Warforged",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 3,
       "spd": 3
@@ -2111,7 +2111,7 @@
     "file": "assets/capes/adeventurers_cloak.png",
     "name": "Adventurer's Cloak",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2128,7 +2128,7 @@
     "file": "assets/capes/cape_of_the_protector.png",
     "name": "Cape of the Protector",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2145,7 +2145,7 @@
     "file": "assets/capes/fine_dark_cape.png",
     "name": "Fine Dark Cape",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2162,7 +2162,7 @@
     "file": "assets/capes/kings_cloak.png",
     "name": "Kings Cloak",
     "stats": {
-      "hp": 5,
+      "hp": 7,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2179,7 +2179,7 @@
     "file": "assets/capes/kings_drape.png",
     "name": "Kings Drape",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2196,7 +2196,7 @@
     "file": "assets/capes/loners_cloak.png",
     "name": "Loners Cloak",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2213,7 +2213,7 @@
     "file": "assets/capes/nightstalkers_hood.png",
     "name": "Nightstalkers Hood",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 2
@@ -2230,7 +2230,7 @@
     "file": "assets/capes/outcasts_red_cloak.png",
     "name": "Outcasts Red Cloak",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2247,7 +2247,7 @@
     "file": "assets/capes/royal_silk_cape.png",
     "name": "Royal Silk Cape",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
       "def": 1,
       "spd": 2
@@ -2264,7 +2264,7 @@
     "file": "assets/capes/travelers_tunic.png",
     "name": "Travelers Tunic",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2281,7 +2281,7 @@
     "file": "assets/capes/wanderers_tattered_cloak.png",
     "name": "Wanderers Tattered Cloak",
     "stats": {
-      "hp": 3,
+      "hp": 4,
       "atk": 0,
       "def": 1,
       "spd": 1
@@ -2298,9 +2298,9 @@
     "file": "assets/chest/blue_royal_guard.png",
     "name": "Blue Royal Guard",
     "stats": {
-      "hp": 19,
+      "hp": 22,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2315,9 +2315,9 @@
     "file": "assets/chest/brotherhood_of_blood.png",
     "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 19,
+      "hp": 21,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2332,7 +2332,7 @@
     "file": "assets/chest/cavalry_chestpiece.png",
     "name": "Cavalry Chestpiece",
     "stats": {
-      "hp": 16,
+      "hp": 18,
       "atk": 0,
       "def": 5,
       "spd": 0
@@ -2349,9 +2349,9 @@
     "file": "assets/chest/chainmail.png",
     "name": "Chainmail",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2366,9 +2366,9 @@
     "file": "assets/chest/demon_hunter.png",
     "name": "Demon Hunter",
     "stats": {
-      "hp": 21,
+      "hp": 24,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2383,9 +2383,9 @@
     "file": "assets/chest/destroyer.png",
     "name": "Destroyer",
     "stats": {
-      "hp": 17,
+      "hp": 18,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2400,9 +2400,9 @@
     "file": "assets/chest/dragon_knights_plate.png",
     "name": "Dragon Knights Plate",
     "stats": {
-      "hp": 24,
+      "hp": 27,
       "atk": 0,
-      "def": 8,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -2417,9 +2417,9 @@
     "file": "assets/chest/dustmarsh.png",
     "name": "Dustmarsh",
     "stats": {
-      "hp": 20,
+      "hp": 22,
       "atk": 0,
-      "def": 5,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2434,9 +2434,9 @@
     "file": "assets/chest/ebon_chestplate.png",
     "name": "Ebon Chestplate",
     "stats": {
-      "hp": 27,
+      "hp": 30,
       "atk": 0,
-      "def": 9,
+      "def": 11,
       "spd": 0
     },
     "dmgType": null,
@@ -2451,9 +2451,9 @@
     "file": "assets/chest/fallen_kingdom_chestplate.png",
     "name": "Fallen Kingdom Chestplate",
     "stats": {
-      "hp": 30,
+      "hp": 34,
       "atk": 0,
-      "def": 10,
+      "def": 12,
       "spd": 0
     },
     "dmgType": null,
@@ -2468,9 +2468,9 @@
     "file": "assets/chest/frogsong_ribbed.png",
     "name": "Frogsong Ribbed",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2485,9 +2485,9 @@
     "file": "assets/chest/frostrime.png",
     "name": "Frostrime",
     "stats": {
-      "hp": 20,
+      "hp": 23,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2502,9 +2502,9 @@
     "file": "assets/chest/frostrime_chest.png",
     "name": "Frostrime Chest",
     "stats": {
-      "hp": 22,
+      "hp": 24,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2519,9 +2519,9 @@
     "file": "assets/chest/fury_chestpiece.png",
     "name": "Fury Chestpiece",
     "stats": {
-      "hp": 18,
+      "hp": 20,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2536,9 +2536,9 @@
     "file": "assets/chest/golden_blood_brother.png",
     "name": "Golden Blood Brother",
     "stats": {
-      "hp": 24,
+      "hp": 26,
       "atk": 0,
-      "def": 7,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2553,9 +2553,9 @@
     "file": "assets/chest/golden_cavalry.png",
     "name": "Golden Cavalry",
     "stats": {
-      "hp": 26,
+      "hp": 28,
       "atk": 0,
-      "def": 7,
+      "def": 9,
       "spd": 0
     },
     "dmgType": null,
@@ -2570,9 +2570,9 @@
     "file": "assets/chest/golden_destroyer.png",
     "name": "Golden Destroyer",
     "stats": {
-      "hp": 23,
+      "hp": 25,
       "atk": 0,
-      "def": 6,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2587,9 +2587,9 @@
     "file": "assets/chest/golden_house_of_leo.png",
     "name": "Golden House of Leo",
     "stats": {
-      "hp": 26,
+      "hp": 29,
       "atk": 0,
-      "def": 7,
+      "def": 9,
       "spd": 0
     },
     "dmgType": null,
@@ -2604,9 +2604,9 @@
     "file": "assets/chest/golden_imbued_chest.png",
     "name": "Golden Imbued Chest",
     "stats": {
-      "hp": 24,
+      "hp": 27,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2621,9 +2621,9 @@
     "file": "assets/chest/golden_nightstalker.png",
     "name": "Golden Nightstalker",
     "stats": {
-      "hp": 26,
+      "hp": 29,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2638,9 +2638,9 @@
     "file": "assets/chest/golden_spiked_mail.png",
     "name": "Golden Spiked Mail",
     "stats": {
-      "hp": 25,
+      "hp": 27,
       "atk": 0,
-      "def": 7,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2655,9 +2655,9 @@
     "file": "assets/chest/golden_studded_armor.png",
     "name": "Golden Studded Armor",
     "stats": {
-      "hp": 26,
+      "hp": 29,
       "atk": 0,
-      "def": 7,
+      "def": 9,
       "spd": 0
     },
     "dmgType": null,
@@ -2672,9 +2672,9 @@
     "file": "assets/chest/golden_tanking_plate.png",
     "name": "Golden Tanking Plate",
     "stats": {
-      "hp": 33,
+      "hp": 36,
       "atk": 0,
-      "def": 11,
+      "def": 13,
       "spd": 0
     },
     "dmgType": null,
@@ -2689,9 +2689,9 @@
     "file": "assets/chest/healers_holy_shirt.png",
     "name": "Healers Holy Shirt",
     "stats": {
-      "hp": 29,
+      "hp": 32,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2706,9 +2706,9 @@
     "file": "assets/chest/heavy_marine.png",
     "name": "Heavy Marine",
     "stats": {
-      "hp": 25,
+      "hp": 28,
       "atk": 0,
-      "def": 8,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -2723,9 +2723,9 @@
     "file": "assets/chest/house_of_leo_insignia_chestplate.png",
     "name": "House of Leo Insignia Chestplate",
     "stats": {
-      "hp": 24,
+      "hp": 27,
       "atk": 0,
-      "def": 8,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -2740,9 +2740,9 @@
     "file": "assets/chest/hunters_guard.png",
     "name": "Hunters Guard",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2757,9 +2757,9 @@
     "file": "assets/chest/imbued.png",
     "name": "Imbued",
     "stats": {
-      "hp": 18,
+      "hp": 20,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -2774,9 +2774,9 @@
     "file": "assets/chest/invader.png",
     "name": "Invader",
     "stats": {
-      "hp": 20,
+      "hp": 22,
       "atk": 0,
-      "def": 5,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -2791,9 +2791,9 @@
     "file": "assets/chest/invader_orange.png",
     "name": "Invader Orange",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2808,7 +2808,7 @@
     "file": "assets/chest/irradiated.png",
     "name": "Irradiated",
     "stats": {
-      "hp": 16,
+      "hp": 18,
       "atk": 0,
       "def": 4,
       "spd": 0
@@ -2825,7 +2825,7 @@
     "file": "assets/chest/jesters_costume.png",
     "name": "Jesters Costume",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -2842,9 +2842,9 @@
     "file": "assets/chest/molten_chestplate.png",
     "name": "Molten Chestplate",
     "stats": {
-      "hp": 28,
+      "hp": 31,
       "atk": 0,
-      "def": 9,
+      "def": 11,
       "spd": 0
     },
     "dmgType": null,
@@ -2859,7 +2859,7 @@
     "file": "assets/chest/nightstalkers_chest.png",
     "name": "Nightstalkers Chest",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -2876,9 +2876,9 @@
     "file": "assets/chest/platemail.png",
     "name": "Platemail",
     "stats": {
-      "hp": 21,
+      "hp": 24,
       "atk": 0,
-      "def": 7,
+      "def": 9,
       "spd": 0
     },
     "dmgType": null,
@@ -2893,9 +2893,9 @@
     "file": "assets/chest/rogues_leather_chest.png",
     "name": "Rogues Leather Chest",
     "stats": {
-      "hp": 19,
+      "hp": 21,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -2910,9 +2910,9 @@
     "file": "assets/chest/rotknight.png",
     "name": "Rotknight",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2927,9 +2927,9 @@
     "file": "assets/chest/spiked_plate.png",
     "name": "Spiked Plate",
     "stats": {
-      "hp": 20,
+      "hp": 23,
       "atk": 0,
-      "def": 7,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -2944,9 +2944,9 @@
     "file": "assets/chest/strongmans_cinch.png",
     "name": "Strongmans Cinch",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2961,9 +2961,9 @@
     "file": "assets/chest/studded_leather_chest.png",
     "name": "Studded Leather Chest",
     "stats": {
-      "hp": 18,
+      "hp": 20,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -2978,9 +2978,9 @@
     "file": "assets/chest/tanking_plate.png",
     "name": "Tanking Plate",
     "stats": {
-      "hp": 29,
+      "hp": 32,
       "atk": 0,
-      "def": 10,
+      "def": 11,
       "spd": 0
     },
     "dmgType": null,
@@ -2995,9 +2995,9 @@
     "file": "assets/chest/thick_plated_cuirass.png",
     "name": "Thick Plated Cuirass",
     "stats": {
-      "hp": 21,
+      "hp": 23,
       "atk": 0,
-      "def": 7,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -3012,7 +3012,7 @@
     "file": "assets/chest/travelers_wrap.png",
     "name": "Travelers Wrap",
     "stats": {
-      "hp": 13,
+      "hp": 15,
       "atk": 0,
       "def": 4,
       "spd": 0
@@ -3029,9 +3029,9 @@
     "file": "assets/chest/underworld.png",
     "name": "Underworld",
     "stats": {
-      "hp": 18,
+      "hp": 20,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -3046,9 +3046,9 @@
     "file": "assets/chest/vampiric_chestpiece.png",
     "name": "Vampiric Chestpiece",
     "stats": {
-      "hp": 19,
+      "hp": 21,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -3065,9 +3065,9 @@
     "file": "assets/chest/vampiric_vest.png",
     "name": "Vampiric Vest",
     "stats": {
-      "hp": 18,
+      "hp": 20,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -3084,9 +3084,9 @@
     "file": "assets/chest/volcanic_chest.png",
     "name": "Volcanic Chest",
     "stats": {
-      "hp": 23,
+      "hp": 26,
       "atk": 0,
-      "def": 6,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -3101,9 +3101,9 @@
     "file": "assets/chest/warforged_chestplate.png",
     "name": "Warforged Chestplate",
     "stats": {
-      "hp": 25,
+      "hp": 28,
       "atk": 0,
-      "def": 8,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -3118,9 +3118,9 @@
     "file": "assets/chest/wizards_blood_tunic.png",
     "name": "Wizards Blood Tunic",
     "stats": {
-      "hp": 17,
+      "hp": 19,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4463,9 +4463,9 @@
     "file": "assets/helms/chimera_10.png",
     "name": "Serpent Coif",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4486,9 +4486,9 @@
     "file": "assets/helms/chimera_11.png",
     "name": "Grave Sentinel Helm",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4509,9 +4509,9 @@
     "file": "assets/helms/chimera_12.png",
     "name": "Ember Crown",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4532,9 +4532,9 @@
     "file": "assets/helms/chimera_13.png",
     "name": "Ironfang Helm",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4555,9 +4555,9 @@
     "file": "assets/helms/chimera_14.png",
     "name": "Duskwatch Helm",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4578,9 +4578,9 @@
     "file": "assets/helms/chimera_15.png",
     "name": "Tidebreaker Helm",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4601,9 +4601,9 @@
     "file": "assets/helms/chimera_16.png",
     "name": "Champion's Greathelm",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4624,9 +4624,9 @@
     "file": "assets/helms/chimera_2.png",
     "name": "Warlord's Visage",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4647,9 +4647,9 @@
     "file": "assets/helms/chimera_3.png",
     "name": "Gilded Sallet",
     "stats": {
-      "hp": 5,
+      "hp": 7,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4670,9 +4670,9 @@
     "file": "assets/helms/chimera_4.png",
     "name": "Bonecrown",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4693,9 +4693,9 @@
     "file": "assets/helms/chimera_5.png",
     "name": "Swampsteel Barbute",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4716,9 +4716,9 @@
     "file": "assets/helms/chimera_6.png",
     "name": "Ratcatcher's Cowl",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4739,9 +4739,9 @@
     "file": "assets/helms/chimera_7.png",
     "name": "Molten Crest",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4762,9 +4762,9 @@
     "file": "assets/helms/chimera_8.png",
     "name": "Frostbitten Casque",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4785,9 +4785,9 @@
     "file": "assets/helms/chimera_9.png",
     "name": "Night Warden's Helm",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4803,14 +4803,39 @@
     }
   },
   {
+    "id": "helms/royal_regalia",
+    "slot": "helms",
+    "file": "assets/helms/royal_regalia.png",
+    "name": "Royal Regalia",
+    "stats": {
+      "hp": 8,
+      "atk": 2,
+      "def": 5,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Royal Regalia",
+      "desc": "+10% to all stats (applied at generation)",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 110
+  },
+  {
     "id": "legs/adventurers_pants",
     "slot": "legs",
     "file": "assets/legs/adventurers_pants.png",
     "name": "Adventurers Pants",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4825,9 +4850,9 @@
     "file": "assets/legs/bood_wizards_legs.png",
     "name": "Bood Wizards Legs",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4842,9 +4867,9 @@
     "file": "assets/legs/breeches_of_lethal_precision.png",
     "name": "Breeches of Lethal Precision",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4859,9 +4884,9 @@
     "file": "assets/legs/brotherhood_of_blood.png",
     "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4876,9 +4901,9 @@
     "file": "assets/legs/bulwark_of_the_sentinel.png",
     "name": "Bulwark of the Sentinel",
     "stats": {
-      "hp": 15,
+      "hp": 18,
       "atk": 0,
-      "def": 5,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -4893,9 +4918,9 @@
     "file": "assets/legs/cavalry_captains_pants.png",
     "name": "Cavalry Captains Pants",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4910,9 +4935,9 @@
     "file": "assets/legs/chainmail.png",
     "name": "Chainmail",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4927,9 +4952,9 @@
     "file": "assets/legs/cursed_weavers_breeches.png",
     "name": "Cursed Weavers Breeches",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -4944,9 +4969,9 @@
     "file": "assets/legs/damage_dealers_slacks.png",
     "name": "Damage Dealers Slacks",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4961,9 +4986,9 @@
     "file": "assets/legs/dark_enchanters_wicked_legwraps.png",
     "name": "Dark Enchanters Wicked Legwraps",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -4978,9 +5003,9 @@
     "file": "assets/legs/demon_hunter_legs.png",
     "name": "Demon Hunter Legs",
     "stats": {
-      "hp": 12,
+      "hp": 15,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -4995,9 +5020,9 @@
     "file": "assets/legs/destroyers_thighs.png",
     "name": "Destroyers Thighs",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5012,9 +5037,9 @@
     "file": "assets/legs/dustmarsh_pants.png",
     "name": "Dustmarsh Pants",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5029,9 +5054,9 @@
     "file": "assets/legs/fallen_kingdom_pants.png",
     "name": "Fallen Kingdom Pants",
     "stats": {
-      "hp": 14,
+      "hp": 17,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -5046,9 +5071,9 @@
     "file": "assets/legs/full_plate_greaves.png",
     "name": "Full Plate Greaves",
     "stats": {
-      "hp": 12,
+      "hp": 15,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -5063,9 +5088,9 @@
     "file": "assets/legs/fury_leggings.png",
     "name": "Fury Leggings",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5080,9 +5105,9 @@
     "file": "assets/legs/golden_blood_brothers_legs.png",
     "name": "Golden Blood Brothers Legs",
     "stats": {
-      "hp": 14,
+      "hp": 17,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -5097,9 +5122,9 @@
     "file": "assets/legs/golden_destroyer.png",
     "name": "Golden Destroyer",
     "stats": {
-      "hp": 15,
+      "hp": 18,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -5114,9 +5139,9 @@
     "file": "assets/legs/golden_house_of_leo.png",
     "name": "Golden House of Leo",
     "stats": {
-      "hp": 15,
+      "hp": 18,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -5131,9 +5156,9 @@
     "file": "assets/legs/golden_spiked_thighs.png",
     "name": "Golden Spiked Thighs",
     "stats": {
-      "hp": 13,
+      "hp": 16,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5148,9 +5173,9 @@
     "file": "assets/legs/golden_studded_pants.png",
     "name": "Golden Studded Pants",
     "stats": {
-      "hp": 13,
+      "hp": 16,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5165,9 +5190,9 @@
     "file": "assets/legs/golden_tanks_pants.png",
     "name": "Golden Tanks Pants",
     "stats": {
-      "hp": 13,
+      "hp": 15,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5182,9 +5207,9 @@
     "file": "assets/legs/grey_leiderhosen.png",
     "name": "Grey Leiderhosen",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5199,9 +5224,9 @@
     "file": "assets/legs/healers_white_leggings.png",
     "name": "Healers White Leggings",
     "stats": {
-      "hp": 14,
+      "hp": 17,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5216,9 +5241,9 @@
     "file": "assets/legs/heavy_marine_leg_armor.png",
     "name": "Heavy Marine Leg Armor",
     "stats": {
-      "hp": 11,
+      "hp": 14,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5233,7 +5258,7 @@
     "file": "assets/legs/highly_imbued_pants.png",
     "name": "Highly Imbued Pants",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -5250,9 +5275,9 @@
     "file": "assets/legs/house_of_leo_pants.png",
     "name": "House of Leo Pants",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5267,9 +5292,9 @@
     "file": "assets/legs/hunters_pants.png",
     "name": "Hunters Pants",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5284,9 +5309,9 @@
     "file": "assets/legs/invaders_pants.png",
     "name": "Invaders Pants",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5301,7 +5326,7 @@
     "file": "assets/legs/irradiated_pants.png",
     "name": "Irradiated Pants",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -5318,9 +5343,9 @@
     "file": "assets/legs/legplates_of_eternal_valor.png",
     "name": "Legplates of Eternal Valor",
     "stats": {
-      "hp": 14,
+      "hp": 16,
       "atk": 0,
-      "def": 5,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -5335,9 +5360,9 @@
     "file": "assets/legs/legwraps_of_the_marksman.png",
     "name": "Legwraps of the Marksman",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5352,9 +5377,9 @@
     "file": "assets/legs/lord_nighstalkers_pants.png",
     "name": "Lord Nighstalkers Pants",
     "stats": {
-      "hp": 10,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5369,9 +5394,9 @@
     "file": "assets/legs/merciless_strikers_breeches.png",
     "name": "Merciless Strikers Breeches",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5386,9 +5411,9 @@
     "file": "assets/legs/molten_pants.png",
     "name": "Molten Pants",
     "stats": {
-      "hp": 12,
+      "hp": 14,
       "atk": 0,
-      "def": 3,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5403,9 +5428,9 @@
     "file": "assets/legs/necromancers_pants.png",
     "name": "Necromancers Pants",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -5420,7 +5445,7 @@
     "file": "assets/legs/nightstalkers.png",
     "name": "Nightstalkers",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -5437,7 +5462,7 @@
     "file": "assets/legs/nightstalkers_legguards.png",
     "name": "Nightstalkers Legguards",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -5454,9 +5479,9 @@
     "file": "assets/legs/orange_invader.png",
     "name": "Orange Invader",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5471,9 +5496,9 @@
     "file": "assets/legs/pants_of_blessed_serenity.png",
     "name": "Pants of Blessed Serenity",
     "stats": {
-      "hp": 15,
+      "hp": 18,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5488,9 +5513,9 @@
     "file": "assets/legs/pants_of_the_iron_vanguard.png",
     "name": "Pants of the Iron Vanguard",
     "stats": {
-      "hp": 13,
+      "hp": 15,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -5505,9 +5530,9 @@
     "file": "assets/legs/royal_blue_guard.png",
     "name": "Royal Blue Guard",
     "stats": {
-      "hp": 12,
+      "hp": 15,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5522,9 +5547,9 @@
     "file": "assets/legs/rusted_chainmail.png",
     "name": "Rusted Chainmail",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5539,7 +5564,7 @@
     "file": "assets/legs/slayers_swift_leggings.png",
     "name": "Slayers Swift Leggings",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -5556,9 +5581,9 @@
     "file": "assets/legs/spiked_mail.png",
     "name": "Spiked Mail",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5573,9 +5598,9 @@
     "file": "assets/legs/studded_leather.png",
     "name": "Studded Leather",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5590,9 +5615,9 @@
     "file": "assets/legs/thiefs_cloth.png",
     "name": "Thiefs Cloth",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5607,9 +5632,9 @@
     "file": "assets/legs/titan_forged_legguards.png",
     "name": "Titan Forged Legguards",
     "stats": {
-      "hp": 11,
+      "hp": 14,
       "atk": 0,
-      "def": 3,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -5624,9 +5649,9 @@
     "file": "assets/legs/trousers_of_the_nethermancer.png",
     "name": "Trousers of the Nethermancer",
     "stats": {
-      "hp": 12,
+      "hp": 15,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5641,9 +5666,9 @@
     "file": "assets/legs/vampiric_pants.png",
     "name": "Vampiric Pants",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5660,7 +5685,7 @@
     "file": "assets/legs/warlocks_infernal_leggings.png",
     "name": "Warlocks Infernal Leggings",
     "stats": {
-      "hp": 11,
+      "hp": 13,
       "atk": 0,
       "def": 3,
       "spd": 0
@@ -5677,9 +5702,9 @@
     "file": "assets/legs/wildgrowth_legwraps.png",
     "name": "Wildgrowth Legwraps",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -5687,6 +5712,31 @@
     "rarityWeight": 100,
     "golden": false,
     "zIndex": 30
+  },
+  {
+    "id": "offhands/arcane_nexus",
+    "slot": "offhands",
+    "file": "assets/offhands/arcane_nexus.png",
+    "name": "Arcane Nexus",
+    "stats": {
+      "hp": 4,
+      "atk": 4,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Arcane Nexus",
+      "desc": "Spells deal +30% damage and ignore cover",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 100
   },
   {
     "id": "offhands/book_of_black_arts",
@@ -5703,7 +5753,7 @@
     "tags": [
       "cleric"
     ],
-    "rarityWeight": 100,
+    "rarityWeight": 400,
     "golden": false,
     "zIndex": 100,
     "ability": {
@@ -5712,6 +5762,31 @@
       "kind": "spell",
       "cost": 1
     }
+  },
+  {
+    "id": "offhands/crystalline_focus",
+    "slot": "offhands",
+    "file": "assets/offhands/crystalline_focus.png",
+    "name": "Crystalline Focus",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Crystalline Focus",
+      "desc": "Cast abilities twice per round",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 100
   },
   {
     "id": "offhands/cursed_pendant",
@@ -6100,6 +6175,31 @@
     }
   },
   {
+    "id": "offhands/spell_mastery_tome",
+    "slot": "offhands",
+    "file": "assets/offhands/spell_mastery_tome.png",
+    "name": "Tome of Spell Mastery",
+    "stats": {
+      "hp": 6,
+      "atk": 4,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Spell Mastery",
+      "desc": "Your spells deal double damage and heal you for half the damage dealt",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 100
+  },
+  {
     "id": "offhands/staff_12",
     "slot": "offhands",
     "file": "assets/offhands/staff_12.png",
@@ -6239,7 +6339,7 @@
     "tags": [
       "cleric"
     ],
-    "rarityWeight": 100,
+    "rarityWeight": 400,
     "golden": false,
     "zIndex": 100,
     "ability": {
@@ -6255,9 +6355,9 @@
     "file": "assets/robes/apostle_of_doom.png",
     "name": "Apostle of Doom",
     "stats": {
-      "hp": 10,
+      "hp": 14,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6280,9 +6380,9 @@
     "file": "assets/robes/blood_lord.png",
     "name": "Blood Lord",
     "stats": {
-      "hp": 10,
+      "hp": 13,
       "atk": 6,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6305,9 +6405,9 @@
     "file": "assets/robes/brewers_guild.png",
     "name": "Brewers Guild",
     "stats": {
-      "hp": 11,
+      "hp": 14,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6330,9 +6430,9 @@
     "file": "assets/robes/children_of_the_atom.png",
     "name": "Children of the Atom",
     "stats": {
-      "hp": 10,
+      "hp": 13,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6355,9 +6455,9 @@
     "file": "assets/robes/dark_disciple.png",
     "name": "Dark Disciple",
     "stats": {
-      "hp": 9,
+      "hp": 12,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6380,9 +6480,9 @@
     "file": "assets/robes/king_5.png",
     "name": "Raiment of the Deposed King",
     "stats": {
-      "hp": 13,
+      "hp": 16,
       "atk": 5,
-      "def": 3,
+      "def": 4,
       "spd": 1
     },
     "dmgType": null,
@@ -6405,9 +6505,9 @@
     "file": "assets/robes/midnights_children.png",
     "name": "Midnights Children",
     "stats": {
-      "hp": 11,
+      "hp": 14,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6430,9 +6530,9 @@
     "file": "assets/robes/princes_ceremonial_tunic.png",
     "name": "Princes Ceremonial Tunic",
     "stats": {
-      "hp": 10,
+      "hp": 13,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6455,9 +6555,9 @@
     "file": "assets/robes/summoners_robe.png",
     "name": "Summoners Robe",
     "stats": {
-      "hp": 9,
+      "hp": 12,
       "atk": 5,
-      "def": 1,
+      "def": 2,
       "spd": 1
     },
     "dmgType": null,
@@ -6480,9 +6580,9 @@
     "file": "assets/robes/swampwalker.png",
     "name": "Swampwalker",
     "stats": {
-      "hp": 11,
+      "hp": 14,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6505,9 +6605,9 @@
     "file": "assets/robes/temple_of_the_worm.png",
     "name": "Temple of the Worm",
     "stats": {
-      "hp": 10,
+      "hp": 13,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6530,9 +6630,9 @@
     "file": "assets/robes/underdwellers.png",
     "name": "Underdwellers",
     "stats": {
-      "hp": 9,
+      "hp": 12,
       "atk": 4,
-      "def": 2,
+      "def": 3,
       "spd": 1
     },
     "dmgType": null,
@@ -6555,9 +6655,9 @@
     "file": "assets/shields/bloody_veterans_shield.png",
     "name": "Bloody Veterans Shield",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": -1
     },
     "dmgType": null,
@@ -6574,9 +6674,9 @@
     "file": "assets/shields/brass_kite_shield.png",
     "name": "Brass Kite Shield",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": -1
     },
     "dmgType": null,
@@ -6595,7 +6695,7 @@
     "stats": {
       "hp": 21,
       "atk": 0,
-      "def": 16,
+      "def": 14,
       "spd": -1
     },
     "dmgType": null,
@@ -6603,7 +6703,7 @@
       "tank",
       "shield"
     ],
-    "rarityWeight": 100,
+    "rarityWeight": 300,
     "golden": false,
     "zIndex": 5
   },
@@ -6615,7 +6715,7 @@
     "stats": {
       "hp": 15,
       "atk": 0,
-      "def": 9,
+      "def": 8,
       "spd": -2
     },
     "dmgType": null,
@@ -6632,9 +6732,9 @@
     "file": "assets/shields/dragon_scale_shield.png",
     "name": "Dragon Scale Shield",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
-      "def": 7,
+      "def": 8,
       "spd": -1
     },
     "dmgType": null,
@@ -6651,9 +6751,9 @@
     "file": "assets/shields/ebon_kite_shield.png",
     "name": "Ebon Kite Shield",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 8,
+      "def": 9,
       "spd": -1
     },
     "dmgType": null,
@@ -6670,9 +6770,9 @@
     "file": "assets/shields/frogsong_shield.png",
     "name": "Frogsong Shield",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": -1
     },
     "dmgType": null,
@@ -6689,9 +6789,9 @@
     "file": "assets/shields/frost_covered_shield.png",
     "name": "Frost Covered Shield",
     "stats": {
-      "hp": 10,
+      "hp": 11,
       "atk": 0,
-      "def": 7,
+      "def": 9,
       "spd": -1
     },
     "dmgType": null,
@@ -6708,9 +6808,9 @@
     "file": "assets/shields/frozen_heart_shield.png",
     "name": "Frozen Heart Shield",
     "stats": {
-      "hp": 8,
+      "hp": 10,
       "atk": 0,
-      "def": 6,
+      "def": 7,
       "spd": -1
     },
     "dmgType": null,
@@ -6727,9 +6827,9 @@
     "file": "assets/shields/golden_buckler.png",
     "name": "Golden Buckler",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -6746,9 +6846,9 @@
     "file": "assets/shields/heros_shield.png",
     "name": "Heros Shield",
     "stats": {
-      "hp": 15,
+      "hp": 17,
       "atk": 0,
-      "def": 8,
+      "def": 9,
       "spd": -1
     },
     "dmgType": null,
@@ -6765,9 +6865,9 @@
     "file": "assets/shields/medium_steel_shield.png",
     "name": "Medium Steel Shield",
     "stats": {
-      "hp": 11,
+      "hp": 12,
       "atk": 0,
-      "def": 9,
+      "def": 11,
       "spd": -1
     },
     "dmgType": null,
@@ -6784,9 +6884,9 @@
     "file": "assets/shields/mossy_wooden_shield.png",
     "name": "Mossy Wooden Shield",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": -1
     },
     "dmgType": null,
@@ -6803,9 +6903,9 @@
     "file": "assets/shields/smouldering_iron.png",
     "name": "Smouldering Iron",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 8,
+      "def": 10,
       "spd": 0
     },
     "dmgType": null,
@@ -6824,7 +6924,7 @@
     "stats": {
       "hp": 17,
       "atk": 0,
-      "def": 13,
+      "def": 12,
       "spd": -1
     },
     "dmgType": null,
@@ -6832,7 +6932,7 @@
       "tank",
       "shield"
     ],
-    "rarityWeight": 100,
+    "rarityWeight": 300,
     "golden": false,
     "zIndex": 5
   },
@@ -6842,9 +6942,9 @@
     "file": "assets/shields/steel_buckler.png",
     "name": "Steel Buckler",
     "stats": {
-      "hp": 5,
+      "hp": 7,
       "atk": 0,
-      "def": 6,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -6861,9 +6961,9 @@
     "file": "assets/shields/viking_shield.png",
     "name": "Viking Shield",
     "stats": {
-      "hp": 10,
+      "hp": 11,
       "atk": 0,
-      "def": 8,
+      "def": 9,
       "spd": -1
     },
     "dmgType": null,
@@ -6882,7 +6982,7 @@
     "stats": {
       "hp": 18,
       "atk": 0,
-      "def": 12,
+      "def": 11,
       "spd": -3
     },
     "dmgType": null,
@@ -7241,9 +7341,9 @@
     "file": "assets/shoulders/brotherhood_of_blood.png",
     "name": "Brotherhood of Blood",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7258,9 +7358,9 @@
     "file": "assets/shoulders/cavalry.png",
     "name": "Cavalry",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7275,9 +7375,9 @@
     "file": "assets/shoulders/cavalry_shoulder.png",
     "name": "Cavalry Shoulder",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7292,9 +7392,9 @@
     "file": "assets/shoulders/chainmail.png",
     "name": "Chainmail",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7309,9 +7409,9 @@
     "file": "assets/shoulders/champions_plate.png",
     "name": "Champions Plate",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
-      "def": 5,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -7326,9 +7426,9 @@
     "file": "assets/shoulders/conquerers_plate.png",
     "name": "Conquerers Plate",
     "stats": {
-      "hp": 10,
+      "hp": 11,
       "atk": 0,
-      "def": 6,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -7343,9 +7443,9 @@
     "file": "assets/shoulders/demon_hunter.png",
     "name": "Demon Hunter",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7360,9 +7460,9 @@
     "file": "assets/shoulders/destroyers_raiment.png",
     "name": "Destroyers Raiment",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7377,9 +7477,9 @@
     "file": "assets/shoulders/dragon_knight_mantle.png",
     "name": "Dragon Knight Mantle",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7394,9 +7494,9 @@
     "file": "assets/shoulders/ebon_shoulders.png",
     "name": "Ebon Shoulders",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7411,9 +7511,9 @@
     "file": "assets/shoulders/fallen_kingdom.png",
     "name": "Fallen Kingdom",
     "stats": {
-      "hp": 8,
+      "hp": 10,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7428,9 +7528,9 @@
     "file": "assets/shoulders/frogsong_mantle.png",
     "name": "Frogsong Mantle",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7445,9 +7545,9 @@
     "file": "assets/shoulders/frostrime.png",
     "name": "Frostrime",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7462,9 +7562,9 @@
     "file": "assets/shoulders/fury_shoulders.png",
     "name": "Fury Shoulders",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7479,9 +7579,9 @@
     "file": "assets/shoulders/golden_blood_brothers.png",
     "name": "Golden Blood Brothers",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7496,9 +7596,9 @@
     "file": "assets/shoulders/golden_cavalry.png",
     "name": "Golden Cavalry",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7513,9 +7613,9 @@
     "file": "assets/shoulders/golden_destroyer.png",
     "name": "Golden Destroyer",
     "stats": {
-      "hp": 8,
+      "hp": 10,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7530,9 +7630,9 @@
     "file": "assets/shoulders/golden_house_of_leo_shoulders.png",
     "name": "Golden House of Leo Shoulders",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7547,9 +7647,9 @@
     "file": "assets/shoulders/golden_imbued_pauldrons.png",
     "name": "Golden Imbued Pauldrons",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7564,9 +7664,9 @@
     "file": "assets/shoulders/golden_nightstalkers.png",
     "name": "Golden Nightstalkers",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7581,9 +7681,9 @@
     "file": "assets/shoulders/golden_spiked.png",
     "name": "Golden Spiked",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
-      "def": 4,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7598,9 +7698,9 @@
     "file": "assets/shoulders/golden_studded.png",
     "name": "Golden Studded",
     "stats": {
-      "hp": 7,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7615,9 +7715,9 @@
     "file": "assets/shoulders/golden_tank_shoulders.png",
     "name": "Golden Tank Shoulders",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7632,9 +7732,9 @@
     "file": "assets/shoulders/healers_mantle.png",
     "name": "Healers Mantle",
     "stats": {
-      "hp": 9,
+      "hp": 11,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7649,9 +7749,9 @@
     "file": "assets/shoulders/heavy_marine_shoulders.png",
     "name": "Heavy Marine Shoulders",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7666,9 +7766,9 @@
     "file": "assets/shoulders/heros_plate.png",
     "name": "Heros Plate",
     "stats": {
-      "hp": 12,
+      "hp": 14,
       "atk": 0,
-      "def": 5,
+      "def": 7,
       "spd": 0
     },
     "dmgType": null,
@@ -7683,9 +7783,9 @@
     "file": "assets/shoulders/holy_mantle.png",
     "name": "Holy Mantle",
     "stats": {
-      "hp": 9,
+      "hp": 10,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7700,9 +7800,9 @@
     "file": "assets/shoulders/house_of_leo.png",
     "name": "House of Leo",
     "stats": {
-      "hp": 5,
+      "hp": 6,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7717,9 +7817,9 @@
     "file": "assets/shoulders/hunters_plate.png",
     "name": "Hunters Plate",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7734,9 +7834,9 @@
     "file": "assets/shoulders/imbued_shoulderplates.png",
     "name": "Imbued Shoulderplates",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7751,9 +7851,9 @@
     "file": "assets/shoulders/invaders.png",
     "name": "Invaders",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7768,9 +7868,9 @@
     "file": "assets/shoulders/invaders_orange.png",
     "name": "Invaders Orange",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7785,9 +7885,9 @@
     "file": "assets/shoulders/irradiated.png",
     "name": "Irradiated",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7802,7 +7902,7 @@
     "file": "assets/shoulders/jesters_coif.png",
     "name": "Jesters Coif",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -7819,9 +7919,9 @@
     "file": "assets/shoulders/mana_charged.png",
     "name": "Mana Charged",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7836,9 +7936,9 @@
     "file": "assets/shoulders/medium_plate.png",
     "name": "Medium Plate",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7853,9 +7953,9 @@
     "file": "assets/shoulders/molten_shoulders.png",
     "name": "Molten Shoulders",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7887,9 +7987,9 @@
     "file": "assets/shoulders/platemail.png",
     "name": "Platemail",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7904,9 +8004,9 @@
     "file": "assets/shoulders/rogues_shoulderpads.png",
     "name": "Rogues Shoulderpads",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -7921,9 +8021,9 @@
     "file": "assets/shoulders/rotknight.png",
     "name": "Rotknight",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7938,9 +8038,9 @@
     "file": "assets/shoulders/royal_blue_guard.png",
     "name": "Royal Blue Guard",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -7955,9 +8055,9 @@
     "file": "assets/shoulders/spiked_plate.png",
     "name": "Spiked Plate",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 5,
+      "def": 6,
       "spd": 0
     },
     "dmgType": null,
@@ -7972,9 +8072,9 @@
     "file": "assets/shoulders/strongmans_pauldrons.png",
     "name": "Strongmans Pauldrons",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -7989,9 +8089,9 @@
     "file": "assets/shoulders/swampwalker.png",
     "name": "Swampwalker",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -8006,9 +8106,9 @@
     "file": "assets/shoulders/tanking_plate.png",
     "name": "Tanking Plate",
     "stats": {
-      "hp": 10,
+      "hp": 12,
       "atk": 0,
-      "def": 6,
+      "def": 8,
       "spd": 0
     },
     "dmgType": null,
@@ -8023,9 +8123,9 @@
     "file": "assets/shoulders/theives_kit.png",
     "name": "Theives Kit",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -8040,7 +8140,7 @@
     "file": "assets/shoulders/thieves_reinforced_leather.png",
     "name": "Thieves Reinforced Leather",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
       "def": 2,
       "spd": 0
@@ -8057,9 +8157,9 @@
     "file": "assets/shoulders/travelers_shoulderpiece.png",
     "name": "Travelers Shoulderpiece",
     "stats": {
-      "hp": 4,
+      "hp": 5,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -8074,9 +8174,9 @@
     "file": "assets/shoulders/underworld_plate.png",
     "name": "Underworld Plate",
     "stats": {
-      "hp": 7,
+      "hp": 8,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -8091,9 +8191,9 @@
     "file": "assets/shoulders/vampiric_shoulders.png",
     "name": "Vampiric Shoulders",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -8110,9 +8210,9 @@
     "file": "assets/shoulders/volcanic.png",
     "name": "Volcanic",
     "stats": {
-      "hp": 8,
+      "hp": 9,
       "atk": 0,
-      "def": 4,
+      "def": 5,
       "spd": 0
     },
     "dmgType": null,
@@ -8127,9 +8227,9 @@
     "file": "assets/shoulders/wanderers_mantle.png",
     "name": "Wanderers Mantle",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 3,
+      "def": 4,
       "spd": 0
     },
     "dmgType": null,
@@ -8144,9 +8244,9 @@
     "file": "assets/shoulders/wizards_bloodmantle.png",
     "name": "Wizards Bloodmantle",
     "stats": {
-      "hp": 6,
+      "hp": 7,
       "atk": 0,
-      "def": 2,
+      "def": 3,
       "spd": 0
     },
     "dmgType": null,
@@ -8179,7 +8279,7 @@
     "name": "Axe of Decay",
     "stats": {
       "hp": 0,
-      "atk": 10,
+      "atk": 9,
       "def": 0,
       "spd": -1
     },
@@ -8196,7 +8296,7 @@
     "name": "Axe of the Ogres",
     "stats": {
       "hp": 0,
-      "atk": 11,
+      "atk": 10,
       "def": 0,
       "spd": -1
     },
@@ -8213,7 +8313,7 @@
     "name": "Berserker Axe",
     "stats": {
       "hp": 0,
-      "atk": 16,
+      "atk": 15,
       "def": 0,
       "spd": -1
     },
@@ -8385,7 +8485,7 @@
     "name": "Cursed Battle Axe",
     "stats": {
       "hp": 0,
-      "atk": 17,
+      "atk": 15,
       "def": 0,
       "spd": -1
     },
@@ -8557,7 +8657,7 @@
     "name": "Frost Axe",
     "stats": {
       "hp": 0,
-      "atk": 13,
+      "atk": 12,
       "def": 0,
       "spd": -1
     },
@@ -8608,7 +8708,7 @@
     "name": "Golden Battle Axe",
     "stats": {
       "hp": 0,
-      "atk": 16,
+      "atk": 15,
       "def": 0,
       "spd": -1
     },
@@ -8661,7 +8761,7 @@
     "name": "Molten Axe",
     "stats": {
       "hp": 0,
-      "atk": 12,
+      "atk": 11,
       "def": 0,
       "spd": -1
     },
@@ -8903,7 +9003,7 @@
     "name": "Steel Torch",
     "stats": {
       "hp": 0,
-      "atk": 4,
+      "atk": 6,
       "def": 0,
       "spd": 0
     },
@@ -8977,7 +9077,7 @@
     },
     "dmgType": "ranged",
     "tags": [],
-    "rarityWeight": 100,
+    "rarityWeight": 300,
     "golden": false,
     "zIndex": 130
   },
@@ -9078,7 +9178,7 @@
     "name": "Wooden Torch",
     "stats": {
       "hp": 0,
-      "atk": 3,
+      "atk": 4,
       "def": 0,
       "spd": 0
     },

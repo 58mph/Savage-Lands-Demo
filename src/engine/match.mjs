@@ -72,8 +72,8 @@ export async function runMatch(teamAFighters, teamBFighters, masterSeed) {
     rounds,
     drops: rollDrops(masterSeed, score),
     teams: {
-      A: unitsA.map((u) => ({ id: u.id, fighterId: u.fighterId, name: u.name, cls: u.cls, species: u.species })),
-      B: unitsB.map((u) => ({ id: u.id, fighterId: u.fighterId, name: u.name, cls: u.cls, species: u.species })),
+      A: unitsA.map((u) => ({ id: u.id, fighterId: u.fighterId, name: u.name, cls: u.cls, species: u.species, hpMax: u.hpMax, slot: u.slot })),
+      B: unitsB.map((u) => ({ id: u.id, fighterId: u.fighterId, name: u.name, cls: u.cls, species: u.species, hpMax: u.hpMax, slot: u.slot })),
     },
     log,
   };

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Savage Arena — Single Player</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E%E2%9A%94%3C/text%3E%3C/svg%3E" />
+<style>
+  :root {
+    --bg: #0e0b12; --panel: #1c1723; --panel-2: #2a2136; --line: #3a2f4a;
+    --gold: #c8a95e; --gold-bright: #f0d080; --text: #f0e6d2; --muted: #9c8db0;
+    --accent: #7ee0a3; --red: #e07e7e; --hp: #6fbf73; --hp-low: #d9534f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--text);
+    background: radial-gradient(1200px 600px at 70% -10%, #241b31 0%, var(--bg) 60%);
+    font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 22px 16px 60px; }
+  header { text-align: center; margin-bottom: 18px; }
+  header h1 { margin: 0 0 4px; font-size: 24px; letter-spacing: 2px; color: var(--gold-bright); text-transform: uppercase; }
+  header p { margin: 0; color: var(--muted); font-size: 12px; }
+
+  button {
+    background: linear-gradient(180deg, #3a2f4a, #2a2136); color: var(--text);
+    border: 1px solid var(--gold); border-radius: 8px; padding: 10px 18px;
+    font: inherit; font-size: 14px; cursor: pointer;
+  }
+  button:hover:not(:disabled) { box-shadow: 0 0 12px rgba(200,169,94,0.35); }
+  button:disabled { opacity: 0.35; cursor: default; }
+  button.secondary { border-color: var(--line); }
+
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* ---- draft ---- */
+  .draft-status { text-align: center; margin-bottom: 14px; color: var(--muted); font-size: 13px; }
+  .draft-status b { color: var(--gold); }
+  .pool {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px; margin-bottom: 20px;
+  }
+  .fcard {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px; cursor: pointer; text-align: center; position: relative;
+    transition: transform .08s ease, border-color .08s ease;
+  }
+  .fcard:hover { transform: translateY(-2px); border-color: var(--gold); }
+  .fcard.picked { opacity: 0.28; pointer-events: none; }
+  .fcard canvas { width: 96px; height: 96px; image-rendering: pixelated; }
+  .fcard .fname { font-size: 12px; font-weight: bold; margin-top: 2px; }
+  .fcard .fcls { font-size: 10px; color: var(--gold); }
+  .fcard .fstat { font-size: 10px; color: var(--muted); margin-top: 3px; }
+  .fcard .fab { font-size: 9px; color: var(--accent); margin-top: 2px; min-height: 11px; }
+
+  .picks-title { color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: center; margin: 6px 0 8px; }
+  .picks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 720px; margin: 0 auto 18px; }
+  .pickslot {
+    background: var(--panel-2); border: 1px dashed var(--line); border-radius: 10px;
+    min-height: 118px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; font-size: 11px; color: var(--muted); cursor: pointer; padding: 6px;
+  }
+  .pickslot.filled { border-style: solid; border-color: var(--gold); color: var(--text); }
+  .pickslot canvas { width: 64px; height: 64px; image-rendering: pixelated; }
+  .draft-actions { text-align: center; }
+
+  /* ---- spectate ---- */
+  .battle { display: grid; grid-template-columns: 240px 1fr 240px; gap: 14px; align-items: start; }
+  .teampanel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  .teampanel h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+  .teampanel h3.you { color: var(--accent); }
+  .teampanel h3.cpu { color: var(--red); }
+  .urow { display: flex; gap: 8px; align-items: center; padding: 5px 2px; border-bottom: 1px dashed var(--line); }
+  .urow:last-child { border-bottom: none; }
+  .urow canvas { width: 40px; height: 40px; image-rendering: pixelated; flex: 0 0 40px; }
+  .urow.dead { opacity: 0.3; filter: grayscale(1); }
+  .uinfo { flex: 1; min-width: 0; }
+  .uname { font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ucls { font-size: 9px; color: var(--gold); }
+  .hpbar { height: 7px; background: #17121e; border-radius: 4px; overflow: hidden; margin-top: 3px; }
+  .hpbar i { display: block; height: 100%; background: var(--hp); border-radius: 4px; transition: width .25s ease; }
+  .hpbar i.low { background: var(--hp-low); }
+  .hptext { font-size: 9px; color: var(--muted); margin-top: 1px; }
+
+  .logpanel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; height: 480px; }
+  .log-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; color: var(--muted); }
+  #log { flex: 1; overflow-y: auto; font-size: 12px; line-height: 1.75; }
+  #log div { opacity: 0.85; }
+  #log .hit { color: var(--text); }
+  #log .heal { color: var(--accent); }
+  #log .death { color: var(--red); font-weight: bold; }
+  #log .cast { color: var(--gold); }
+  #log .round { color: var(--gold-bright); text-align: center; margin: 4px 0; }
+  .controls { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
+  .controls button { padding: 7px 14px; font-size: 12px; }
+  .controls button.on { border-color: var(--accent); color: var(--accent); }
+
+  /* ---- results ---- */
+  .banner { text-align: center; border-radius: 12px; padding: 26px 16px; margin-bottom: 18px; border: 1px solid var(--line); background: var(--panel); }
+  .banner.win { border-color: var(--accent); }
+  .banner.loss { border-color: var(--red); }
+  .banner h2 { margin: 0 0 6px; font-size: 26px; }
+  .banner.win h2 { color: var(--accent); }
+  .banner.loss h2 { color: var(--red); }
+  .banner p { margin: 0; color: var(--muted); font-size: 13px; }
+  .loot { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 16px 0 22px; }
+  .lootcard { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; text-align: center; font-size: 12px; }
+  .lootcard .rar-common { color: var(--muted); } .lootcard .rar-rare { color: #7ec8e0; } .lootcard .rar-epic { color: #c07ee0; }
+  .lootcard .r { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .results-party { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 720px; margin: 0 auto 20px; }
+  .results-actions { text-align: center; }
+  .seednote { text-align: center; color: var(--muted); font-size: 10px; margin-top: 14px; word-break: break-all; }
+
+  #loading { text-align: center; color: var(--muted); padding: 60px 0; }
+
+  @media (max-width: 900px) {
+    .battle { grid-template-columns: 1fr 1fr; }
+    .logpanel { grid-column: 1 / -1; order: 3; height: 320px; }
+  }
+  @media (max-width: 620px) {
+    .picks, .results-party { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+    .pool { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .battle { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚔ Savage Arena</h1>
+    <p>Draft five fighters. Watch them battle. Claim the loot.</p>
+  </header>
+
+  <div id="loading">Summoning fighters…</div>
+
+  <!-- DRAFT -->
+  <section id="draft" class="screen">
+    <div class="draft-status">
+      Draft round <b id="d-round">1</b>/3 — pick <b id="d-need">1</b> more
+      (party <b id="d-count">0</b>/5)
+    </div>
+    <div class="pool" id="pool"></div>
+    <div class="picks-title">Your party — click a slot to unpick</div>
+    <div class="picks" id="picks"></div>
+    <div class="draft-actions">
+      <button id="d-next" disabled>NEXT ROUND</button>
+    </div>
+  </section>
+
+  <!-- SPECTATE -->
+  <section id="spectate" class="screen">
+    <div class="battle">
+      <div class="teampanel"><h3 class="you">Your party</h3><div id="teamA"></div></div>
+      <div class="logpanel">
+        <div class="log-head"><span id="s-round">Round 1</span><span id="s-turn">turn 0</span></div>
+        <div id="log"></div>
+        <div class="controls">
+          <button id="s-play" class="on">⏸ Pause</button>
+          <button id="s-05" class="secondary">0.5×</button>
+          <button id="s-1" class="secondary on">1×</button>
+          <button id="s-2" class="secondary">2×</button>
+          <button id="s-skip" class="secondary">⏭ Skip</button>
+        </div>
+      </div>
+      <div class="teampanel"><h3 class="cpu">Enemy team</h3><div id="teamB"></div></div>
+    </div>
+    <div class="results-actions" style="margin-top:14px">
+      <button id="s-results" style="display:none">SEE RESULTS →</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="screen">
+    <div class="banner" id="r-banner">
+      <h2 id="r-title">VICTORY</h2>
+      <p id="r-sub">2-0 · round 2 · wipe</p>
+    </div>
+    <div class="picks-title">Your party</div>
+    <div class="results-party" id="r-party"></div>
+    <div class="picks-title">Loot</div>
+    <div class="loot" id="r-loot"></div>
+    <div class="results-actions"><button id="r-again">⚔ PLAY AGAIN</button></div>
+    <div class="seednote" id="r-seed"></div>
+  </section>
+</div>
+
+<script type="module">
+  import { generateFighterWith, fnv1a } from '../src/gen/compose-core.mjs';
+  import { runMatch, formatMatchLog } from '../src/engine/index.mjs';
+
+  const $ = (id) => document.getElementById(id);
+  const NATIVE = 128;
+
+  // ---- data ----------------------------------------------------------------
+  const [manifest, tuning, names] = await Promise.all(
+    ['attributes', 'tuning', 'names'].map((f) =>
+      fetch(`../data/${f}.json`, { cache: 'no-store' }).then((r) => {
+        if (!r.ok) throw new Error(`failed to load data/${f}.json`);
+        return r.json();
+      })
+    )
+  );
+  const data = { manifest, tuning, names };
+  const manifestById = new Map(manifest.map((e) => [e.id, e]));
+
+  // ---- sprite compositing (same approach as the demo) ------------------------
+  const imageCache = new Map();
+  const loadImage = (src) => {
+    if (!imageCache.has(src)) {
+      imageCache.set(src, new Promise((res) => {
+        const img = new Image();
+        img.onload = () => res(img);
+        img.onerror = () => res(null);
+        img.src = src;
+      }));
+    }
+    return imageCache.get(src);
+  };
+  const scratch = document.createElement('canvas');
+  scratch.width = scratch.height = NATIVE;
+  const sctx = scratch.getContext('2d');
+
+  async function drawFighter(canvas, fighter) {
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, NATIVE, NATIVE);
+    ctx.imageSmoothingEnabled = false;
+    const parts = [...fighter.parts].sort((a, b) => (a.zIndex ?? 0) - (b.zIndex ?? 0));
+    for (const part of parts) {
+      const entry = manifestById.get(part.id);
+      const img = entry && !entry.missing ? await loadImage('../' + entry.file) : null;
+      if (!img) continue;
+      if (part.goldenTint) {
+        sctx.clearRect(0, 0, NATIVE, NATIVE);
+        sctx.drawImage(img, 0, 0);
+        sctx.globalCompositeOperation = 'source-atop';
+        sctx.fillStyle = 'rgba(255,200,40,0.35)';
+        sctx.fillRect(0, 0, NATIVE, NATIVE);
+        sctx.globalCompositeOperation = 'source-over';
+        ctx.drawImage(scratch, 0, 0);
+      } else {
+        ctx.drawImage(img, 0, 0);
+      }
+    }
+  }
+
+  const mkCanvas = () => {
+    const c = document.createElement('canvas');
+    c.width = c.height = NATIVE;
+    return c;
+  };
+
+  // ---- game state ------------------------------------------------------------
+  const PICKS_PER_ROUND = [1, 2, 2]; // snake draft 1 -> 2 -> 2
+  let gameSeed, draftRound, picks, pool, existingIds;
+  let match, lines, cursor, playing, speed, timer, hp, cpuTeam;
+
+  function newGame() {
+    gameSeed = `sp-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+    draftRound = 0;
+    picks = [];
+    existingIds = new Set();
+    match = null;
+    show('draft');
+    nextDraftRound();
+  }
+
+  const gen = (seed) => {
+    const f = generateFighterWith(seed, data, { existingIds });
+    existingIds.add(f.id);
+    return f;
+  };
+
+  // ---- draft ------------------------------------------------------------------
+  function nextDraftRound() {
+    draftRound++;
+    pool = Array.from({ length: 10 }, (_, i) =>
+      gen(`pool-${fnv1a(gameSeed + draftRound).toString(16)}-${i}`)
+    );
+    renderDraft();
+  }
+
+  function picksNeeded() {
+    return PICKS_PER_ROUND.slice(0, draftRound).reduce((a, b) => a + b, 0);
+  }
+
+  function renderDraft() {
+    $('d-round').textContent = draftRound;
+    $('d-count').textContent = picks.length;
+    $('d-need').textContent = Math.max(0, picksNeeded() - picks.length);
+
+    const poolEl = $('pool');
+    poolEl.innerHTML = '';
+    for (const f of pool) {
+      const card = document.createElement('div');
+      card.className = 'fcard' + (picks.includes(f) ? ' picked' : '');
+      const cv = mkCanvas();
+      drawFighter(cv, f);
+      card.appendChild(cv);
+      const ab = f.abilities.map((a) => a.name).slice(0, 2).join(' · ');
+      card.insertAdjacentHTML(
+        'beforeend',
+        `<div class="fname">${f.name}</div><div class="fcls">${f.cls}</div>
+         <div class="fstat">HP ${f.stats.hp} ATK ${f.stats.atk} DEF ${f.stats.def} SPD ${f.stats.spd}</div>
+         <div class="fab">${ab || (f.doubleAttack ? '⚔ dual strike' : '')}</div>`
+      );
+      card.onclick = () => {
+        if (picks.length >= picksNeeded() || picks.includes(f)) return;
+        picks.push(f);
+        renderDraft();
+      };
+      poolEl.appendChild(card);
+    }
+
+    const picksEl = $('picks');
+    picksEl.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+      const f = picks[i];
+      const slot = document.createElement('div');
+      slot.className = 'pickslot' + (f ? ' filled' : '');
+      if (f) {
+        const cv = mkCanvas();
+        drawFighter(cv, f);
+        slot.appendChild(cv);
+        slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls">${f.cls}</div>`);
+        slot.onclick = () => {
+          // unpick only if drafted this round (can't rewind previous rounds)
+          if (i >= picksNeeded() - PICKS_PER_ROUND[draftRound - 1]) {
+            picks.splice(i, 1);
+            renderDraft();
+          }
+        };
+      } else {
+        slot.textContent = `slot ${i + 1}`;
+      }
+      picksEl.appendChild(slot);
+    }
+
+    const btn = $('d-next');
+    btn.disabled = picks.length < picksNeeded();
+    btn.textContent = draftRound < 3 ? 'NEXT ROUND' : 'START MATCH ⚔';
+    btn.onclick = draftRound < 3 ? nextDraftRound : startMatch;
+  }
+
+  // ---- spectate -----------------------------------------------------------------
+  async function startMatch() {
+    cpuTeam = Array.from({ length: 5 }, (_, i) => gen(`cpu-${gameSeed}-${i}`));
+    match = await runMatch(picks, cpuTeam, `match-${gameSeed}`);
+    lines = formatMatchLog(match);
+    cursor = 0;
+    playing = true;
+    speed = 1;
+    hp = {};
+    for (const side of ['A', 'B']) for (const u of match.teams[side]) hp[u.id] = u.hpMax;
+
+    $('log').innerHTML = '';
+    $('s-results').style.display = 'none';
+    $('s-play').textContent = '⏸ Pause';
+    renderTeams();
+    show('spectate');
+    tick();
+  }
+
+  function unitFighter(id) {
+    const idx = Number(id.slice(1));
+    return id[0] === 'A' ? picks[idx] : cpuTeam[idx];
+  }
+
+  function renderTeams() {
+    for (const side of ['A', 'B']) {
+      const el = $(side === 'A' ? 'teamA' : 'teamB');
+      el.innerHTML = '';
+      for (const u of match.teams[side]) {
+        const row = document.createElement('div');
+        row.className = 'urow' + (hp[u.id] <= 0 ? ' dead' : '');
+        row.id = `u-${u.id}`;
+        const cv = mkCanvas();
+        drawFighter(cv, unitFighter(u.id));
+        row.appendChild(cv);
+        const frac = Math.max(0, hp[u.id]) / u.hpMax;
+        row.insertAdjacentHTML(
+          'beforeend',
+          `<div class="uinfo">
+             <div class="uname">${u.name}</div><div class="ucls">${u.cls} · ${u.slot}</div>
+             <div class="hpbar"><i class="${frac < 0.35 ? 'low' : ''}" style="width:${frac * 100}%"></i></div>
+             <div class="hptext">${Math.max(0, hp[u.id])}/${u.hpMax}</div>
+           </div>`
+        );
+        el.appendChild(row);
+      }
+    }
+  }
+
+  function updateUnit(id) {
+    const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === id);
+    const row = $(`u-${id}`);
+    if (!u || !row) return;
+    const frac = Math.max(0, hp[id]) / u.hpMax;
+    row.classList.toggle('dead', hp[id] <= 0);
+    const bar = row.querySelector('.hpbar i');
+    bar.style.width = `${frac * 100}%`;
+    bar.classList.toggle('low', frac < 0.35);
+    row.querySelector('.hptext').textContent = `${Math.max(0, hp[id])}/${u.hpMax}`;
+  }
+
+  function applyRaw(raw) {
+    switch (raw.type) {
+      case 'round-start':
+        for (const id of Object.keys(hp)) {
+          const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === id);
+          hp[id] = u.hpMax;
+          updateUnit(id);
+        }
+        $('s-round').textContent = `Round ${raw.round}`;
+        break;
+      case 'damage': case 'retaliate': case 'familiar':
+        hp[raw.target] = Math.max(0, hp[raw.target] - raw.dmg);
+        updateUnit(raw.target);
+        break;
+      case 'dot':
+        hp[raw.unit] = Math.max(0, hp[raw.unit] - raw.dmg);
+        updateUnit(raw.unit);
+        break;
+      case 'heal': case 'bloodlust': {
+        const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === raw.unit);
+        hp[raw.unit] = Math.min(u.hpMax, hp[raw.unit] + (raw.amount ?? raw.heal ?? 0));
+        updateUnit(raw.unit);
+        break;
+      }
+      case 'survive': {
+        const u = [...match.teams.A, ...match.teams.B].find((x) => x.id === raw.unit);
+        hp[raw.unit] = Math.round(u.hpMax * 0.2);
+        updateUnit(raw.unit);
+        break;
+      }
+      case 'pact':
+        hp[raw.unit] = Math.max(1, hp[raw.unit] - raw.cost);
+        updateUnit(raw.unit);
+        break;
+      case 'death':
+        hp[raw.unit] = 0;
+        updateUnit(raw.unit);
+        break;
+    }
+  }
+
+  function lineClass(raw) {
+    if (raw.type === 'death') return 'death';
+    if (raw.type === 'heal' || raw.type === 'bloodlust' || raw.type === 'survive') return 'heal';
+    if (raw.type === 'cast' || raw.type === 'pact') return 'cast';
+    if (raw.type === 'round-start' || raw.type === 'round-end') return 'round';
+    return 'hit';
+  }
+
+  function step() {
+    if (cursor >= lines.length) {
+      playing = false;
+      clearTimeout(timer);
+      $('s-play').textContent = '▶ Play';
+      $('s-results').style.display = 'inline-block';
+      return;
+    }
+    const line = lines[cursor++];
+    applyRaw(line.raw);
+    $('s-turn').textContent = `turn ${line.turn}/${lines.length}`;
+    const log = $('log');
+    log.insertAdjacentHTML('beforeend', `<div class="${lineClass(line.raw)}">${line.event}</div>`);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function tick() {
+    clearTimeout(timer);
+    if (!playing) return;
+    step();
+    if (playing) timer = setTimeout(tick, 320 / speed);
+  }
+
+  $('s-play').onclick = () => {
+    playing = !playing;
+    $('s-play').textContent = playing ? '⏸ Pause' : '▶ Play';
+    $('s-play').classList.toggle('on', playing);
+    if (playing) tick();
+  };
+  for (const [id, s] of [['s-05', 0.5], ['s-1', 1], ['s-2', 2]]) {
+    $(id).onclick = () => {
+      speed = s;
+      for (const b of ['s-05', 's-1', 's-2']) $(b).classList.toggle('on', b === id);
+    };
+  }
+  $('s-skip').onclick = () => {
+    playing = false;
+    clearTimeout(timer);
+    while (cursor < lines.length) step();
+    step(); // one extra call hits the end-of-log branch and reveals SEE RESULTS
+  };
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && $('spectate').classList.contains('active')) {
+      e.preventDefault();
+      $('s-play').click();
+    }
+  });
+  $('s-results').onclick = showResults;
+
+  // ---- results ---------------------------------------------------------------
+  function showResults() {
+    const won = match.winner === 'A';
+    const last = match.rounds[match.rounds.length - 1];
+    $('r-banner').className = `banner ${won ? 'win' : 'loss'}`;
+    $('r-title').textContent = won ? '🏆 VICTORY' : '💀 DEFEAT';
+    $('r-sub').textContent = `${match.score.A}-${match.score.B} · ${match.rounds.length} round${match.rounds.length > 1 ? 's' : ''} · last: ${last.how}`;
+
+    const party = $('r-party');
+    party.innerHTML = '';
+    for (const f of picks) {
+      const slot = document.createElement('div');
+      slot.className = 'pickslot filled';
+      const cv = mkCanvas();
+      drawFighter(cv, f);
+      slot.appendChild(cv);
+      slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls">${f.cls}</div>`);
+      party.appendChild(slot);
+    }
+
+    const loot = $('r-loot');
+    loot.innerHTML = '';
+    const drops = won ? match.drops : match.drops.slice(0, 1); // losers get scraps
+    for (const d of drops) {
+      loot.insertAdjacentHTML(
+        'beforeend',
+        `<div class="lootcard"><div class="rar-${d.rarity}">${d.item}</div><div class="r rar-${d.rarity}">${d.rarity}</div></div>`
+      );
+    }
+    if (!won) loot.insertAdjacentHTML('beforeend', `<div class="lootcard"><div class="rar-common">…the rest went to the victor</div></div>`);
+
+    $('r-seed').textContent = `verifiable seed: match-${gameSeed} — same seed, same battle, forever`;
+    show('results');
+  }
+  $('r-again').onclick = newGame;
+
+  // ---- boot -------------------------------------------------------------------
+  function show(id) {
+    for (const s of document.querySelectorAll('.screen')) s.classList.remove('active');
+    $(id).classList.add('active');
+    window.scrollTo({ top: 0 });
+  }
+  $('loading').remove();
+  newGame();
+</script>
+</body>
+</html>

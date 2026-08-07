@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Savage Arena — Fighter Compositor Demo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E%E2%9A%94%3C/text%3E%3C/svg%3E" />
+<style>
+  :root {
+    /* Savage Arena unified theme: warm earth + metallics (matches /game/) */
+    --bg: #171008;
+    --panel: #3a2b18;
+    --panel-2: #4a3521;
+    --line: #6b5b3e;
+    --gold: #c9aa6d;
+    --gold-bright: #f0d080;
+    --text: #e8d9b8;
+    --muted: #a0826d;
+    --accent: #7ee0a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1400px 700px at 50% -10%, #3d2f1c 0%, #2e2013 55%, var(--bg) 100%);
+    color: var(--text);
+    font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 28px 20px 60px; }
+
+  header { text-align: center; margin-bottom: 26px; }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    text-shadow: 0 2px 0 #5e4413, 0 4px 8px rgba(0,0,0,.7);
+  }
+  header p { margin: 0; color: var(--muted); font-size: 13px; }
+
+  .controls {
+    display: flex; gap: 10px; justify-content: center; align-items: center;
+    flex-wrap: wrap; margin-bottom: 28px;
+  }
+  .controls label { color: var(--muted); font-size: 13px; }
+  #seed {
+    background: var(--panel); color: var(--text);
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 10px 14px; font: inherit; font-size: 15px; width: 260px;
+    outline: none;
+  }
+  #seed:focus { border-color: var(--gold); }
+  button {
+    background: linear-gradient(180deg, #3a2f4a, #2a2136);
+    color: var(--text); border: 1px solid var(--gold);
+    border-radius: 8px; padding: 10px 18px; font: inherit; font-size: 14px;
+    cursor: pointer; transition: transform 0.05s ease, box-shadow 0.15s ease;
+  }
+  button:hover { box-shadow: 0 0 12px rgba(200, 169, 94, 0.35); }
+  button:active { transform: translateY(1px); }
+  button.secondary { border-color: var(--line); }
+
+  .stage {
+    display: grid; grid-template-columns: 340px 1fr; gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 800px) { .stage { grid-template-columns: 1fr; } }
+
+  .card-holder { text-align: center; }
+  #card {
+    width: 100%; max-width: 320px;
+    image-rendering: pixelated;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    background: var(--panel);
+    min-height: 200px;
+  }
+
+  .panel {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 20px;
+  }
+  .panel h2 {
+    margin: 0 0 2px; font-size: 20px; color: var(--gold-bright);
+  }
+  .cls { color: var(--gold); font-size: 13px; margin-bottom: 14px; }
+
+  .statgrid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 8px; margin-bottom: 14px;
+  }
+  .stat {
+    background: var(--panel-2); border-radius: 8px; padding: 8px 10px;
+    text-align: center;
+  }
+  .stat .k { color: var(--muted); font-size: 10px; letter-spacing: 1px; }
+  .stat .v { font-size: 17px; margin-top: 2px; }
+
+  /* pills wrap onto multiple lines; past ~3 rows they scroll instead of
+     pushing the equipment table off-screen */
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+    max-height: 76px; overflow-y: auto;
+  }
+  .chip {
+    font-size: 11px; padding: 3px 10px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--muted); white-space: nowrap;
+  }
+  .chip.on { border-color: var(--accent); color: var(--accent); }
+  .chip.gold { border-color: var(--gold); color: var(--gold); }
+
+  .badge {
+    display: inline-block; font-size: 11px; padding: 2px 8px;
+    border-radius: 6px; border: 1px solid var(--accent); color: var(--accent);
+    cursor: help;
+  }
+  .badge-sub { display: block; font-size: 9px; color: var(--muted); margin-top: 2px; }
+
+  .summary {
+    background: var(--panel-2); border-radius: 10px;
+    padding: 10px 12px; margin-bottom: 14px;
+  }
+  .summary h3 {
+    margin: 0 0 8px; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .sum-row { display: flex; gap: 8px; margin: 5px 0; font-size: 12px; align-items: baseline; }
+  .sum-row .k {
+    flex: 0 0 88px; color: var(--muted); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .sum-row .v { flex: 1; }
+  .ability { margin-bottom: 4px; }
+  .ability .a-name { color: var(--gold-bright); }
+  .ability .a-kind { color: var(--muted); font-size: 9px; margin-left: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .ability .a-kind .pip { color: var(--accent); }
+  .ability .a-desc { color: var(--muted); font-size: 10px; display: block; }
+  .syn .a-name { color: var(--accent); }
+  .res-chip {
+    display: inline-block; font-size: 10px; padding: 2px 8px; margin: 0 4px 4px 0;
+    border-radius: 999px; border: 1px solid var(--line); color: var(--text);
+  }
+  .none { color: var(--muted); font-size: 11px; }
+
+  .parts { list-style: none; margin: 0 0 14px; padding: 0; font-size: 13px; }
+  .parts li {
+    display: flex; justify-content: space-between; gap: 10px;
+    padding: 5px 0; border-bottom: 1px dashed var(--line);
+  }
+  .parts .slot { color: var(--muted); text-transform: uppercase; font-size: 11px; }
+  .parts .golden { color: var(--gold-bright); }
+
+  .meta { font-size: 11px; color: var(--muted); word-break: break-all; }
+  .meta b { color: var(--text); font-weight: normal; }
+
+  .gallery-title {
+    margin: 34px 0 12px; color: var(--muted); font-size: 13px;
+    letter-spacing: 1px; text-transform: uppercase; text-align: center;
+  }
+  .gallery {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+  .gallery img {
+    width: 100%; image-rendering: pixelated; border-radius: 8px;
+    cursor: pointer; border: 1px solid transparent;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+    background: var(--panel);
+  }
+  .gallery img:hover { transform: translateY(-3px); border-color: var(--gold); }
+
+  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚔ Fighter Compositor</h1>
+    <p>Deterministic, seeded fighter generation — same seed, same fighter, byte-identical pixels. Forever.</p>
+  </header>
+
+  <div class="controls">
+    <label for="seed">seed</label>
+    <input id="seed" value="test" spellcheck="false" />
+    <button id="go">Generate</button>
+    <button id="dice" class="secondary" title="Random seed">🎲 Random</button>
+  </div>
+
+  <div class="stage">
+    <div class="card-holder">
+      <img id="card" alt="fighter card" />
+    </div>
+
+    <div class="panel" id="details">
+      <h2 id="f-name">—</h2>
+      <div class="cls" id="f-cls">—</div>
+
+      <div class="statgrid" id="f-stats"></div>
+      <div class="chips" id="f-chips"></div>
+
+      <div class="summary" id="f-summary"></div>
+
+      <ul class="parts" id="f-parts"></ul>
+
+      <div class="meta">
+        id <b id="f-id">—</b><br />
+        seed <b id="f-seed">—</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-title">More from this seed family — click one to inspect</div>
+  <div class="gallery" id="gallery"></div>
+
+  <footer>
+    Savage Arena · HEAVY META: The Savage Lands ·
+    rendered server-side by the same pipeline that feeds the battle engine
+  </footer>
+</div>
+
+<script type="module">
+  const $ = (id) => document.getElementById(id);
+  const GALLERY_N = 12;
+
+  const STAT_KEYS = [
+    ['hp', 'HP'], ['atk', 'ATK'], ['def', 'DEF'], ['spd', 'SPD'],
+  ];
+
+  const tuning = await fetch('/api/tuning').then((r) => r.json());
+
+  function gearSummaryHtml(fighter) {
+    const critPct = Math.round(fighter.stats.crit * 100);
+    // one action per turn (locked): casting replaces the attack, 1x/round
+    const costLabel = (a) =>
+      a.kind === 'passive' ? 'passive' : `${a.kind} · 1×/round`;
+    const abilities = fighter.abilities.length
+      ? fighter.abilities.map((a) =>
+          `<div class="ability"><span class="a-name">${a.name}</span><span class="a-kind">${costLabel(a)}</span><span class="a-desc">${a.desc}</span></div>`
+        ).join('')
+      : '<span class="none">none</span>';
+    const synergies = fighter.synergies.length
+      ? fighter.synergies.map((s) =>
+          `<div class="ability syn"><span class="a-name">${s.name}</span><span class="a-desc">${s.desc}</span></div>`
+        ).join('')
+      : '<span class="none">none</span>';
+    const resKeys = Object.keys(fighter.resistances);
+    const resistances = resKeys.length
+      ? resKeys.map((k) =>
+          `<span class="res-chip">${k.toUpperCase()} ${Math.round(fighter.resistances[k] * 100)}%</span>`
+        ).join('')
+      : '<span class="none">none</span>';
+    return `<h3>Gear Summary</h3>
+      <div class="sum-row"><span class="k">Crit</span><span class="v">${critPct}%</span></div>
+      <div class="sum-row"><span class="k">Abilities</span><span class="v">${abilities}</span></div>
+      <div class="sum-row"><span class="k">Synergy</span><span class="v">${synergies}</span></div>
+      <div class="sum-row"><span class="k">Resists</span><span class="v">${resistances}</span></div>`;
+  }
+
+  async function load(seed) {
+    $('seed').value = seed;
+    history.replaceState(null, '', '#seed=' + encodeURIComponent(seed));
+
+    $('card').src = '/api/card.png?seed=' + encodeURIComponent(seed);
+
+    const fighter = await fetch('/api/fighter?seed=' + encodeURIComponent(seed)).then((r) => r.json());
+
+    $('f-name').textContent = fighter.name;
+    $('f-cls').textContent = fighter.cls + ' · ' + fighter.dmgTypes.join(' + ');
+
+    $('f-stats').innerHTML = STAT_KEYS.map(([k, label]) =>
+      `<div class="stat"><div class="k">${label}</div><div class="v">${fighter.stats[k]}</div></div>`
+    ).join('') +
+      `<div class="stat"><div class="k">CRIT</div><div class="v">${Math.round(fighter.stats.crit * 100)}%</div></div>`;
+
+    const chips = [];
+    if (fighter.doubleAttack) chips.push('<span class="chip on">double attack</span>');
+    for (const tag of fighter.tags) chips.push(`<span class="chip gold">${tag}</span>`);
+    if (chips.length === 0) chips.push('<span class="chip">no modifiers</span>');
+    $('f-chips').innerHTML = chips.join('');
+
+    $('f-summary').innerHTML = gearSummaryHtml(fighter);
+
+    const dualStrikePct = Math.round(tuning.secondAttackMultiplier * 100);
+    const partRows = fighter.parts
+      // straps are part of their shield, never shown as their own item
+      .filter((p) => p.slot !== 'shieldstraps')
+      .map((p) => {
+        const pretty =
+          p.name && p.name !== 'TODO' ? p.name : p.id.split('/')[1].replace(/_/g, ' ');
+        return `<li><span class="slot">${p.slot}</span><span class="${p.golden ? 'golden' : ''}">${p.golden ? '★ ' : ''}${pretty}</span></li>`;
+      });
+    if (fighter.doubleAttack) {
+      const dualText = `Free hand: every attack swings twice — the second lands at ${dualStrikePct}% damage (after armor)`;
+      partRows.push(
+        `<li><span class="slot">offhands</span><span>` +
+          `<span class="badge" title="${dualText}">⚔ DUAL STRIKE</span>` +
+          `<span class="badge-sub">${dualText}</span>` +
+          `</span></li>`
+      );
+    }
+    $('f-parts').innerHTML = partRows.join('');
+
+    $('f-id').textContent = fighter.id;
+    $('f-seed').textContent = fighter.seed;
+  }
+
+  function buildGallery(seed) {
+    $('gallery').innerHTML = Array.from({ length: GALLERY_N }, (_, i) => {
+      const s = `${seed}:${i}`;
+      return `<img loading="lazy" src="/api/sprite.png?seed=${encodeURIComponent(s)}" title="${s}" data-seed="${s}" alt="fighter ${s}" />`;
+    }).join('');
+  }
+
+  $('go').addEventListener('click', () => {
+    const seed = $('seed').value.trim() || 'test';
+    load(seed);
+    buildGallery(seed);
+  });
+  $('seed').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('go').click(); });
+  $('dice').addEventListener('click', () => {
+    $('seed').value = Math.random().toString(36).slice(2, 10);
+    $('go').click();
+  });
+  $('gallery').addEventListener('click', (e) => {
+    const seed = e.target?.dataset?.seed;
+    if (seed) { load(seed); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  });
+
+  const initial = decodeURIComponent((location.hash.match(/#seed=(.+)/) || [])[1] || 'test');
+  load(initial);
+  buildGallery(initial);
+</script>
+</body>
+</html>

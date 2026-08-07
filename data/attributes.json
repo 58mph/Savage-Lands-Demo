@@ -1,0 +1,9191 @@
+[
+  {
+    "id": "bases/albino_crocodillian",
+    "slot": "bases",
+    "file": "assets/bases/albino_crocodillian.png",
+    "name": "Albino Crocodillian",
+    "stats": {
+      "hp": 84,
+      "atk": 12,
+      "def": 7,
+      "spd": 9
+    },
+    "dmgType": null,
+    "tags": [
+      "shaman"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/bearkin",
+    "slot": "bases",
+    "file": "assets/bases/bearkin.png",
+    "name": "Bearkin",
+    "stats": {
+      "hp": 92,
+      "atk": 13,
+      "def": 11,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [
+      "warrior"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/black_ratman",
+    "slot": "bases",
+    "file": "assets/bases/black_ratman.png",
+    "name": "Black Ratman",
+    "stats": {
+      "hp": 78,
+      "atk": 12,
+      "def": 6,
+      "spd": 14
+    },
+    "dmgType": null,
+    "tags": [
+      "scout"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/brown_ratman",
+    "slot": "bases",
+    "file": "assets/bases/brown_ratman.png",
+    "name": "Brown Ratman",
+    "stats": {
+      "hp": 85,
+      "atk": 12,
+      "def": 8,
+      "spd": 12
+    },
+    "dmgType": null,
+    "tags": [
+      "hunter"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/crocodillian",
+    "slot": "bases",
+    "file": "assets/bases/crocodillian.png",
+    "name": "Crocodillian",
+    "stats": {
+      "hp": 92,
+      "atk": 13,
+      "def": 11,
+      "spd": 10
+    },
+    "dmgType": null,
+    "tags": [
+      "warrior"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/frogfolk",
+    "slot": "bases",
+    "file": "assets/bases/frogfolk.png",
+    "name": "Frogfolk",
+    "stats": {
+      "hp": 85,
+      "atk": 12,
+      "def": 8,
+      "spd": 12
+    },
+    "dmgType": null,
+    "tags": [
+      "hunter"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/lizardman",
+    "slot": "bases",
+    "file": "assets/bases/lizardman.png",
+    "name": "Lizardman",
+    "stats": {
+      "hp": 78,
+      "atk": 12,
+      "def": 6,
+      "spd": 14
+    },
+    "dmgType": null,
+    "tags": [
+      "scout"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/minotaur",
+    "slot": "bases",
+    "file": "assets/bases/minotaur.png",
+    "name": "Minotaur",
+    "stats": {
+      "hp": 110,
+      "atk": 15,
+      "def": 9,
+      "spd": 7
+    },
+    "dmgType": null,
+    "tags": [
+      "brute"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/poisonous_frogfolk",
+    "slot": "bases",
+    "file": "assets/bases/poisonous_frogfolk.png",
+    "name": "Poisonous Frogfolk",
+    "stats": {
+      "hp": 84,
+      "atk": 12,
+      "def": 7,
+      "spd": 9
+    },
+    "dmgType": null,
+    "tags": [
+      "shaman"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/possum",
+    "slot": "bases",
+    "file": "assets/bases/possum.png",
+    "name": "Possum",
+    "stats": {
+      "hp": 78,
+      "atk": 12,
+      "def": 6,
+      "spd": 14
+    },
+    "dmgType": null,
+    "tags": [
+      "scout"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/raccoon",
+    "slot": "bases",
+    "file": "assets/bases/raccoon.png",
+    "name": "Raccoon",
+    "stats": {
+      "hp": 85,
+      "atk": 12,
+      "def": 8,
+      "spd": 12
+    },
+    "dmgType": null,
+    "tags": [
+      "hunter"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/salamander",
+    "slot": "bases",
+    "file": "assets/bases/salamander.png",
+    "name": "Salamander",
+    "stats": {
+      "hp": 110,
+      "atk": 15,
+      "def": 9,
+      "spd": 7
+    },
+    "dmgType": null,
+    "tags": [
+      "brute"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/white_ratman",
+    "slot": "bases",
+    "file": "assets/bases/white_ratman.png",
+    "name": "White Ratman",
+    "stats": {
+      "hp": 84,
+      "atk": 12,
+      "def": 7,
+      "spd": 9
+    },
+    "dmgType": null,
+    "tags": [
+      "shaman"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "bases/winter_bearkin",
+    "slot": "bases",
+    "file": "assets/bases/winter_bearkin.png",
+    "name": "Winter Bearkin",
+    "stats": {
+      "hp": 105,
+      "atk": 13,
+      "def": 12,
+      "spd": 8
+    },
+    "dmgType": null,
+    "tags": [
+      "chief"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 10
+  },
+  {
+    "id": "belts/brotherhood_of_blood",
+    "slot": "belts",
+    "file": "assets/belts/brotherhood_of_blood.png",
+    "name": "Brotherhood of Blood",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/cavalry",
+    "slot": "belts",
+    "file": "assets/belts/cavalry.png",
+    "name": "Cavalry",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/chainmail",
+    "slot": "belts",
+    "file": "assets/belts/chainmail.png",
+    "name": "Chainmail",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/champions_belt",
+    "slot": "belts",
+    "file": "assets/belts/champions_belt.png",
+    "name": "Champions Belt",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/conquerers",
+    "slot": "belts",
+    "file": "assets/belts/conquerers.png",
+    "name": "Conquerers",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/demon_hunter",
+    "slot": "belts",
+    "file": "assets/belts/demon_hunter.png",
+    "name": "Demon Hunter",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/destroyers_belt",
+    "slot": "belts",
+    "file": "assets/belts/destroyers_belt.png",
+    "name": "Destroyers Belt",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/dragon_knight",
+    "slot": "belts",
+    "file": "assets/belts/dragon_knight.png",
+    "name": "Dragon Knight",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/dustmarsh",
+    "slot": "belts",
+    "file": "assets/belts/dustmarsh.png",
+    "name": "Dustmarsh",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/ebon_belt",
+    "slot": "belts",
+    "file": "assets/belts/ebon_belt.png",
+    "name": "Ebon Belt",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/fallen_kingdom_kilt",
+    "slot": "belts",
+    "file": "assets/belts/fallen_kingdom_kilt.png",
+    "name": "Fallen Kingdom Kilt",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/frogsong",
+    "slot": "belts",
+    "file": "assets/belts/frogsong.png",
+    "name": "Frogsong",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/frostrime",
+    "slot": "belts",
+    "file": "assets/belts/frostrime.png",
+    "name": "Frostrime",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/fury_belt",
+    "slot": "belts",
+    "file": "assets/belts/fury_belt.png",
+    "name": "Fury Belt",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_bloodbrothers_belt",
+    "slot": "belts",
+    "file": "assets/belts/golden_bloodbrothers_belt.png",
+    "name": "Golden Bloodbrothers Belt",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_cavalry",
+    "slot": "belts",
+    "file": "assets/belts/golden_cavalry.png",
+    "name": "Golden Cavalry",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_destroyers_belt",
+    "slot": "belts",
+    "file": "assets/belts/golden_destroyers_belt.png",
+    "name": "Golden Destroyers Belt",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_house_of_leo",
+    "slot": "belts",
+    "file": "assets/belts/golden_house_of_leo.png",
+    "name": "Golden House of Leo",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_imbued",
+    "slot": "belts",
+    "file": "assets/belts/golden_imbued.png",
+    "name": "Golden Imbued",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_nightstalkers_belt",
+    "slot": "belts",
+    "file": "assets/belts/golden_nightstalkers_belt.png",
+    "name": "Golden Nightstalkers Belt",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_spiked",
+    "slot": "belts",
+    "file": "assets/belts/golden_spiked.png",
+    "name": "Golden Spiked",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_studded_armor",
+    "slot": "belts",
+    "file": "assets/belts/golden_studded_armor.png",
+    "name": "Golden Studded Armor",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/golden_tanking_plate",
+    "slot": "belts",
+    "file": "assets/belts/golden_tanking_plate.png",
+    "name": "Golden Tanking Plate",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/healers_sash",
+    "slot": "belts",
+    "file": "assets/belts/healers_sash.png",
+    "name": "Healers Sash",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/heavy_marine",
+    "slot": "belts",
+    "file": "assets/belts/heavy_marine.png",
+    "name": "Heavy Marine",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/heros_waist",
+    "slot": "belts",
+    "file": "assets/belts/heros_waist.png",
+    "name": "Heros Waist",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/highwaymans_belt",
+    "slot": "belts",
+    "file": "assets/belts/highwaymans_belt.png",
+    "name": "Highwaymans Belt",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/holy_waistwrap",
+    "slot": "belts",
+    "file": "assets/belts/holy_waistwrap.png",
+    "name": "Holy Waistwrap",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/house_of_leo",
+    "slot": "belts",
+    "file": "assets/belts/house_of_leo.png",
+    "name": "House of Leo",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/hunters_plate",
+    "slot": "belts",
+    "file": "assets/belts/hunters_plate.png",
+    "name": "Hunters Plate",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/imbued_sash",
+    "slot": "belts",
+    "file": "assets/belts/imbued_sash.png",
+    "name": "Imbued Sash",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/invaders",
+    "slot": "belts",
+    "file": "assets/belts/invaders.png",
+    "name": "Invaders",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/invaders_orange",
+    "slot": "belts",
+    "file": "assets/belts/invaders_orange.png",
+    "name": "Invaders Orange",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/irradiated",
+    "slot": "belts",
+    "file": "assets/belts/irradiated.png",
+    "name": "Irradiated",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/jesters_belt",
+    "slot": "belts",
+    "file": "assets/belts/jesters_belt.png",
+    "name": "Jesters Belt",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/molten",
+    "slot": "belts",
+    "file": "assets/belts/molten.png",
+    "name": "Molten",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/necromancers_cinch",
+    "slot": "belts",
+    "file": "assets/belts/necromancers_cinch.png",
+    "name": "Necromancers Cinch",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/plated_belt",
+    "slot": "belts",
+    "file": "assets/belts/plated_belt.png",
+    "name": "Plated Belt",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/platemail_girdle",
+    "slot": "belts",
+    "file": "assets/belts/platemail_girdle.png",
+    "name": "Platemail Girdle",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/rogue_stalkers_wrap",
+    "slot": "belts",
+    "file": "assets/belts/rogue_stalkers_wrap.png",
+    "name": "Rogue Stalkers Wrap",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/rotknight",
+    "slot": "belts",
+    "file": "assets/belts/rotknight.png",
+    "name": "Rotknight",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/royal_blue_guard",
+    "slot": "belts",
+    "file": "assets/belts/royal_blue_guard.png",
+    "name": "Royal Blue Guard",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/sentinels_girdle",
+    "slot": "belts",
+    "file": "assets/belts/sentinels_girdle.png",
+    "name": "Sentinels Girdle",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/shadowbinders_belt",
+    "slot": "belts",
+    "file": "assets/belts/shadowbinders_belt.png",
+    "name": "Shadowbinders Belt",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/spiked_belt",
+    "slot": "belts",
+    "file": "assets/belts/spiked_belt.png",
+    "name": "Spiked Belt",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/strongmanss_belt",
+    "slot": "belts",
+    "file": "assets/belts/strongmanss_belt.png",
+    "name": "Strongmanss Belt",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/studded_leather",
+    "slot": "belts",
+    "file": "assets/belts/studded_leather.png",
+    "name": "Studded Leather",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/tanking_plate",
+    "slot": "belts",
+    "file": "assets/belts/tanking_plate.png",
+    "name": "Tanking Plate",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/thieves_toolkit",
+    "slot": "belts",
+    "file": "assets/belts/thieves_toolkit.png",
+    "name": "Thieves Toolkit",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/travelers_belt",
+    "slot": "belts",
+    "file": "assets/belts/travelers_belt.png",
+    "name": "Travelers Belt",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/underworld_belt",
+    "slot": "belts",
+    "file": "assets/belts/underworld_belt.png",
+    "name": "Underworld Belt",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/vampires_belt",
+    "slot": "belts",
+    "file": "assets/belts/vampires_belt.png",
+    "name": "Vampires Belt",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/volcanic_belt",
+    "slot": "belts",
+    "file": "assets/belts/volcanic_belt.png",
+    "name": "Volcanic Belt",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "belts/wizards_wrap",
+    "slot": "belts",
+    "file": "assets/belts/wizards_wrap.png",
+    "name": "Wizards Wrap",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 90
+  },
+  {
+    "id": "boots/adventurers_leather_boots",
+    "slot": "boots",
+    "file": "assets/boots/adventurers_leather_boots.png",
+    "name": "Adventurers Leather Boots",
+    "stats": {
+      "hp": 3,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/blue_royal_guard",
+    "slot": "boots",
+    "file": "assets/boots/blue_royal_guard.png",
+    "name": "Blue Royal Guard",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/boots_of_the_rush",
+    "slot": "boots",
+    "file": "assets/boots/boots_of_the_rush.png",
+    "name": "Boots of the Rush",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 4
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/brotherhood_of_blood",
+    "slot": "boots",
+    "file": "assets/boots/brotherhood_of_blood.png",
+    "name": "Brotherhood of Blood",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/chainmail",
+    "slot": "boots",
+    "file": "assets/boots/chainmail.png",
+    "name": "Chainmail",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/champions_boots",
+    "slot": "boots",
+    "file": "assets/boots/champions_boots.png",
+    "name": "Champions Boots",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/conquerers_skull_crushers",
+    "slot": "boots",
+    "file": "assets/boots/conquerers_skull_crushers.png",
+    "name": "Conquerers Skull Crushers",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 4
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/demon_hunter_boots",
+    "slot": "boots",
+    "file": "assets/boots/demon_hunter_boots.png",
+    "name": "Demon Hunter Boots",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/demon_hunters_feet",
+    "slot": "boots",
+    "file": "assets/boots/demon_hunters_feet.png",
+    "name": "Demon Hunters Feet",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/destroyers_boots",
+    "slot": "boots",
+    "file": "assets/boots/destroyers_boots.png",
+    "name": "Destroyers Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/dragon_kinght_boots",
+    "slot": "boots",
+    "file": "assets/boots/dragon_kinght_boots.png",
+    "name": "Dragon Knight Boots",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/dragon_knight_riders",
+    "slot": "boots",
+    "file": "assets/boots/dragon_knight_riders.png",
+    "name": "Dragon Knight Riders",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/dustmarsh_stompers",
+    "slot": "boots",
+    "file": "assets/boots/dustmarsh_stompers.png",
+    "name": "Dustmarsh Stompers",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/ebon_boots",
+    "slot": "boots",
+    "file": "assets/boots/ebon_boots.png",
+    "name": "Ebon Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/ebon_plate_boots",
+    "slot": "boots",
+    "file": "assets/boots/ebon_plate_boots.png",
+    "name": "Ebon Plate Boots",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/fallen_kingdom_boots",
+    "slot": "boots",
+    "file": "assets/boots/fallen_kingdom_boots.png",
+    "name": "Fallen Kingdom Boots",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/frogsong_boots",
+    "slot": "boots",
+    "file": "assets/boots/frogsong_boots.png",
+    "name": "Frogsong Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/frostrime",
+    "slot": "boots",
+    "file": "assets/boots/frostrime.png",
+    "name": "Frostrime",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/gold_spiked_boots",
+    "slot": "boots",
+    "file": "assets/boots/gold_spiked_boots.png",
+    "name": "Gold Spiked Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_bloodbrother",
+    "slot": "boots",
+    "file": "assets/boots/golden_bloodbrother.png",
+    "name": "Golden Bloodbrother",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_cavalry",
+    "slot": "boots",
+    "file": "assets/boots/golden_cavalry.png",
+    "name": "Golden Cavalry",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_destroyers_boots",
+    "slot": "boots",
+    "file": "assets/boots/golden_destroyers_boots.png",
+    "name": "Golden Destroyers Boots",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_house_of_leo",
+    "slot": "boots",
+    "file": "assets/boots/golden_house_of_leo.png",
+    "name": "Golden House of Leo",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_imbued",
+    "slot": "boots",
+    "file": "assets/boots/golden_imbued.png",
+    "name": "Golden Imbued",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_nightstalkers_greaves",
+    "slot": "boots",
+    "file": "assets/boots/golden_nightstalkers_greaves.png",
+    "name": "Golden Nightstalkers Greaves",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 4
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_studded",
+    "slot": "boots",
+    "file": "assets/boots/golden_studded.png",
+    "name": "Golden Studded",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/golden_tanking",
+    "slot": "boots",
+    "file": "assets/boots/golden_tanking.png",
+    "name": "Golden Tanking",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/healers_walkers",
+    "slot": "boots",
+    "file": "assets/boots/healers_walkers.png",
+    "name": "Healers Walkers",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/heavy_marine_boots",
+    "slot": "boots",
+    "file": "assets/boots/heavy_marine_boots.png",
+    "name": "Heavy Marine Boots",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/heros_boots",
+    "slot": "boots",
+    "file": "assets/boots/heros_boots.png",
+    "name": "Heros Boots",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/holy_stompers",
+    "slot": "boots",
+    "file": "assets/boots/holy_stompers.png",
+    "name": "Holy Stompers",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/house_of_leo_boots",
+    "slot": "boots",
+    "file": "assets/boots/house_of_leo_boots.png",
+    "name": "House of Leo Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/hunters_plate",
+    "slot": "boots",
+    "file": "assets/boots/hunters_plate.png",
+    "name": "Hunters Plate",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/imbued_steel",
+    "slot": "boots",
+    "file": "assets/boots/imbued_steel.png",
+    "name": "Imbued Steel",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/invaders_boots",
+    "slot": "boots",
+    "file": "assets/boots/invaders_boots.png",
+    "name": "Invaders Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/irradiated_boots",
+    "slot": "boots",
+    "file": "assets/boots/irradiated_boots.png",
+    "name": "Irradiated Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/jesters_silk_boots",
+    "slot": "boots",
+    "file": "assets/boots/jesters_silk_boots.png",
+    "name": "Jesters Silk Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 4
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/mana_imbued_boots",
+    "slot": "boots",
+    "file": "assets/boots/mana_imbued_boots.png",
+    "name": "Mana Imbued Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/molten_legs",
+    "slot": "boots",
+    "file": "assets/boots/molten_legs.png",
+    "name": "Molten Legs",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/nightstalkers_feet",
+    "slot": "boots",
+    "file": "assets/boots/nightstalkers_feet.png",
+    "name": "Nightstalkers Feet",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 4
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/orange_invaders_boots",
+    "slot": "boots",
+    "file": "assets/boots/orange_invaders_boots.png",
+    "name": "Orange Invaders Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/plated_steel_boots",
+    "slot": "boots",
+    "file": "assets/boots/plated_steel_boots.png",
+    "name": "Plated Steel Boots",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/rogues_boots",
+    "slot": "boots",
+    "file": "assets/boots/rogues_boots.png",
+    "name": "Rogues Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 4
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/rotknight",
+    "slot": "boots",
+    "file": "assets/boots/rotknight.png",
+    "name": "Rotknight",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/spiked_plate_boots",
+    "slot": "boots",
+    "file": "assets/boots/spiked_plate_boots.png",
+    "name": "Spiked Plate Boots",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/strongmans_stompers",
+    "slot": "boots",
+    "file": "assets/boots/strongmans_stompers.png",
+    "name": "Strongmans Stompers",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/tanking_boots",
+    "slot": "boots",
+    "file": "assets/boots/tanking_boots.png",
+    "name": "Tanking Boots",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/thick_plated",
+    "slot": "boots",
+    "file": "assets/boots/thick_plated.png",
+    "name": "Thick Plated",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/thieves_sneakers",
+    "slot": "boots",
+    "file": "assets/boots/thieves_sneakers.png",
+    "name": "Thieves Sneakers",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/travelers_leather_boots",
+    "slot": "boots",
+    "file": "assets/boots/travelers_leather_boots.png",
+    "name": "Travelers Leather Boots",
+    "stats": {
+      "hp": 3,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/underworld",
+    "slot": "boots",
+    "file": "assets/boots/underworld.png",
+    "name": "Underworld",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/vampiric_boots",
+    "slot": "boots",
+    "file": "assets/boots/vampiric_boots.png",
+    "name": "Vampiric Boots",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/volcanic",
+    "slot": "boots",
+    "file": "assets/boots/volcanic.png",
+    "name": "Volcanic",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "boots/warforged",
+    "slot": "boots",
+    "file": "assets/boots/warforged.png",
+    "name": "Warforged",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 3
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 50
+  },
+  {
+    "id": "capes/adeventurers_cloak",
+    "slot": "capes",
+    "file": "assets/capes/adeventurers_cloak.png",
+    "name": "Adventurer's Cloak",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/cape_of_the_protector",
+    "slot": "capes",
+    "file": "assets/capes/cape_of_the_protector.png",
+    "name": "Cape of the Protector",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/fine_dark_cape",
+    "slot": "capes",
+    "file": "assets/capes/fine_dark_cape.png",
+    "name": "Fine Dark Cape",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/kings_cloak",
+    "slot": "capes",
+    "file": "assets/capes/kings_cloak.png",
+    "name": "Kings Cloak",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/kings_drape",
+    "slot": "capes",
+    "file": "assets/capes/kings_drape.png",
+    "name": "Kings Drape",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/loners_cloak",
+    "slot": "capes",
+    "file": "assets/capes/loners_cloak.png",
+    "name": "Loners Cloak",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/nightstalkers_hood",
+    "slot": "capes",
+    "file": "assets/capes/nightstalkers_hood.png",
+    "name": "Nightstalkers Hood",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/outcasts_red_cloak",
+    "slot": "capes",
+    "file": "assets/capes/outcasts_red_cloak.png",
+    "name": "Outcasts Red Cloak",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/royal_silk_cape",
+    "slot": "capes",
+    "file": "assets/capes/royal_silk_cape.png",
+    "name": "Royal Silk Cape",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/travelers_tunic",
+    "slot": "capes",
+    "file": "assets/capes/travelers_tunic.png",
+    "name": "Travelers Tunic",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "capes/wanderers_tattered_cloak",
+    "slot": "capes",
+    "file": "assets/capes/wanderers_tattered_cloak.png",
+    "name": "Wanderers Tattered Cloak",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 1,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 0
+  },
+  {
+    "id": "chest/blue_royal_guard",
+    "slot": "chest",
+    "file": "assets/chest/blue_royal_guard.png",
+    "name": "Blue Royal Guard",
+    "stats": {
+      "hp": 22,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/brotherhood_of_blood",
+    "slot": "chest",
+    "file": "assets/chest/brotherhood_of_blood.png",
+    "name": "Brotherhood of Blood",
+    "stats": {
+      "hp": 21,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/cavalry_chestpiece",
+    "slot": "chest",
+    "file": "assets/chest/cavalry_chestpiece.png",
+    "name": "Cavalry Chestpiece",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/chainmail",
+    "slot": "chest",
+    "file": "assets/chest/chainmail.png",
+    "name": "Chainmail",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/demon_hunter",
+    "slot": "chest",
+    "file": "assets/chest/demon_hunter.png",
+    "name": "Demon Hunter",
+    "stats": {
+      "hp": 24,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/destroyer",
+    "slot": "chest",
+    "file": "assets/chest/destroyer.png",
+    "name": "Destroyer",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/dragon_knights_plate",
+    "slot": "chest",
+    "file": "assets/chest/dragon_knights_plate.png",
+    "name": "Dragon Knights Plate",
+    "stats": {
+      "hp": 27,
+      "atk": 0,
+      "def": 10,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/dustmarsh",
+    "slot": "chest",
+    "file": "assets/chest/dustmarsh.png",
+    "name": "Dustmarsh",
+    "stats": {
+      "hp": 22,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/ebon_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/ebon_chestplate.png",
+    "name": "Ebon Chestplate",
+    "stats": {
+      "hp": 30,
+      "atk": 0,
+      "def": 11,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/fallen_kingdom_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/fallen_kingdom_chestplate.png",
+    "name": "Fallen Kingdom Chestplate",
+    "stats": {
+      "hp": 34,
+      "atk": 0,
+      "def": 12,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/frogsong_ribbed",
+    "slot": "chest",
+    "file": "assets/chest/frogsong_ribbed.png",
+    "name": "Frogsong Ribbed",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/frostrime",
+    "slot": "chest",
+    "file": "assets/chest/frostrime.png",
+    "name": "Frostrime",
+    "stats": {
+      "hp": 23,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/frostrime_chest",
+    "slot": "chest",
+    "file": "assets/chest/frostrime_chest.png",
+    "name": "Frostrime Chest",
+    "stats": {
+      "hp": 24,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/fury_chestpiece",
+    "slot": "chest",
+    "file": "assets/chest/fury_chestpiece.png",
+    "name": "Fury Chestpiece",
+    "stats": {
+      "hp": 20,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_blood_brother",
+    "slot": "chest",
+    "file": "assets/chest/golden_blood_brother.png",
+    "name": "Golden Blood Brother",
+    "stats": {
+      "hp": 26,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_cavalry",
+    "slot": "chest",
+    "file": "assets/chest/golden_cavalry.png",
+    "name": "Golden Cavalry",
+    "stats": {
+      "hp": 28,
+      "atk": 0,
+      "def": 9,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_destroyer",
+    "slot": "chest",
+    "file": "assets/chest/golden_destroyer.png",
+    "name": "Golden Destroyer",
+    "stats": {
+      "hp": 25,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_house_of_leo",
+    "slot": "chest",
+    "file": "assets/chest/golden_house_of_leo.png",
+    "name": "Golden House of Leo",
+    "stats": {
+      "hp": 29,
+      "atk": 0,
+      "def": 9,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_imbued_chest",
+    "slot": "chest",
+    "file": "assets/chest/golden_imbued_chest.png",
+    "name": "Golden Imbued Chest",
+    "stats": {
+      "hp": 27,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_nightstalker",
+    "slot": "chest",
+    "file": "assets/chest/golden_nightstalker.png",
+    "name": "Golden Nightstalker",
+    "stats": {
+      "hp": 29,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_spiked_mail",
+    "slot": "chest",
+    "file": "assets/chest/golden_spiked_mail.png",
+    "name": "Golden Spiked Mail",
+    "stats": {
+      "hp": 27,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_studded_armor",
+    "slot": "chest",
+    "file": "assets/chest/golden_studded_armor.png",
+    "name": "Golden Studded Armor",
+    "stats": {
+      "hp": 29,
+      "atk": 0,
+      "def": 9,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/golden_tanking_plate",
+    "slot": "chest",
+    "file": "assets/chest/golden_tanking_plate.png",
+    "name": "Golden Tanking Plate",
+    "stats": {
+      "hp": 36,
+      "atk": 0,
+      "def": 13,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/healers_holy_shirt",
+    "slot": "chest",
+    "file": "assets/chest/healers_holy_shirt.png",
+    "name": "Healers Holy Shirt",
+    "stats": {
+      "hp": 32,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/heavy_marine",
+    "slot": "chest",
+    "file": "assets/chest/heavy_marine.png",
+    "name": "Heavy Marine",
+    "stats": {
+      "hp": 28,
+      "atk": 0,
+      "def": 10,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/house_of_leo_insignia_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/house_of_leo_insignia_chestplate.png",
+    "name": "House of Leo Insignia Chestplate",
+    "stats": {
+      "hp": 27,
+      "atk": 0,
+      "def": 10,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/hunters_guard",
+    "slot": "chest",
+    "file": "assets/chest/hunters_guard.png",
+    "name": "Hunters Guard",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/imbued",
+    "slot": "chest",
+    "file": "assets/chest/imbued.png",
+    "name": "Imbued",
+    "stats": {
+      "hp": 20,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/invader",
+    "slot": "chest",
+    "file": "assets/chest/invader.png",
+    "name": "Invader",
+    "stats": {
+      "hp": 22,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/invader_orange",
+    "slot": "chest",
+    "file": "assets/chest/invader_orange.png",
+    "name": "Invader Orange",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/irradiated",
+    "slot": "chest",
+    "file": "assets/chest/irradiated.png",
+    "name": "Irradiated",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/jesters_costume",
+    "slot": "chest",
+    "file": "assets/chest/jesters_costume.png",
+    "name": "Jesters Costume",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/molten_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/molten_chestplate.png",
+    "name": "Molten Chestplate",
+    "stats": {
+      "hp": 31,
+      "atk": 0,
+      "def": 11,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/nightstalkers_chest",
+    "slot": "chest",
+    "file": "assets/chest/nightstalkers_chest.png",
+    "name": "Nightstalkers Chest",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/platemail",
+    "slot": "chest",
+    "file": "assets/chest/platemail.png",
+    "name": "Platemail",
+    "stats": {
+      "hp": 24,
+      "atk": 0,
+      "def": 9,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/rogues_leather_chest",
+    "slot": "chest",
+    "file": "assets/chest/rogues_leather_chest.png",
+    "name": "Rogues Leather Chest",
+    "stats": {
+      "hp": 21,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/rotknight",
+    "slot": "chest",
+    "file": "assets/chest/rotknight.png",
+    "name": "Rotknight",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/spiked_plate",
+    "slot": "chest",
+    "file": "assets/chest/spiked_plate.png",
+    "name": "Spiked Plate",
+    "stats": {
+      "hp": 23,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/strongmans_cinch",
+    "slot": "chest",
+    "file": "assets/chest/strongmans_cinch.png",
+    "name": "Strongmans Cinch",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/studded_leather_chest",
+    "slot": "chest",
+    "file": "assets/chest/studded_leather_chest.png",
+    "name": "Studded Leather Chest",
+    "stats": {
+      "hp": 20,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/tanking_plate",
+    "slot": "chest",
+    "file": "assets/chest/tanking_plate.png",
+    "name": "Tanking Plate",
+    "stats": {
+      "hp": 32,
+      "atk": 0,
+      "def": 11,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/thick_plated_cuirass",
+    "slot": "chest",
+    "file": "assets/chest/thick_plated_cuirass.png",
+    "name": "Thick Plated Cuirass",
+    "stats": {
+      "hp": 23,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/travelers_wrap",
+    "slot": "chest",
+    "file": "assets/chest/travelers_wrap.png",
+    "name": "Travelers Wrap",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/underworld",
+    "slot": "chest",
+    "file": "assets/chest/underworld.png",
+    "name": "Underworld",
+    "stats": {
+      "hp": 20,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/vampiric_chestpiece",
+    "slot": "chest",
+    "file": "assets/chest/vampiric_chestpiece.png",
+    "name": "Vampiric Chestpiece",
+    "stats": {
+      "hp": 21,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/vampiric_vest",
+    "slot": "chest",
+    "file": "assets/chest/vampiric_vest.png",
+    "name": "Vampiric Vest",
+    "stats": {
+      "hp": 20,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/volcanic_chest",
+    "slot": "chest",
+    "file": "assets/chest/volcanic_chest.png",
+    "name": "Volcanic Chest",
+    "stats": {
+      "hp": 26,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/warforged_chestplate",
+    "slot": "chest",
+    "file": "assets/chest/warforged_chestplate.png",
+    "name": "Warforged Chestplate",
+    "stats": {
+      "hp": 28,
+      "atk": 0,
+      "def": 10,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "chest/wizards_blood_tunic",
+    "slot": "chest",
+    "file": "assets/chest/wizards_blood_tunic.png",
+    "name": "Wizards Blood Tunic",
+    "stats": {
+      "hp": 19,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 40
+  },
+  {
+    "id": "conditions/berzerker",
+    "slot": "conditions",
+    "file": "assets/conditions/berzerker.png",
+    "name": "Berzerker",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/blessed_mark",
+    "slot": "conditions",
+    "file": "assets/conditions/blessed_mark.png",
+    "name": "Blessed Mark",
+    "stats": {
+      "hp": 3,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/bloodlust",
+    "slot": "conditions",
+    "file": "assets/conditions/bloodlust.png",
+    "name": "Bloodlust",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/burned",
+    "slot": "conditions",
+    "file": "assets/conditions/burned.png",
+    "name": "Burned",
+    "stats": {
+      "hp": -4,
+      "atk": 2,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/ebon_skin",
+    "slot": "conditions",
+    "file": "assets/conditions/ebon_skin.png",
+    "name": "Ebon Skin",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/enraged",
+    "slot": "conditions",
+    "file": "assets/conditions/enraged.png",
+    "name": "Enraged",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/frostrime",
+    "slot": "conditions",
+    "file": "assets/conditions/frostrime.png",
+    "name": "Frostrime",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 2,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/fury_mark",
+    "slot": "conditions",
+    "file": "assets/conditions/fury_mark.png",
+    "name": "Fury Mark",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/holy_mark",
+    "slot": "conditions",
+    "file": "assets/conditions/holy_mark.png",
+    "name": "Holy Mark",
+    "stats": {
+      "hp": 3,
+      "atk": 0,
+      "def": 1,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/kings_crown",
+    "slot": "conditions",
+    "file": "assets/conditions/kings_crown.png",
+    "name": "Kings Crown",
+    "stats": {
+      "hp": 2,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/mark_of_the_bear",
+    "slot": "conditions",
+    "file": "assets/conditions/mark_of_the_bear.png",
+    "name": "Mark of the Bear",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/mark_of_the_hunter",
+    "slot": "conditions",
+    "file": "assets/conditions/mark_of_the_hunter.png",
+    "name": "Mark of the Hunter",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/nicked",
+    "slot": "conditions",
+    "file": "assets/conditions/nicked.png",
+    "name": "Nicked",
+    "stats": {
+      "hp": -2,
+      "atk": 1,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/pain_is_weakness",
+    "slot": "conditions",
+    "file": "assets/conditions/pain_is_weakness.png",
+    "name": "Pain Is Weakness",
+    "stats": {
+      "hp": -2,
+      "atk": 2,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/pain_tolerance",
+    "slot": "conditions",
+    "file": "assets/conditions/pain_tolerance.png",
+    "name": "Pain Tolerance",
+    "stats": {
+      "hp": 4,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/recovering",
+    "slot": "conditions",
+    "file": "assets/conditions/recovering.png",
+    "name": "Recovering",
+    "stats": {
+      "hp": 3,
+      "atk": 0,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/scratched",
+    "slot": "conditions",
+    "file": "assets/conditions/scratched.png",
+    "name": "Scratched",
+    "stats": {
+      "hp": -1,
+      "atk": 1,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/slowed",
+    "slot": "conditions",
+    "file": "assets/conditions/slowed.png",
+    "name": "Slowed",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 2,
+      "spd": -2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/tattoo_12",
+    "slot": "conditions",
+    "file": "assets/conditions/tattoo_12.png",
+    "name": "Warpaint of the Raven",
+    "stats": {
+      "hp": 0,
+      "atk": 1,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/tattoo_18",
+    "slot": "conditions",
+    "file": "assets/conditions/tattoo_18.png",
+    "name": "Warpaint of the Wolf",
+    "stats": {
+      "hp": 0,
+      "atk": 1,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/tattoo_24",
+    "slot": "conditions",
+    "file": "assets/conditions/tattoo_24.png",
+    "name": "Warpaint of the Sun",
+    "stats": {
+      "hp": 0,
+      "atk": 1,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/tattoo_6",
+    "slot": "conditions",
+    "file": "assets/conditions/tattoo_6.png",
+    "name": "Warpaint of the Boar",
+    "stats": {
+      "hp": 0,
+      "atk": 1,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/tattoo_8",
+    "slot": "conditions",
+    "file": "assets/conditions/tattoo_8.png",
+    "name": "Warpaint of the Serpent",
+    "stats": {
+      "hp": 0,
+      "atk": 1,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/venomous",
+    "slot": "conditions",
+    "file": "assets/conditions/venomous.png",
+    "name": "Venomous",
+    "stats": {
+      "hp": -1,
+      "atk": 2,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "conditions/wrapped",
+    "slot": "conditions",
+    "file": "assets/conditions/wrapped.png",
+    "name": "Wrapped",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 20
+  },
+  {
+    "id": "gloves/blood_wizards_caress",
+    "slot": "gloves",
+    "file": "assets/gloves/blood_wizards_caress.png",
+    "name": "Blood Wizards Caress",
+    "stats": {
+      "hp": 0,
+      "atk": 4,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/brotherhood_of_blood",
+    "slot": "gloves",
+    "file": "assets/gloves/brotherhood_of_blood.png",
+    "name": "Brotherhood of Blood",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/cavalry",
+    "slot": "gloves",
+    "file": "assets/gloves/cavalry.png",
+    "name": "Cavalry",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/chainmail_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/chainmail_gloves.png",
+    "name": "Chainmail Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/champions_grip",
+    "slot": "gloves",
+    "file": "assets/gloves/champions_grip.png",
+    "name": "Champions Grip",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/conquerers_grip",
+    "slot": "gloves",
+    "file": "assets/gloves/conquerers_grip.png",
+    "name": "Conquerers Grip",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/demon_hunter",
+    "slot": "gloves",
+    "file": "assets/gloves/demon_hunter.png",
+    "name": "Demon Hunter",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/destroyers_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/destroyers_gloves.png",
+    "name": "Destroyers Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/dragon_knights_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/dragon_knights_fists.png",
+    "name": "Dragon Knights Fists",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/dustmarsh_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/dustmarsh_gloves.png",
+    "name": "Dustmarsh Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/ebon_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/ebon_fists.png",
+    "name": "Ebon Fists",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/ebon_plate",
+    "slot": "gloves",
+    "file": "assets/gloves/ebon_plate.png",
+    "name": "Ebon Plate",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/fallen_kingdom_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/fallen_kingdom_gloves.png",
+    "name": "Fallen Kingdom Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/frogsong",
+    "slot": "gloves",
+    "file": "assets/gloves/frogsong.png",
+    "name": "Frogsong",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/frostrime_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/frostrime_gloves.png",
+    "name": "Frostrime Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/full_plate_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/full_plate_gloves.png",
+    "name": "Full Plate Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/fury_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/fury_gloves.png",
+    "name": "Fury Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_cavalry",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_cavalry.png",
+    "name": "Golden Cavalry",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_destroyer",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_destroyer.png",
+    "name": "Golden Destroyer",
+    "stats": {
+      "hp": 0,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_hands",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_hands.png",
+    "name": "Golden Hands",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_imbued_gauntlets",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_imbued_gauntlets.png",
+    "name": "Golden Imbued Gauntlets",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_nightstalkers_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_nightstalkers_gloves.png",
+    "name": "Golden Nightstalkers Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_plate",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_plate.png",
+    "name": "Golden Plate",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_spiked_hands",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_spiked_hands.png",
+    "name": "Golden Spiked Hands",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_studded_grips",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_studded_grips.png",
+    "name": "Golden Studded Grips",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/golden_tanking_plate",
+    "slot": "gloves",
+    "file": "assets/gloves/golden_tanking_plate.png",
+    "name": "Golden Tanking Plate",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/healers_touch",
+    "slot": "gloves",
+    "file": "assets/gloves/healers_touch.png",
+    "name": "Healers Touch",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/heavy_marines_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/heavy_marines_gloves.png",
+    "name": "Heavy Marines Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/heros_grip",
+    "slot": "gloves",
+    "file": "assets/gloves/heros_grip.png",
+    "name": "Heros Grip",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/house_of_leo_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/house_of_leo_gloves.png",
+    "name": "House of Leo Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/hunters_spiked_glove",
+    "slot": "gloves",
+    "file": "assets/gloves/hunters_spiked_glove.png",
+    "name": "Hunters Spiked Glove",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/imbued_silk_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/imbued_silk_gloves.png",
+    "name": "Imbued Silk Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/invaders",
+    "slot": "gloves",
+    "file": "assets/gloves/invaders.png",
+    "name": "Invaders",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/invaders_orange",
+    "slot": "gloves",
+    "file": "assets/gloves/invaders_orange.png",
+    "name": "Invaders Orange",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/irradiated_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/irradiated_gloves.png",
+    "name": "Irradiated Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/jesters_silk_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/jesters_silk_gloves.png",
+    "name": "Jesters Silk Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/mana_imbued_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/mana_imbued_gloves.png",
+    "name": "Mana Imbued Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/molten_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/molten_gloves.png",
+    "name": "Molten Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/necromancers_touch",
+    "slot": "gloves",
+    "file": "assets/gloves/necromancers_touch.png",
+    "name": "Necromancers Touch",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/nightstalkers_touch",
+    "slot": "gloves",
+    "file": "assets/gloves/nightstalkers_touch.png",
+    "name": "Nightstalkers Touch",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/plate_steel_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/plate_steel_gloves.png",
+    "name": "Plate Steel Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/platemail",
+    "slot": "gloves",
+    "file": "assets/gloves/platemail.png",
+    "name": "Platemail",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/rogues_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/rogues_gloves.png",
+    "name": "Rogues Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/royal_blue_guard",
+    "slot": "gloves",
+    "file": "assets/gloves/royal_blue_guard.png",
+    "name": "Royal Blue Guard",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/shadowbinder_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/shadowbinder_gloves.png",
+    "name": "Shadowbinder Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/spiked_steel_gauntlets",
+    "slot": "gloves",
+    "file": "assets/gloves/spiked_steel_gauntlets.png",
+    "name": "Spiked Steel Gauntlets",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/studded_leather",
+    "slot": "gloves",
+    "file": "assets/gloves/studded_leather.png",
+    "name": "Studded Leather",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/studded_leather_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/studded_leather_gloves.png",
+    "name": "Studded Leather Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/tanking_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/tanking_fists.png",
+    "name": "Tanking Fists",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/thieves_fingers",
+    "slot": "gloves",
+    "file": "assets/gloves/thieves_fingers.png",
+    "name": "Thieves Fingers",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 1,
+      "spd": 2
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/travelers_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/travelers_gloves.png",
+    "name": "Travelers Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/vampiric_fists",
+    "slot": "gloves",
+    "file": "assets/gloves/vampiric_fists.png",
+    "name": "Vampiric Fists",
+    "stats": {
+      "hp": 0,
+      "atk": 3,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "gloves/volcanic_gloves",
+    "slot": "gloves",
+    "file": "assets/gloves/volcanic_gloves.png",
+    "name": "Volcanic Gloves",
+    "stats": {
+      "hp": 0,
+      "atk": 2,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 70
+  },
+  {
+    "id": "helms/chimera_10",
+    "slot": "helms",
+    "file": "assets/helms/chimera_10.png",
+    "name": "Serpent Coif",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Serpent's Reflex",
+      "desc": "Chance to counterattack when struck",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_11",
+    "slot": "helms",
+    "file": "assets/helms/chimera_11.png",
+    "name": "Grave Sentinel Helm",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Undying",
+      "desc": "Survive a killing blow once per battle",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_12",
+    "slot": "helms",
+    "file": "assets/helms/chimera_12.png",
+    "name": "Ember Crown",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Flame Aura",
+      "desc": "Melee attackers take burn damage",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_13",
+    "slot": "helms",
+    "file": "assets/helms/chimera_13.png",
+    "name": "Ironfang Helm",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Bite Down",
+      "desc": "Bonus damage against wounded enemies",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_14",
+    "slot": "helms",
+    "file": "assets/helms/chimera_14.png",
+    "name": "Duskwatch Helm",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Duskwatch",
+      "desc": "Improved accuracy — rarely miss",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_15",
+    "slot": "helms",
+    "file": "assets/helms/chimera_15.png",
+    "name": "Tidebreaker Helm",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Bulwark",
+      "desc": "The first hit you take each battle is halved",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_16",
+    "slot": "helms",
+    "file": "assets/helms/chimera_16.png",
+    "name": "Champion's Greathelm",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Second Wind",
+      "desc": "Heal once upon falling below half HP",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_2",
+    "slot": "helms",
+    "file": "assets/helms/chimera_2.png",
+    "name": "Warlord's Visage",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Warcry",
+      "desc": "Open the battle by boosting your ATK",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "helms/chimera_3",
+    "slot": "helms",
+    "file": "assets/helms/chimera_3.png",
+    "name": "Gilded Sallet",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Deflect",
+      "desc": "Chance to ignore a physical hit entirely",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_4",
+    "slot": "helms",
+    "file": "assets/helms/chimera_4.png",
+    "name": "Bonecrown",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Terrify",
+      "desc": "Frighten a foe, lowering its ATK",
+      "kind": "debuff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "helms/chimera_5",
+    "slot": "helms",
+    "file": "assets/helms/chimera_5.png",
+    "name": "Swampsteel Barbute",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Bog Ward",
+      "desc": "Strong resistance to poison",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_6",
+    "slot": "helms",
+    "file": "assets/helms/chimera_6.png",
+    "name": "Ratcatcher's Cowl",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Scavenge",
+      "desc": "Heal a little whenever an enemy falls",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_7",
+    "slot": "helms",
+    "file": "assets/helms/chimera_7.png",
+    "name": "Molten Crest",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Ignite",
+      "desc": "Your attacks have a chance to burn",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_8",
+    "slot": "helms",
+    "file": "assets/helms/chimera_8.png",
+    "name": "Frostbitten Casque",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Chill Touch",
+      "desc": "Your attacks have a chance to slow",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/chimera_9",
+    "slot": "helms",
+    "file": "assets/helms/chimera_9.png",
+    "name": "Night Warden's Helm",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 110,
+    "ability": {
+      "name": "Nightstalk",
+      "desc": "Bonus crit chance on your first strike",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "helms/royal_regalia",
+    "slot": "helms",
+    "file": "assets/helms/royal_regalia.png",
+    "name": "Royal Regalia",
+    "stats": {
+      "hp": 8,
+      "atk": 2,
+      "def": 5,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Royal Regalia",
+      "desc": "+10% to all stats (applied at generation)",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 110
+  },
+  {
+    "id": "legs/adventurers_pants",
+    "slot": "legs",
+    "file": "assets/legs/adventurers_pants.png",
+    "name": "Adventurers Pants",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/bood_wizards_legs",
+    "slot": "legs",
+    "file": "assets/legs/bood_wizards_legs.png",
+    "name": "Bood Wizards Legs",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/breeches_of_lethal_precision",
+    "slot": "legs",
+    "file": "assets/legs/breeches_of_lethal_precision.png",
+    "name": "Breeches of Lethal Precision",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/brotherhood_of_blood",
+    "slot": "legs",
+    "file": "assets/legs/brotherhood_of_blood.png",
+    "name": "Brotherhood of Blood",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/bulwark_of_the_sentinel",
+    "slot": "legs",
+    "file": "assets/legs/bulwark_of_the_sentinel.png",
+    "name": "Bulwark of the Sentinel",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/cavalry_captains_pants",
+    "slot": "legs",
+    "file": "assets/legs/cavalry_captains_pants.png",
+    "name": "Cavalry Captains Pants",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/chainmail",
+    "slot": "legs",
+    "file": "assets/legs/chainmail.png",
+    "name": "Chainmail",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/cursed_weavers_breeches",
+    "slot": "legs",
+    "file": "assets/legs/cursed_weavers_breeches.png",
+    "name": "Cursed Weavers Breeches",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/damage_dealers_slacks",
+    "slot": "legs",
+    "file": "assets/legs/damage_dealers_slacks.png",
+    "name": "Damage Dealers Slacks",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/dark_enchanters_wicked_legwraps",
+    "slot": "legs",
+    "file": "assets/legs/dark_enchanters_wicked_legwraps.png",
+    "name": "Dark Enchanters Wicked Legwraps",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/demon_hunter_legs",
+    "slot": "legs",
+    "file": "assets/legs/demon_hunter_legs.png",
+    "name": "Demon Hunter Legs",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/destroyers_thighs",
+    "slot": "legs",
+    "file": "assets/legs/destroyers_thighs.png",
+    "name": "Destroyers Thighs",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/dustmarsh_pants",
+    "slot": "legs",
+    "file": "assets/legs/dustmarsh_pants.png",
+    "name": "Dustmarsh Pants",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/fallen_kingdom_pants",
+    "slot": "legs",
+    "file": "assets/legs/fallen_kingdom_pants.png",
+    "name": "Fallen Kingdom Pants",
+    "stats": {
+      "hp": 17,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/full_plate_greaves",
+    "slot": "legs",
+    "file": "assets/legs/full_plate_greaves.png",
+    "name": "Full Plate Greaves",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/fury_leggings",
+    "slot": "legs",
+    "file": "assets/legs/fury_leggings.png",
+    "name": "Fury Leggings",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/golden_blood_brothers_legs",
+    "slot": "legs",
+    "file": "assets/legs/golden_blood_brothers_legs.png",
+    "name": "Golden Blood Brothers Legs",
+    "stats": {
+      "hp": 17,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/golden_destroyer",
+    "slot": "legs",
+    "file": "assets/legs/golden_destroyer.png",
+    "name": "Golden Destroyer",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/golden_house_of_leo",
+    "slot": "legs",
+    "file": "assets/legs/golden_house_of_leo.png",
+    "name": "Golden House of Leo",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/golden_spiked_thighs",
+    "slot": "legs",
+    "file": "assets/legs/golden_spiked_thighs.png",
+    "name": "Golden Spiked Thighs",
+    "stats": {
+      "hp": 16,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/golden_studded_pants",
+    "slot": "legs",
+    "file": "assets/legs/golden_studded_pants.png",
+    "name": "Golden Studded Pants",
+    "stats": {
+      "hp": 16,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/golden_tanks_pants",
+    "slot": "legs",
+    "file": "assets/legs/golden_tanks_pants.png",
+    "name": "Golden Tanks Pants",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/grey_leiderhosen",
+    "slot": "legs",
+    "file": "assets/legs/grey_leiderhosen.png",
+    "name": "Grey Leiderhosen",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/healers_white_leggings",
+    "slot": "legs",
+    "file": "assets/legs/healers_white_leggings.png",
+    "name": "Healers White Leggings",
+    "stats": {
+      "hp": 17,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/heavy_marine_leg_armor",
+    "slot": "legs",
+    "file": "assets/legs/heavy_marine_leg_armor.png",
+    "name": "Heavy Marine Leg Armor",
+    "stats": {
+      "hp": 14,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/highly_imbued_pants",
+    "slot": "legs",
+    "file": "assets/legs/highly_imbued_pants.png",
+    "name": "Highly Imbued Pants",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/house_of_leo_pants",
+    "slot": "legs",
+    "file": "assets/legs/house_of_leo_pants.png",
+    "name": "House of Leo Pants",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/hunters_pants",
+    "slot": "legs",
+    "file": "assets/legs/hunters_pants.png",
+    "name": "Hunters Pants",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/invaders_pants",
+    "slot": "legs",
+    "file": "assets/legs/invaders_pants.png",
+    "name": "Invaders Pants",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/irradiated_pants",
+    "slot": "legs",
+    "file": "assets/legs/irradiated_pants.png",
+    "name": "Irradiated Pants",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/legplates_of_eternal_valor",
+    "slot": "legs",
+    "file": "assets/legs/legplates_of_eternal_valor.png",
+    "name": "Legplates of Eternal Valor",
+    "stats": {
+      "hp": 16,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/legwraps_of_the_marksman",
+    "slot": "legs",
+    "file": "assets/legs/legwraps_of_the_marksman.png",
+    "name": "Legwraps of the Marksman",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/lord_nighstalkers_pants",
+    "slot": "legs",
+    "file": "assets/legs/lord_nighstalkers_pants.png",
+    "name": "Lord Nighstalkers Pants",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/merciless_strikers_breeches",
+    "slot": "legs",
+    "file": "assets/legs/merciless_strikers_breeches.png",
+    "name": "Merciless Strikers Breeches",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/molten_pants",
+    "slot": "legs",
+    "file": "assets/legs/molten_pants.png",
+    "name": "Molten Pants",
+    "stats": {
+      "hp": 14,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/necromancers_pants",
+    "slot": "legs",
+    "file": "assets/legs/necromancers_pants.png",
+    "name": "Necromancers Pants",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/nightstalkers",
+    "slot": "legs",
+    "file": "assets/legs/nightstalkers.png",
+    "name": "Nightstalkers",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/nightstalkers_legguards",
+    "slot": "legs",
+    "file": "assets/legs/nightstalkers_legguards.png",
+    "name": "Nightstalkers Legguards",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/orange_invader",
+    "slot": "legs",
+    "file": "assets/legs/orange_invader.png",
+    "name": "Orange Invader",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/pants_of_blessed_serenity",
+    "slot": "legs",
+    "file": "assets/legs/pants_of_blessed_serenity.png",
+    "name": "Pants of Blessed Serenity",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/pants_of_the_iron_vanguard",
+    "slot": "legs",
+    "file": "assets/legs/pants_of_the_iron_vanguard.png",
+    "name": "Pants of the Iron Vanguard",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/royal_blue_guard",
+    "slot": "legs",
+    "file": "assets/legs/royal_blue_guard.png",
+    "name": "Royal Blue Guard",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/rusted_chainmail",
+    "slot": "legs",
+    "file": "assets/legs/rusted_chainmail.png",
+    "name": "Rusted Chainmail",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/slayers_swift_leggings",
+    "slot": "legs",
+    "file": "assets/legs/slayers_swift_leggings.png",
+    "name": "Slayers Swift Leggings",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/spiked_mail",
+    "slot": "legs",
+    "file": "assets/legs/spiked_mail.png",
+    "name": "Spiked Mail",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/studded_leather",
+    "slot": "legs",
+    "file": "assets/legs/studded_leather.png",
+    "name": "Studded Leather",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/thiefs_cloth",
+    "slot": "legs",
+    "file": "assets/legs/thiefs_cloth.png",
+    "name": "Thiefs Cloth",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/titan_forged_legguards",
+    "slot": "legs",
+    "file": "assets/legs/titan_forged_legguards.png",
+    "name": "Titan Forged Legguards",
+    "stats": {
+      "hp": 14,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/trousers_of_the_nethermancer",
+    "slot": "legs",
+    "file": "assets/legs/trousers_of_the_nethermancer.png",
+    "name": "Trousers of the Nethermancer",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/vampiric_pants",
+    "slot": "legs",
+    "file": "assets/legs/vampiric_pants.png",
+    "name": "Vampiric Pants",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/warlocks_infernal_leggings",
+    "slot": "legs",
+    "file": "assets/legs/warlocks_infernal_leggings.png",
+    "name": "Warlocks Infernal Leggings",
+    "stats": {
+      "hp": 13,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "legs/wildgrowth_legwraps",
+    "slot": "legs",
+    "file": "assets/legs/wildgrowth_legwraps.png",
+    "name": "Wildgrowth Legwraps",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 30
+  },
+  {
+    "id": "offhands/arcane_nexus",
+    "slot": "offhands",
+    "file": "assets/offhands/arcane_nexus.png",
+    "name": "Arcane Nexus",
+    "stats": {
+      "hp": 4,
+      "atk": 4,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Arcane Nexus",
+      "desc": "Spells deal +30% damage and ignore cover",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/book_of_black_arts",
+    "slot": "offhands",
+    "file": "assets/offhands/book_of_black_arts.png",
+    "name": "Book of Black Arts",
+    "stats": {
+      "hp": 6,
+      "atk": 2,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "cleric"
+    ],
+    "rarityWeight": 400,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Shadow Bolt",
+      "desc": "Dark blast that saps the target’s strength",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/crystalline_focus",
+    "slot": "offhands",
+    "file": "assets/offhands/crystalline_focus.png",
+    "name": "Crystalline Focus",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Crystalline Focus",
+      "desc": "Cast abilities twice per round",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/cursed_pendant",
+    "slot": "offhands",
+    "file": "assets/offhands/cursed_pendant.png",
+    "name": "Cursed Pendant",
+    "stats": {
+      "hp": 4,
+      "atk": 4,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/cursed_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/cursed_staff.png",
+    "name": "Cursed Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Hex",
+      "desc": "Curse a target, lowering its ATK and DEF",
+      "kind": "debuff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/decaying_flower",
+    "slot": "offhands",
+    "file": "assets/offhands/decaying_flower.png",
+    "name": "Decaying Flower",
+    "stats": {
+      "hp": 4,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/eye_of_the_ice_dragon",
+    "slot": "offhands",
+    "file": "assets/offhands/eye_of_the_ice_dragon.png",
+    "name": "Eye of the Ice Dragon",
+    "stats": {
+      "hp": 5,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/flamewielders_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/flamewielders_staff.png",
+    "name": "Flamewielders Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Flame Wave",
+      "desc": "Scorch all enemies for light spell damage",
+      "kind": "spell",
+      "cost": 2
+    }
+  },
+  {
+    "id": "offhands/holy_smiter",
+    "slot": "offhands",
+    "file": "assets/offhands/holy_smiter.png",
+    "name": "Holy Smiter",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Smite",
+      "desc": "Holy strike that heals you for part of the damage",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/illuminated_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/illuminated_staff.png",
+    "name": "Illuminated Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Radiance",
+      "desc": "Blind enemies, reducing their accuracy",
+      "kind": "debuff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/imbued_rose",
+    "slot": "offhands",
+    "file": "assets/offhands/imbued_rose.png",
+    "name": "Imbued Rose",
+    "stats": {
+      "hp": 4,
+      "atk": 4,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/items_7",
+    "slot": "offhands",
+    "file": "assets/offhands/items_7.png",
+    "name": "Whispering Idol",
+    "stats": {
+      "hp": 4,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/malevolent_mirror",
+    "slot": "offhands",
+    "file": "assets/offhands/malevolent_mirror.png",
+    "name": "Malevolent Mirror",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Mirror Curse",
+      "desc": "Reflect a portion of all damage taken",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/malevolent_ruby",
+    "slot": "offhands",
+    "file": "assets/offhands/malevolent_ruby.png",
+    "name": "Malevolent Ruby",
+    "stats": {
+      "hp": 4,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/necromancers_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/necromancers_staff.png",
+    "name": "Necromancers Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Raise Skeleton",
+      "desc": "Summon a skeleton to fight alongside you",
+      "kind": "summon",
+      "cost": 2
+    }
+  },
+  {
+    "id": "offhands/poison_rose",
+    "slot": "offhands",
+    "file": "assets/offhands/poison_rose.png",
+    "name": "Poison Rose",
+    "stats": {
+      "hp": 4,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/poisonous_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/poisonous_staff.png",
+    "name": "Poisonous Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Venom Bolt",
+      "desc": "Poison a target, dealing damage over time",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/precious_rose",
+    "slot": "offhands",
+    "file": "assets/offhands/precious_rose.png",
+    "name": "Precious Rose",
+    "stats": {
+      "hp": 4,
+      "atk": 3,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/royal_scepter",
+    "slot": "offhands",
+    "file": "assets/offhands/royal_scepter.png",
+    "name": "Royal Scepter",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "King's Decree",
+      "desc": "Rally: your side gains ATK for 2 turns",
+      "kind": "buff",
+      "cost": 2
+    }
+  },
+  {
+    "id": "offhands/sentient_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/sentient_staff.png",
+    "name": "Sentient Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Mind Spike",
+      "desc": "Psychic strike that ignores armor",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/serpent_lords_staff",
+    "slot": "offhands",
+    "file": "assets/offhands/serpent_lords_staff.png",
+    "name": "Serpent Lords Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Serpent Strike",
+      "desc": "A venomous lash that may stun",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/spell_mastery_tome",
+    "slot": "offhands",
+    "file": "assets/offhands/spell_mastery_tome.png",
+    "name": "Tome of Spell Mastery",
+    "stats": {
+      "hp": 6,
+      "atk": 4,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "prestige"
+    ],
+    "ability": {
+      "name": "Spell Mastery",
+      "desc": "Your spells deal double damage and heal you for half the damage dealt",
+      "kind": "passive",
+      "cost": 0
+    },
+    "rarityWeight": 3,
+    "golden": true,
+    "zIndex": 100
+  },
+  {
+    "id": "offhands/staff_12",
+    "slot": "offhands",
+    "file": "assets/offhands/staff_12.png",
+    "name": "Voidcaller Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Void Bolt",
+      "desc": "Unstable void damage that ignores resistances",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/staff_6",
+    "slot": "offhands",
+    "file": "assets/offhands/staff_6.png",
+    "name": "Emberwood Staff",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Ember Spray",
+      "desc": "A cone of embers with a chance to burn",
+      "kind": "spell",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/staff_of_fire",
+    "slot": "offhands",
+    "file": "assets/offhands/staff_of_fire.png",
+    "name": "Staff of Fire",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Fireball",
+      "desc": "Hurl a fireball for heavy spell damage",
+      "kind": "spell",
+      "cost": 2
+    }
+  },
+  {
+    "id": "offhands/staff_of_reflection",
+    "slot": "offhands",
+    "file": "assets/offhands/staff_of_reflection.png",
+    "name": "Staff of Reflection",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Spell Reflect",
+      "desc": "Bounce the next enemy spell back at its caster",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/staff_of_thorns",
+    "slot": "offhands",
+    "file": "assets/offhands/staff_of_thorns.png",
+    "name": "Staff of Thorns",
+    "stats": {
+      "hp": 0,
+      "atk": 5,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "caster"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Thorn Burst",
+      "desc": "Attackers take damage in return this turn",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "offhands/tome_of_knowledge",
+    "slot": "offhands",
+    "file": "assets/offhands/tome_of_knowledge.png",
+    "name": "Tome of Knowledge",
+    "stats": {
+      "hp": 6,
+      "atk": 2,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "cleric"
+    ],
+    "rarityWeight": 400,
+    "golden": false,
+    "zIndex": 100,
+    "ability": {
+      "name": "Heal",
+      "desc": "Restore HP to the most wounded ally",
+      "kind": "heal",
+      "cost": 1
+    }
+  },
+  {
+    "id": "robes/apostle_of_doom",
+    "slot": "robes",
+    "file": "assets/robes/apostle_of_doom.png",
+    "name": "Apostle of Doom",
+    "stats": {
+      "hp": 14,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Doomsay",
+      "desc": "Curse an enemy: its ATK decays each turn",
+      "kind": "debuff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "robes/blood_lord",
+    "slot": "robes",
+    "file": "assets/robes/blood_lord.png",
+    "name": "Blood Lord",
+    "stats": {
+      "hp": 13,
+      "atk": 6,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Blood Frenzy",
+      "desc": "Gain ATK while below half HP",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "robes/brewers_guild",
+    "slot": "robes",
+    "file": "assets/robes/brewers_guild.png",
+    "name": "Brewers Guild",
+    "stats": {
+      "hp": 14,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Battle Brew",
+      "desc": "Chug a brew: heal now, hiccup later",
+      "kind": "heal",
+      "cost": 1
+    }
+  },
+  {
+    "id": "robes/children_of_the_atom",
+    "slot": "robes",
+    "file": "assets/robes/children_of_the_atom.png",
+    "name": "Children of the Atom",
+    "stats": {
+      "hp": 13,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Radiant Burst",
+      "desc": "Irradiate all enemies for spell damage",
+      "kind": "spell",
+      "cost": 2
+    }
+  },
+  {
+    "id": "robes/dark_disciple",
+    "slot": "robes",
+    "file": "assets/robes/dark_disciple.png",
+    "name": "Dark Disciple",
+    "stats": {
+      "hp": 12,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Dark Pact",
+      "desc": "Sacrifice HP to empower your next attack",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "robes/king_5",
+    "slot": "robes",
+    "file": "assets/robes/king_5.png",
+    "name": "Raiment of the Deposed King",
+    "stats": {
+      "hp": 16,
+      "atk": 5,
+      "def": 4,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Last Command",
+      "desc": "Once per battle, rally the whole team",
+      "kind": "buff",
+      "cost": 2
+    }
+  },
+  {
+    "id": "robes/midnights_children",
+    "slot": "robes",
+    "file": "assets/robes/midnights_children.png",
+    "name": "Midnights Children",
+    "stats": {
+      "hp": 14,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Shadowstep",
+      "desc": "Slip into shadow and dodge the next attack",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "robes/princes_ceremonial_tunic",
+    "slot": "robes",
+    "file": "assets/robes/princes_ceremonial_tunic.png",
+    "name": "Princes Ceremonial Tunic",
+    "stats": {
+      "hp": 13,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Rally",
+      "desc": "Inspire allies, raising their DEF",
+      "kind": "buff",
+      "cost": 2
+    }
+  },
+  {
+    "id": "robes/summoners_robe",
+    "slot": "robes",
+    "file": "assets/robes/summoners_robe.png",
+    "name": "Summoners Robe",
+    "stats": {
+      "hp": 12,
+      "atk": 5,
+      "def": 2,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Summon Familiar",
+      "desc": "Call a minor familiar that pesters enemies",
+      "kind": "summon",
+      "cost": 2
+    }
+  },
+  {
+    "id": "robes/swampwalker",
+    "slot": "robes",
+    "file": "assets/robes/swampwalker.png",
+    "name": "Swampwalker",
+    "stats": {
+      "hp": 14,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Bog Meld",
+      "desc": "Meld with the mire — much harder to hit",
+      "kind": "buff",
+      "cost": 1
+    }
+  },
+  {
+    "id": "robes/temple_of_the_worm",
+    "slot": "robes",
+    "file": "assets/robes/temple_of_the_worm.png",
+    "name": "Temple of the Worm",
+    "stats": {
+      "hp": 13,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Burrow",
+      "desc": "Vanish underground, then strike from below",
+      "kind": "spell",
+      "cost": 2
+    }
+  },
+  {
+    "id": "robes/underdwellers",
+    "slot": "robes",
+    "file": "assets/robes/underdwellers.png",
+    "name": "Underdwellers",
+    "stats": {
+      "hp": 12,
+      "atk": 4,
+      "def": 3,
+      "spd": 1
+    },
+    "dmgType": null,
+    "tags": [
+      "robe-ability"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 60,
+    "ability": {
+      "name": "Ambush",
+      "desc": "Your first attack each battle is a guaranteed crit",
+      "kind": "passive",
+      "cost": 0
+    }
+  },
+  {
+    "id": "shields/bloody_veterans_shield",
+    "slot": "shields",
+    "file": "assets/shields/bloody_veterans_shield.png",
+    "name": "Bloody Veterans Shield",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 7,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/brass_kite_shield",
+    "slot": "shields",
+    "file": "assets/shields/brass_kite_shield.png",
+    "name": "Brass Kite Shield",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 7,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/bulwark_of_the_titans",
+    "slot": "shields",
+    "file": "assets/shields/bulwark_of_the_titans.png",
+    "name": "Bulwark of the Titans",
+    "stats": {
+      "hp": 21,
+      "atk": 0,
+      "def": 14,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "tank",
+      "shield"
+    ],
+    "rarityWeight": 300,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/coffin_shield",
+    "slot": "shields",
+    "file": "assets/shields/coffin_shield.png",
+    "name": "Coffin Shield",
+    "stats": {
+      "hp": 15,
+      "atk": 0,
+      "def": 8,
+      "spd": -2
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/dragon_scale_shield",
+    "slot": "shields",
+    "file": "assets/shields/dragon_scale_shield.png",
+    "name": "Dragon Scale Shield",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 8,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/ebon_kite_shield",
+    "slot": "shields",
+    "file": "assets/shields/ebon_kite_shield.png",
+    "name": "Ebon Kite Shield",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 9,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/frogsong_shield",
+    "slot": "shields",
+    "file": "assets/shields/frogsong_shield.png",
+    "name": "Frogsong Shield",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 7,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/frost_covered_shield",
+    "slot": "shields",
+    "file": "assets/shields/frost_covered_shield.png",
+    "name": "Frost Covered Shield",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 9,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/frozen_heart_shield",
+    "slot": "shields",
+    "file": "assets/shields/frozen_heart_shield.png",
+    "name": "Frozen Heart Shield",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 7,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/golden_buckler",
+    "slot": "shields",
+    "file": "assets/shields/golden_buckler.png",
+    "name": "Golden Buckler",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/heros_shield",
+    "slot": "shields",
+    "file": "assets/shields/heros_shield.png",
+    "name": "Heros Shield",
+    "stats": {
+      "hp": 17,
+      "atk": 0,
+      "def": 9,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/medium_steel_shield",
+    "slot": "shields",
+    "file": "assets/shields/medium_steel_shield.png",
+    "name": "Medium Steel Shield",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 11,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/mossy_wooden_shield",
+    "slot": "shields",
+    "file": "assets/shields/mossy_wooden_shield.png",
+    "name": "Mossy Wooden Shield",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 6,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/smouldering_iron",
+    "slot": "shields",
+    "file": "assets/shields/smouldering_iron.png",
+    "name": "Smouldering Iron",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 10,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/spiked_tower_shield",
+    "slot": "shields",
+    "file": "assets/shields/spiked_tower_shield.png",
+    "name": "Spiked Tower Shield",
+    "stats": {
+      "hp": 17,
+      "atk": 0,
+      "def": 12,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "tank",
+      "shield"
+    ],
+    "rarityWeight": 300,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/steel_buckler",
+    "slot": "shields",
+    "file": "assets/shields/steel_buckler.png",
+    "name": "Steel Buckler",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/viking_shield",
+    "slot": "shields",
+    "file": "assets/shields/viking_shield.png",
+    "name": "Viking Shield",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 9,
+      "spd": -1
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/volcanic_slab",
+    "slot": "shields",
+    "file": "assets/shields/volcanic_slab.png",
+    "name": "Volcanic Slab",
+    "stats": {
+      "hp": 18,
+      "atk": 0,
+      "def": 11,
+      "spd": -3
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shields/wooden_buckler",
+    "slot": "shields",
+    "file": "assets/shields/wooden_buckler.png",
+    "name": "Wooden Buckler",
+    "stats": {
+      "hp": 3,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "shield"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 5
+  },
+  {
+    "id": "shieldstraps/bloody_veterans_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/bloody_veterans_shield_strap.png",
+    "name": "Bloody Veterans Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/brass_kite_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/brass_kite_shield_strap.png",
+    "name": "Brass Kite Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/bulwark_of_the_titans_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/bulwark_of_the_titans_strap.png",
+    "name": "Bulwark of the Titans Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/coffin_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/coffin_shield_strap.png",
+    "name": "Coffin Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/dragon_scale_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/dragon_scale_shield_strap.png",
+    "name": "Dragon Scale Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/ebon_kite_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/ebon_kite_shield_strap.png",
+    "name": "Ebon Kite Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/frogsong_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/frogsong_shield_strap.png",
+    "name": "Frogsong Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/frost_covered_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/frost_covered_shield_strap.png",
+    "name": "Frost Covered Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/frozen_heart_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/frozen_heart_shield_strap.png",
+    "name": "Frozen Heart Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/golden_buckler_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/golden_buckler_strap.png",
+    "name": "Golden Buckler Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/heros_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/heros_shield_strap.png",
+    "name": "Heros Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/medium_steel_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/medium_steel_shield_strap.png",
+    "name": "Medium Steel Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/mossy_wooden_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/mossy_wooden_shield_strap.png",
+    "name": "Mossy Wooden Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/smouldering_iron_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/smouldering_iron_strap.png",
+    "name": "Smouldering Iron Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/spiked_tower_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/spiked_tower_shield_strap.png",
+    "name": "Spiked Tower Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/steel_buckler_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/steel_buckler_strap.png",
+    "name": "Steel Buckler Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/viking_shield_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/viking_shield_strap.png",
+    "name": "Viking Shield Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/volcanic_slab_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/volcanic_slab_strap.png",
+    "name": "Volcanic Slab Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shieldstraps/wooden_buckler_strap",
+    "slot": "shieldstraps",
+    "file": "assets/shieldstraps/wooden_buckler_strap.png",
+    "name": "Wooden Buckler Strap",
+    "stats": {
+      "hp": 0,
+      "atk": 0,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 80
+  },
+  {
+    "id": "shoulders/brotherhood_of_blood",
+    "slot": "shoulders",
+    "file": "assets/shoulders/brotherhood_of_blood.png",
+    "name": "Brotherhood of Blood",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/cavalry",
+    "slot": "shoulders",
+    "file": "assets/shoulders/cavalry.png",
+    "name": "Cavalry",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/cavalry_shoulder",
+    "slot": "shoulders",
+    "file": "assets/shoulders/cavalry_shoulder.png",
+    "name": "Cavalry Shoulder",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/chainmail",
+    "slot": "shoulders",
+    "file": "assets/shoulders/chainmail.png",
+    "name": "Chainmail",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/champions_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/champions_plate.png",
+    "name": "Champions Plate",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/conquerers_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/conquerers_plate.png",
+    "name": "Conquerers Plate",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/demon_hunter",
+    "slot": "shoulders",
+    "file": "assets/shoulders/demon_hunter.png",
+    "name": "Demon Hunter",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/destroyers_raiment",
+    "slot": "shoulders",
+    "file": "assets/shoulders/destroyers_raiment.png",
+    "name": "Destroyers Raiment",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/dragon_knight_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/dragon_knight_mantle.png",
+    "name": "Dragon Knight Mantle",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/ebon_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/ebon_shoulders.png",
+    "name": "Ebon Shoulders",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/fallen_kingdom",
+    "slot": "shoulders",
+    "file": "assets/shoulders/fallen_kingdom.png",
+    "name": "Fallen Kingdom",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/frogsong_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/frogsong_mantle.png",
+    "name": "Frogsong Mantle",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/frostrime",
+    "slot": "shoulders",
+    "file": "assets/shoulders/frostrime.png",
+    "name": "Frostrime",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/fury_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/fury_shoulders.png",
+    "name": "Fury Shoulders",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_blood_brothers",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_blood_brothers.png",
+    "name": "Golden Blood Brothers",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_cavalry",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_cavalry.png",
+    "name": "Golden Cavalry",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_destroyer",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_destroyer.png",
+    "name": "Golden Destroyer",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_house_of_leo_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_house_of_leo_shoulders.png",
+    "name": "Golden House of Leo Shoulders",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_imbued_pauldrons",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_imbued_pauldrons.png",
+    "name": "Golden Imbued Pauldrons",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_nightstalkers",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_nightstalkers.png",
+    "name": "Golden Nightstalkers",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_spiked",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_spiked.png",
+    "name": "Golden Spiked",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_studded",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_studded.png",
+    "name": "Golden Studded",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/golden_tank_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/golden_tank_shoulders.png",
+    "name": "Golden Tank Shoulders",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/healers_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/healers_mantle.png",
+    "name": "Healers Mantle",
+    "stats": {
+      "hp": 11,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/heavy_marine_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/heavy_marine_shoulders.png",
+    "name": "Heavy Marine Shoulders",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/heros_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/heros_plate.png",
+    "name": "Heros Plate",
+    "stats": {
+      "hp": 14,
+      "atk": 0,
+      "def": 7,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/holy_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/holy_mantle.png",
+    "name": "Holy Mantle",
+    "stats": {
+      "hp": 10,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/house_of_leo",
+    "slot": "shoulders",
+    "file": "assets/shoulders/house_of_leo.png",
+    "name": "House of Leo",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/hunters_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/hunters_plate.png",
+    "name": "Hunters Plate",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/imbued_shoulderplates",
+    "slot": "shoulders",
+    "file": "assets/shoulders/imbued_shoulderplates.png",
+    "name": "Imbued Shoulderplates",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/invaders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/invaders.png",
+    "name": "Invaders",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/invaders_orange",
+    "slot": "shoulders",
+    "file": "assets/shoulders/invaders_orange.png",
+    "name": "Invaders Orange",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/irradiated",
+    "slot": "shoulders",
+    "file": "assets/shoulders/irradiated.png",
+    "name": "Irradiated",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/jesters_coif",
+    "slot": "shoulders",
+    "file": "assets/shoulders/jesters_coif.png",
+    "name": "Jesters Coif",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/mana_charged",
+    "slot": "shoulders",
+    "file": "assets/shoulders/mana_charged.png",
+    "name": "Mana Charged",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/medium_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/medium_plate.png",
+    "name": "Medium Plate",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/molten_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/molten_shoulders.png",
+    "name": "Molten Shoulders",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/nightstalkers",
+    "slot": "shoulders",
+    "file": "assets/shoulders/nightstalkers.png",
+    "name": "Nightstalkers",
+    "stats": {
+      "hp": 6,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/platemail",
+    "slot": "shoulders",
+    "file": "assets/shoulders/platemail.png",
+    "name": "Platemail",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/rogues_shoulderpads",
+    "slot": "shoulders",
+    "file": "assets/shoulders/rogues_shoulderpads.png",
+    "name": "Rogues Shoulderpads",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/rotknight",
+    "slot": "shoulders",
+    "file": "assets/shoulders/rotknight.png",
+    "name": "Rotknight",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/royal_blue_guard",
+    "slot": "shoulders",
+    "file": "assets/shoulders/royal_blue_guard.png",
+    "name": "Royal Blue Guard",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/spiked_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/spiked_plate.png",
+    "name": "Spiked Plate",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 6,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/strongmans_pauldrons",
+    "slot": "shoulders",
+    "file": "assets/shoulders/strongmans_pauldrons.png",
+    "name": "Strongmans Pauldrons",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/swampwalker",
+    "slot": "shoulders",
+    "file": "assets/shoulders/swampwalker.png",
+    "name": "Swampwalker",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/tanking_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/tanking_plate.png",
+    "name": "Tanking Plate",
+    "stats": {
+      "hp": 12,
+      "atk": 0,
+      "def": 8,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/theives_kit",
+    "slot": "shoulders",
+    "file": "assets/shoulders/theives_kit.png",
+    "name": "Theives Kit",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/thieves_reinforced_leather",
+    "slot": "shoulders",
+    "file": "assets/shoulders/thieves_reinforced_leather.png",
+    "name": "Thieves Reinforced Leather",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 2,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/travelers_shoulderpiece",
+    "slot": "shoulders",
+    "file": "assets/shoulders/travelers_shoulderpiece.png",
+    "name": "Travelers Shoulderpiece",
+    "stats": {
+      "hp": 5,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/underworld_plate",
+    "slot": "shoulders",
+    "file": "assets/shoulders/underworld_plate.png",
+    "name": "Underworld Plate",
+    "stats": {
+      "hp": 8,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/vampiric_shoulders",
+    "slot": "shoulders",
+    "file": "assets/shoulders/vampiric_shoulders.png",
+    "name": "Vampiric Shoulders",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/volcanic",
+    "slot": "shoulders",
+    "file": "assets/shoulders/volcanic.png",
+    "name": "Volcanic",
+    "stats": {
+      "hp": 9,
+      "atk": 0,
+      "def": 5,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/wanderers_mantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/wanderers_mantle.png",
+    "name": "Wanderers Mantle",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 4,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "shoulders/wizards_bloodmantle",
+    "slot": "shoulders",
+    "file": "assets/shoulders/wizards_bloodmantle.png",
+    "name": "Wizards Bloodmantle",
+    "stats": {
+      "hp": 7,
+      "atk": 0,
+      "def": 3,
+      "spd": 0
+    },
+    "dmgType": null,
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 120
+  },
+  {
+    "id": "weapons/armor_piercer",
+    "slot": "weapons",
+    "file": "assets/weapons/armor_piercer.png",
+    "name": "Armor Piercer",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/axe_of_decay",
+    "slot": "weapons",
+    "file": "assets/weapons/axe_of_decay.png",
+    "name": "Axe of Decay",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/axe_of_the_ogres",
+    "slot": "weapons",
+    "file": "assets/weapons/axe_of_the_ogres.png",
+    "name": "Axe of the Ogres",
+    "stats": {
+      "hp": 0,
+      "atk": 10,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/berserker_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/berserker_axe.png",
+    "name": "Berserker Axe",
+    "stats": {
+      "hp": 0,
+      "atk": 15,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/bloodletter",
+    "slot": "weapons",
+    "file": "assets/weapons/bloodletter.png",
+    "name": "Bloodletter",
+    "stats": {
+      "hp": 0,
+      "atk": 12,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/boar_spear",
+    "slot": "weapons",
+    "file": "assets/weapons/boar_spear.png",
+    "name": "Boar Spear",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/bone_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/bone_dagger.png",
+    "name": "Bone Dagger",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/bone_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/bone_sword.png",
+    "name": "Bone Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/broken_crystal_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/broken_crystal_sword.png",
+    "name": "Broken Crystal Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/broken_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/broken_sword.png",
+    "name": "Broken Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/clawfist",
+    "slot": "weapons",
+    "file": "assets/weapons/clawfist.png",
+    "name": "Clawfist",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/crackling_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/crackling_sword.png",
+    "name": "Crackling Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/crystal_shard",
+    "slot": "weapons",
+    "file": "assets/weapons/crystal_shard.png",
+    "name": "Crystal Shard",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/cursed_battle_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/cursed_battle_axe.png",
+    "name": "Cursed Battle Axe",
+    "stats": {
+      "hp": 0,
+      "atk": 15,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/cutlass",
+    "slot": "weapons",
+    "file": "assets/weapons/cutlass.png",
+    "name": "Cutlass",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/demonic_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/demonic_blade.png",
+    "name": "Demonic Blade",
+    "stats": {
+      "hp": 0,
+      "atk": 11,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/dragon_fang",
+    "slot": "weapons",
+    "file": "assets/weapons/dragon_fang.png",
+    "name": "Dragon Fang",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/dragons_tooth",
+    "slot": "weapons",
+    "file": "assets/weapons/dragons_tooth.png",
+    "name": "Dragons Tooth",
+    "stats": {
+      "hp": 0,
+      "atk": 10,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/duelist_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/duelist_blade.png",
+    "name": "Duelist Blade",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/ebon_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/ebon_longsword.png",
+    "name": "Ebon Longsword",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/energy_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/energy_blade.png",
+    "name": "Energy Blade",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/flame_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/flame_dagger.png",
+    "name": "Flame Dagger",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/frogsong_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/frogsong_blade.png",
+    "name": "Frogsong Blade",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/frost_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/frost_axe.png",
+    "name": "Frost Axe",
+    "stats": {
+      "hp": 0,
+      "atk": 12,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/gladius",
+    "slot": "weapons",
+    "file": "assets/weapons/gladius.png",
+    "name": "Gladius",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/glass_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/glass_longsword.png",
+    "name": "Glass Longsword",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/golden_battle_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/golden_battle_axe.png",
+    "name": "Golden Battle Axe",
+    "stats": {
+      "hp": 0,
+      "atk": 15,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": true,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/knuckled_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/knuckled_dagger.png",
+    "name": "Knuckled Dagger",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/knuckled_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/knuckled_sword.png",
+    "name": "Knuckled Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/molten_axe",
+    "slot": "weapons",
+    "file": "assets/weapons/molten_axe.png",
+    "name": "Molten Axe",
+    "stats": {
+      "hp": 0,
+      "atk": 11,
+      "def": 0,
+      "spd": -1
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/molten_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/molten_dagger.png",
+    "name": "Molten Dagger",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 3
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/pirate_cutlass",
+    "slot": "weapons",
+    "file": "assets/weapons/pirate_cutlass.png",
+    "name": "Pirate Cutlass",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/pirates_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/pirates_sword.png",
+    "name": "Pirates Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/rapier",
+    "slot": "weapons",
+    "file": "assets/weapons/rapier.png",
+    "name": "Rapier",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/rusty_shortsword",
+    "slot": "weapons",
+    "file": "assets/weapons/rusty_shortsword.png",
+    "name": "Rusty Shortsword",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/sage_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/sage_blade.png",
+    "name": "Sage Blade",
+    "stats": {
+      "hp": 0,
+      "atk": 7,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/scimitar",
+    "slot": "weapons",
+    "file": "assets/weapons/scimitar.png",
+    "name": "Scimitar",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/serrated_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/serrated_longsword.png",
+    "name": "Serrated Longsword",
+    "stats": {
+      "hp": 0,
+      "atk": 12,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/serrated_shortsword",
+    "slot": "weapons",
+    "file": "assets/weapons/serrated_shortsword.png",
+    "name": "Serrated Shortsword",
+    "stats": {
+      "hp": 0,
+      "atk": 14,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/slimesword",
+    "slot": "weapons",
+    "file": "assets/weapons/slimesword.png",
+    "name": "Slimesword",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/snake_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/snake_dagger.png",
+    "name": "Snake Dagger",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/snake_handled_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/snake_handled_sword.png",
+    "name": "Snake Handled Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/steel_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/steel_longsword.png",
+    "name": "Steel Longsword",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/steel_torch",
+    "slot": "weapons",
+    "file": "assets/weapons/steel_torch.png",
+    "name": "Steel Torch",
+    "stats": {
+      "hp": 0,
+      "atk": 6,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/sword_of_ancient_kings",
+    "slot": "weapons",
+    "file": "assets/weapons/sword_of_ancient_kings.png",
+    "name": "Sword of Ancient Kings",
+    "stats": {
+      "hp": 0,
+      "atk": 11,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/sword_of_rot",
+    "slot": "weapons",
+    "file": "assets/weapons/sword_of_rot.png",
+    "name": "Sword of Rot",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/swordbreaker",
+    "slot": "weapons",
+    "file": "assets/weapons/swordbreaker.png",
+    "name": "Swordbreaker",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/throwing_lance",
+    "slot": "weapons",
+    "file": "assets/weapons/throwing_lance.png",
+    "name": "Throwing Lance",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 1
+    },
+    "dmgType": "ranged",
+    "tags": [],
+    "rarityWeight": 300,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/vampiric_dagger",
+    "slot": "weapons",
+    "file": "assets/weapons/vampiric_dagger.png",
+    "name": "Vampiric Dagger",
+    "stats": {
+      "hp": 0,
+      "atk": 10,
+      "def": 0,
+      "spd": 2
+    },
+    "dmgType": "physical",
+    "tags": [
+      "vampiric",
+      "dagger-hybrid"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/vampiric_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/vampiric_sword.png",
+    "name": "Vampiric Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 13,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [
+      "vampiric"
+    ],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/venomous_longsword",
+    "slot": "weapons",
+    "file": "assets/weapons/venomous_longsword.png",
+    "name": "Venomous Longsword",
+    "stats": {
+      "hp": 0,
+      "atk": 8,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/volcanic_sword",
+    "slot": "weapons",
+    "file": "assets/weapons/volcanic_sword.png",
+    "name": "Volcanic Sword",
+    "stats": {
+      "hp": 0,
+      "atk": 9,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/wicked_blade",
+    "slot": "weapons",
+    "file": "assets/weapons/wicked_blade.png",
+    "name": "Wicked Blade",
+    "stats": {
+      "hp": 0,
+      "atk": 13,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  },
+  {
+    "id": "weapons/wooden_torch",
+    "slot": "weapons",
+    "file": "assets/weapons/wooden_torch.png",
+    "name": "Wooden Torch",
+    "stats": {
+      "hp": 0,
+      "atk": 4,
+      "def": 0,
+      "spd": 0
+    },
+    "dmgType": "physical",
+    "tags": [],
+    "rarityWeight": 100,
+    "golden": false,
+    "zIndex": 130
+  }
+]

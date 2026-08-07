@@ -3,11 +3,26 @@
  "version": "1.0.0",
  "description": "5v5v5v5v5 Tactical Auto-Battler - HEAVY META: The Savage Lands",
  "scripts": {
-   "deploy:vercel": "vercel --prod",
-   "deploy:surge": "surge . savage-arena.surge.sh",
-   "start": "npx serve ."
+  "deploy:vercel": "vercel --prod",
+  "deploy:surge": "surge . savage-arena.surge.sh",
+  "start": "npx serve .",
+  "scan": "node scripts/scan-assets.mjs",
+  "sheet": "node scripts/contact-sheet.mjs --seed test --count 50",
+  "demo": "node scripts/demo-server.mjs",
+  "engine": "node scripts/test-engine.mjs --n=20",
+  "engine:bands": "node scripts/test-engine.mjs --n=600 --bands",
+  "test": "node --test test/*.test.mjs"
  },
- "keywords": ["game", "auto-battler", "nft", "chimera", "heavy-meta"],
+ "keywords": [
+  "game",
+  "auto-battler",
+  "nft",
+  "chimera",
+  "heavy-meta"
+ ],
  "author": "ClydeTheSavage & Danno",
- "license": "MIT"
+ "license": "MIT",
+ "dependencies": {
+  "sharp": "^0.35.3"
+ }
 }

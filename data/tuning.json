@@ -1,0 +1,30 @@
+{
+  "pieceWeight": 100,
+  "emptySlotWeight": 25,
+  "slotEmptyWeights": {
+    "legs": 25,
+    "chest": 25,
+    "shoulders": 25,
+    "gloves": 25,
+    "helms": 150,
+    "capes": 100,
+    "robes": 400,
+    "conditions": 300,
+    "offhand": 35
+  },
+  "berserkerChance": 0.03,
+  "goldenChance": 0.08,
+  "goldenStatMultiplier": 1.1,
+  "critPerGap": 0.02,
+  "secondAttackMultiplier": 0.6,
+  "combat": {
+    "actionsPerTurn": 1,
+    "cyclesPerRound": 12,
+    "defEffectiveness": 0.5,
+    "critMult": 2,
+    "cover": { "vanguard": 0.4, "flank": 0.2 },
+    "initiativeDie": 20,
+    "roundsPerMatch": 3
+  },
+  "canvas": { "width": 128, "height": 128 }
+}

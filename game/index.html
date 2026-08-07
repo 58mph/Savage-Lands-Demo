@@ -293,6 +293,92 @@
 
   #loading { text-align: center; color: var(--sand); padding: 60px 0; }
 
+  /* ================= character inspector modal ================= */
+  .inspector-modal {
+    position: fixed; inset: 0; background: rgba(20, 12, 5, 0.85);
+    display: none; align-items: center; justify-content: center; z-index: 1000;
+    animation: fadeIn .2s; padding: 16px;
+  }
+  .inspector-modal.active { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .inspector-panel {
+    background: linear-gradient(180deg, var(--parchment), var(--parchment-dark));
+    border: 3px solid var(--bronze); border-radius: 14px;
+    box-shadow: inset 0 0 0 2px rgba(201,170,109,.7), 0 20px 50px rgba(0,0,0,.7);
+    padding: 22px; max-width: 540px; width: 100%; max-height: 84vh; overflow-y: auto;
+    animation: slideUp .25s; position: relative; color: var(--ink);
+  }
+  @keyframes slideUp { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .inspector-close {
+    position: absolute; top: 10px; right: 10px; width: 30px; height: 30px;
+    background: linear-gradient(180deg, #6b5232, #4a3521); border: 2px solid var(--gold);
+    color: var(--parchment); border-radius: 6px; cursor: pointer; font-size: 15px;
+    display: flex; align-items: center; justify-content: center; z-index: 2;
+  }
+  .inspector-close:hover { background: linear-gradient(180deg, #a03028, #742018); border-color: #dc5a4a; }
+  .ins-header {
+    display: flex; gap: 16px; align-items: center; margin-bottom: 16px;
+    border-bottom: 2px solid rgba(139,69,19,.4); padding-bottom: 14px;
+  }
+  .ins-title { flex: 1; }
+  .ins-name { font-size: 19px; font-weight: bold; color: #2e2013; }
+  .ins-cls { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 2px; }
+  .ins-species { font-size: 10px; color: #6d5a3c; margin-top: 2px; }
+  .ins-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 16px; }
+  .ins-stat {
+    background: rgba(46,32,19,.08); border: 1px solid rgba(139,69,19,.35);
+    border-radius: 8px; padding: 8px 4px; text-align: center;
+  }
+  .ins-stat .k { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #6d5a3c; font-weight: bold; }
+  .ins-stat .v { font-size: 17px; font-weight: bold; margin-top: 2px; }
+  .ins-stat.hp .v { color: #1e7a1e; } .ins-stat.atk .v { color: #b8321e; }
+  .ins-stat.def .v { color: #1565c0; } .ins-stat.spd .v { color: #b87309; }
+  .ins-stat.crit .v { color: #7b1fa2; }
+  .ins-section h3 {
+    font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
+    color: #8b4513; margin: 0 0 10px; border-bottom: 1px solid rgba(139,69,19,.35); padding-bottom: 6px;
+  }
+  .ins-gear { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px; }
+  .ins-gear-item {
+    background: rgba(46,32,19,.06); border: 1px solid rgba(139,69,19,.3);
+    border-radius: 8px; padding: 9px; border-left-width: 4px;
+  }
+  .ins-gear-item.common { border-left-color: #8a7a5c; }
+  .ins-gear-item.rare { border-left-color: #1abc9c; }
+  .ins-gear-item.epic { border-left-color: #9b59b6; }
+  .ins-gear-item.legendary { border-left-color: #f39c12; background: rgba(243,156,18,.09); }
+  .ins-gear-item .g-slot { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; color: #6d5a3c; }
+  .ins-gear-item .g-name { font-size: 11px; font-weight: bold; color: #2e2013; margin: 2px 0 4px; }
+  .ins-gear-item .g-stats { font-size: 9px; line-height: 1.5; }
+  .ins-gear-item .g-stats .plus { color: #1e7a1e; font-weight: bold; }
+  .ins-gear-item .g-stats .minus { color: #b8321e; font-weight: bold; }
+  .ability-box {
+    background: rgba(123,31,162,.07); border: 1px solid rgba(139,69,19,.3);
+    border-left: 4px solid #9b59b6; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
+  }
+  .ability-box.dual { border-left-color: var(--atk-orange); background: rgba(224,120,24,.08); }
+  .ability-box .a-name { font-size: 12px; font-weight: bold; color: #2e2013; }
+  .ability-box .a-kind { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; color: #7b1fa2; margin-left: 6px; }
+  .ability-box .a-desc { font-size: 10.5px; color: #4a3521; margin-top: 3px; line-height: 1.5; }
+  .ins-footer { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .ins-chip {
+    font-size: 9px; padding: 3px 9px; border-radius: 999px; font-weight: bold;
+    border: 1px solid rgba(139,69,19,.45); color: #4a3521;
+  }
+  .fcard .inspect-btn {
+    margin-top: 6px; padding: 3px 10px; font-size: 9px; letter-spacing: 1px;
+    background: rgba(46,32,19,.1); border: 1px solid var(--bronze); color: #4a3521;
+    border-radius: 5px; cursor: pointer; text-transform: uppercase; font-weight: bold;
+    box-shadow: none;
+  }
+  .fcard .inspect-btn:hover { background: rgba(46,32,19,.2); box-shadow: none; }
+  .unit { cursor: pointer; }
+  .unit:hover .oval { box-shadow: inset 0 2px 3px rgba(255,255,255,.5), inset 0 -3px 5px rgba(0,0,0,.55), 0 0 14px 3px rgba(240,208,128,.6); }
+  @media (max-width: 640px) {
+    .ins-stats { grid-template-columns: repeat(3, 1fr); }
+    .ins-gear { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 980px) { .board-grid { grid-template-columns: 1fr; } .logpanel { min-height: 240px; } }
   @media (max-width: 640px) {
     .pool { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
@@ -311,6 +397,11 @@
   </header>
 
   <div id="loading">Summoning fighters…</div>
+
+  <!-- CHARACTER INSPECTOR -->
+  <div class="inspector-modal" id="inspector">
+    <div class="inspector-panel" id="inspector-panel"></div>
+  </div>
 
   <!-- DRAFT -->
   <section id="draft" class="screen">
@@ -477,6 +568,114 @@
     return wrap;
   }
 
+  // ---- character inspector ----------------------------------------------------
+  const SLOT_LABEL = {
+    weapons: 'main hand', offhands: 'off hand', shields: 'shield', helms: 'helm',
+    chest: 'chest', shoulders: 'shoulders', gloves: 'gloves', legs: 'pants',
+    boots: 'boots', belts: 'belt', capes: 'cape', robes: 'robe', conditions: 'mark',
+  };
+  function partRarity(entry) {
+    if ((entry.tags ?? []).includes('prestige')) return 'legendary';
+    if (entry.golden) return 'epic';
+    if (entry.ability) return 'rare';
+    return 'common';
+  }
+  function statLines(stats) {
+    return ['hp', 'atk', 'def', 'spd']
+      .filter((k) => (stats?.[k] ?? 0) !== 0)
+      .map((k) => {
+        const v = stats[k];
+        return `<span class="${v > 0 ? 'plus' : 'minus'}">${k.toUpperCase()} ${v > 0 ? '+' : ''}${v}</span>`;
+      })
+      .join(' · ') || '<span style="color:#8a7a5c">cosmetic</span>';
+  }
+
+  function showInspector(f) {
+    const panel = $('inspector-panel');
+    panel.innerHTML = '';
+    panel.insertAdjacentHTML('beforeend', `<div class="inspector-close" id="ins-close">✕</div>`);
+
+    const species = f.parts.find((p) => p.slot === 'bases');
+    const header = document.createElement('div');
+    header.className = 'ins-header';
+    header.appendChild(mkOval(f));
+    header.insertAdjacentHTML(
+      'beforeend',
+      `<div class="ins-title">
+         <div class="ins-name">${f.name}</div>
+         <div class="ins-cls" style="color:${clsColor(f.cls)}">${f.cls}</div>
+         <div class="ins-species">${species?.name ?? ''}${f.doubleAttack ? ' · free off-hand' : ''}</div>
+       </div>`
+    );
+    panel.appendChild(header);
+
+    panel.insertAdjacentHTML(
+      'beforeend',
+      `<div class="ins-stats">
+         <div class="ins-stat hp"><div class="k">HP</div><div class="v">${f.stats.hp}</div></div>
+         <div class="ins-stat atk"><div class="k">ATK</div><div class="v">${f.stats.atk}</div></div>
+         <div class="ins-stat def"><div class="k">DEF</div><div class="v">${f.stats.def}</div></div>
+         <div class="ins-stat spd"><div class="k">SPD</div><div class="v">${f.stats.spd}</div></div>
+         <div class="ins-stat crit"><div class="k">CRIT</div><div class="v">${Math.round(f.stats.crit * 100)}%</div></div>
+       </div>`
+    );
+
+    // gear: the fighter's real parts with their real stat contributions
+    const gear = f.parts.filter((p) => p.slot !== 'bases' && p.slot !== 'shieldstraps');
+    panel.insertAdjacentHTML(
+      'beforeend',
+      `<div class="ins-section"><h3>⚔ Gear</h3><div class="ins-gear">` +
+        gear.map((p) => {
+          const entry = manifestById.get(p.id) ?? {};
+          return `<div class="ins-gear-item ${partRarity(entry)}">
+              <div class="g-slot">${SLOT_LABEL[p.slot] ?? p.slot}</div>
+              <div class="g-name">${p.golden ? '★ ' : ''}${p.name ?? p.id.split('/')[1]}</div>
+              <div class="g-stats">${statLines(entry.stats)}${p.golden ? ' <span class="plus">·  golden +10%</span>' : ''}</div>
+            </div>`;
+        }).join('') +
+      `</div></div>`
+    );
+
+    // abilities (real, from gear) + dual strike
+    const abilityBoxes = [];
+    for (const a of f.abilities) {
+      abilityBoxes.push(
+        `<div class="ability-box"><span class="a-name">${a.name}</span><span class="a-kind">${a.kind}</span><div class="a-desc">${a.desc}</div></div>`
+      );
+    }
+    if (f.doubleAttack) {
+      const pct = Math.round(tuning.secondAttackMultiplier * 100);
+      abilityBoxes.push(
+        `<div class="ability-box dual"><span class="a-name">⚔ Dual Strike</span><span class="a-kind">passive</span><div class="a-desc">Free hand: every attack swings twice — the second lands at ${pct}% damage (after armor)</div></div>`
+      );
+    }
+    if (abilityBoxes.length) {
+      panel.insertAdjacentHTML('beforeend', `<div class="ins-section"><h3>✨ Abilities</h3>${abilityBoxes.join('')}</div>`);
+    }
+
+    // synergies + resistances footer
+    const chips = [
+      ...f.synergies.map((s) => `<span class="ins-chip" style="border-color:#1abc9c;color:#0d7a63" title="${s.desc}">◈ ${s.name}</span>`),
+      ...Object.entries(f.resistances).map(([k, v]) => `<span class="ins-chip">${k.toUpperCase()} RES ${Math.round(v * 100)}%</span>`),
+      ...f.tags.filter((t) => t !== 'robe-ability').map((t) => `<span class="ins-chip">${t}</span>`),
+    ];
+    if (chips.length) {
+      panel.insertAdjacentHTML('beforeend', `<div class="ins-section"><h3>◈ Traits</h3><div class="ins-footer">${chips.join('')}</div></div>`);
+    }
+
+    $('ins-close').onclick = closeInspector;
+    $('inspector').classList.add('active');
+  }
+  function closeInspector() {
+    $('inspector').classList.remove('active');
+  }
+  $('inspector').addEventListener('click', (e) => {
+    if (e.target === $('inspector')) closeInspector();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeInspector();
+  });
+
   // ---- game state ------------------------------------------------------------
   const PICKS_PER_ROUND = [1, 2, 2];
   let gameSeed, draftRound, picks, pool, existingIds;
@@ -531,8 +730,13 @@
            <span class="gem def" title="Defense">🛡${f.stats.def}</span>
            <span class="gem spd" title="Speed">»${f.stats.spd}</span>
          </div>
-         <div class="fab">${ab || (f.doubleAttack ? '⚔ dual strike' : '')}</div>`
+         <div class="fab">${ab || (f.doubleAttack ? '⚔ dual strike' : '')}</div>
+         <button class="inspect-btn">Inspect</button>`
       );
+      card.querySelector('.inspect-btn').onclick = (e) => {
+        e.stopPropagation();
+        showInspector(f);
+      };
       card.onclick = () => {
         if (picks.length >= picksNeeded() || picks.includes(f)) return;
         picks.push(f);
@@ -604,9 +808,10 @@
     const frac = Math.max(0, hp[u.id]) / u.hpMax;
     unit.insertAdjacentHTML(
       'beforeend',
-      `<div class="nameplate" title="${u.name} — ${u.cls} (${u.slot === 'V' ? 'vanguard' : u.slot === 'F' ? 'flank' : 'backline'})">${u.name}</div>
+      `<div class="nameplate" title="${u.name} — ${u.cls} (${u.slot === 'V' ? 'vanguard' : u.slot === 'F' ? 'flank' : 'backline'}) — click to inspect">${u.name}</div>
        <div class="hpbar"><i class="${frac < 0.35 ? 'low' : ''}" style="width:${frac * 100}%"></i></div>`
     );
+    unit.onclick = () => showInspector(f);
     return unit;
   }
 
@@ -895,8 +1100,10 @@
     for (const f of picks) {
       const slot = document.createElement('div');
       slot.className = 'pickslot filled';
+      slot.title = 'Click to inspect';
       slot.appendChild(mkOval(f));
       slot.insertAdjacentHTML('beforeend', `<div>${f.name}</div><div class="fcls" style="color:${clsColor(f.cls)}">${f.cls}</div>`);
+      slot.onclick = () => showInspector(f);
       party.appendChild(slot);
     }
 
